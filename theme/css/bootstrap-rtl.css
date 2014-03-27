@@ -1159,7 +1159,7 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.42857143;
   color: #333;
@@ -1316,6 +1316,8 @@ h2,
 .h2,
 h3,
 .h3 {
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin-top: 44px;
   margin-bottom: 22px;
 }
@@ -1610,8 +1612,8 @@ abbr[data-original-title] {
 }
 
 blockquote {
-  padding: 11px 22px;
-  margin: 0 0 22px;
+  padding: 11px 25px;
+  margin: 0 -30px 22px 0;
   font-size: 20px;
   border-right: 5px solid #eee;
 }
