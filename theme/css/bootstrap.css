@@ -1120,6 +1120,9 @@ p {
     font-size: 24px;
   }
 }
+.rendered_html p {
+  margin: 0;
+}
 small,
 .small {
   font-size: 85%;
@@ -1332,6 +1335,12 @@ address {
   font-style: normal;
   line-height: 1.42857143;
 }
+figcaption {
+  font-size: 12px;
+}
+figcaption .fname {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
 code,
 kbd,
 pre,
@@ -1358,7 +1367,7 @@ pre {
   display: block;
   padding: 10.5px;
   margin: 0 0 11px;
-  font-size: 15px;
+  font-size: 12px;
   line-height: 1.42857143;
   color: #333;
   word-break: break-all;
@@ -1374,6 +1383,10 @@ pre code {
   white-space: pre-wrap;
   background-color: transparent;
   border-radius: 0;
+}
+.output_stream pre {
+  background-color: #fff;
+  border: none;
 }
 .pre-scrollable {
   max-height: 340px;
