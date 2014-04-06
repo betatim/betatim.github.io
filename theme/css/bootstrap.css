@@ -1120,9 +1120,6 @@ p {
     font-size: 24px;
   }
 }
-.rendered_html p {
-  margin: 0;
-}
 small,
 .small {
   font-size: 85%;

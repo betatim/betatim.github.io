@@ -1414,10 +1414,6 @@ p {
   }
 }
 
-.rendered_html p {
-  margin: 0;
-}
-
 small,
 .small {
   font-size: 85%;
