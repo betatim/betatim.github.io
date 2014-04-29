@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sports - Tim Head</title>
+    <title>Data locality and sorting - Tim Head</title>
 
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -277,32 +277,30 @@ init_mathjax();
     
     <div class="container">
       <div class="col-md-8 col-md-offset-2">
-    <section id="content" class="body">
-      <header class="title">
-        <h1>
-          Sports
-        </h1>
-      </header>
-      <div class="entry-content">
-        <p><a href="http://en.wikipedia.org/wiki/Triathlon">Triathlon</a>: swimming, biking and running crazy long distances
-without a break.  The aim is to complete all three sports (including
-transitions!) in the fastest time possible.</p>
-<p>In May 2013 I took part in the <a href="http://www.genevemarathon.org/en/">Geneva half-marathon</a>, a
-few weeks later I finished the <a href="http://www.cyclotour.ch/">Cyclotour du leman</a>, a
-180km bike race. It was my first "century ride" (a bike ride of more
-than 100miles). In August I did my best not to melt in the heat at <a href="http://www.lacyclosportivevalaisanne.ch/cms/">La
-cyclosportive des vins du valais</a>, a shorter race but
-with a lot more climbing.</p>
-<p>In 2012 I competed in a 5km lake swim at <a href="http://www.highterrainevents.co.uk/19.html">Utterly Buttermere</a>
-and my first <a href="http://en.wikipedia.org/wiki/Ironman_70.3">half Ironman distance triathlon</a> which I
-completed in just over five hours.</p>
-<p>Previously I have taken part in the 2011 <a href="http://chicagotriathlon.com/">Chicago triathlon</a>,
-the 2011 <a href="http://www.bigshoulders.org/">Big Shoulders</a> lake swim, several sprint
-distance triathlons (<a href="http://www.fnal.gov/orgs/gsa/pages/events/triathlon/index.html">Fermilab</a> 2010 and 2011, <a href="http://www.theblenheimtriathlon.com/">Blenheim
-Palace</a> 2012, <a href="http://www.tig.ch">Geneva</a> 2013), several 10km and
-5km distance running races.</p>
-      </div>
+    <section id="content">
+        <article>
+            <header class="title">
+                <h1>
+                    <!--<a href="http://betatim.github.io/posts/location-location-location/"
+                       rel="bookmark"
+                       title="Permalink to Data locality and sorting">
+                        Data locality and sorting
+                    </a>-->
+		    Data locality and sorting
+                </h1>
+		<div class="when">25 April 2014</div>
+            </header>
+            <div class="entry-content">
+                <p>Should you sort a vector of pointers or a vector of objects? Most people
+think you should sort a vector of pointers. The reasoning being that in
+the other case you have to move around the objects themselves which
+has to be slower than swapping pointers.</p>
+<p>The real answer is: It depends.</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
     </section>
+
       </div>
     </div>
 
