@@ -299,7 +299,7 @@ init_mathjax();
 <p>Changing habits is always difficult and one of the first questions asked when you propose a change of something that works is: how do we reproduce our current results? This is how scientists adopt new strategies and techniques. You take a problem you already solved, apply a new method and check if you get the same answer. Then you apply the new method to a new problem.</p>
 <p>Let's see if we can obtain the same result from <code>TMVA</code> and <code>scikit-learn</code> when training a set of <a href="http://en.wikipedia.org/wiki/Decision_tree_learning">Decision Trees</a> combined via <a href="http://en.wikipedia.org/wiki/AdaBoost">AdaBoost</a>.</p>
 <p>The first thing we need is some data to train on. As this is about AdaBoost we will use the dataset used in Hastie et al 2009, Example 10.2 where they compare the performance of a decision tree, a decision stump and a boosted decision stump.</p>
-<h1 id="creating-a-problem-for-ourselves">Creating a problem for ourselves</h1>
+<h2 id="creating-a-problem-for-ourselves">Creating a problem for ourselves</h2>
 <p>With that, some setup and data generation:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
@@ -2378,7 +2378,7 @@ DwAGIv4AYCDiDwAGIv4AYCDiDwAGIv4AYCDiDwAGegLOi2sAszFM/AAAAABJRU5ErkJggg==
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Not really. There does not seem to be a clear pattern on how to separate blue from red points by looking at any pair of variables. Good luck Mr DecisionTree!</p>
-<h1 id="training-a-bdt-with-tmva">Training a BDT with TMVA</h1>
+<h2 id="training-a-bdt-with-tmva">Training a BDT with TMVA</h2>
 <p>First we will train the default Boosted Decision Tree classifier in <code>TMVA</code>. After this we will try and replicate this with <code>scikit-learn</code>.</p>
 <p>In order to use <code>TMVA</code> we have to create a Factory object, to which we add the individual samples, labelling them as either &quot;signal&quot; or &quot;background&quot; and as &quot;testing&quot; or &quot;training&quot;.</p>
 </div>
@@ -2703,7 +2703,7 @@ RArHM3oiIoVj0RMRKRyLnohI4Vj0REQKx6InIlI4Fj0RkcL9P+jBw33jdv8EAAAAAElFTkSuQmCC
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="next-up-scikit-learn">Next up scikit-learn!</h1>
+<h2 id="next-up-scikit-learn">Next up scikit-learn!</h2>
 <p>Now for doing the same in <code>scikit-learn</code>! We setup the weak learner used by AdaBoost with the same options as used in <code>TMVA</code>, then train it and evaluate the same performance metrics, as well as the area under the ROC. The performance metrics are almsot exactly the same, and the area under the ROC is exactly the same (within the precision of the print out).</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
@@ -2951,166 +2951,6 @@ JHEseiIiiWPRExFJHIueiEji/h+dkfB95ZnUSgAAAABJRU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Compare the above figure of the BDT output from <code>scikit-learn</code> with the one we got from TMVA. They are remarkably similar! With such similiar BDT responses we can be pretty confident we managed to replicate what <code>TMVA</code> does with <code>scikit-learn</code>.</p>
 <p>So now that we understand how to configure <code>scikit-learn</code> to reproduce previous results, we can go forth and fiddle with the tools that it provides. The scientific method is as much about taking small steps where you can predict what will happen as huge leaps which will turn out to be great discoveries!</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bdt</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="n">y_train</span><span class="o">&gt;</span><span class="mf">0.</span><span class="p">])</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span>
-         <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.4</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bdt</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="n">y_train</span><span class="o">&lt;</span><span class="mf">0.</span><span class="p">])</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span>
-         <span class="n">color</span><span class="o">=</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.4</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[27]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">(array([   1.,    8.,   23.,   47.,   93.,  124.,  159.,  231.,  263.,
-          48.,    0.,    0.,    0.,    0.,    0.,    0.,    0.,    0.,
-           0.,    0.]),
- array([-0.4 , -0.36, -0.32, -0.28, -0.24, -0.2 , -0.16, -0.12, -0.08,
-        -0.04,  0.  ,  0.04,  0.08,  0.12,  0.16,  0.2 ,  0.24,  0.28,
-         0.32,  0.36,  0.4 ]),
- &lt;a list of 20 Patch objects&gt;)</pre>
-
-</div>
-</div>
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<img src="data:image/png;base64,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
-7rhj4rDHAcCYZmLszJkzZvny5eGfd+7cacrKyq5bJz093UjiwYMHDx7DeKSnp0fVyw5jjFEMXbt2
-TV/60pf0pz/9SV/4whc0f/58HTx4UDNnzozl2wAAIhTzqZukpCQ9/fTTWr58uXp7e7Vp0yZKHgAS
-KOZ79ACA0eWm3AKhs7NTeXl5mjFjhpYtW6aurq4brtvb2yuv16vVq1cnPNOHH36o3Nxc5eTkyOPx
-6Iknnkh4ppaWFi1evFizZs3S7NmztXfv3oRnkqSNGzfK6XRqzpw5cctSU1OjrKwsZWZmqry8fMB1
-vvvd7yozM1PZ2dlqaGiIW5bh5PrHP/6hBQsW6LOf/ayeeuqpUZHpV7/6lbKzszV37lx97Wtf02uv
-vZbwTJWVlcrOzpbX69W9996rP//5zwnP9LGzZ88qKSlJv/vd7xKeKRAIaNKkSfJ6vfJ6vfrxj388
-9EajPuo6DI899pgpLy83xhhTVlZmtm3bdsN1n3rqKXP//feb1atXj4pMH3zwgTHGmKtXr5rc3Fxz
-8uTJhGZqb283DQ0Nxhhj3n//fTNjxgwTDAYTmskYY/7yl7+YV1991cyePTsuOa5du2bS09NNU1OT
-6enpMdnZ2f3+3H/84x/NihUrjDHGvPzyyyY3NzcuWYab61//+pc5e/as+f73v2+efPLJUZHppZde
-Ml1dXcYYY6qrq+P+WUWS6fLly+Hnr732WtQHHmOZ6eP1Fi9ebFatWmV+85vfJDzTiy++OOx+vCl7
-9FVVVSouLpYkFRcX6+jRowOu19raqmPHjmnz5s0ycZ5RijTT+PHjJUk9PT3q7e3VlClTEpopNTVV
-OTk5kqQJEyZo5syZunjxYkIzSdKiRYs0efLkuOWI5EK8T2bNzc1VV1eXOjo64pYp0lx333235s2b
-p+Tk5LhmGU6mBQsWaNKkSZI++qxaW1sTnunzn/98+Pnly5d11113JTyTJO3bt09r167V3XffHdc8
-w8k03H68KUXf0dEhp9MpSXI6nTf8n+973/uefvazn2ncuPjHijRTX1+fcnJy5HQ6tXjxYnk8noRn
-+lhzc7MaGhqUm5s7ajLFy0AX4rW1tQ25TrwLLJJcN9twMx04cEArV64cFZmOHj2qmTNnasWKFXGf
-loz071RlZaUeeughSZFfJxTPTA6HQy+99JKys7O1cuVKBYPBIbcbs7Nu8vLyFBrgsuGf/OQn/UIO
-9GH94Q9/UEpKirxerwKBwKjIJH10NW5jY6Pee+89LV++XIFAQD6fL6GZpI/2eNauXas9e/ZowoQJ
-UeeJZaZ4ivR9P72nE++8ifo8BjOcTC+++KKee+45nT59Oo6JIs9UUFCggoICnTx5UuvXr9c///nP
-hGbaunWrysrK5HA4ZIyJ+0xDJJm+/OUvq6WlRePHj1d1dbUKCgp07ty5QcfErOhfeOGFG77mdDoV
-CoWUmpqq9vZ2paSk9FvnpZdeUlVVlY4dO6YPP/xQ//73v/Wtb31Lv/zlLxOW6ZMmTZqkVatW6a9/
-/euIij4Wma5evao1a9bogQceUEHByO/IGcvPKV7S0tLU0tIS/rmlpUUul2vQdVpbW5WWlpbwXDdb
-pJlee+01ffvb31ZNTU1cp92Gk+ljixYt0rVr1/TOO+/ozjvvTFim+vp6rVu3TpJ06dIlVVdXKzk5
-Wfn5+QnLNHHi/787wIoVK7RlyxZ1dnYOPq0co2MIg3rsscfCV8fu2rVr0IOxxhgTCATM17/+9YRn
-evvtt827775rjDHmypUrZtGiReb48eMJzdTX12fWr19vtm7dGrccw830saamprgdjL169aq55557
-TFNTk/nPf/4z5MHYM2fO3JSDsZHk+tj27dtvysHYSDK99dZbJj093Zw5cybueSLNdOHCBdPX12eM
-Maa+vt7cc889Cc/0SRs2bDC//e1vE54pFAqFP6dXXnnFfPGLXxxyuzel6N955x2zZMkSk5mZafLy
-8sLl2dbWZlauXNlv/UAgEPezbiLJ9Le//c14vV6TnZ1t5syZY376058mPNPJkyeNw+Ew2dnZJicn
-x+Tk5Jjq6uqEZjLGmHXr1pmpU6eaz3zmM8blcpnnnnsu5lmOHTtmZsyYYdLT083OnTuNMcY888wz
-5plnngmv853vfMekp6ebuXPnmvr6+phniCZXe3u7cblc5vbbbzd33HGHmTZtmnn//fcTmmnTpk1m
-ypQp4b9DX/nKV+KaJ5JM5eXlZtasWSYnJ8csXLjQ1NXVJTzTJ92Moo8k09NPP21mzZplsrOzzYIF
-CyL6x5oLpgDAcnxnLABYjqIHAMtR9ABgOYoeACxH0QOA5Sh6ALAcRQ8AlqPoAcBy/w8bseJyIEFc
-+wAAAABJRU5ErkJggg==
-">
-
-</div>
-</div>
-
-</div>
-</div>
-
 </div></p>
 <p>This post started life as a ipython notebook,
 <a href="/downloads/notebooks/tmva-vs-scikit-learn.ipynb">download it</a>
