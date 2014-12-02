@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
 
-    <title>Archives - Tim Head</title>
+    <title>Read any Nature Paper for Free - Tim Head</title>
 
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -280,23 +280,49 @@ init_mathjax();
     <div class="container">
       <div class="col-md-8 col-md-offset-2">
     <section id="content">
-        <h1>Archives for Tim Head</h1>
+        <article>
+            <header class="title">
+                <h1>
+                    <!--<a href="http://betatim.github.io/posts/read-any-nature-paper-for-free/"
+                       rel="bookmark"
+                       title="Permalink to Read any Nature Paper for Free">
+                        Read any Nature Paper for Free
+                    </a>-->
+		    Read any Nature Paper for Free
+                </h1>
+		<div class="when">02 December 2014</div>
+            </header>
+            <div class="entry-content">
+                <p>Today <a href="http://www.nature.com">Nature</a>
+<a href="http://www.nature.com/news/nature-makes-all-articles-free-to-view-1.16460">announced</a>
+that all papers published in their journals will be "made free to read
+in a proprietary screen-view format that can be annotated but not
+copied, printed or downloaded" all articles they have published.</p>
+<p>If you want to read opinions about the merit of this move check out what Michael Eisen has to say</p>
+<p>Michel Eisen wonders if <a href="http://www.michaeleisen.org/blog/?p=1668">Nature’s “free to view” is a magnanimous gesture or a cynical ploy?</a> Considering how hard
+they make it to find the link to the free-as-in-beer version of a paper, you
+might think so.</p>
+<h3>Bookmarklet</h3>
+<p>I bring you the <a href="javascript:(function()%7Bfunction%20callback()%7B(function(%24)%7Bvar%20jQuery%3D%24%3Bwindow.location%20%3D%20%22http%3A%2F%2Fwww.readcube.com%2Farticles%2F%22%2B%24(%22dd.doi%22).html().substr(4)%7D)(jQuery.noConflict(true))%7Dvar%20s%3Ddocument.createElement(%22script%22)%3Bs.src%3D%22https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fjquery%2F1.7.1%2Fjquery.min.js%22%3Bif(s.addEventListener)%7Bs.addEventListener(%22load%22%2Ccallback%2Cfalse)%7Delse%20if(s.readyState)%7Bs.onreadystatechange%3Dcallback%7Ddocument.body.appendChild(s)%3B%7D)()">Nature, read now!</a> bookmarklet. Just drag it to
+your bookmarkbar, click it when viewing the public page of an article
+and be taken straight to the full text of the article.</p>
+<p>If you can not drag the bookmarklet here is the source so you can
+create it manually. To create the "Nature, read now!" Bookmarklet you
+need to copy the code below into the URL field of a new bookmark.</p>
+<div class="highlight"><pre><span class="nx">javascript</span><span class="o">:</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span><span class="kd">function</span> <span class="nx">callback</span><span class="p">(){(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span><span class="kd">var</span> <span class="nx">jQuery</span><span class="o">=</span><span class="nx">$</span><span class="p">;</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="s2">&quot;http://www.readcube.com/articles/&quot;</span><span class="o">+</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;dd.doi&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">().</span><span class="nx">substr</span><span class="p">(</span><span class="mi">4</span><span class="p">)})(</span><span class="nx">jQuery</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">(</span><span class="kc">true</span><span class="p">))}</span><span class="kd">var</span> <span class="nx">s</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;script&quot;</span><span class="p">);</span><span class="nx">s</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="s2">&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js&quot;</span><span class="p">;</span><span class="k">if</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">){</span><span class="nx">s</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span><span class="nx">callback</span><span class="p">,</span><span class="kc">false</span><span class="p">)}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">readyState</span><span class="p">){</span><span class="nx">s</span><span class="p">.</span><span class="nx">onreadystatechange</span><span class="o">=</span><span class="nx">callback</span><span class="p">}</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);})()</span>
+</pre></div>
 
-        <dl>
-                <dt>02 December 2014</dt>
-                <dd><a href='http://betatim.github.io/posts/read-any-nature-paper-for-free/'>Read any Nature Paper for Free</a></dd>
-                <dt>03 June 2014</dt>
-                <dd><a href='http://betatim.github.io/posts/quasi-random-numbers/'>Monte Carlo Integration with Quasi Random Numbers</a></dd>
-                <dt>28 May 2014</dt>
-                <dd><a href='http://betatim.github.io/posts/early-stopping/'>Early stopping</a></dd>
-                <dt>14 May 2014</dt>
-                <dd><a href='http://betatim.github.io/posts/matching-machine-learning/'>Matching Machine Learning</a></dd>
-                <dt>29 April 2014</dt>
-                <dd><a href='http://betatim.github.io/posts/when-to-switch/'>Knowing when to switch</a></dd>
-                <dt>26 March 2014</dt>
-                <dd><a href='http://betatim.github.io/posts/obligatory-first-post/'>Obligatory first post</a></dd>
-        </dl>
+
+<h3>Example</h3>
+<p>Head over to <a href="http://www.nature.com/nature/journal/vaop/ncurrent/full/nature14015.html">Proton transport through one-atom-thick
+crystals</a>,
+the latest paper on how graphene will revolutionise the world. Hit the
+"Nature, read now!" bookmarklet button, et voila you see the full text.</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
     </section>
+
       </div>
     </div>
 
