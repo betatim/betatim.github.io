@@ -1,0 +1,2562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
+
+    <title>Analysing the arXiv - Tim Head</title>
+
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="/theme/css/bootstrap.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/default.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-49540142-1', 'betatim.github.io');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- extra stuff for nbconvert -->
+	
+<style type="text/css">
+    .highlight-ipynb .hll { background-color: #ffffcc }
+.highlight-ipynb  { background: #f8f8f8; }
+.highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
+.highlight-ipynb .err { border: 1px solid #FF0000 } /* Error */
+.highlight-ipynb .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight-ipynb .o { color: #666666 } /* Operator */
+.highlight-ipynb .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight-ipynb .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight-ipynb .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight-ipynb .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight-ipynb .gd { color: #A00000 } /* Generic.Deleted */
+.highlight-ipynb .ge { font-style: italic } /* Generic.Emph */
+.highlight-ipynb .gr { color: #FF0000 } /* Generic.Error */
+.highlight-ipynb .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight-ipynb .gi { color: #00A000 } /* Generic.Inserted */
+.highlight-ipynb .go { color: #888888 } /* Generic.Output */
+.highlight-ipynb .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight-ipynb .gs { font-weight: bold } /* Generic.Strong */
+.highlight-ipynb .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight-ipynb .gt { color: #0044DD } /* Generic.Traceback */
+.highlight-ipynb .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight-ipynb .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight-ipynb .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight-ipynb .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight-ipynb .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight-ipynb .kt { color: #B00040 } /* Keyword.Type */
+.highlight-ipynb .m { color: #666666 } /* Literal.Number */
+.highlight-ipynb .s { color: #BA2121 } /* Literal.String */
+.highlight-ipynb .na { color: #7D9029 } /* Name.Attribute */
+.highlight-ipynb .nb { color: #008000 } /* Name.Builtin */
+.highlight-ipynb .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight-ipynb .no { color: #880000 } /* Name.Constant */
+.highlight-ipynb .nd { color: #AA22FF } /* Name.Decorator */
+.highlight-ipynb .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight-ipynb .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight-ipynb .nf { color: #0000FF } /* Name.Function */
+.highlight-ipynb .nl { color: #A0A000 } /* Name.Label */
+.highlight-ipynb .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight-ipynb .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight-ipynb .nv { color: #19177C } /* Name.Variable */
+.highlight-ipynb .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight-ipynb .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight-ipynb .mf { color: #666666 } /* Literal.Number.Float */
+.highlight-ipynb .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight-ipynb .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight-ipynb .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight-ipynb .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight-ipynb .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight-ipynb .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight-ipynb .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight-ipynb .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight-ipynb .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight-ipynb .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight-ipynb .sx { color: #008000 } /* Literal.String.Other */
+.highlight-ipynb .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight-ipynb .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight-ipynb .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight-ipynb .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight-ipynb .vc { color: #19177C } /* Name.Variable.Class */
+.highlight-ipynb .vg { color: #19177C } /* Name.Variable.Global */
+.highlight-ipynb .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
+</style>
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+div.entry-content {
+  overflow: visible;
+  padding: 8px;
+}
+.input_area {
+  padding: 0.2em;
+}
+
+a.heading-anchor {
+ white-space: normal;
+}
+
+.rendered_html
+code {
+ font-size: .8em;
+}
+
+pre.ipynb {
+  color: black;
+  background: #f7f7f7;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 0;
+  padding: 0;
+  margin: 0px;
+  font-size: 13px;
+}
+
+/* remove the prompt div from text cells */
+div.text_cell .prompt {
+    display: none;
+}
+div.prompt {
+    display: none;
+}
+
+/* remove horizontal padding from text cells, */
+/* so it aligns with outer body text */
+div.text_cell_render {
+    padding: 0.5em 0em;
+}
+
+img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
+</style>
+
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
+    <!-- extra stuff for nbconvert -->
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/javascript">
+      init_mathjax = function() {
+      if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+        },
+        displayAlign: 'left', // Change this to 'center' to center equations.
+        "HTML-CSS": {
+          styles: {'.MathJax_Display': {"margin": 0}}
+        }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+      }
+      }
+      init_mathjax();
+    </script>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <style>
+      .cell {
+      margin-top: 22px;
+      margin-bottom: 11px;
+      }
+      .text_cell_render {
+      padding: 0;
+      }
+      .title {
+      border-left: 7px solid #eee;
+      padding: 10px 10px 10px 23px;
+      margin-left: -30px;
+      }
+      .when {
+      padding-top: 5px;
+      text-transform: uppercase;
+      color: #777;
+      }
+      .entry-content img {
+      border-radius: 4px;
+      }
+      .navbar {
+      margin: 75px 0 25px 0;
+      }
+      .footer {
+      margin: 100px 0 25px 0;
+      border-top: 1px solid transparent;
+      border-color: #eee;
+      }
+      .powered-by {
+      padding: 15px;
+      float: right;
+      }
+      .social {
+      padding: 15px;
+      float: left;
+      }
+      .social i {
+      padding-left: 15px;
+      }
+      .social a {
+      color: black;
+      transition: all 0.25s ease-in;
+      -webkit-transition: all 0.25s ease-in;
+      }
+      .social a:hover {
+      text-shadow: 0 0 15px #000;
+      }
+      .listing span {
+      float: right;
+      text-transform: uppercase;
+      }
+      .listing li {
+      list-style-type: none;
+      }
+      .navbar a {
+      transition: color 0.5s ease-in;
+      -webkit-transition: color 0.5s ease-in;
+      }
+      .navbar li a {
+      font-weight: bold;
+      }
+      .navbar a {
+      text-transform: uppercase
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+	<div class="col-md-8 col-md-offset-2">
+	  <nav class="navbar navbar-default" role="navigation">
+	    
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand name" href="http://betatim.github.io/">Tim<b>Head</b></a>
+	    </div>
+	    <div class="collapse navbar-collapse navbar-right">
+	      <ul class="nav navbar-nav">
+		<!-- <li><a href="#">Notes</a></li> -->
+		<!-- <li><a href="#">Talks</a></li> -->
+                         <li><a href="http://betatim.github.io/pages/about.html">
+                             About
+                         </a></li>
+                         <li><a href="http://betatim.github.io/pages/science.html">
+                             Science
+                         </a></li>
+                         <li><a href="http://betatim.github.io/pages/sports.html">
+                             Sports
+                         </a></li>
+	      </ul>
+	    </div>
+	    
+	  </nav>  
+	</div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="col-md-8 col-md-offset-2">
+    <section id="content">
+        <article>
+            <header class="title">
+                <h1>
+                    <!--<a href="http://betatim.github.io/posts/analysing-the-arxiv/"
+                       rel="bookmark"
+                       title="Permalink to Analysing the arXiv">
+                        Analysing the arXiv
+                    </a>-->
+		    Analysing the arXiv
+                </h1>
+		<div class="when">16 December 2014</div>
+            </header>
+            <div class="entry-content">
+                <p>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This post is about what you can learn about scientific articles posted on the <a href="http://arxiv.org">arXiv</a> by using Natural Language Processing (NLP). Said differently: I had some questions about papers posted on the arXiv and used it as an excuse to teach myself the basics of NLP. We also look at citation counts and reveal the top cited paper of 2014!</p>
+<p>The arXiv makes its data available via a simple API which allows you to download almost everything about an article short of its full text. For each article we can look up information about who has been citing it on <a href="http://inspirehep.net/">inspire</a>. Combined this is a powerful dataset that can answer some interesting questions like: what are the most used words, can we auto generate abstracts, what about summarising abstracts or finding the most cited article of 2014.</p>
+<p>Let's get going!</p>
+<p>First some standard imports that we will need later. Some of them you might need to install but nothing too obscure:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+
+
+
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">urllib2</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">ifilter</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span><span class="p">,</span> <span class="n">defaultdict</span>
+<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="kn">as</span> <span class="nn">ET</span>
+
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">bibtexparser</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s">&#39;mode.chained_assignment&#39;</span><span class="p">,</span><span class="s">&#39;warn&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+
+
+
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre><span class="o">%</span><span class="k">matplotlib</span> <span class="n">inline</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>harvest</code> function will query the arXiv API for all articles modified between January, 1st 2010 and the end of the year 2014. This is a subtlety worth noting: with this query you will also get articles <em>created</em> before 2010 if their entry was modified after 2010.</p>
+<p>The arXiv itself covers so many topics that it is organised into seperate arxivs (I know unfortunate doulbe use of the name arxiv), one for each topic. By default <code>harvest</code> will collect articles from the <code>physics:hep-ex</code> arxiv. This is because I am a experimental particle physicist. If you are into theory try <code>physics:hep-th</code> or <code>stats</code> if you are a stats guru. The API gives you a <a href="http://export.arxiv.org/oai2?verb=ListSets">full list of all sets of topics</a> to explore.</p>
+<p>If you do not care for the technicalities of how to scrape the data skip right ahead to the first <a href="#factoid">factoid</a>.</p>
+<h2 id="harvesting-articles">Harvesting articles</h2>
+<p>Most of <code>harvest</code> is pretty straight forward. The API returns a big XML document containing information about at most 1000 articles which we can parse with <code>ElementTree</code> and store. If there are more than 1000 articles for a particular query we can get those using the <code>resumptionToken</code> in the XML. API access can be throttled so on occasion the arXiv will reply with a 503 error asking us to retry later. The information we harvest is stored in a <code>pandas</code> dataframe.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+
+
+
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre><span class="n">OAI</span> <span class="o">=</span> <span class="s">&quot;{http://www.openarchives.org/OAI/2.0/}&quot;</span>
+<span class="n">ARXIV</span> <span class="o">=</span> <span class="s">&quot;{http://arxiv.org/OAI/arXiv/}&quot;</span>
+
+<span class="k">def</span> <span class="nf">harvest</span><span class="p">(</span><span class="n">arxiv</span><span class="o">=</span><span class="s">&quot;physics:hep-ex&quot;</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s">&quot;title&quot;</span><span class="p">,</span> <span class="s">&quot;abstract&quot;</span><span class="p">,</span> <span class="s">&quot;categories&quot;</span><span class="p">,</span> <span class="s">&quot;created&quot;</span><span class="p">,</span> <span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;doi&quot;</span><span class="p">))</span>
+    <span class="n">base_url</span> <span class="o">=</span> <span class="s">&quot;http://export.arxiv.org/oai2?verb=ListRecords&amp;&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="p">(</span><span class="n">base_url</span> <span class="o">+</span>
+           <span class="s">&quot;from=2010-01-01&amp;until=2014-12-31&amp;&quot;</span> <span class="o">+</span>
+           <span class="s">&quot;metadataPrefix=arXiv&amp;set=</span><span class="si">%s</span><span class="s">&quot;</span><span class="o">%</span><span class="k">arxiv</span><span class="p">)</span>
+    
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;fetching&quot;</span><span class="p">,</span> <span class="n">url</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+            
+        <span class="k">except</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="mi">503</span><span class="p">:</span>
+                <span class="n">to</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">hdrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;retry-after&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+                <span class="k">print</span> <span class="s">&quot;Got 503. Retrying after {0:d} seconds.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">to</span><span class="p">)</span>
+
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">to</span><span class="p">)</span>
+                <span class="k">continue</span>
+                
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span>
+            
+        <span class="n">xml</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+        <span class="n">root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">OAI</span><span class="o">+</span><span class="s">&#39;ListRecords&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">OAI</span><span class="o">+</span><span class="s">&quot;record&quot;</span><span class="p">):</span>
+            <span class="n">arxiv_id</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">OAI</span><span class="o">+</span><span class="s">&#39;header&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">OAI</span><span class="o">+</span><span class="s">&#39;identifier&#39;</span><span class="p">)</span>
+            <span class="n">meta</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">OAI</span><span class="o">+</span><span class="s">&#39;metadata&#39;</span><span class="p">)</span>
+            <span class="n">info</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">ARXIV</span><span class="o">+</span><span class="s">&quot;arXiv&quot;</span><span class="p">)</span>
+            <span class="n">created</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">ARXIV</span><span class="o">+</span><span class="s">&quot;created&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+            <span class="n">created</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">created</span><span class="p">,</span> <span class="s">&quot;%Y-%m-</span><span class="si">%d</span><span class="s">&quot;</span><span class="p">)</span>
+            <span class="n">categories</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">ARXIV</span><span class="o">+</span><span class="s">&quot;categories&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+
+            <span class="c"># if there is more than one DOI use the first one</span>
+            <span class="c"># often the second one (if it exists at all) refers</span>
+            <span class="c"># to an eratum or similar</span>
+            <span class="n">doi</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">ARXIV</span><span class="o">+</span><span class="s">&quot;doi&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">doi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">doi</span> <span class="o">=</span> <span class="n">doi</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+                
+            <span class="n">contents</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="n">info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">ARXIV</span><span class="o">+</span><span class="s">&quot;title&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+                        <span class="s">&#39;id&#39;</span><span class="p">:</span> <span class="n">info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">ARXIV</span><span class="o">+</span><span class="s">&quot;id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">,</span><span class="c">#arxiv_id.text[4:],</span>
+                        <span class="s">&#39;abstract&#39;</span><span class="p">:</span> <span class="n">info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">ARXIV</span><span class="o">+</span><span class="s">&quot;abstract&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span>
+                        <span class="s">&#39;created&#39;</span><span class="p">:</span> <span class="n">created</span><span class="p">,</span>
+                        <span class="s">&#39;categories&#39;</span><span class="p">:</span> <span class="n">categories</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span>
+                        <span class="s">&#39;doi&#39;</span><span class="p">:</span> <span class="n">doi</span><span class="p">,</span>
+                        <span class="p">}</span>
+
+            <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">contents</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+        <span class="c"># The list of articles returned by the API comes in chunks of</span>
+        <span class="c"># 1000 articles. The presence of a resumptionToken tells us that</span>
+        <span class="c"># there is more to be fetched.</span>
+        <span class="n">token</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">OAI</span><span class="o">+</span><span class="s">&#39;ListRecords&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">OAI</span><span class="o">+</span><span class="s">&quot;resumptionToken&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">token</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">token</span><span class="o">.</span><span class="n">text</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">break</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s">&quot;resumptionToken=</span><span class="si">%s</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+            
+    <span class="k">return</span> <span class="n">df</span>
+    
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Set <code>harvest</code> running and go chat with someone for a few minutes while it gathers the information about your articles.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+
+
+
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">harvest</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What does all that stuff we just downloaded look like? Here are the first five entries in the dataframe:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+
+
+
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[73]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+<div class="output_html rendered_html">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>title</th>
+      <th>abstract</th>
+      <th>categories</th>
+      <th>created</th>
+      <th>id</th>
+      <th>doi</th>
+      <th>cited_by</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td> Measurement of the Hadronic Form Factor in D0 ...</td>
+      <td> The shape of the hadronic form factor f+(q2) i...</td>
+      <td>                  [hep-ex]</td>
+      <td>2007-03-31</td>
+      <td> 0704.0020</td>
+      <td> doi:10.1103/PhysRevD.76.052005</td>
+      <td> [{u'slaccitation': u'%%CITATION = ARXIV:1411.3...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td> Measurement of B(D_S^+ --&gt; ell^+ nu) and the D...</td>
+      <td> We examine e+e- --&gt; Ds- Ds*+ and Ds*- Ds+ inte...</td>
+      <td> [hep-ex, hep-lat, hep-ph]</td>
+      <td>2007-04-03</td>
+      <td> 0704.0437</td>
+      <td>     10.1103/PhysRevD.76.072002</td>
+      <td> [{u'author': u'Yelton, John M.', u'journal': u...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td> A unified analysis of the reactor neutrino pro...</td>
+      <td> We present in this article a detailed quantita...</td>
+      <td>                  [hep-ex]</td>
+      <td>2007-04-04</td>
+      <td> 0704.0498</td>
+      <td> 10.1088/1742-6596/110/8/082013</td>
+      <td> [{u'author': u'Queval, Rachel', u'title': u'Ch...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td> Measurement of Decay Amplitudes of B --&gt;(c cba...</td>
+      <td> We perform the first three-dimensional measure...</td>
+      <td>                  [hep-ex]</td>
+      <td>2007-04-04</td>
+      <td> 0704.0522</td>
+      <td>     10.1103/PhysRevD.76.031102</td>
+      <td> [{u'author': u'Giurgiu, Gavril', u'journal': u...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td> Measurement of the Decay Constant $f_D{_S^+}$ ...</td>
+      <td> We measure the decay constant fDs using the Ds...</td>
+      <td> [hep-ex, hep-lat, hep-ph]</td>
+      <td>2007-04-04</td>
+      <td> 0704.0629</td>
+      <td>  10.1103/PhysRevLett.99.071802</td>
+      <td> [{u'author': u'Jackson, Graham', u'type': u'ar...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="first-factoid">First factoid</h2>
+<p><a id="factoid"></a></p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+
+
+
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">bar_chart</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Make a bar chart showing the count associated with each key</span>
+<span class="sd">    </span>
+<span class="sd">    `items` is a list of (key, count) pairs.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">))</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+    <span class="n">rects1</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">items</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">ind</span><span class="o">+</span><span class="n">width</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">items</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">autofmt_xdate</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">edits_per_year</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">created</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">year</span><span class="p">))</span>
+<span class="n">bar_chart</span><span class="p">(</span><span class="n">edits_per_year</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="n">new_articles</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">edits_per_year</span><span class="p">[</span><span class="n">year</span><span class="p">]</span> <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">2010</span><span class="p">,</span><span class="mi">2011</span><span class="p">,</span><span class="mi">2012</span><span class="p">,</span><span class="mi">2013</span><span class="p">,</span><span class="mi">2014</span><span class="p">))</span>
+<span class="k">print</span> <span class="s">&quot;Unique arXiv IDs edited between 2010 and 2014:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="k">print</span> <span class="s">&quot;of which </span><span class="si">%i</span><span class="s"> entries were created in that time period.&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">new_articles</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<img src="data:image/png;base64,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
+">
+
+</div>
+</div>
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>Unique arXiv IDs edited between 2010 and 2014: 16321
+of which 11958 entries were created in that time period.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here is our first factoid about the arXiv: There are about 16000 articles in <code>hep-ex</code> which were edited between the beginning of 2010 and the end of 2014. Including about 12000 newly created articles. The other 4000 papers were created before 2010 and were updated after creation. Amazing to see that papers created in 1994 were still being edited almost ten years later!</p>
+<p>Let's take a look at those, maybe there is something interesting:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+
+
+
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">created</span><span class="o">&lt;</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">1995</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[72]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+<div class="output_html rendered_html">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>title</th>
+      <th>abstract</th>
+      <th>categories</th>
+      <th>created</th>
+      <th>id</th>
+      <th>doi</th>
+      <th>cited_by</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>13366</th>
+      <td> DUMAND and AMANDA: High Energy Neutrino Astrop...</td>
+      <td> The field of high energy neutrino astrophysics...</td>
+      <td>         [astro-ph, hep-ex]</td>
+      <td>1994-12-06</td>
+      <td> astro-ph/9412019</td>
+      <td>                         None</td>
+      <td> [{u'author': u'Al Samarai, Imen', u'type': u'a...</td>
+    </tr>
+    <tr>
+      <th>13375</th>
+      <td> Detection of nuclear recoils in prototype dark...</td>
+      <td> This work is part of an ongoing project to dev...</td>
+      <td>         [cond-mat, hep-ex]</td>
+      <td>1994-11-17</td>
+      <td> cond-mat/9411072</td>
+      <td> 10.1016/0168-9002(95)00036-4</td>
+      <td> [{u'doi': u'10.1016/j.astropartphys.2004.06.00...</td>
+    </tr>
+    <tr>
+      <th>15144</th>
+      <td> Precise Measurement of the Left-Right Cross Se...</td>
+      <td> We present a precise measurement of the left-r...</td>
+      <td>           [hep-ex, hep-ph]</td>
+      <td>1994-04-27</td>
+      <td>   hep-ex/9404001</td>
+      <td>    10.1103/PhysRevLett.73.25</td>
+      <td> [{u'doi': u'10.1088/1742-6596/335/1/012078', u...</td>
+    </tr>
+    <tr>
+      <th>15145</th>
+      <td> An optimal method of moments to measure the ch...</td>
+      <td> Parity violation at LEP or SLC can be measured...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-05-11</td>
+      <td>   hep-ex/9405002</td>
+      <td> 10.1016/0168-9002(94)90847-8</td>
+      <td>                                                []</td>
+    </tr>
+    <tr>
+      <th>15146</th>
+      <td> Observation of Anisotropic Event Shapes and Tr...</td>
+      <td> Event shapes for Au + Au collisions at 11.4 Ge...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-05-13</td>
+      <td>   hep-ex/9405003</td>
+      <td>  10.1103/PhysRevLett.73.2532</td>
+      <td> [{u'primaryclass': u'nucl-th', u'author': u'Wa...</td>
+    </tr>
+    <tr>
+      <th>15147</th>
+      <td> Measurement of the Charged Multiplicity of $Z ...</td>
+      <td> Using an impact parameter tag to select an enr...</td>
+      <td>           [hep-ex, hep-ph]</td>
+      <td>1994-05-13</td>
+      <td>   hep-ex/9405004</td>
+      <td>  10.1103/PhysRevLett.72.3145</td>
+      <td> [{u'doi': u'10.1140/epjc/s2005-02424-5', u'pri...</td>
+    </tr>
+    <tr>
+      <th>15148</th>
+      <td> Evidence for Top Quark Production in $\bar{p}p...</td>
+      <td> We summarize a search for the top quark with t...</td>
+      <td>           [hep-ex, hep-ph]</td>
+      <td>1994-05-16</td>
+      <td>   hep-ex/9405005</td>
+      <td>   10.1103/PhysRevLett.73.225</td>
+      <td> [{u'primaryclass': u'hep-ex', u'author': u'Ger...</td>
+    </tr>
+    <tr>
+      <th>15149</th>
+      <td> Precise Determination of the Weak Mixing Angle...</td>
+      <td> In the 1993 SLC/SLD run, the SLD recorded 50,0...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-05-20</td>
+      <td>   hep-ex/9405011</td>
+      <td>                         None</td>
+      <td> [{u'doi': u'10.1016/0370-1573(95)00072-0', u'a...</td>
+    </tr>
+    <tr>
+      <th>15150</th>
+      <td> A Neural Network for Locating the Primary Vert...</td>
+      <td> Using simulated collider data for $p+p\rightar...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-06-21</td>
+      <td>   hep-ex/9406003</td>
+      <td> 10.1016/0168-9002(94)01133-8</td>
+      <td>                                                []</td>
+    </tr>
+    <tr>
+      <th>15151</th>
+      <td> Semileptonic Branching Fraction of Charged and...</td>
+      <td> An examination of leptons in ${\Upsilon (4S)}$...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-06-23</td>
+      <td>   hep-ex/9406004</td>
+      <td>  10.1103/PhysRevLett.73.3503</td>
+      <td> [{u'author': u'Ivarsson, Jenny', u'title': u'P...</td>
+    </tr>
+    <tr>
+      <th>15152</th>
+      <td> Measurement of the B -&gt; D^* l nu Branching Fra...</td>
+      <td> We study the exclusive semileptonic B meson de...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-06-24</td>
+      <td>   hep-ex/9406005</td>
+      <td>     10.1103/PhysRevD.51.1014</td>
+      <td> [{u'author': u'Borean, Cristiano', u'type': u'...</td>
+    </tr>
+    <tr>
+      <th>15153</th>
+      <td> Spin Asymmetry in Muon--Proton Deep Inelastic ...</td>
+      <td> We measured the spin asymmetry in the scatteri...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-08-06</td>
+      <td>   hep-ex/9408001</td>
+      <td> 10.1016/0370-2693(94)00968-6</td>
+      <td> [{u'primaryclass': u'nucl-ex', u'author': u'Pa...</td>
+    </tr>
+    <tr>
+      <th>15154</th>
+      <td> Measurement of the polarization of Lambda0 Ant...</td>
+      <td> The polarization of Lambda0, AntiLambda0, Sigm...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-09-16</td>
+      <td>   hep-ex/9409001</td>
+      <td>           10.1007/BF01291194</td>
+      <td> [{u'doi': u'10.1088/1742-6596/509/1/012056', u...</td>
+    </tr>
+    <tr>
+      <th>15155</th>
+      <td>       Search for slowly moving magnetic monopoles</td>
+      <td> We report a search for slowly moving magnetic ...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-10-05</td>
+      <td>   hep-ex/9410006</td>
+      <td> 10.1016/0920-5632(94)90257-7</td>
+      <td>                                                []</td>
+    </tr>
+    <tr>
+      <th>15156</th>
+      <td> Polarized Bhabha Scattering and a Precision Me...</td>
+      <td> We present the first measurement of the left-r...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-10-10</td>
+      <td>   hep-ex/9410009</td>
+      <td>  10.1103/PhysRevLett.74.2880</td>
+      <td> [{u'author': u'Quast, Gunther', u'title': u'Me...</td>
+    </tr>
+    <tr>
+      <th>15157</th>
+      <td> A Measurement of the $D^{*\pm}$ Cross Section ...</td>
+      <td> We have measured the inclusive $D^{*\pm}$ prod...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-11-29</td>
+      <td>   hep-ex/9411002</td>
+      <td>     10.1103/PhysRevD.50.1879</td>
+      <td> [{u'author': u'Ngac, An Bang', u'title': u'Mea...</td>
+    </tr>
+    <tr>
+      <th>15158</th>
+      <td> Measurement of the $D^{*\pm}$ Cross Section us...</td>
+      <td> The differential cross section of $d\sigma(e^+...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-12-01</td>
+      <td>   hep-ex/9412001</td>
+      <td> 10.1016/0370-2693(94)91515-6</td>
+      <td> [{u'author': u'Ngac, An Bang', u'title': u'Mea...</td>
+    </tr>
+    <tr>
+      <th>15159</th>
+      <td> $K^0(\bar{K^0})$ Production in Two-Photon Proc...</td>
+      <td> We have carried out an inclusive measurement o...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-12-05</td>
+      <td>   hep-ex/9412003</td>
+      <td> 10.1016/0370-2693(94)90315-8</td>
+      <td> [{u'doi': u'10.1016/S0370-2693(02)01769-0', u'...</td>
+    </tr>
+    <tr>
+      <th>15160</th>
+      <td> New Tagging Method of B Flavor of Neutral B Me...</td>
+      <td> In CP violation measurements in asymmetric B-f...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-12-08</td>
+      <td>   hep-ex/9412005</td>
+      <td>         10.1143/JPSJ.63.3542</td>
+      <td> [{u'author': u'Foland, Andrew Dean', u'title':...</td>
+    </tr>
+    <tr>
+      <th>15161</th>
+      <td> Kinematic Evidence for Top Quark Pair Producti...</td>
+      <td> We present a study of $W+$multijet events that...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-12-13</td>
+      <td>   hep-ex/9412009</td>
+      <td>     10.1103/PhysRevD.51.4623</td>
+      <td> [{u'author': u'Hinchliffe, Ian and Paige, FE a...</td>
+    </tr>
+    <tr>
+      <th>15162</th>
+      <td> Feasibility Study of Single-Photon Counting Us...</td>
+      <td> The fine-mesh phototube is one type of photode...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-12-13</td>
+      <td>   hep-ex/9412010</td>
+      <td> 10.1016/0168-9002(93)90749-8</td>
+      <td> [{u'doi': u'10.1140/epjc/s10052-014-3026-9', u...</td>
+    </tr>
+    <tr>
+      <th>15163</th>
+      <td> Measurement of inclusive electron cross sectio...</td>
+      <td> We have studied open charm production in $\gam...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-12-16</td>
+      <td>   hep-ex/9412011</td>
+      <td> 10.1016/0370-2693(94)01349-7</td>
+      <td> [{u'doi': u'10.1016/S0370-2693(02)01769-0', u'...</td>
+    </tr>
+    <tr>
+      <th>15164</th>
+      <td> Measurement of the forward-backward asymmetrie...</td>
+      <td> We have measured, with electron tagging, the f...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-12-18</td>
+      <td>   hep-ex/9412012</td>
+      <td> 10.1016/0370-2693(94)91310-2</td>
+      <td> [{u'doi': u'10.1103/PhysRevD.65.053002', u'pri...</td>
+    </tr>
+    <tr>
+      <th>15165</th>
+      <td> J/psi,psi(2S) to mu+ mu- and B to J/psi,psi(2S...</td>
+      <td> This paper presents a measurement of J/psi,psi...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-12-23</td>
+      <td>   hep-ex/9412013</td>
+      <td>                         None</td>
+      <td> [{u'slaccitation': u'%%CITATION = ARXIV:1411.3...</td>
+    </tr>
+    <tr>
+      <th>15166</th>
+      <td> Measurement of inclusive particle spectra and ...</td>
+      <td> Inclusive momentum spectra are measured for al...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-12-27</td>
+      <td>   hep-ex/9412015</td>
+      <td> 10.1016/0370-2693(94)01685-6</td>
+      <td> [{u'slaccitation': u'%%CITATION = ARXIV:1412.2...</td>
+    </tr>
+    <tr>
+      <th>15167</th>
+      <td>              Measurement of the Bs Meson Lifetime</td>
+      <td> The lifetime of the $B_s$ meson is measured us...</td>
+      <td>                   [hep-ex]</td>
+      <td>1994-12-27</td>
+      <td>   hep-ex/9412017</td>
+      <td>  10.1103/PhysRevLett.74.4988</td>
+      <td> [{u'doi': u'10.1007/s00601-014-0871-x', u'prim...</td>
+    </tr>
+    <tr>
+      <th>16101</th>
+      <td> Exclusive Hadronic B Decays to Charm and Charm...</td>
+      <td> We have fully reconstructed decays of both B0 ...</td>
+      <td>           [hep-ph, hep-ex]</td>
+      <td>1994-03-15</td>
+      <td>   hep-ph/9403295</td>
+      <td>       10.1103/PhysRevD.50.43</td>
+      <td> [{u'author': u'Sabelli, Chiara', u'title': u'T...</td>
+    </tr>
+    <tr>
+      <th>16102</th>
+      <td>        Observation of a New Charmed Strange Meson</td>
+      <td> Using the CLEO-II detector, we have obtained e...</td>
+      <td>           [hep-ph, hep-ex]</td>
+      <td>1994-03-21</td>
+      <td>   hep-ph/9403325</td>
+      <td>  10.1103/PhysRevLett.72.1972</td>
+      <td> [{u'slaccitation': u'%%CITATION = ARXIV:1410.5...</td>
+    </tr>
+    <tr>
+      <th>16103</th>
+      <td> Study of the Decay $\Lambda_c \to \Lambda l^+ ...</td>
+      <td> Using the CLEO II detector at CESR, we observe...</td>
+      <td>           [hep-ph, hep-ex]</td>
+      <td>1994-03-21</td>
+      <td>   hep-ph/9403326</td>
+      <td> 10.1016/0370-2693(94)90295-X</td>
+      <td> [{u'doi': u'10.1140/epjc/s10052-014-3194-7', u...</td>
+    </tr>
+    <tr>
+      <th>16104</th>
+      <td> Precision Measurement of the $D_s^{*+}- D_s^+$...</td>
+      <td> We have measured the vector-pseudoscalar mass ...</td>
+      <td>           [hep-ph, hep-ex]</td>
+      <td>1994-03-21</td>
+      <td>   hep-ph/9403327</td>
+      <td>     10.1103/PhysRevD.50.1884</td>
+      <td> [{u'doi': u'10.1007/JHEP06(2013)065', u'primar...</td>
+    </tr>
+    <tr>
+      <th>16105</th>
+      <td> A Measurement of ${\cal B}(D_s \to \phi l^+ \n...</td>
+      <td> Using the CLEO~II detector at CESR, we have me...</td>
+      <td>           [hep-ph, hep-ex]</td>
+      <td>1994-03-21</td>
+      <td>   hep-ph/9403328</td>
+      <td> 10.1016/0370-2693(94)90416-2</td>
+      <td> [{u'doi': u'10.1103/RevModPhys.84.65', u'prima...</td>
+    </tr>
+    <tr>
+      <th>16106</th>
+      <td> Measurement of Cabibbo Suppressed Decays of th...</td>
+      <td> Branching ratios for the dominant Cabibbo-supp...</td>
+      <td>           [hep-ph, hep-ex]</td>
+      <td>1994-03-21</td>
+      <td>   hep-ph/9403329</td>
+      <td>  10.1103/PhysRevLett.73.1079</td>
+      <td> [{u'doi': u'10.1103/PhysRevD.87.073016', u'pri...</td>
+    </tr>
+    <tr>
+      <th>16107</th>
+      <td> Production and Decay of D_1(2420)^0 and D_2^*(...</td>
+      <td> We have investigated $D^{+}\pi^{-}$ and $D^{*+...</td>
+      <td>           [hep-ph, hep-ex]</td>
+      <td>1994-03-24</td>
+      <td>   hep-ph/9403359</td>
+      <td> 10.1016/0370-2693(94)90968-7</td>
+      <td> [{u'slaccitation': u'%%CITATION = ARXIV:1410.5...</td>
+    </tr>
+    <tr>
+      <th>16108</th>
+      <td> Two-Photon Production of Charged Pion and Kaon...</td>
+      <td> A measurement of the cross section for the com...</td>
+      <td>           [hep-ph, hep-ex]</td>
+      <td>1994-03-28</td>
+      <td>   hep-ph/9403379</td>
+      <td>     10.1103/PhysRevD.50.3027</td>
+      <td> [{u'slaccitation': u'%%CITATION = ARXIV:1307.0...</td>
+    </tr>
+    <tr>
+      <th>16109</th>
+      <td> Measurement of the Branching Fraction for D^+ ...</td>
+      <td> Using the CLEO-II detector at CESR we have mea...</td>
+      <td>           [hep-ph, hep-ex]</td>
+      <td>1994-03-28</td>
+      <td>   hep-ph/9403382</td>
+      <td>  10.1103/PhysRevLett.72.2328</td>
+      <td> [{u'doi': u'10.1103/RevModPhys.84.65', u'prima...</td>
+    </tr>
+    <tr>
+      <th>16110</th>
+      <td> Measurement of the Spin-Dependent Structure Fu...</td>
+      <td> We have measured the spin-dependent structure ...</td>
+      <td>           [hep-ph, hep-ex]</td>
+      <td>1994-04-15</td>
+      <td>   hep-ph/9404270</td>
+      <td> 10.1016/0370-2693(94)90793-5</td>
+      <td> [{u'doi': u'10.1103/PhysRevD.90.012009', u'pri...</td>
+    </tr>
+    <tr>
+      <th>16111</th>
+      <td> A Measurement of the Branching Fraction ${\cal...</td>
+      <td> Using data from the CLEO II detector at CESR, ...</td>
+      <td>           [hep-ph, hep-ex]</td>
+      <td>1994-04-20</td>
+      <td>   hep-ph/9404310</td>
+      <td>  10.1103/PhysRevLett.72.3762</td>
+      <td> [{u'primaryclass': u'hep-ex', u'author': u'Amh...</td>
+    </tr>
+    <tr>
+      <th>16112</th>
+      <td>                   Supersymmetry at the DiTevatron</td>
+      <td> We study the signals for supersymmetry at the ...</td>
+      <td>           [hep-ph, hep-ex]</td>
+      <td>1994-06-07</td>
+      <td>   hep-ph/9406248</td>
+      <td>     10.1103/PhysRevD.50.5676</td>
+      <td> [{u'doi': u'10.1103/PhysRevD.82.035009', u'pri...</td>
+    </tr>
+    <tr>
+      <th>16113</th>
+      <td> Detecting Tau Neutrino Oscillations at PeV Ene...</td>
+      <td> It is suggested that a large deep underocean (...</td>
+      <td> [hep-ph, astro-ph, hep-ex]</td>
+      <td>1994-08-15</td>
+      <td>   hep-ph/9408296</td>
+      <td> 10.1016/0927-6505(94)00043-3</td>
+      <td> [{u'slaccitation': u'%%CITATION = ARXIV:1412.1...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After scrolling through the list I can not spot a particular pattern to the edits. Though it does seem like the list contains articles on interesting topics like evidence for the top quark (index 15148), PeV <span class="math">\(\tau\)</span> neutrinos (index 16113) and an article about determining the weak mixing angle at SLD (index 15149).</p>
+<h2 id="collecting-citations">Collecting citations</h2>
+<p>Unfortunately Inspire does not provide a real API, so we have to scrape their webpages to get what we want. The <code>get_cites</code> function will look up the citations of an article by its <code>arxiv_id</code>. Having to make one HTTP request per article means this takes quite a while. So set it going and come back after a few hours. We process articles in chunks of 1000 to get some feedback as well as being able to resume if something goes wrong:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+
+
+
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">get_cites</span><span class="p">(</span><span class="n">arxiv_id</span><span class="p">):</span>
+    <span class="n">cites</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">base_url</span> <span class="o">=</span> <span class="s">&quot;http://inspirehep.net/search?p=refersto:</span><span class="si">%s</span><span class="s">&amp;of=hx&amp;rg=250&amp;jrec=</span><span class="si">%i</span><span class="s">&quot;</span>
+    <span class="n">offset</span> <span class="o">=</span> <span class="mi">1</span>
+    
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">base_url</span><span class="o">%</span><span class="p">(</span><span class="n">arxiv_id</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">base_url</span><span class="o">%</span><span class="p">(</span><span class="n">arxiv_id</span><span class="p">,</span> <span class="n">offset</span><span class="p">))</span>
+        <span class="n">xml</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
+
+        <span class="n">refs</span> <span class="o">=</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cite</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span> <span class="k">for</span> <span class="n">cite</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&quot;pre&quot;</span><span class="p">))</span>
+
+        <span class="n">bib_database</span> <span class="o">=</span> <span class="n">bibtexparser</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">refs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">bib_database</span><span class="o">.</span><span class="n">entries</span><span class="p">:</span>
+            <span class="n">cites</span> <span class="o">+=</span> <span class="n">bib_database</span><span class="o">.</span><span class="n">entries</span>
+            <span class="n">offset</span> <span class="o">+=</span> <span class="mi">250</span>
+            
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+
+    <span class="k">return</span> <span class="n">cites</span>
+
+<span class="n">step</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="k">for</span> <span class="n">N</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">17</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">N</span>
+    <span class="n">cites</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">][</span><span class="n">N</span><span class="o">*</span><span class="n">step</span><span class="p">:(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">step</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">get_cites</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">N</span><span class="o">*</span><span class="n">step</span><span class="p">:(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">step</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s">&#39;cited_by&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cites</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="data-preservation">Data preservation</h2>
+<p>After investing so much time to gather the raw data it is a good idea to store it locally so we do not have to scrape it all again later:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+
+
+
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre><span class="n">store</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">HDFStore</span><span class="p">(</span><span class="s">&quot;/Users/thead/git/arxiv-experiments/hep-ex.h5&quot;</span><span class="p">)</span>
+<span class="c">#store[&#39;df&#39;] = df</span>
+<span class="c">#df = store[&#39;df&#39;]</span>
+<span class="n">store</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="word-counts">Word counts</h2>
+<p>Let's get to answering some questions. What are the ten most used words in <code>hep-ex</code> abstracts?</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+
+
+
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre><span class="n">word_bag</span> <span class="o">=</span> <span class="s">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">abstract</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">lower</span><span class="p">()))</span>
+
+<span class="n">Counter</span><span class="p">(</span><span class="n">word_bag</span><span class="o">.</span><span class="n">split</span><span class="p">())</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[77]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre class="ipynb tim">[(&apos;the&apos;, 161889),
+ (&apos;of&apos;, 79075),
+ (&apos;and&apos;, 54236),
+ (&apos;in&apos;, 41418),
+ (&apos;a&apos;, 38591),
+ (&apos;to&apos;, 36425),
+ (&apos;for&apos;, 25128),
+ (&apos;is&apos;, 23440),
+ (&apos;with&apos;, 23015),
+ (&apos;we&apos;, 22510)]</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Not too enlightening, boring little words close out the top ten. These words are known as stopwords and the <code>NLTK</code> library provides a list of all of them. So let's remove them as well as basic mathematical symbols:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+
+
+
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+
+<span class="n">stops</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s">&#39;english&#39;</span><span class="p">)]</span>
+<span class="n">stops</span> <span class="o">+=</span> <span class="p">[</span><span class="s">&quot;=&quot;</span><span class="p">,</span> <span class="s">&quot;-&gt;&quot;</span><span class="p">]</span>
+<span class="n">words</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stops</span><span class="p">,</span>
+               <span class="n">word_bag</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">top_twenty</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">words</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">bar_chart</span><span class="p">(</span><span class="n">top_twenty</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAekAAAHXCAYAAACYvqJKAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XuYHGWZ/vHvnYQAgUAMhxBOEiEIQUQJEMADoxwMqICK
+EFQIGlGMB9RVCeBCgqiA7goqIIqQgIriAYyKSETG9bCaRUXRiMCuUYkmHhHd/alBnt8fz9t00fTM
+9GSmk5rh/lzXXFNVXf1WdXXV+7ynqlZEYGZmZvUzZkPvgJmZmbXnIG1mZlZTDtJmZmY15SBtZmZW
+Uw7SZmZmNeUgbWZmVlMDBmlJp0u6U9KPJZ1elk2WtEzS3ZJukTSpsv6Zku6RdJekIyrLZ5Z07pF0
+SXc+jpmZ2ejRb5CW9CTglcD+wD7A8yTtCiwAlkXE7sCtZR5JM4ATgBnAbOAySSrJXQ7Mi4jpwHRJ
+s7vweczMzEaNgWrSewDfjYi/RcQ/ga8DLwKOBpaUdZYAx5bpY4DrImJtRKwE7gVmSZoKTIyI5WW9
+ayrvMTMzszYGCtI/Bp5RmrcnAEcBOwJTImJNWWcNMKVMbw/cV3n/fcAObZavKsvNzMysD+P6ezEi
+7pJ0IXAL8L/AHcA/W9YJScP2bNHhTMvMzGwkiAi1Wz7gwLGIuCoi9ouIQ4A/AXcDayRtB1Casn9b
+Vl8F7FR5+45kDXpVma4uX9XPNjv6O/fccztedzB/Iy3dkbjPPhY+Fj4WoyvdkbjPdTkW/elkdPe2
+5f/OwAuBTwBLgblllbnAjWV6KTBH0nhJ04DpwPKIWA08IGlWGUh2UuU9ZmZm1ka/zd3FZyRtBawF
+5kfEnyVdAFwvaR6wEjgeICJWSLoeWAE8WNZvFBPmA4uBTYGbIuLmYf0kZmZmo8yAQTointlm2R+B
+w/pY/13Au9os/x6w9zrsY596enqGM7kRm2430x5p6XYz7ZGWbjfTHmnpdjNtp9v9tEdausOZtgZq
+D1/fJEXd9snMzKxbJBHrOnDMzMzMNgwHaTMzs5pykDYzM6spB2kzM7OacpA2MzOrKQdpMzOzmnKQ
+NjMzqykHaTMzs5pykDYzM6spB2kzM7OacpA2MzOrKQdpMzOzmnKQNjMzqykHaTMzs5oa8PekNwSp
+7S92teWftTQzs9GqlkG607DbeSg3MzMbedzcbWZmVlMO0mZmZjXlIG1mZlZTDtJmZmY15SBtZmZW
+Uw7SZmZmNeUgbWZmVlMO0mZmZjXlIG1mZlZTDtJmZmY15SBtZmZWUw7SZmZmNeUgbWZmVlMO0mZm
+ZjXlIG1mZlZTDtJmZmY15SBtZmZWUw7SZmZmNeUgbWZmVlMDBmlJZ0r6iaQ7JX1C0saSJktaJulu
+SbdImtSy/j2S7pJ0RGX5zJLGPZIu6dYHMjMzGy36DdKSdgFOBfaNiL2BscAcYAGwLCJ2B24t80ia
+AZwAzABmA5dJUknucmBeREwHpkuaPeyfxszMbBQZqCb9ALAWmCBpHDAB+DVwNLCkrLMEOLZMHwNc
+FxFrI2IlcC8wS9JUYGJELC/rXVN5j5mZmbXRb5COiD8C/wb8kgzO90fEMmBKRKwpq60BppTp7YH7
+KkncB+zQZvmqstzMzMz6MK6/FyXtCrwR2AX4M/BpSS+rrhMRISmGc6cWVqZ7yp+Zmdlo0NvbS29v
+b0fr9hukgf2Ab0fEHwAkfQ44CFgtabuIWF2asn9b1l8F7FR5/45kDXpVma4uX9XXRhd2tOtmZmYj
+T09PDz09PQ/PL1q0qM91B+qTvgs4UNKmZQDYYcAK4AvA3LLOXODGMr0UmCNpvKRpwHRgeUSsBh6Q
+NKukc1LlPWZmZtZGvzXpiPihpGuA24GHgO8DHwYmAtdLmgesBI4v66+QdD0ZyB8E5kdEoyl8PrAY
+2BS4KSJuHvZPY2ZmNoqoGUPrQVLHeySgbvtvZmY2GJKICLV7zU8cMzMzqykHaTMzs5pykDYzM6sp
+B2kzM7OacpA2MzOrKQdpMzOzmnKQNjMzqykHaTMzs5pykDYzM6spB2kzM7OacpA2MzOrKQdpMzOz
+mnKQNjMzqykHaTMzs5pykDYzM6spB2kzM7OacpA2MzOrKQdpMzOzmnKQNjMzqykHaTMzs5pykDYz
+M6spB2kzM7OacpA2MzOrKQdpMzOzmnKQNjMzqykHaTMzs5pykDYzM6spB2kzM7OacpA2MzOrKQdp
+MzOzmnKQNjMzqykHaTMzs5pykDYzM6spB2kzM7OacpA2MzOrKQdpMzOzmhowSEt6oqQfVP7+LOkN
+kiZLWibpbkm3SJpUec+Zku6RdJekIyrLZ0q6s7x2Sbc+lJmZ2WgwYJCOiJ9FxFMj4qnATOD/gBuA
+BcCyiNgduLXMI2kGcAIwA5gNXCZJJbnLgXkRMR2YLmn2cH8gMzOz0WKwzd2HAfdGxK+Ao4ElZfkS
+4NgyfQxwXUSsjYiVwL3ALElTgYkRsbysd03lPWZmZtZisEF6DnBdmZ4SEWvK9BpgSpneHriv8p77
+gB3aLF9VlpuZmVkb4zpdUdJ44PnAGa2vRURIiuHaqYWV6Z7yZ2ZmNhr09vbS29vb0bodB2ngSOB7
+EfG7Mr9G0nYRsbo0Zf+2LF8F7FR5345kDXpVma4uX9VuQwsHsVNmZmYjSU9PDz09PQ/PL1q0qM91
+B9PcfSLNpm6ApcDcMj0XuLGyfI6k8ZKmAdOB5RGxGnhA0qwykOykynvMzMyshSIGbqWWtBnwC2Ba
+RPylLJsMXA/sDKwEjo+I+8trZwGvAB4ETo+Ir5TlM4HFwKbATRHxhjbb6mCPyrpAJ/tvZmZWV5KI
+CLV9rW5BzkHazMweS/oL0n7imJmZWU05SJuZmdWUg7SZmVlNOUibmZnVlIO0mZlZTTlIm5mZ1ZSD
+tJmZWU05SJuZmdWUg7SZmVlNOUibmZnV1GB+BWtEy9/06JwfN2pmZhvaYyZIAwzmmeBmZmYbmpu7
+zczMaspB2szMrKYcpM3MzGrKQdrMzKymHKTNzMxqykHazMysphykzczMauoxdZ90N/ghKWZm1i0O
+0sPAD0kxM7NucHO3mZlZTTlIm5mZ1ZSDtJmZWU05SJuZmdWUg7SZmVlNOUibmZnVlIO0mZlZTTlI
+m5mZ1ZSDtJmZWU05SJuZmdWUg7SZmVlNOUibmZnVlIO0mZlZTTlIm5mZ1ZSDtJmZWU11FKQlTZL0
+GUk/lbRC0ixJkyUtk3S3pFskTaqsf6akeyTdJemIyvKZku4sr13SjQ9kZmY2WnRak74EuCki9gSe
+DNwFLACWRcTuwK1lHkkzgBOAGcBs4DJJKulcDsyLiOnAdEmzh+2TmJmZjTIDBmlJWwLPiIirACLi
+wYj4M3A0sKSstgQ4tkwfA1wXEWsjYiVwLzBL0lRgYkQsL+tdU3mPmZmZteikJj0N+J2kqyV9X9JH
+JG0GTImINWWdNcCUMr09cF/l/fcBO7RZvqostzYkDfrPzMxGl3EdrrMv8LqI+C9JF1OathsiIiTF
+cO3Uwsp0T/l7LBrMAR1MiB5sQI8Ytq/WzOwxr7e3l97e3o7W1UAZsKTtgP+MiGll/unAmcATgGdF
+xOrSlH1bROwhaQFARFxQ1r8ZOBf4RVlnz7L8ROCQiDitZXsdhwTReQCR1HHQG2npdjPtwaRrZmaD
+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
+bQlwbJk+BrguItZGxErgXmCWpKnAxIhYXta7pvIeMzMzazGoPmlJuwBPBb4LTImINeWlNcCUMr09
+cF/lbfeRQb11+aqy3MzMzNoY1+mKkjYHPgucHhF/abZgQ0SEpBiunVpYme4pf2ZmZqNBb28vvb29
+Ha3bUZCWtBEZoK+NiBvL4jWStouI1aUp+7dl+Spgp8rbdyRr0KvKdHX5qnbbW9jRrpuZmY08PT09
+9PT0PDy/aNGiPtftZHS3gI8CKyLi4spLS4G5ZXoucGNl+RxJ4yVNA6YDyyNiNfCApFklzZMq7zEz
+M7MWndSknwa8DPiRpB+UZWcCFwDXS5oHrASOB4iIFZKuB1YADwLzI6LRFD4fWAxsCtwUETcP0+cw
+MzMbddSMn/UgqeM9EtDp/ktitKbbzbRHWrrdTHukpdvNtEdaut1MezSn2820R1q63UxbEhGhdq/5
+iWNmZmY15SBtZmZWUw7SZmZmNeUgbWZmVlMO0mZmZjXlIG1mZlZTDtJmZmY15SBtZmZWUw7SZmZm
+NeUgbWZmVlMO0mZmZjXlIG1mZlZTDtJmZmY15SBtZmZWUw7SZmZmNeUgbWZmVlMO0mZmZjXlIG1m
+ZlZTDtJmZmY15SBtZmZWUw7SZmZmNeUgbWZmVlMO0mZmZjXlIG1mZlZTDtJmZmY15SBtZmZWUw7S
+ZmZmNeUgbWZmVlMO0mZmZjXlIG1mZlZTDtJmZmY15SBtZmZWUw7SZmZmNeUgbWZmVlMO0mZmZjXl
+IG1mZlZTAwZpSVdJWiPpzsqyyZKWSbpb0i2SJlVeO1PSPZLuknREZflMSXeW1y4Z/o9iZmY2unRS
+k74amN2ybAGwLCJ2B24t80iaAZwAzCjvuUySynsuB+ZFxHRguqTWNM3MzKxiwCAdEd8A/tSy+Ghg
+SZleAhxbpo8BrouItRGxErgXmCVpKjAxIpaX9a6pvMfMzMzaWNc+6SkRsaZMrwGmlOntgfsq690H
+7NBm+aqy3MzMzPowbqgJRERIiuHYmYaFleme8mdmZjYa9Pb20tvb29G66xqk10jaLiJWl6bs35bl
+q4CdKuvtSNagV5Xp6vJVfSW+cB13yszMrO56enro6el5eH7RokV9rruuzd1Lgbllei5wY2X5HEnj
+JU0DpgPLI2I18ICkWWUg2UmV95iZmVkbA9akJV0HHAJsLelXwDnABcD1kuYBK4HjASJihaTrgRXA
+g8D8iGg0hc8HFgObAjdFxM3D+1HMzMxGFzVjaD1I6niPBHS6/5IYrel2M+2Rlm430x5p6XYz7ZGW
+bjfTHs3pdjPtkZZuN9OWRESo3Wt+4piZmVlNOUibmZnVlIO0mZlZTTlIm5mZ1ZSDtJmZWU05SJuZ
+mdWUg7SZmVlNOUibmZnVlIO0mZlZTTlIm5mZ1ZSDtJmZWU05SJuZmdWUg7SZmVlNOUibmZnVlIO0
+mZlZTTlIm5mZ1ZSDtJmZWU05SJuZmdWUg7SZmVlNOUibmZnVlIO0mZlZTTlIm5mZ1ZSDtJmZWU05
+SJuZmdWUg7SZmVlNOUibmZnVlIO0mZlZTTlIm5mZ1ZSDtJmZWU05SJuZmdWUg7SZmVlNOUibmZnV
+lIO0mZlZTTlIm5mZ1ZSDtJmZWU2t9yAtabakuyTdI+mM9b19MzOzkWK9BmlJY4EPArOBGcCJkvZc
+n/tgZmY2UqzvmvQBwL0RsTIi1gKfBI5Zz/tgZmY2IqzvIL0D8KvK/H1lmZmZmbUYt563F52spEEk
+KHW+9mhOt5tpj7R0u5n2SEu3m2mPtHS7mfZoTrebaY+0dLuddjvrO0ivAnaqzO9E1qYfFhFD/1Rm
+ZmajwPpu7r4dmC5pF0njgROApet5H8zMzEaE9VqTjogHJb0O+AowFvhoRPx0fe6DmZnZSKGIjrqJ
+zczMbD3zE8cMSWPK/xEzHkDStA29D48Fkrbc0Ptgjw2SXi/p8DLt2FTU+kCMxC+qPLClK+kOdxBV
+GhsRDwHEMDerdCvoS9oK+J6kp3Yj/ZGkm9eIpKcBFw93gUhSV7rZRmhhsyv73MVjPOzHtrKv/wSu
+BGjkScOUflfy5PWllkGwcVCrX1SXTo4pkjYZprQa+/zPMr+3pM2GIV1JGhMR/4yIkLTNUNNsiPRP
+STtKukzSi4Yr7Ub6AJK2Lv+H9B1KGlMKFX8ALgfOHvpePmobknT4cHx3bdI+UNKMYUxPjWtE0nMl
+bTFM6TYytdXA74FjhyldQY5NKfMHSZowHOl2s7BZ2c5Gw5hW47oe1n2uHmNJG5VzbvxwpF3SbVzT
+Rw1HeuUcfrDMfrQse1X5P+T4VNJv5MnbDTW9SrqP2rduFQ5rGaQrB/VYSYslPQPYpiwb8oGQ9DhJ
+1wDvA3YcanrwiH0+TtKnStpPGIZ0IyIekrS5pI8CX5P0WknrlLakbRol15JRPB/4OvBL4KtD3d9q
+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
+6UJtCMw17gAAAABJRU5ErkJggg==
+">
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Experimental physics is all about data afterall! A shame that <code>model</code> beats <code>detector</code> but probably that is inevitable as there are many more theoretical models than experimental detectors. The <code>higgs</code> boson beats the <code>neutrino</code> but they reign supreme over all the other particles.</p>
+<p>Towards the bottom we have <code>measurements</code> and <code>measured</code>. These should probably be counted as one entry, together with <code>measurement</code>, <code>measuring</code>, etc. The easiest way to achieve this is to stem the words before counting. <a href="http://en.wikipedia.org/wiki/Stemming">Stemming</a> is the process of reducing derived words to their stem, for example:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+
+
+
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre><span class="kn">import</span> <span class="nn">nltk.stem</span> <span class="kn">as</span> <span class="nn">stem</span>
+
+<span class="n">porter</span> <span class="o">=</span> <span class="n">stem</span><span class="o">.</span><span class="n">PorterStemmer</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&quot;measurement&quot;</span><span class="p">,</span> <span class="s">&quot;measurements&quot;</span><span class="p">,</span> <span class="s">&quot;measured&quot;</span><span class="p">,</span> <span class="s">&quot;measure&quot;</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">w</span><span class="p">,</span> <span class="s">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">porter</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>measurement -&gt; measur
+measurements -&gt; measur
+measured -&gt; measur
+measure -&gt; measur
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Like in this case the stem does not have to be a real word itself. By stemming words before counting how often they occur the entries for <code>measurements</code> and <code>measured</code> get added together. Using the stem of every word we get the following ranking:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+
+
+
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre><span class="n">word_stems</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="p">(</span><span class="n">porter</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">w</span><span class="p">),</span><span class="n">w</span><span class="p">),</span> <span class="n">words</span><span class="p">)</span>
+<span class="n">stem2words</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">stem</span><span class="p">,</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_stems</span><span class="p">:</span>
+    <span class="n">stem2words</span><span class="p">[</span><span class="n">stem</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+
+<span class="n">top_twenty</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">word_stems</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">bar_chart</span><span class="p">(</span><span class="n">top_twenty</span><span class="p">)</span>
+
+<span class="c"># list all words which correspond to each top twenty stem</span>
+<span class="k">for</span> <span class="n">stem</span><span class="p">,</span><span class="n">count</span> <span class="ow">in</span> <span class="n">top_twenty</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">stem</span><span class="p">,</span> <span class="s">&quot;&lt;-&quot;</span><span class="p">,</span> <span class="s">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">stem2words</span><span class="p">[</span><span class="n">stem</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<img src="data:image/png;base64,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
+DWds3gAAAABJRU5ErkJggg==
+">
+
+</div>
+</div>
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>measur &lt;- measuring, measures, measurment, measurements, measure, measurable, measurably, measureable, measurability, measurement, measured
+decay &lt;- decayed, decays, decaying, decay
+use &lt;- use, used, useful, uses, usefulness, using
+data &lt;- data
+mass &lt;- masses, mass
+model &lt;- models, modeled, modelled, modelling, modeling, model
+result &lt;- resulted, resultant, resulting, results, result
+energi &lt;- energies, energy
+product &lt;- product, productive, productivity, productions, production, products
+detector &lt;- detector, detectors
+neutrino &lt;- neutrino, neutrinos
+present &lt;- presently, presented, presentations, presents, presentational, presenting, presentation, present
+search &lt;- searches, searchs, search, searching, searched
+new &lt;- new
+studi &lt;- studying, study, studied, studies
+observ &lt;- observational, observable, observation, observer, observes, observed, observe, observations, observables, observability, observing
+standard &lt;- standards, standardize, standardized, standard
+higg &lt;- higgs
+cross &lt;- crossing, crossings, crosses, crossed, cross
+experi &lt;- experiement, experiments, experiences, experiment, experience
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Turns out experimental phsics is all about measuring things. The stemming is not perfect, but good enough for now.</p>
+<h2 id="cite-me-cite-me-no-cite-me">Cite me, cite me, no cite me!</h2>
+<p>In science citations is the currency used to measure the success of a paper. What does the distribution of citations look like then?</p>
+<p>A simple question to ask is: how often are articles cited? As articles have to be read and understood before they can be cited we only look at articles created before the beginning of 2014.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+
+
+
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre><span class="n">before_2014</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">created</span><span class="o">&lt;</span><span class="n">before_2014</span><span class="p">]</span><span class="o">.</span><span class="n">cited_by</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">len</span><span class="p">),</span>
+         <span class="n">bins</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;Number of citations&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;Fraction&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[235]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre class="ipynb tim">&lt;matplotlib.text.Text at 0x13a304c50&gt;</pre>
+
+</div>
+</div>
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<img src="data:image/png;base64,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
+JLXy/wEhD+LRSQUwPAAAAABJRU5ErkJggg==
+">
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This plot shows the fraction of articles cited zero, one, two, three, ... times. The single most likely number of citations for an article on <code>hep-ex</code> is zero! A whopping 13% of articles never get cited and nearly a third of articles are cited less than four times.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+
+
+
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre><span class="n">df</span><span class="p">[</span><span class="s">&#39;citation_count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">cited_by</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">created</span><span class="o">&lt;</span><span class="n">before_2014</span><span class="p">][</span><span class="s">&#39;citation_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[233]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre class="ipynb tim">count    14059.000000
+mean        32.630486
+std        100.773436
+min          0.000000
+25%          2.000000
+50%         10.000000
+75%         31.000000
+max       4138.000000
+Name: citation_count, dtype: float64</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The average number of citations is about 33. The average is misleading for a steeply falling distribution like this, afterall we reach the 50% percentile at only 10 citations!</p>
+<h2 id="citations-top-ten">Citations top ten</h2>
+<p><a id="topten"></a></p>
+<p>The prize for most cited paper with a whopping 4138 citations goes to:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+
+
+
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">citation_count</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[234]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre class="ipynb tim">title             New Generation of Parton Distributions with Un...
+abstract          A new generation of parton distribution functi...
+categories                                         [hep-ph, hep-ex]
+created                                         2002-01-21 00:00:00
+id                                                   hep-ph/0201195
+doi                                   10.1088/1126-6708/2002/07/012
+cited_by          [{u&apos;slaccitation&apos;: u&apos;%%CITATION = ARXIV:1412.4...
+citation_count                                                 4138
+Name: 15779, dtype: object</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Read the paper yourself: <a href="http://arxiv.org/abs/hep-ph/0201195">New Generation of Parton Distributions with Uncertainties from Global QCD Analysis</a> and see if you agree.</p>
+<p>We can also easily compute the top ten papers. This is an interesting mix of articles. Number two and three are the papers by the <a href="http://atlas.ch">ATLAS</a> and <a href="http://cms.web.cern.ch/">CMS</a> experiments reporting on the discovery of the <a href="http://en.wikipedia.org/wiki/Higgs_boson">Higgs boson</a>. While most of the papers in the top ten are older these two were only published in 2012 and have already overtaken the top quark discovery which was published in 1995! Curious fact, the ATLAS paper has ever so few more citations than the CMS one.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+
+
+
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre><span class="n">df</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">&#39;citation_count&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[241]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+<div class="output_html rendered_html">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>title</th>
+      <th>abstract</th>
+      <th>categories</th>
+      <th>created</th>
+      <th>id</th>
+      <th>doi</th>
+      <th>cited_by</th>
+      <th>citation_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>15779</th>
+      <td> New Generation of Parton Distributions with Un...</td>
+      <td> A new generation of parton distribution functi...</td>
+      <td>         [hep-ph, hep-ex]</td>
+      <td>2002-01-21</td>
+      <td>  hep-ph/0201195</td>
+      <td>  10.1088/1126-6708/2002/07/012</td>
+      <td> [{u'slaccitation': u'%%CITATION = ARXIV:1412.4...</td>
+      <td> 4138</td>
+    </tr>
+    <tr>
+      <th>7371 </th>
+      <td> Observation of a new particle in the search fo...</td>
+      <td> A search for the Standard Model Higgs boson in...</td>
+      <td>                 [hep-ex]</td>
+      <td>2012-07-31</td>
+      <td>       1207.7214</td>
+      <td> 10.1016/j.physletb.2012.08.020</td>
+      <td> [{u'slaccitation': u'%%CITATION = ARXIV:1412.4...</td>
+      <td> 3653</td>
+    </tr>
+    <tr>
+      <th>7372 </th>
+      <td> Observation of a new boson at a mass of 125 Ge...</td>
+      <td> Results are presented from searches for the st...</td>
+      <td>                 [hep-ex]</td>
+      <td>2012-07-31</td>
+      <td>       1207.7235</td>
+      <td> 10.1016/j.physletb.2012.08.021</td>
+      <td> [{u'slaccitation': u'%%CITATION = ARXIV:1412.4...</td>
+      <td> 3592</td>
+    </tr>
+    <tr>
+      <th>15181</th>
+      <td> Observation of Top Quark Production in Pbar-P ...</td>
+      <td> We establish the existence of the top quark us...</td>
+      <td>         [hep-ex, hep-ph]</td>
+      <td>1995-03-02</td>
+      <td>  hep-ex/9503002</td>
+      <td>    10.1103/PhysRevLett.74.2626</td>
+      <td> [{u'slaccitation': u'%%CITATION = ARXIV:1412.4...</td>
+      <td> 2519</td>
+    </tr>
+    <tr>
+      <th>16241</th>
+      <td> Direct Evidence for Neutrino Flavor Transforma...</td>
+      <td> Observations of neutral current neutrino inter...</td>
+      <td>        [nucl-ex, hep-ex]</td>
+      <td>2002-04-21</td>
+      <td> nucl-ex/0204008</td>
+      <td>  10.1103/PhysRevLett.89.011301</td>
+      <td> [{u'slaccitation': u'%%CITATION = ARXIV:1412.4...</td>
+      <td> 2425</td>
+    </tr>
+    <tr>
+      <th>15690</th>
+      <td> HERWIG 6.5: an event generator for Hadron Emis...</td>
+      <td> HERWIG is a general-purpose Monte Carlo event ...</td>
+      <td>         [hep-ph, hep-ex]</td>
+      <td>2000-11-29</td>
+      <td>  hep-ph/0011363</td>
+      <td>  10.1088/1126-6708/2001/01/010</td>
+      <td> [{u'slaccitation': u'%%CITATION = ARXIV:1412.4...</td>
+      <td> 2324</td>
+    </tr>
+    <tr>
+      <th>14026</th>
+      <td> First Results from KamLAND: Evidence for React...</td>
+      <td> KamLAND has been used to measure the flux of $...</td>
+      <td>        [hep-ex, nucl-ex]</td>
+      <td>2002-12-09</td>
+      <td>  hep-ex/0212021</td>
+      <td>  10.1103/PhysRevLett.90.021802</td>
+      <td> [{u'slaccitation': u'%%CITATION = ARXIV:1412.4...</td>
+      <td> 2235</td>
+    </tr>
+    <tr>
+      <th>16152</th>
+      <td>                            A Supersymmetry Primer</td>
+      <td> I provide a pedagogical introduction to supers...</td>
+      <td> [hep-ph, hep-ex, hep-th]</td>
+      <td>1997-09-15</td>
+      <td>  hep-ph/9709356</td>
+      <td>                           None</td>
+      <td> [{u'slaccitation': u'%%CITATION = ARXIV:1412.4...</td>
+      <td> 2160</td>
+    </tr>
+    <tr>
+      <th>16235</th>
+      <td> Measurement of the rate of nu_e + d --&gt; p + p ...</td>
+      <td> Solar neutrinos from the decay of $^8$B have b...</td>
+      <td>        [nucl-ex, hep-ex]</td>
+      <td>2001-06-18</td>
+      <td> nucl-ex/0106015</td>
+      <td>  10.1103/PhysRevLett.87.071301</td>
+      <td> [{u'slaccitation': u'%%CITATION = ARXIV:1412.4...</td>
+      <td> 2030</td>
+    </tr>
+    <tr>
+      <th>13678</th>
+      <td>                                The BABAR Detector</td>
+      <td> BABAR, the detector for the SLAC PEP-II asymme...</td>
+      <td>                 [hep-ex]</td>
+      <td>2001-05-16</td>
+      <td>  hep-ex/0105044</td>
+      <td>  10.1016/S0168-9002(01)02012-5</td>
+      <td> [{u'title': u'Measurement of the Partial Branc...</td>
+      <td> 1828</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are many more interesting things to be done with analysing the words used in abstracts as well as anlysing who cites who. This will be covered in the second part of this post as this one is already fairly lengthy.</p>
+<p>Just one more thing, the top cited paper of 2014: <a href="http://arxiv.org/abs/1403.4427">First combination of Tevatron and LHC measurements of the top-quark mass</a> celebrating collaboration across the globe:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+
+
+
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">created</span><span class="o">&gt;</span><span class="n">before_2014</span><span class="p">]</span><span class="o">.</span><span class="n">citation_count</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[242]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre class="ipynb tim">title             First combination of Tevatron and LHC measurem...
+abstract          We present a combination of measurements of th...
+categories                                                 [hep-ex]
+created                                         2014-03-18 00:00:00
+id                                                        1403.4427
+doi                                                            None
+cited_by          [{u&apos;slaccitation&apos;: u&apos;%%CITATION = ARXIV:1412.1...
+citation_count                                                  118
+Name: 11494, dtype: object</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div></p>
+<p>This post started life as a ipython notebook,
+<a href="/downloads/notebooks/arxiv.ipynb">download it</a>
+or
+<a href="http://nbviewer.ipython.org/url/betatim.github.io//downloads/notebooks/arxiv.ipynb">view it</a> online.</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+      </div>
+    </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <footer class="footer">
+	<div class="social">
+	    <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+	    <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+	    <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+	</div>
+	<div class="powered-by">
+	  Powered by <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>.
+	</div>
+      </footer>
+    </div>
+  </div>
+</div>    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+  </body>
+</html>
