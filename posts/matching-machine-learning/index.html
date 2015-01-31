@@ -317,6 +317,12 @@ init_mathjax();
                 <p>
 
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="matching-machine-learning">Matching Machine Learning</h1>
+<p><em>This notebook first appeared as a <a href="//betatim.github.io/posts/matching-machine-learning/">blog post</a> on <a href="//betatim.github.io">Tim Head</a>'s blog.</em></p>
+<p><em>License: <a href="http://opensource.org/licenses/MIT">MIT</a></em></p>
+<p><em>(C) 2015, Tim Head.</em> <em>Feel free to use, distribute, and modify with the above attribution.</em></p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>In High Energy Physics a lot of Machine Learning is done. Mostly with the <a href="http://tmva.sourceforge.net/">TMVA</a> package which is part of the <a href="http://root.cern.ch">ROOT</a> framework which is used by almost every experiment. In this post I will compare how to use <code>TMVA</code> and <code>scikit-learn</code> to solve the same problem.</p>
 <p><code>TMVA</code> implements many of the popular Machine Learning algorithms, is basically the only option considered by High Energy Physicists, and is used almost exclusively by them. This means it is easy to discuss and share code with others. The fact that it is used almost exclusively by and in High Energy Physics also means it is a bit clunky to use and is missing a lot of the useful features present in other packages like <a href="http://scikit-learn.org/stable/">scikit-learn</a>.</p>
 <p>Changing habits is always difficult and one of the first questions asked when you propose a change of something that works is: how do we reproduce our current results? This is how scientists adopt new strategies and techniques. You take a problem you already solved, apply a new method and check if you get the same answer. Then you apply the new method to a new problem.</p>
