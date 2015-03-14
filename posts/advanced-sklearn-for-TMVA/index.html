@@ -1423,7 +1423,7 @@ gg==
 
 <div class="hbox output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
-<pre>Accuracy: 0.71094 (+/- 0.00868)
+<pre>Accuracy: 0.71285 (+/- 0.00805)
 </pre>
 </div>
 </div>
@@ -1489,6 +1489,69 @@ gg==
 <span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span> <span class="o">=</span> <span class="n">y_eval</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_eval</span><span class="p">)</span>
 <span class="k">print</span> <span class="s">&quot;  It scores </span><span class="si">%0.4f</span><span class="s"> on the full evaluation set&quot;</span><span class="o">%</span><span class="k">roc_auc_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
 </pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>Best parameter set found on development set:
+
+GradientBoostingClassifier(init=None, learning_rate=0.1, loss=&apos;deviance&apos;,
+              max_depth=3, max_features=0.5, max_leaf_nodes=None,
+              min_samples_leaf=1, min_samples_split=2, n_estimators=200,
+              random_state=None, subsample=0.5, verbose=0,
+              warm_start=False)
+
+Grid scores on a subset of the development set:
+
+0.7151 (+/-0.0078) for {&apos;n_estimators&apos;: 50, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 1}
+0.7491 (+/-0.0044) for {&apos;n_estimators&apos;: 200, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 1}
+0.7547 (+/-0.0035) for {&apos;n_estimators&apos;: 400, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 1}
+0.7550 (+/-0.0037) for {&apos;n_estimators&apos;: 1000, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 1}
+0.7674 (+/-0.0053) for {&apos;n_estimators&apos;: 50, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 3}
+0.7731 (+/-0.0024) for {&apos;n_estimators&apos;: 200, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 3}
+0.7716 (+/-0.0029) for {&apos;n_estimators&apos;: 400, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 3}
+0.7620 (+/-0.0045) for {&apos;n_estimators&apos;: 1000, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 3}
+0.7696 (+/-0.0036) for {&apos;n_estimators&apos;: 50, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 8}
+0.7631 (+/-0.0058) for {&apos;n_estimators&apos;: 200, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 8}
+0.7654 (+/-0.0044) for {&apos;n_estimators&apos;: 400, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 8}
+0.7691 (+/-0.0070) for {&apos;n_estimators&apos;: 1000, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 8}
+0.7330 (+/-0.0079) for {&apos;n_estimators&apos;: 50, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 1}
+0.7544 (+/-0.0030) for {&apos;n_estimators&apos;: 200, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 1}
+0.7544 (+/-0.0023) for {&apos;n_estimators&apos;: 400, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 1}
+0.7505 (+/-0.0037) for {&apos;n_estimators&apos;: 1000, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 1}
+0.7697 (+/-0.0034) for {&apos;n_estimators&apos;: 50, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 3}
+0.7639 (+/-0.0047) for {&apos;n_estimators&apos;: 200, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 3}
+0.7557 (+/-0.0027) for {&apos;n_estimators&apos;: 400, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 3}
+0.7474 (+/-0.0082) for {&apos;n_estimators&apos;: 1000, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 3}
+0.7474 (+/-0.0060) for {&apos;n_estimators&apos;: 50, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 8}
+0.7501 (+/-0.0072) for {&apos;n_estimators&apos;: 200, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 8}
+0.7532 (+/-0.0049) for {&apos;n_estimators&apos;: 400, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 8}
+0.7609 (+/-0.0070) for {&apos;n_estimators&apos;: 1000, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 8}
+0.7398 (+/-0.0046) for {&apos;n_estimators&apos;: 50, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 1}
+0.7354 (+/-0.0090) for {&apos;n_estimators&apos;: 200, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 1}
+0.7250 (+/-0.0036) for {&apos;n_estimators&apos;: 400, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 1}
+0.7180 (+/-0.0021) for {&apos;n_estimators&apos;: 1000, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 1}
+0.7097 (+/-0.0024) for {&apos;n_estimators&apos;: 50, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 3}
+0.6711 (+/-0.0027) for {&apos;n_estimators&apos;: 200, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 3}
+0.6561 (+/-0.0016) for {&apos;n_estimators&apos;: 400, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 3}
+0.6492 (+/-0.0066) for {&apos;n_estimators&apos;: 1000, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 3}
+0.6308 (+/-0.0065) for {&apos;n_estimators&apos;: 50, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 8}
+0.5955 (+/-0.0132) for {&apos;n_estimators&apos;: 200, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 8}
+0.5733 (+/-0.0216) for {&apos;n_estimators&apos;: 400, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 8}
+0.5488 (+/-0.0114) for {&apos;n_estimators&apos;: 1000, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 8}
+
+With the model trained on the full development set:
+  It scores 0.8238 on the full development set
+  It scores 0.7824 on the full evaluation set
+</pre>
+</div>
+</div>
 
 </div>
 </div>
@@ -3419,7 +3482,7 @@ ERGpUWEgIiIiNSoMREREpEaFgYiIiNT8fyJFT68XqOUhAAAAAElFTkSuQmCC
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is the end of the second part of <a href="posts/advanced-sklearn-for-TMVA/">scikit-learn for TMVA users</a>. Thank you for reading.</p>
-<p>If you find a mistake or want to tell me something else get in touch on twitter<span class="citation">[@betatim]</span>(//twitter.com/betatim).</p>
+<p>If you find a mistake or want to tell me something else get in touch on twitter @<a href="//twitter.com/betatim">betatim</a></p>
 </div></p>
 <p>This post started life as a ipython notebook,
 <a href="/downloads/notebooks/advanced-sklearn-for-TMVA.ipynb">download it</a>
