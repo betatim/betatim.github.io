@@ -36,68 +36,69 @@
     <!-- extra stuff for nbconvert -->
 	
 <style type="text/css">
-    .highlight-ipynb .hll { background-color: #ffffcc }
-.highlight-ipynb  { background: #f8f8f8; }
-.highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
-.highlight-ipynb .err { border: 1px solid #FF0000 } /* Error */
-.highlight-ipynb .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight-ipynb .o { color: #666666 } /* Operator */
-.highlight-ipynb .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight-ipynb .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight-ipynb .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight-ipynb .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight-ipynb .gd { color: #A00000 } /* Generic.Deleted */
-.highlight-ipynb .ge { font-style: italic } /* Generic.Emph */
-.highlight-ipynb .gr { color: #FF0000 } /* Generic.Error */
-.highlight-ipynb .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight-ipynb .gi { color: #00A000 } /* Generic.Inserted */
-.highlight-ipynb .go { color: #888888 } /* Generic.Output */
-.highlight-ipynb .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight-ipynb .gs { font-weight: bold } /* Generic.Strong */
-.highlight-ipynb .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight-ipynb .gt { color: #0044DD } /* Generic.Traceback */
-.highlight-ipynb .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight-ipynb .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight-ipynb .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight-ipynb .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight-ipynb .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight-ipynb .kt { color: #B00040 } /* Keyword.Type */
-.highlight-ipynb .m { color: #666666 } /* Literal.Number */
-.highlight-ipynb .s { color: #BA2121 } /* Literal.String */
-.highlight-ipynb .na { color: #7D9029 } /* Name.Attribute */
-.highlight-ipynb .nb { color: #008000 } /* Name.Builtin */
-.highlight-ipynb .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight-ipynb .no { color: #880000 } /* Name.Constant */
-.highlight-ipynb .nd { color: #AA22FF } /* Name.Decorator */
-.highlight-ipynb .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight-ipynb .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight-ipynb .nf { color: #0000FF } /* Name.Function */
-.highlight-ipynb .nl { color: #A0A000 } /* Name.Label */
-.highlight-ipynb .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight-ipynb .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight-ipynb .nv { color: #19177C } /* Name.Variable */
-.highlight-ipynb .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight-ipynb .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight-ipynb .mf { color: #666666 } /* Literal.Number.Float */
-.highlight-ipynb .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight-ipynb .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight-ipynb .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight-ipynb .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight-ipynb .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight-ipynb .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight-ipynb .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight-ipynb .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight-ipynb .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight-ipynb .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight-ipynb .sx { color: #008000 } /* Literal.String.Other */
-.highlight-ipynb .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight-ipynb .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight-ipynb .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight-ipynb .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight-ipynb .vc { color: #19177C } /* Name.Variable.Class */
-.highlight-ipynb .vg { color: #19177C } /* Name.Variable.Global */
-.highlight-ipynb .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 
 <style type="text/css">
@@ -145,6 +146,14 @@ div.text_cell_render {
 }
 
 img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
+
+div.collapseheader {
+    width=100%;
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 </style>
 
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
@@ -167,6 +176,23 @@ init_mathjax = function() {
 }
 init_mathjax();
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $("div.collapseheader").click(function () {
+    $header = $(this).children("span").first();
+    $codearea = $(this).children(".input_area");
+    console.log($(this).children());
+    $codearea.slideToggle(500, function () {
+        $header.text(function () {
+            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+        });
+    });
+});
+});
+</script>
+
 
     <!-- extra stuff for nbconvert -->
 
@@ -315,30 +341,35 @@ init_mathjax();
             </header>
             <div class="entry-content">
                 <p>
-
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This post is about what you can learn about scientific articles posted on the <a href="http://arxiv.org">arXiv</a> by using Natural Language Processing (NLP). Said differently: I had some questions about papers posted on the arXiv and used it as an excuse to teach myself the basics of NLP. We also look at citation counts and reveal the top cited paper of 2014!</p>
 <p>The arXiv makes its data available via a simple API which allows you to download almost everything about an article short of its full text. For each article we can look up information about who has been citing it on <a href="http://inspirehep.net/">inspire</a>. Combined this is a powerful dataset that can answer some interesting questions like: what are the most used words, can we auto generate abstracts, what about summarising abstracts or finding the most cited article of 2014.</p>
 <p>Let's get going!</p>
 <p>First some standard imports that we will need later. Some of them you might need to install but nothing too obscure:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">import</span> <span class="nn">time</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[175]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">urllib2</span>
 <span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">ifilter</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span><span class="p">,</span> <span class="n">defaultdict</span>
-<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="kn">as</span> <span class="nn">ET</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">ifilter</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">Counter</span><span class="p">,</span> <span class="n">defaultdict</span>
+<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
 
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">bibtexparser</span>
 
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s">&#39;mode.chained_assignment&#39;</span><span class="p">,</span><span class="s">&#39;warn&#39;</span><span class="p">)</span>
@@ -346,35 +377,41 @@ init_mathjax();
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="o">%</span><span class="k">matplotlib</span> <span class="n">inline</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <code>harvest</code> function will query the arXiv API for all articles modified between January, 1st 2010 and the end of the year 2014. This is a subtlety worth noting: with this query you will also get articles <em>created</em> before 2010 if their entry was modified after 2010.</p>
 <p>The arXiv itself covers so many topics that it is organised into seperate arxivs (I know unfortunate doulbe use of the name arxiv), one for each topic. By default <code>harvest</code> will collect articles from the <code>physics:hep-ex</code> arxiv. This is because I am a experimental particle physicist. If you are into theory try <code>physics:hep-th</code> or <code>stats</code> if you are a stats guru. The API gives you a <a href="http://export.arxiv.org/oai2?verb=ListSets">full list of all sets of topics</a> to explore.</p>
 <p>If you do not care for the technicalities of how to scrape the data skip right ahead to the first <a href="#factoid">factoid</a>.</p>
-<h2 id="harvesting-articles">Harvesting articles</h2>
-<p>Most of <code>harvest</code> is pretty straight forward. The API returns a big XML document containing information about at most 1000 articles which we can parse with <code>ElementTree</code> and store. If there are more than 1000 articles for a particular query we can get those using the <code>resumptionToken</code> in the XML. API access can be throttled so on occasion the arXiv will reply with a 503 error asking us to retry later. The information we harvest is stored in a <code>pandas</code> dataframe.</p>
+<h2 id="Harvesting-articles">Harvesting articles<a class="anchor-link" href="#Harvesting-articles">&#182;</a></h2><p>Most of <code>harvest</code> is pretty straight forward. The API returns a big XML document containing information about at most 1000 articles which we can parse with <code>ElementTree</code> and store. If there are more than 1000 articles for a particular query we can get those using the <code>resumptionToken</code> in the XML. API access can be throttled so on occasion the arXiv will reply with a 503 error asking us to retry later. The information we harvest is stored in a <code>pandas</code> dataframe.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">OAI</span> <span class="o">=</span> <span class="s">&quot;{http://www.openarchives.org/OAI/2.0/}&quot;</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">OAI</span> <span class="o">=</span> <span class="s">&quot;{http://www.openarchives.org/OAI/2.0/}&quot;</span>
 <span class="n">ARXIV</span> <span class="o">=</span> <span class="s">&quot;{http://arxiv.org/OAI/arXiv/}&quot;</span>
 
 <span class="k">def</span> <span class="nf">harvest</span><span class="p">(</span><span class="n">arxiv</span><span class="o">=</span><span class="s">&quot;physics:hep-ex&quot;</span><span class="p">):</span>
@@ -382,17 +419,17 @@ init_mathjax();
     <span class="n">base_url</span> <span class="o">=</span> <span class="s">&quot;http://export.arxiv.org/oai2?verb=ListRecords&amp;&quot;</span>
     <span class="n">url</span> <span class="o">=</span> <span class="p">(</span><span class="n">base_url</span> <span class="o">+</span>
            <span class="s">&quot;from=2010-01-01&amp;until=2014-12-31&amp;&quot;</span> <span class="o">+</span>
-           <span class="s">&quot;metadataPrefix=arXiv&amp;set=</span><span class="si">%s</span><span class="s">&quot;</span><span class="o">%</span><span class="k">arxiv</span><span class="p">)</span>
+           <span class="s">&quot;metadataPrefix=arXiv&amp;set=%s&quot;</span><span class="o">%</span><span class="k">arxiv</span>)
     
-    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-        <span class="k">print</span> <span class="s">&quot;fetching&quot;</span><span class="p">,</span> <span class="n">url</span>
+    <span class="k">while</span> <span class="k">True</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="s">&quot;fetching&quot;</span><span class="p">,</span> <span class="n">url</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
             
         <span class="k">except</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="mi">503</span><span class="p">:</span>
                 <span class="n">to</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">hdrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;retry-after&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
-                <span class="k">print</span> <span class="s">&quot;Got 503. Retrying after {0:d} seconds.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">to</span><span class="p">)</span>
+                <span class="nb">print</span> <span class="s">&quot;Got 503. Retrying after {0:d} seconds.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">to</span><span class="p">)</span>
 
                 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">to</span><span class="p">)</span>
                 <span class="k">continue</span>
@@ -409,14 +446,14 @@ init_mathjax();
             <span class="n">meta</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">OAI</span><span class="o">+</span><span class="s">&#39;metadata&#39;</span><span class="p">)</span>
             <span class="n">info</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">ARXIV</span><span class="o">+</span><span class="s">&quot;arXiv&quot;</span><span class="p">)</span>
             <span class="n">created</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">ARXIV</span><span class="o">+</span><span class="s">&quot;created&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
-            <span class="n">created</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">created</span><span class="p">,</span> <span class="s">&quot;%Y-%m-</span><span class="si">%d</span><span class="s">&quot;</span><span class="p">)</span>
+            <span class="n">created</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">created</span><span class="p">,</span> <span class="s">&quot;%Y-%m-%d&quot;</span><span class="p">)</span>
             <span class="n">categories</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">ARXIV</span><span class="o">+</span><span class="s">&quot;categories&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
 
             <span class="c"># if there is more than one DOI use the first one</span>
             <span class="c"># often the second one (if it exists at all) refers</span>
             <span class="c"># to an eratum or similar</span>
             <span class="n">doi</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">ARXIV</span><span class="o">+</span><span class="s">&quot;doi&quot;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">doi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">doi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="k">None</span><span class="p">:</span>
                 <span class="n">doi</span> <span class="o">=</span> <span class="n">doi</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
                 
             <span class="n">contents</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="n">info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">ARXIV</span><span class="o">+</span><span class="s">&quot;title&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
@@ -427,17 +464,17 @@ init_mathjax();
                         <span class="s">&#39;doi&#39;</span><span class="p">:</span> <span class="n">doi</span><span class="p">,</span>
                         <span class="p">}</span>
 
-            <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">contents</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">contents</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 
         <span class="c"># The list of articles returned by the API comes in chunks of</span>
         <span class="c"># 1000 articles. The presence of a resumptionToken tells us that</span>
         <span class="c"># there is more to be fetched.</span>
         <span class="n">token</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">OAI</span><span class="o">+</span><span class="s">&#39;ListRecords&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">OAI</span><span class="o">+</span><span class="s">&quot;resumptionToken&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">token</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">token</span><span class="o">.</span><span class="n">text</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">token</span> <span class="ow">is</span> <span class="k">None</span> <span class="ow">or</span> <span class="n">token</span><span class="o">.</span><span class="n">text</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
             <span class="k">break</span>
 
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s">&quot;resumptionToken=</span><span class="si">%s</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s">&quot;resumptionToken=%s&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
             
     <span class="k">return</span> <span class="n">df</span>
     
@@ -445,48 +482,61 @@ init_mathjax();
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Set <code>harvest</code> running and go chat with someone for a few minutes while it gathers the information about your articles.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">harvest</span><span class="p">()</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">harvest</span><span class="p">()</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What does all that stuff we just downloaded look like? Here are the first five entries in the dataframe:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[73]:</div>
-<div class="box-flex1 output_subarea output_pyout">
+<div class="output_area"><div class="prompt output_prompt">Out[73]:</div>
 
-<div class="output_html rendered_html">
+<div class="output_html rendered_html output_subarea output_execute_result">
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
 <table border="1" class="dataframe">
   <thead>
@@ -558,23 +608,27 @@ init_mathjax();
 </div>
 
 </div>
-</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="first-factoid">First factoid</h2>
-<p><a id="factoid"></a></p>
+<h2 id="First-factoid">First factoid<a class="anchor-link" href="#First-factoid">&#182;</a></h2><p><a id="factoid"></a></p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">bar_chart</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">bar_chart</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Make a bar chart showing the count associated with each key</span>
 <span class="sd">    </span>
 <span class="sd">    `items` is a list of (key, count) pairs.</span>
@@ -591,21 +645,22 @@ init_mathjax();
 <span class="n">edits_per_year</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">created</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">year</span><span class="p">))</span>
 <span class="n">bar_chart</span><span class="p">(</span><span class="n">edits_per_year</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
 <span class="n">new_articles</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">edits_per_year</span><span class="p">[</span><span class="n">year</span><span class="p">]</span> <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">2010</span><span class="p">,</span><span class="mi">2011</span><span class="p">,</span><span class="mi">2012</span><span class="p">,</span><span class="mi">2013</span><span class="p">,</span><span class="mi">2014</span><span class="p">))</span>
-<span class="k">print</span> <span class="s">&quot;Unique arXiv IDs edited between 2010 and 2014:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-<span class="k">print</span> <span class="s">&quot;of which </span><span class="si">%i</span><span class="s"> entries were created in that time period.&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">new_articles</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s">&quot;Unique arXiv IDs edited between 2010 and 2014:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="nb">print</span> <span class="s">&quot;of which %i entries were created in that time period.&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">new_articles</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAegAAAG/CAYAAACT20RDAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XmcbGV95/HPl0VAFhE17EYMoOJgEBQ0LrSiiMlEMIto
 EmOQuAQX4kwWcJJ4I25ZNGAcSKJG0SgRgyJERNGxo0kUogElIAozEr03gMY9MQuE3/xxnuaWbd/u
@@ -767,13 +822,14 @@ nZ0ZLlLwXuBUhk/YL6qqb49bY5q1ptUe66x+nZ7aYp21aYvW2GolP8OVqT7OsCGcvjnr9NSW3uow
 XPDkToZrGp+6wvd8xbWm1R7r+F5ZZ/pt8ba2t9UrDP+T4b/l7LS56/TUlt7qMHyv9KXA3abwnq+4
 1rTaYx3fK+tMvy3e1va2KkPcMFyYo5b4N5FrVaentvRYR5LUn1ULaEmSNLk1+29WkiRpfAa0JEkd
 MqAlSeqQAS1JUocMaEmSOmRAS5LUIQNakqQO/X90zUmYVayJ6QAAAABJRU5ErkJggg==
-">
+"
+>
+</div>
 
 </div>
-</div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>Unique arXiv IDs edited between 2010 and 2014: 16321
 of which 11958 entries were created in that time period.
 </pre>
@@ -784,31 +840,36 @@ of which 11958 entries were created in that time period.
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here is our first factoid about the arXiv: There are about 16000 articles in <code>hep-ex</code> which were edited between the beginning of 2010 and the end of 2014. Including about 12000 newly created articles. The other 4000 papers were created before 2010 and were updated after creation. Amazing to see that papers created in 1994 were still being edited almost ten years later!</p>
 <p>Let's take a look at those, maybe there is something interesting:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">created</span><span class="o">&lt;</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">1995</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">created</span><span class="o">&lt;</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">1995</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[72]:</div>
-<div class="box-flex1 output_subarea output_pyout">
+<div class="output_area"><div class="prompt output_prompt">Out[72]:</div>
 
-<div class="output_html rendered_html">
+<div class="output_html rendered_html output_subarea output_execute_result">
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
 <table border="1" class="dataframe">
   <thead>
@@ -1220,30 +1281,34 @@ of which 11958 entries were created in that time period.
 </div>
 
 </div>
-</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>After scrolling through the list I can not spot a particular pattern to the edits. Though it does seem like the list contains articles on interesting topics like evidence for the top quark (index 15148), PeV <span class="math">\(\tau\)</span> neutrinos (index 16113) and an article about determining the weak mixing angle at SLD (index 15149).</p>
-<h2 id="collecting-citations">Collecting citations</h2>
-<p>Unfortunately Inspire does not provide a real API, so we have to scrape their webpages to get what we want. The <code>get_cites</code> function will look up the citations of an article by its <code>arxiv_id</code>. Having to make one HTTP request per article means this takes quite a while. So set it going and come back after a few hours. We process articles in chunks of 1000 to get some feedback as well as being able to resume if something goes wrong:</p>
+<p>After scrolling through the list I can not spot a particular pattern to the edits. Though it does seem like the list contains articles on interesting topics like evidence for the top quark (index 15148), PeV $\tau$ neutrinos (index 16113) and an article about determining the weak mixing angle at SLD (index 15149).</p>
+<h2 id="Collecting-citations">Collecting citations<a class="anchor-link" href="#Collecting-citations">&#182;</a></h2><p>Unfortunately Inspire does not provide a real API, so we have to scrape their webpages to get what we want. The <code>get_cites</code> function will look up the citations of an article by its <code>arxiv_id</code>. Having to make one HTTP request per article means this takes quite a while. So set it going and come back after a few hours. We process articles in chunks of 1000 to get some feedback as well as being able to resume if something goes wrong:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">get_cites</span><span class="p">(</span><span class="n">arxiv_id</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[226]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">get_cites</span><span class="p">(</span><span class="n">arxiv_id</span><span class="p">):</span>
     <span class="n">cites</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">base_url</span> <span class="o">=</span> <span class="s">&quot;http://inspirehep.net/search?p=refersto:</span><span class="si">%s</span><span class="s">&amp;of=hx&amp;rg=250&amp;jrec=</span><span class="si">%i</span><span class="s">&quot;</span>
+    <span class="n">base_url</span> <span class="o">=</span> <span class="s">&quot;http://inspirehep.net/search?p=refersto:%s&amp;of=hx&amp;rg=250&amp;jrec=%i&quot;</span>
     <span class="n">offset</span> <span class="o">=</span> <span class="mi">1</span>
     
-    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-        <span class="k">print</span> <span class="n">base_url</span><span class="o">%</span><span class="p">(</span><span class="n">arxiv_id</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
+    <span class="k">while</span> <span class="k">True</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="n">base_url</span><span class="o">%</span><span class="p">(</span><span class="n">arxiv_id</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
         <span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">base_url</span><span class="o">%</span><span class="p">(</span><span class="n">arxiv_id</span><span class="p">,</span> <span class="n">offset</span><span class="p">))</span>
         <span class="n">xml</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
         <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
@@ -1262,26 +1327,32 @@ of which 11958 entries were created in that time period.
 
 <span class="n">step</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="k">for</span> <span class="n">N</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">17</span><span class="p">):</span>
-    <span class="k">print</span> <span class="n">N</span>
+    <span class="nb">print</span> <span class="n">N</span>
     <span class="n">cites</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">][</span><span class="n">N</span><span class="o">*</span><span class="n">step</span><span class="p">:(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">step</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">get_cites</span><span class="p">)</span>
     <span class="n">df</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">N</span><span class="o">*</span><span class="n">step</span><span class="p">:(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">step</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s">&#39;cited_by&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cites</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="data-preservation">Data preservation</h2>
-<p>After investing so much time to gather the raw data it is a good idea to store it locally so we do not have to scrape it all again later:</p>
+<h2 id="Data-preservation">Data preservation<a class="anchor-link" href="#Data-preservation">&#182;</a></h2><p>After investing so much time to gather the raw data it is a good idea to store it locally so we do not have to scrape it all again later:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">store</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">HDFStore</span><span class="p">(</span><span class="s">&quot;/Users/thead/git/arxiv-experiments/hep-ex.h5&quot;</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[236]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">store</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">HDFStore</span><span class="p">(</span><span class="s">&quot;/Users/thead/git/arxiv-experiments/hep-ex.h5&quot;</span><span class="p">)</span>
 <span class="c">#store[&#39;df&#39;] = df</span>
 <span class="c">#df = store[&#39;df&#39;]</span>
 <span class="n">store</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -1289,36 +1360,42 @@ of which 11958 entries were created in that time period.
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="word-counts">Word counts</h2>
-<p>Let's get to answering some questions. What are the ten most used words in <code>hep-ex</code> abstracts?</p>
+<h2 id="Word-counts">Word counts<a class="anchor-link" href="#Word-counts">&#182;</a></h2><p>Let's get to answering some questions. What are the ten most used words in <code>hep-ex</code> abstracts?</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">word_bag</span> <span class="o">=</span> <span class="s">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">abstract</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">lower</span><span class="p">()))</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">word_bag</span> <span class="o">=</span> <span class="s">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">abstract</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">lower</span><span class="p">()))</span>
 
 <span class="n">Counter</span><span class="p">(</span><span class="n">word_bag</span><span class="o">.</span><span class="n">split</span><span class="p">())</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[77]:</div>
-<div class="box-flex1 output_subarea output_pyout">
+<div class="output_wrapper">
+<div class="output">
 
 
-<pre class="ipynb tim">[(&apos;the&apos;, 161889),
+<div class="output_area"><div class="prompt output_prompt">Out[77]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[(&apos;the&apos;, 161889),
  (&apos;of&apos;, 79075),
  (&apos;and&apos;, 54236),
  (&apos;in&apos;, 41418),
@@ -1328,24 +1405,30 @@ of which 11958 entries were created in that time period.
  (&apos;is&apos;, 23440),
  (&apos;with&apos;, 23015),
  (&apos;we&apos;, 22510)]</pre>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Not too enlightening, boring little words close out the top ten. These words are known as stopwords and the <code>NLTK</code> library provides a list of all of them. So let's remove them as well as basic mathematical symbols:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[113]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="k">import</span> <span class="n">stopwords</span>
 
 <span class="n">stops</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s">&#39;english&#39;</span><span class="p">)]</span>
 <span class="n">stops</span> <span class="o">+=</span> <span class="p">[</span><span class="s">&quot;=&quot;</span><span class="p">,</span> <span class="s">&quot;-&gt;&quot;</span><span class="p">]</span>
@@ -1358,15 +1441,16 @@ of which 11958 entries were created in that time period.
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAekAAAHXCAYAAACYvqJKAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XuYHGWZ/vHvnYQAgUAMhxBOEiEIQUQJEMADoxwMqICK
 EFQIGlGMB9RVCeBCgqiA7goqIIqQgIriAYyKSETG9bCaRUXRiMCuUYkmHhHd/alBnt8fz9t00fTM
@@ -1673,41 +1757,49 @@ AK+WVP3BisXw8INfzPrk0d1mZuvIP1hh3eYgbWa27h7xgxXkj188jeyDhvzBismUH6yIiE9smN20
 kcp90mZmQ+AfrLBuck3azGxoLiJ/Q/vI8nORtwCb4R+ssGHgmrSZ2RD5ByusWzy628xs6BbjH6yw
 LnBN2szMrKbcJ21mZlZTDtJmZmY15SBtZmZWUw7SZmZmNeUgbWZmVlMO0mZmZjXlIG1mZlZT/x8b
 6UJtCMw17gAAAABJRU5ErkJggg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Experimental physics is all about data afterall! A shame that <code>model</code> beats <code>detector</code> but probably that is inevitable as there are many more theoretical models than experimental detectors. The <code>higgs</code> boson beats the <code>neutrino</code> but they reign supreme over all the other particles.</p>
 <p>Towards the bottom we have <code>measurements</code> and <code>measured</code>. These should probably be counted as one entry, together with <code>measurement</code>, <code>measuring</code>, etc. The easiest way to achieve this is to stem the words before counting. <a href="http://en.wikipedia.org/wiki/Stemming">Stemming</a> is the process of reducing derived words to their stem, for example:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">import</span> <span class="nn">nltk.stem</span> <span class="kn">as</span> <span class="nn">stem</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[108]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">nltk.stem</span> <span class="k">as</span> <span class="nn">stem</span>
 
 <span class="n">porter</span> <span class="o">=</span> <span class="n">stem</span><span class="o">.</span><span class="n">PorterStemmer</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&quot;measurement&quot;</span><span class="p">,</span> <span class="s">&quot;measurements&quot;</span><span class="p">,</span> <span class="s">&quot;measured&quot;</span><span class="p">,</span> <span class="s">&quot;measure&quot;</span><span class="p">):</span>
-    <span class="k">print</span> <span class="n">w</span><span class="p">,</span> <span class="s">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">porter</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="n">w</span><span class="p">,</span> <span class="s">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">porter</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>measurement -&gt; measur
 measurements -&gt; measur
 measured -&gt; measur
@@ -1720,16 +1812,22 @@ measure -&gt; measur
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Like in this case the stem does not have to be a real word itself. By stemming words before counting how often they occur the entries for <code>measurements</code> and <code>measured</code> get added together. Using the stem of every word we get the following ranking:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">word_stems</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="p">(</span><span class="n">porter</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">w</span><span class="p">),</span><span class="n">w</span><span class="p">),</span> <span class="n">words</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[115]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">word_stems</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="p">(</span><span class="n">porter</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">w</span><span class="p">),</span><span class="n">w</span><span class="p">),</span> <span class="n">words</span><span class="p">)</span>
 <span class="n">stem2words</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">stem</span><span class="p">,</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_stems</span><span class="p">:</span>
     <span class="n">stem2words</span><span class="p">[</span><span class="n">stem</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
@@ -1740,20 +1838,21 @@ measure -&gt; measur
 
 <span class="c"># list all words which correspond to each top twenty stem</span>
 <span class="k">for</span> <span class="n">stem</span><span class="p">,</span><span class="n">count</span> <span class="ow">in</span> <span class="n">top_twenty</span><span class="p">:</span>
-    <span class="k">print</span> <span class="n">stem</span><span class="p">,</span> <span class="s">&quot;&lt;-&quot;</span><span class="p">,</span> <span class="s">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">stem2words</span><span class="p">[</span><span class="n">stem</span><span class="p">])</span>
+    <span class="nb">print</span> <span class="n">stem</span><span class="p">,</span> <span class="s">&quot;&lt;-&quot;</span><span class="p">,</span> <span class="s">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">stem2words</span><span class="p">[</span><span class="n">stem</span><span class="p">])</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAe4AAAHICAYAAACI4gl9AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xe4ZEWZ+PHvOzOEAQeQnKODMCSFFRBFZgURUAEVAQOi
 jgpiwkhSgmsATCAKKiBJRTABKhJERtRdxLAqiij8dnFlFEyr6O66C1K/P95q+kxP33u7b2DmXL6f
@@ -2035,13 +2134,14 @@ XXgC+TuCvPXpvMlKc5TXWoHsvZ2PDfJlWkTMp3uf7hUma+RFy5bJ7nFL08UFwN87o0fDPrmU8jfg
 wxFxFfCbOrlrMl3IwzS6VfLrWOdOVfqamFoGNiW/MvY44KzS8xVFTS/2uCWp5erNWfYhf4rzEfG9
 90cyA7ckSS0yKd/jliRJDw8DtyRJLWLgliSpRQzckiS1iIFbkqQWMXBLktQiBm5Jklrk/wNvs8vX
 DWds3gAAAABJRU5ErkJggg==
-">
+"
+>
+</div>
 
 </div>
-</div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>measur &lt;- measuring, measures, measurment, measurements, measure, measurable, measurably, measureable, measurability, measurement, measured
 decay &lt;- decayed, decays, decaying, decay
 use &lt;- use, used, useful, uses, usefulness, using
@@ -2070,46 +2170,51 @@ experi &lt;- experiement, experiments, experiences, experiment, experience
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Turns out experimental phsics is all about measuring things. The stemming is not perfect, but good enough for now.</p>
-<h2 id="cite-me-cite-me-no-cite-me">Cite me, cite me, no cite me!</h2>
-<p>In science citations is the currency used to measure the success of a paper. What does the distribution of citations look like then?</p>
+<h2 id="Cite-me,-cite-me,-no-cite-me!">Cite me, cite me, no cite me!<a class="anchor-link" href="#Cite-me,-cite-me,-no-cite-me!">&#182;</a></h2><p>In science citations is the currency used to measure the success of a paper. What does the distribution of citations look like then?</p>
 <p>A simple question to ask is: how often are articles cited? As articles have to be read and understood before they can be cited we only look at articles created before the beginning of 2014.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">before_2014</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[235]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">before_2014</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">created</span><span class="o">&lt;</span><span class="n">before_2014</span><span class="p">]</span><span class="o">.</span><span class="n">cited_by</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">len</span><span class="p">),</span>
-         <span class="n">bins</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span>
+         <span class="n">bins</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="k">True</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;Number of citations&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;Fraction&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[235]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">&lt;matplotlib.text.Text at 0x13a304c50&gt;</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[235]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.text.Text at 0x13a304c50&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAY4AAAEPCAYAAABV6CMBAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAGVZJREFUeJzt3Xu0nXWd3/H3p+HqBVHb4gCZRiVWYusYp6WsOtbjaG2M
 FpyxiiwVF3UG1hoDaK0LmXZJ8k+Xzmh1KC2ixttUJ2O9TRxBvLFdOrVIkItAYsnUKCAESmUExkti
@@ -2226,41 +2331,48 @@ m1TAN4FXJDm2uX3+K5plIwOruR33r1dVj/7zqJ/AgWEtAUv0tupaNgb/p/4eYMPA/AeBv0hyE/Al
 XdPcMnxbkl/S70H8x6FiHwC+lOTuqnpRM3y2g/7xmG9NVW7gPW5M8lH2P1vhg1V1c/qPEx3+LEX/
 2MmfJnlC8zn+pDw7SyN4W3VJUisOVUmSWjE4JEmtGBySpFYMDklSKwaHJKkVg0OS1IrBIUlqxeCQ
 JLXy/wEhD+LRSQUwPAAAAABJRU5ErkJggg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This plot shows the fraction of articles cited zero, one, two, three, ... times. The single most likely number of citations for an article on <code>hep-ex</code> is zero! A whopping 13% of articles never get cited and nearly a third of articles are cited less than four times.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">df</span><span class="p">[</span><span class="s">&#39;citation_count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">cited_by</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[233]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">df</span><span class="p">[</span><span class="s">&#39;citation_count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">cited_by</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
 <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">created</span><span class="o">&lt;</span><span class="n">before_2014</span><span class="p">][</span><span class="s">&#39;citation_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[233]:</div>
-<div class="box-flex1 output_subarea output_pyout">
+<div class="output_wrapper">
+<div class="output">
 
 
-<pre class="ipynb tim">count    14059.000000
+<div class="output_area"><div class="prompt output_prompt">Out[233]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>count    14059.000000
 mean        32.630486
 std        100.773436
 min          0.000000
@@ -2269,42 +2381,47 @@ min          0.000000
 75%         31.000000
 max       4138.000000
 Name: citation_count, dtype: float64</pre>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The average number of citations is about 33. The average is misleading for a steeply falling distribution like this, afterall we reach the 50% percentile at only 10 citations!</p>
-<h2 id="citations-top-ten">Citations top ten</h2>
-<p><a id="topten"></a></p>
+<h2 id="Citations-top-ten">Citations top ten<a class="anchor-link" href="#Citations-top-ten">&#182;</a></h2><p><a id="topten"></a></p>
 <p>The prize for most cited paper with a whopping 4138 citations goes to:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">citation_count</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[234]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">citation_count</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[234]:</div>
-<div class="box-flex1 output_subarea output_pyout">
+<div class="output_wrapper">
+<div class="output">
 
 
-<pre class="ipynb tim">title             New Generation of Parton Distributions with Un...
+<div class="output_area"><div class="prompt output_prompt">Out[234]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>title             New Generation of Parton Distributions with Un...
 abstract          A new generation of parton distribution functi...
 categories                                         [hep-ph, hep-ex]
 created                                         2002-01-21 00:00:00
@@ -2313,39 +2430,44 @@ doi                                   10.1088/1126-6708/2002/07/012
 cited_by          [{u&apos;slaccitation&apos;: u&apos;%%CITATION = ARXIV:1412.4...
 citation_count                                                 4138
 Name: 15779, dtype: object</pre>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Read the paper yourself: <a href="http://arxiv.org/abs/hep-ph/0201195">New Generation of Parton Distributions with Uncertainties from Global QCD Analysis</a> and see if you agree.</p>
 <p>We can also easily compute the top ten papers. This is an interesting mix of articles. Number two and three are the papers by the <a href="http://atlas.ch">ATLAS</a> and <a href="http://cms.web.cern.ch/">CMS</a> experiments reporting on the discovery of the <a href="http://en.wikipedia.org/wiki/Higgs_boson">Higgs boson</a>. While most of the papers in the top ten are older these two were only published in 2012 and have already overtaken the top quark discovery which was published in 1995! Curious fact, the ATLAS paper has ever so few more citations than the CMS one.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">df</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">&#39;citation_count&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[241]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">df</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">&#39;citation_count&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="k">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[241]:</div>
-<div class="box-flex1 output_subarea output_pyout">
+<div class="output_area"><div class="prompt output_prompt">Out[241]:</div>
 
-<div class="output_html rendered_html">
+<div class="output_html rendered_html output_subarea output_execute_result">
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
 <table border="1" class="dataframe">
   <thead>
@@ -2478,15 +2600,21 @@ Name: 15779, dtype: object</pre>
 </div>
 
 </div>
-</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There are many more interesting things to be done with analysing the words used in abstracts as well as anlysing who cites who. This will be covered in the second part of this post as this one is already fairly lengthy.</p>
 <p>Just one more thing, the top cited paper of 2014: <a href="http://arxiv.org/abs/1403.4427">First combination of Tevatron and LHC measurements of the top-quark mass</a> celebrating collaboration across the globe:</p>
+
+</div>
+</div>
 </div></p>
 <p>This post started life as a ipython notebook,
 <a href="/downloads/notebooks/arXiv.ipynb">download it</a>

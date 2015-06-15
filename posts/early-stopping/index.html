@@ -36,68 +36,69 @@
     <!-- extra stuff for nbconvert -->
 	
 <style type="text/css">
-    .highlight-ipynb .hll { background-color: #ffffcc }
-.highlight-ipynb  { background: #f8f8f8; }
-.highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
-.highlight-ipynb .err { border: 1px solid #FF0000 } /* Error */
-.highlight-ipynb .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight-ipynb .o { color: #666666 } /* Operator */
-.highlight-ipynb .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight-ipynb .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight-ipynb .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight-ipynb .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight-ipynb .gd { color: #A00000 } /* Generic.Deleted */
-.highlight-ipynb .ge { font-style: italic } /* Generic.Emph */
-.highlight-ipynb .gr { color: #FF0000 } /* Generic.Error */
-.highlight-ipynb .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight-ipynb .gi { color: #00A000 } /* Generic.Inserted */
-.highlight-ipynb .go { color: #888888 } /* Generic.Output */
-.highlight-ipynb .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight-ipynb .gs { font-weight: bold } /* Generic.Strong */
-.highlight-ipynb .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight-ipynb .gt { color: #0044DD } /* Generic.Traceback */
-.highlight-ipynb .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight-ipynb .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight-ipynb .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight-ipynb .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight-ipynb .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight-ipynb .kt { color: #B00040 } /* Keyword.Type */
-.highlight-ipynb .m { color: #666666 } /* Literal.Number */
-.highlight-ipynb .s { color: #BA2121 } /* Literal.String */
-.highlight-ipynb .na { color: #7D9029 } /* Name.Attribute */
-.highlight-ipynb .nb { color: #008000 } /* Name.Builtin */
-.highlight-ipynb .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight-ipynb .no { color: #880000 } /* Name.Constant */
-.highlight-ipynb .nd { color: #AA22FF } /* Name.Decorator */
-.highlight-ipynb .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight-ipynb .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight-ipynb .nf { color: #0000FF } /* Name.Function */
-.highlight-ipynb .nl { color: #A0A000 } /* Name.Label */
-.highlight-ipynb .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight-ipynb .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight-ipynb .nv { color: #19177C } /* Name.Variable */
-.highlight-ipynb .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight-ipynb .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight-ipynb .mf { color: #666666 } /* Literal.Number.Float */
-.highlight-ipynb .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight-ipynb .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight-ipynb .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight-ipynb .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight-ipynb .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight-ipynb .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight-ipynb .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight-ipynb .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight-ipynb .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight-ipynb .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight-ipynb .sx { color: #008000 } /* Literal.String.Other */
-.highlight-ipynb .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight-ipynb .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight-ipynb .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight-ipynb .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight-ipynb .vc { color: #19177C } /* Name.Variable.Class */
-.highlight-ipynb .vg { color: #19177C } /* Name.Variable.Global */
-.highlight-ipynb .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 
 <style type="text/css">
@@ -145,6 +146,14 @@ div.text_cell_render {
 }
 
 img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
+
+div.collapseheader {
+    width=100%;
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 </style>
 
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
@@ -167,6 +176,23 @@ init_mathjax = function() {
 }
 init_mathjax();
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $("div.collapseheader").click(function () {
+    $header = $(this).children("span").first();
+    $codearea = $(this).children(".input_area");
+    console.log($(this).children());
+    $codearea.slideToggle(500, function () {
+        $header.text(function () {
+            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+        });
+    });
+});
+});
+</script>
+
 
     <!-- extra stuff for nbconvert -->
 
@@ -315,36 +341,41 @@ init_mathjax();
             </header>
             <div class="entry-content">
                 <p>
-
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A lot of people are using statistical hypothesis testing without knowing it. Everytime somebody does a A/B test, what they are doing is testing a hypothesis. There are many pits you can fall into when doing hypothesis testing, some of them obvious (do enough tests and you will find something!), some of them more subtle. One of the more subtle points is that you can not stop your experiment early.</p>
 <p>It is tempting to start collecting data and when you see the p-value drop to a low value declare: Hooray, this new button is working! People are signing up in record numbers! If you do this you are kidding yourself. This post will explain why this is the wrong thing to do.</p>
 <p>While it might be new and fashionable to use A/B testing, hypothesis testing itself has been around for a long time. It is used (and abused) in medical trials and High Energy Particle Physics all the time. This means most traps have been discovered before, there is no need for A/B testers to rediscover them. Just one recent example: <a href="http://nerds.airbnb.com/experiments-at-airbnb/">Experiments at AirBnB</a> by the mighty <a href="http://airbnb.com">AirBnB</a>. They like stopping their experiments early and provide a little glance at what methodology they use to do that. There is not enough information in the post to show that their method works, but let's assume it does. One thing not covered is what stopping early does to the power of your test.</p>
 <p>If you need a refresher on hypothesis testing, take a look at a previous post of mine: <a href="/posts/when-to-switch/">When to switch?</a>. It also explains what the power of your test is.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="o">%</span><span class="k">matplotlib</span> <span class="n">inline</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">scipy</span> <span class="kn">as</span> <span class="nn">sp</span>
-<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="kn">as</span> <span class="nn">stats</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
 <span class="kn">import</span> <span class="nn">random</span>
 
 <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
@@ -353,24 +384,31 @@ init_mathjax();
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The first thing we need is a set of observations. In this experiment you measure the conversion rate on your website. The average conversion rate is 6%. The first set of observations will always have an average conversion rate of 6%, using the <code>difference</code> parameter we can decide how big the difference between the two samples should be. This is handy as it allows us to generate a set of observations where the true difference is zero, or any other value we would like to investigate. We can also set how big the samples should be (how many observations there are).</p>
 <p>We use Student's t-test to calculate the p-value for each experiment.In this example we want to know if the changes to our website improved the conversion rate or not. The p-value is the probability of the mean in the second sample being bigger than the mean in the first sample due to nothing else but chance. In this case you can calculate the p-value by using <a href="http://en.wikipedia.org/wiki/Student%27s_t-test">Student's t-test</a>.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">two_samples</span><span class="p">(</span><span class="n">difference</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">6500</span><span class="p">,</span> <span class="n">delta_variance</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">two_samples</span><span class="p">(</span><span class="n">difference</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">6500</span><span class="p">,</span> <span class="n">delta_variance</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
     <span class="n">As</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">6.</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
     <span class="n">Bs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">6.</span> <span class="o">+</span> <span class="n">difference</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="o">+</span><span class="n">delta_variance</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">As</span><span class="p">,</span> <span class="n">Bs</span>
 
-<span class="k">def</span> <span class="nf">one_sided_ttest</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">one_sided_ttest</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="k">True</span><span class="p">):</span>
     <span class="n">t</span><span class="p">,</span><span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="n">equal_var</span><span class="p">)</span>
     <span class="c"># the t-test implemented in scipy is two sided, but we are interested</span>
     <span class="c"># in the one sided p-value, hence this if statement and the divide by two.</span>
@@ -384,21 +422,28 @@ init_mathjax();
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Time to run an experiment. Let's assume that in total you collect 100 observations in each group. To see what happens with the p-value as we collect the data we will plot it after each a new observation has been collected in each group.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="c"># There is no difference between the two samples</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># There is no difference between the two samples</span>
 <span class="n">As</span><span class="p">,</span> <span class="n">Bs</span> <span class="o">=</span> <span class="n">two_samples</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">p_vals</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">As</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">As</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">+=</span> <span class="mi">2</span>
     <span class="n">p_vals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">one_sided_ttest</span><span class="p">(</span><span class="n">As</span><span class="p">[:</span><span class="n">n</span><span class="p">],</span> <span class="n">Bs</span><span class="p">[:</span><span class="n">n</span><span class="p">]))</span>
 
@@ -412,25 +457,25 @@ init_mathjax();
 
 </div>
 </div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[4]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">&lt;matplotlib.collections.LineCollection at 0x10ca20b10&gt;</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.collections.LineCollection at 0x10ca20b10&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYcAAAEPCAYAAACp/QjLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XlcVPX6B/DPKLjkvuTCYiAgiwqogEuZKCFq7qZYaYpL
 Zle7llreuj9DK5drXcuL3rBMy8wl03AlryaaC2qCYmIKCom4JCq4s8x8f388zbCc2ZkzMwzP+/Xq
@@ -705,28 +750,35 @@ xdChQ3HlyhX07t0bnTp1wtixY7Fw4UIAwLp167Bq1SoEBwejQ4cO2LZtm87rEB0djXXr1mmalAAg
 NjYWI0eOREhICJ588knNPoMGDcLWrVvRuXNnTSBQ/+7rr7/G7NmzERQUhLS0NMydO1fn9QaATZs2
 oUOHDujUqRPOnj2LV155Re+1YY6DU3YzxhiT4JoDY4wxCQ4OjDHGJDg4MMYYk+DgwBhjTIKDA2OM
 MQkODowxxiQ4ODDGGJPg4MAYY0zi/wGANOggY9J0EAAAAABJRU5ErkJggg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As you can see it varies quite a bit over the course of the experiment. While in this particular case it never dipped below 0.05, you do not have to rerun that cell too often to find one where it does.</p>
 <p>If you were to do a large number of experiments where you show the same webpage to both groups and plot the p-value you see you would get the following:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">repeat_experiment</span><span class="p">(</span><span class="n">repeats</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">diff</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">repeat_experiment</span><span class="p">(</span><span class="n">repeats</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">diff</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
     <span class="n">p_values</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">repeats</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">repeats</span><span class="p">):</span>
         <span class="n">A</span><span class="p">,</span><span class="n">B</span> <span class="o">=</span> <span class="n">two_samples</span><span class="p">(</span><span class="n">diff</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
         <span class="n">p</span> <span class="o">=</span> <span class="n">one_sided_ttest</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
         <span class="n">p_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
@@ -741,15 +793,16 @@ MQkODowxxiQ4ODDGGJPg4MAYY0zi/wGANOggY9J0EAAAAABJRU5ErkJggg==
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYkAAAEPCAYAAAC3NDh4AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAH0ZJREFUeJzt3X1UlHX+//HnIOzPrGitdCiwM66ANCk3Zpi1FoqgZZK3
 GFZLVu6ulqWnPeW2nRXdLafs1Frp+bYtJqe1ALWEbYtDW+LmXZhStI5HtIMFCLO6iPcFwvX7Ax01
@@ -893,33 +946,40 @@ rG/fvixatAi73c7+/fvdl3c/22svW7bstNfOyspi4sSJDBw4kB49erhf48RmN2i9TeeaNWuIj49n
 48aN7h3XKSkpTJ482b1zPT09nUOHDnn6K5BLmC4VLuIju3btYvTo0XzzzTf+LkXEYxpJiPiQzmmQ
 C41GEiIiYkojCRERMaWQEBERUwoJERExpZAQERFTCgkRETGlkBAREVP/H9wRsgM6nv7KAAAAAElF
 TkSuQmCC
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As you can see 10% of your observed p-values fall into the red area. Similarly 5% of your experiments will give you a p-value of less than 0.05. All despite there being no difference!</p>
 <p>This brings us to what exactly the hypothesis testing procedure does for you. By choosing to declare victory when you observe a p-value below 0.05 you are saying: In the long run, over many repeats of this experiment there is only a 5% change of declaring victory when I should not.</p>
 <p>This is important. It does not tell you how likely it is that you have truely found something. It does not even tell you whether in this particular instance you are making the right choice. Only that in the long run, over many repeats of this experiment you will be wrong 5% of the time.</p>
 <p>So what does stopping early do to this?</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">repeat_early_stop_experiment</span><span class="p">(</span><span class="n">repeats</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">diff</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">repeat_early_stop_experiment</span><span class="p">(</span><span class="n">repeats</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">diff</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
     <span class="n">p_values</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">repeats</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">repeats</span><span class="p">):</span>
         <span class="n">A</span><span class="p">,</span><span class="n">B</span> <span class="o">=</span> <span class="n">two_samples</span><span class="p">(</span><span class="n">diff</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 
-        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
             <span class="n">n</span> <span class="o">+=</span> <span class="mi">2</span>
             <span class="n">p</span> <span class="o">=</span> <span class="n">one_sided_ttest</span><span class="p">(</span><span class="n">A</span><span class="p">[:</span><span class="n">n</span><span class="p">],</span> <span class="n">B</span><span class="p">[:</span><span class="n">n</span><span class="p">])</span>
             <span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
@@ -937,15 +997,16 @@ TkSuQmCC
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYgAAAEPCAYAAABY9lNGAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAH7ZJREFUeJzt3XtUVXX+//HnVvhlppaWooEtGEHpKJeThDp9bY4hXjLJ
 K4ZdyNSZ0abGy6w11lSiMyVjTY2ZruW0bKTJwluK04wsnPTYeBtMIRtpCbawAJHRUbwXCPv3h3WM
@@ -1091,34 +1152,41 @@ Xr1YsmQJNpuNU6dOuR7RbrXtlStX1tl2Wloa48ePJy4ujs6dO7u28f1QG1z6es1t27YRGxvL7t27
 XSepExMTmThxoutEenJyMmfPnnX3P4HcoPS4bxEvOXz4MCNHjuTzzz/3dSkibtERhIgX6Z4FuZ7o
 CEJERCzpCEJERCwpIERExJICQkRELCkgRETEkgJCREQsKSBERMTS/wcU4nAqEQQWGQAAAABJRU5E
 rkJggg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You see a small p-value, stop the experiment, declare victory and have a celebratory beer. Only to wake up with a massive hangover and a webpage which you think is better but actually is not.</p>
 <p>Even worse you have lost the only thing that the hypothesis testing procedure does for you. Namely, you see a p-value below 0.05 many more times than 5% of all experiments (1000 * 0.05 = 50). In the long run you will not be wrong only 5% of the time, but more often.</p>
 <p>So what about the power then? The power of a test is defined as the probability that you change your mind/website when you should do so. Phrased differently: if the alternative website is better, how likely are you to detect that? This depends on how big the difference between the two is and how many observations you make. The larger the improvements, the easier they are to detect. If B increases your conversion rate from 6 to 20%, you will spot that much easier than if it only changes it from 6 to 7%.</p>
 <p>Let's take a look what happens if you stop your experiments early.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">keep_or_not</span><span class="p">(</span><span class="n">improvement</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">early_stop</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">keep_or_not</span><span class="p">(</span><span class="n">improvement</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">early_stop</span><span class="o">=</span><span class="k">False</span><span class="p">):</span>
     <span class="n">keep</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">repeats</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">repeats</span><span class="p">):</span>
         <span class="n">A</span><span class="p">,</span><span class="n">B</span> <span class="o">=</span> <span class="n">two_samples</span><span class="p">(</span><span class="n">improvement</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">early_stop</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
                 <span class="n">n</span> <span class="o">+=</span> <span class="mi">2</span>
                 <span class="n">p</span> <span class="o">=</span> <span class="n">one_sided_ttest</span><span class="p">(</span><span class="n">A</span><span class="p">[:</span><span class="n">n</span><span class="p">],</span> <span class="n">B</span><span class="p">[:</span><span class="n">n</span><span class="p">])</span>
                 <span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
@@ -1141,7 +1209,7 @@ rkJggg==
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">improvements</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mf">1.1</span><span class="p">))</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;Size of the improvement&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;</span><span class="si">% d</span><span class="s">ecided to change&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;% decided to change&quot;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="n">improvements</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
@@ -1150,22 +1218,23 @@ rkJggg==
 <span class="n">early_keeps</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">improvement</span> <span class="ow">in</span> <span class="n">improvements</span><span class="p">:</span>
     <span class="n">keeps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">keep_or_not</span><span class="p">(</span><span class="n">improvement</span><span class="o">/</span><span class="mf">100.</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
-    <span class="n">early_keeps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">keep_or_not</span><span class="p">(</span><span class="n">improvement</span><span class="o">/</span><span class="mf">100.</span><span class="p">,</span> <span class="n">early_stop</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">early_keeps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">keep_or_not</span><span class="p">(</span><span class="n">improvement</span><span class="o">/</span><span class="mf">100.</span><span class="p">,</span> <span class="n">early_stop</span><span class="o">=</span><span class="k">True</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
 
 <span class="n">power_plot</span><span class="p">(</span><span class="n">improvements</span><span class="p">,</span> <span class="n">keeps</span><span class="p">,</span> <span class="n">early_keeps</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYEAAAEPCAYAAACk43iMAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XtcVNXeBvBnEIQwErEE1AwlL6Hc0kR7T4oZYEfpJOat
 MrzVUUsze81SO8e3NCnNRI72vpUKXsp7XqCDqHFRwzQStchIvCbgKcEbCAas9w+aLSADs5nLXgPP
@@ -1394,33 +1463,40 @@ Ra3PiYuLw6RJk1BcXAxvb2/lewMqzwbeeOMNzJ8/H0DlGYgx7WWoXR566CHMnz8foaGhqKiogIOD
 A1asWIEOHToYbJ9Ro0bhxRdfRExMDDZv3qwM6JNt4iWiRFbSsWNHZGRkwM3NTesoRAp2BxFZCfvR
 SUY8EyAiasJ4JkBE1ISxCBARNWEsAkRETRiLABFRE8YiQETUhLEIEBE1Yf8PVqngNBtzB74AAAAA
 SUVORK5CYII=
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This suggests that by stopping your experiment early you change your webpage to the alternative more often when there really is an effect! If the improvement is from 6% to 7% you are almost six times more likely to correctly change your mind.</p>
 <p>Surely this is a good thing. Not so fast! The reason it looks like stopping early boosts your chances of discovery is because we are not looking at the false positive rate. As we saw before, if you stop early you incorrectly change your website more often than 5% of the time. The power of a test also depends on how often you want to be wrong. If you have no problem being wrong all the time, then the best strategy is to always switch. You will correctly switch 100% of the time.</p>
 <p>What is the true false positive rate of the early stopping strategy?</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">false_positives</span><span class="p">(</span><span class="n">repeats</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">early_stop</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.05</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">false_positives</span><span class="p">(</span><span class="n">repeats</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">early_stop</span><span class="o">=</span><span class="k">False</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.05</span><span class="p">):</span>
     <span class="n">switches</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">repeats</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">repeats</span><span class="p">):</span>
         <span class="n">A</span><span class="p">,</span><span class="n">B</span> <span class="o">=</span> <span class="n">two_samples</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">early_stop</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
                 <span class="n">n</span> <span class="o">+=</span> <span class="mi">2</span>
                 <span class="n">p</span> <span class="o">=</span> <span class="n">one_sided_ttest</span><span class="p">(</span><span class="n">A</span><span class="p">[:</span><span class="n">n</span><span class="p">],</span> <span class="n">B</span><span class="p">[:</span><span class="n">n</span><span class="p">])</span>
                 <span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">:</span>
@@ -1434,19 +1510,20 @@ SUVORK5CYII=
 
     <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">switches</span><span class="p">)</span><span class="o">/</span><span class="n">repeats</span>
 
-<span class="k">print</span> <span class="s">&quot;Normal stopping strategy:&quot;</span><span class="p">,</span> <span class="n">false_positives</span><span class="p">()</span>
-<span class="k">print</span> <span class="s">&quot;Early stopping strategy:&quot;</span><span class="p">,</span> <span class="n">false_positives</span><span class="p">(</span><span class="n">early_stop</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s">&quot;Normal stopping strategy:&quot;</span><span class="p">,</span> <span class="n">false_positives</span><span class="p">()</span>
+<span class="nb">print</span> <span class="s">&quot;Early stopping strategy:&quot;</span><span class="p">,</span> <span class="n">false_positives</span><span class="p">(</span><span class="n">early_stop</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>Normal stopping strategy: 0.06
 Early stopping strategy: 0.325
 </pre>
@@ -1457,18 +1534,24 @@ Early stopping strategy: 0.325
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>When making the decision after all observations have been collected the false positive rate is indeed close to 5%, as promised by the hypothesis testing procedure. For the early stopping method you end up with a false positive rate of something around 30%!</p>
 <p>How much lower do we have to make the p-value threshold with the early stopping strategy in order to have the same false positive rate of 5%?</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">thresholds</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0025</span><span class="p">,</span> <span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">)</span>
-<span class="n">fp_rates</span> <span class="o">=</span> <span class="p">[</span><span class="n">false_positives</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="n">p</span><span class="p">,</span> <span class="n">early_stop</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">thresholds</span><span class="p">]</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">thresholds</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0025</span><span class="p">,</span> <span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">)</span>
+<span class="n">fp_rates</span> <span class="o">=</span> <span class="p">[</span><span class="n">false_positives</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="n">p</span><span class="p">,</span> <span class="n">early_stop</span><span class="o">=</span><span class="k">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">thresholds</span><span class="p">]</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thresholds</span><span class="p">,</span> <span class="n">fp_rates</span><span class="p">,</span> <span class="s">&quot;bo&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;p-value threshold&quot;</span><span class="p">)</span>
@@ -1478,15 +1561,16 @@ Early stopping strategy: 0.325
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZIAAAEPCAYAAABoekJnAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XtUVWX+BvDnCIgp5i01BVsooIDCARVJDcMSSFEaMZMy
 l+SN8YY1zoyVzU9WpeWkrbg0KysvNZnZ5KQWhmgDESYyGUojasqAIoqXSeWiIBze3x/GGRkuBzx7
@@ -1661,32 +1745,39 @@ nx8ee+wx82R7SEgIjh8/bh5W69q1Kz7++GP07t273vsuWLAAvr6+GDFiBF577bVGjwj+9+eOHTvi
 rPdeU6dOxT/+8Q94e3vjgQcewJgxY1ry107ULF5GnnSjsLAQU6ZMwU8//dTWpRDRHTi0RbrCcx6I
 tIdHJEREZBUekRARkVXYSIiIyCpsJEREZBU2EiIisgobCRERWYWNhIiIrPL/nV0BdemBfcUAAAAA
 SUVORK5CYII=
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The threshold to use when stopping an experiment early has to be much, much lower than 0.05 to achieve the same actual false positive rate. Now we can re-run our comparison of the power of the two tests (normal and early stopping). Below we have the power of both tests for a false positive rate of 5%.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">improvements</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">improvements</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
 
 <span class="n">keeps</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">early_keeps</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">improvement</span> <span class="ow">in</span> <span class="n">improvements</span><span class="p">:</span>
     <span class="n">keeps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">keep_or_not</span><span class="p">(</span><span class="n">improvement</span><span class="o">/</span><span class="mf">100.</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
     <span class="n">early_keeps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">keep_or_not</span><span class="p">(</span><span class="n">improvement</span><span class="o">/</span><span class="mf">100.</span><span class="p">,</span>
-                                   <span class="n">early_stop</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                                   <span class="n">early_stop</span><span class="o">=</span><span class="k">True</span><span class="p">,</span>
                                    <span class="n">threshold</span><span class="o">=</span><span class="mf">0.005</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
 
 <span class="n">power_plot</span><span class="p">(</span><span class="n">improvements</span><span class="p">,</span> <span class="n">keeps</span><span class="p">,</span> <span class="n">early_keeps</span><span class="p">)</span>
@@ -1694,15 +1785,16 @@ SUVORK5CYII=
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYEAAAEPCAYAAACk43iMAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xt8TNeiB/DfRCLxCPGoJGiFVBDyQj16byVoEv2g16Pi
 cUq82qKC1kXrcZpTVKqcSnLovW2RHBRRb3EiSh6eB6ngNlQNQSVSJEESiSZZ9490djPkMTuTmb2T
@@ -1921,19 +2013,27 @@ twsLC8P7778PDw8PFBYWwtvbG+vWrdPbV+nXP/uez75/6eWsrCx4eHjAxsYGW7duLfM1kZGRmDZt
 GvLy8uDs7Cz9bEDJ2cD8+fOxbNkyACVnIIaUV3nl0qVLFyxbtgx+fn4oLi6GlZUV1q1bh5deeqnc
 8hkzZgzeeecdhIeHY8eOHVKHPtVMvESUyEzat2+PpKQkNG/eXOkoRBI2BxGZCdvRSY14JkBEVIfx
 TICIqA5jJUBEVIexEiAiqsNYCRAR1WGsBIiI6jBWAkREddj/A/B1S4HRZ7uCAAAAAElFTkSuQmCC
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Exactly that! You almost never decide to change to the new webpage. By stopping early and insisting on the same overall false positive rate you are making your test less powerful.</p>
 <p>The most common reason given for wanting to stop early is that you would not possibly want to miss out on an opportunity. By switching to the new design earlier, more customers will see it and as a result more of them will end up giving you their money. Turns out that by wanting to stop early you end up never switching your website, even if it is clearly better!</p>
 <p>The conclusion is that by trying to be smarter than generations of statisticians you are very likely to make things worse. You have to be very careful with what you are doing, to actually improve on the standard prescription of how to run an A/B test. Read some more about this and related problems on wikiepdia: <a href="https://en.wikipedia.org/wiki/Sequential_analysis">Sequential analysis</a></p>
+
+</div>
+</div>
 </div></p>
 <p>This post started life as a ipython notebook,
 <a href="/downloads/notebooks/early-stopping.ipynb">download it</a>

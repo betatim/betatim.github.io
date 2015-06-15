@@ -36,68 +36,69 @@
     <!-- extra stuff for nbconvert -->
 	
 <style type="text/css">
-    .highlight-ipynb .hll { background-color: #ffffcc }
-.highlight-ipynb  { background: #f8f8f8; }
-.highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
-.highlight-ipynb .err { border: 1px solid #FF0000 } /* Error */
-.highlight-ipynb .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight-ipynb .o { color: #666666 } /* Operator */
-.highlight-ipynb .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight-ipynb .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight-ipynb .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight-ipynb .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight-ipynb .gd { color: #A00000 } /* Generic.Deleted */
-.highlight-ipynb .ge { font-style: italic } /* Generic.Emph */
-.highlight-ipynb .gr { color: #FF0000 } /* Generic.Error */
-.highlight-ipynb .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight-ipynb .gi { color: #00A000 } /* Generic.Inserted */
-.highlight-ipynb .go { color: #888888 } /* Generic.Output */
-.highlight-ipynb .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight-ipynb .gs { font-weight: bold } /* Generic.Strong */
-.highlight-ipynb .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight-ipynb .gt { color: #0044DD } /* Generic.Traceback */
-.highlight-ipynb .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight-ipynb .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight-ipynb .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight-ipynb .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight-ipynb .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight-ipynb .kt { color: #B00040 } /* Keyword.Type */
-.highlight-ipynb .m { color: #666666 } /* Literal.Number */
-.highlight-ipynb .s { color: #BA2121 } /* Literal.String */
-.highlight-ipynb .na { color: #7D9029 } /* Name.Attribute */
-.highlight-ipynb .nb { color: #008000 } /* Name.Builtin */
-.highlight-ipynb .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight-ipynb .no { color: #880000 } /* Name.Constant */
-.highlight-ipynb .nd { color: #AA22FF } /* Name.Decorator */
-.highlight-ipynb .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight-ipynb .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight-ipynb .nf { color: #0000FF } /* Name.Function */
-.highlight-ipynb .nl { color: #A0A000 } /* Name.Label */
-.highlight-ipynb .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight-ipynb .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight-ipynb .nv { color: #19177C } /* Name.Variable */
-.highlight-ipynb .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight-ipynb .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight-ipynb .mf { color: #666666 } /* Literal.Number.Float */
-.highlight-ipynb .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight-ipynb .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight-ipynb .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight-ipynb .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight-ipynb .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight-ipynb .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight-ipynb .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight-ipynb .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight-ipynb .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight-ipynb .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight-ipynb .sx { color: #008000 } /* Literal.String.Other */
-.highlight-ipynb .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight-ipynb .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight-ipynb .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight-ipynb .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight-ipynb .vc { color: #19177C } /* Name.Variable.Class */
-.highlight-ipynb .vg { color: #19177C } /* Name.Variable.Global */
-.highlight-ipynb .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 
 <style type="text/css">
@@ -145,6 +146,14 @@ div.text_cell_render {
 }
 
 img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
+
+div.collapseheader {
+    width=100%;
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 </style>
 
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
@@ -167,6 +176,23 @@ init_mathjax = function() {
 }
 init_mathjax();
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $("div.collapseheader").click(function () {
+    $header = $(this).children("span").first();
+    $codearea = $(this).children(".input_area");
+    console.log($(this).children());
+    $codearea.slideToggle(500, function () {
+        $header.text(function () {
+            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+        });
+    });
+});
+});
+</script>
+
 
     <!-- extra stuff for nbconvert -->
 
@@ -304,7 +330,7 @@ init_mathjax();
         <article>
             <header class="title">
                 <h1>
-                    <!--<a href="http://betatim.github.io/posts/using-statistics-to-find-things-more-quickly/"
+                    <!--<a href="http://betatim.github.io/drafts/using-statistics-to-find-things-more-quickly.html"
                        rel="bookmark"
                        title="Permalink to Using statistics to find things more quickly">
                         Using statistics to find things more quickly
@@ -315,93 +341,112 @@ init_mathjax();
             </header>
             <div class="entry-content">
                 <p>
-
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>What is the best strategy to find something you lost? Since <a href="http://en.wikipedia.org/wiki/Malaysia_Airlines_Flight_370">MH370</a> went missing my interest in search strategies was rekindled. I had read before about &quot;sophisticated statistical methods&quot; being used to recover the nuclear weapon lost during the <a href="http://en.wikipedia.org/wiki/1966_Palomares_B-52_crash">Palomares B-52 crash</a>, but did not investigate further.</p>
+<p>What is the best strategy to find something you lost? Since <a href="http://en.wikipedia.org/wiki/Malaysia_Airlines_Flight_370">MH370</a> went missing my interest in search strategies was rekindled. I had read before about "sophisticated statistical methods" being used to recover the nuclear weapon lost during the <a href="http://en.wikipedia.org/wiki/1966_Palomares_B-52_crash">Palomares B-52 crash</a>, but did not investigate further.</p>
 <p>Then this article came along: <a href="http://america.aljazeera.com/articles/2014/3/12/mathematical-equationcouldhelpfindmissingmalaysianplane.html">Math equation could help find missing malaysian plane</a>. The idea underlying it all is <a href="http://en.wikipedia.org/wiki/Bayesian_search_theory">Bayesian search theory</a>.</p>
 <p>Before going off to do something fancy, let's setup the problem and investigate the two most basic search strategies.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">import</span> <span class="nn">random</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">random</span>
 <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">SIZE</span> <span class="o">=</span> <span class="mi">30</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">make_search_area</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="n">SIZE</span><span class="p">,</span> <span class="n">treasure</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">)):</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">make_search_area</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="n">SIZE</span><span class="p">,</span> <span class="n">treasure</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">)):</span>
     <span class="n">search_area</span> <span class="o">=</span> <span class="p">{}</span>
 
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-            <span class="n">search_area</span><span class="p">[(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)]</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+            <span class="n">search_area</span><span class="p">[(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)]</span> <span class="o">=</span> <span class="k">False</span>
         
-    <span class="n">search_area</span><span class="p">[</span><span class="n">treasure</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">search_area</span><span class="p">[</span><span class="n">treasure</span><span class="p">]</span> <span class="o">=</span> <span class="k">True</span>
     <span class="k">return</span> <span class="n">search_area</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The simplest strategy you could imagine is to visit one square of the search space after the other, just like a tractor plowing a field. This is what the <code>Tractor</code> class implements. It always starts searching at (0,0) and then works its way along the columns and rows. This is a strategy you could implement with a boat searching an area of the sea, or a plane.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">class</span> <span class="nc">Tractor</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">class</span> <span class="nc">Tractor</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">SIZE</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
         
     <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span> <span class="o">==</span> <span class="k">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
     
         <span class="n">n</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">*</span><span class="n">y</span>
         <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">new_x</span> <span class="o">=</span> <span class="n">n</span><span class="o">%</span><span class="k">self</span><span class="o">.</span><span class="n">size</span>
+        <span class="n">new_x</span> <span class="o">=</span> <span class="n">n</span><span class="o">%</span><span class="k">self</span>.size
         <span class="n">new_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">new_x</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span>
         <span class="k">return</span> <span class="n">new_x</span><span class="p">,</span> <span class="n">new_y</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A strategy you could not use with a plane or boat is randomly visiting squares on the grid. However it is nice to have a strategy that is not much of a strategy to compare to. It would be a viable strategy though in cases where you had satellite images of the search region and needed to decide in which order to look at them.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">class</span> <span class="nc">Hopping</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">class</span> <span class="nc">Hopping</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">SIZE</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
-            <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
                 
         <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">)</span>
@@ -412,22 +457,29 @@ init_mathjax();
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The next two bits of code take care of performing one actual search and then performing many searches so that we can collect statistics about how the searches proceed. For example the <code>Hopping</code> strategy could get lucky and pick the square that contains the treasure as the first one to visit. So you want to average over several searches to get an idea how long you should expect a typical search to take.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">tx</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">ty</span><span class="o">=</span><span class="mi">14</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">tx</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">ty</span><span class="o">=</span><span class="mi">14</span><span class="p">):</span>
     <span class="n">search_area</span> <span class="o">=</span> <span class="n">make_search_area</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">treasure</span><span class="o">=</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">))</span>
     
-    <span class="n">found</span> <span class="o">=</span> <span class="bp">False</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="k">False</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="k">None</span>
     <span class="n">steps</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">while</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
@@ -440,17 +492,17 @@ init_mathjax();
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">average_search</span><span class="p">(</span><span class="n">Method</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">tx</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span><span class="n">ty</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="mi">14</span><span class="p">):</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">average_search</span><span class="p">(</span><span class="n">Method</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">tx</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span><span class="n">ty</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="mi">14</span><span class="p">):</span>
     <span class="n">steps_</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
         <span class="n">searcher</span> <span class="o">=</span> <span class="n">Method</span><span class="p">()</span>
         <span class="n">steps</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="n">search</span><span class="p">(</span><span class="n">searcher</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">SIZE</span><span class="p">,</span> <span class="n">tx</span><span class="o">=</span><span class="n">tx</span><span class="p">(),</span><span class="n">ty</span><span class="o">=</span><span class="n">ty</span><span class="p">())</span>
         <span class="n">steps_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span>
@@ -460,26 +512,27 @@ init_mathjax();
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">print</span> <span class="s">&quot;Hopping took </span><span class="si">%.2f</span><span class="s"> +- </span><span class="si">%.3f</span><span class="s"> steps on average.&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">average_search</span><span class="p">(</span><span class="n">Hopping</span><span class="p">))</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="s">&quot;Hopping took %.2f +- %.3f steps on average.&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">average_search</span><span class="p">(</span><span class="n">Hopping</span><span class="p">))</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>Hopping took 442.75 +- 5.752 steps on average.
 </pre>
 </div>
@@ -489,26 +542,26 @@ init_mathjax();
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">print</span> <span class="s">&quot;Tractor took </span><span class="si">%.2f</span><span class="s"> +- </span><span class="si">%.3f</span><span class="s"> steps on average.&quot;</span><span class="o">%</span><span class="k">average_search</span><span class="p">(</span><span class="n">Tractor</span><span class="p">,</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="s">&quot;Tractor took %.2f +- %.3f steps on average.&quot;</span><span class="o">%</span><span class="k">average_search</span>(Tractor,
                                                                    <span class="n">tx</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SIZE</span><span class="p">),</span>
                                                                    <span class="n">ty</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SIZE</span><span class="p">))</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>Tractor took 452.28 +- 5.850 steps on average.
 </pre>
 </div>
@@ -518,47 +571,50 @@ init_mathjax();
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>When we have no clues about where in the search area the treasure could be, it makes no difference how you search it. The tractor like search path takes just as long as looking at squares at random. In the absence of any information we can not really do much better.</p>
 <p>If we do have some information about which squares are more or less likely to contain the treasure we should be able to find it more quickly. After working out what your belief is for the treasure being in any one square, you start searching the squares which have the highest probability. If you think you last saw your keys in the living room, you do not start by looking in the office. You do not need Bayesian statistics for this. Bayes' rule comes in handy once you have started looking. It allows you to update your beliefs after you have seen new evidence.</p>
 <p>Bayes rule helps you with combining the information you gained from searching a certain area with your prior information about where the treasure is.</p>
 <p>Bayes' rule goes like this:</p>
-<p><span class="math">\[P(\mathrm{H\mid E}) = \frac{P(\mathrm{E \mid H}) \cdot P(\mathrm{H})}{P(\mathrm{E})}\]</span></p>
-<p>the probability <span class="math">\(P(\mathrm{H\mid E})\)</span> of hypothesis H given the evidence E is computed from the probability of the hypothesis H giving you evidence E, <span class="math">\(P(\mathrm{E\mid H})\)</span>, the probability of the hypothesis, <span class="math">\(P(\mathrm{H})\)</span> and the probability of the evidence, <span class="math">\(P(\mathrm{E})\)</span>.</p>
+$$P(\mathrm{H\mid E}) = \frac{P(\mathrm{E \mid H}) \cdot P(\mathrm{H})}{P(\mathrm{E})}$$<p>the probability $P(\mathrm{H\mid E})$ of hypothesis H given the evidence E is computed from the probability of the hypothesis H giving you evidence E, $P(\mathrm{E\mid H})$, the probability of the hypothesis, $P(\mathrm{H})$ and the probability of the evidence, $P(\mathrm{E})$.</p>
 <p>The question we want to answer is: What is the probability of the treasure being in a square after searching it and not finding anything?</p>
-<p><span class="math">\[P(\mathrm{there \mid notfound}) = \frac{P(\mathrm{notfound \mid there}) \cdot P(\mathrm{there}) }{ P(\mathrm{notfound})} \]</span></p>
-<p>before we searched the square we thougth the probability for the treasure being in that square was <span class="math">\(P(\mathrm{there})\)</span>, the term <span class="math">\(P(\mathrm{notfound \mid there})\)</span> allows us to take into account that we might overlook the treasure, it is the probability of overlooking the treasure. These two probabilities are easy to work out, <span class="math">\(P(\mathrm{there})\)</span> comes from our initial guess and we could evaluate <span class="math">\(P(\mathrm{notfound \mid there})\)</span> by placing a treasure in a square and repeatedly searching it and counting how often we do not find it. What is the probability <span class="math">\(P(\mathrm{notfound})\)</span> though? There are two scenarios in which you can not find the treasure:</p>
-<ol style="list-style-type: decimal">
+$$P(\mathrm{there \mid notfound}) = \frac{P(\mathrm{notfound \mid there}) \cdot P(\mathrm{there}) }{ P(\mathrm{notfound})} $$<p>before we searched the square we thougth the probability for the treasure being in that square was $P(\mathrm{there})$, the term $P(\mathrm{notfound \mid there})$ allows us to take into account that we might overlook the treasure, it is the probability of overlooking the treasure. These two probabilities are easy to work out, $P(\mathrm{there})$ comes from our initial guess and we could evaluate $P(\mathrm{notfound \mid there})$ by placing a treasure in a square and repeatedly searching it and counting how often we do not find it. What is the probability $P(\mathrm{notfound})$ though? There are two scenarios in which you can not find the treasure:</p>
+<ol>
 <li>the treasure is not there and you do not find it</li>
 <li>the treasure is there and you do not find it</li>
 </ol>
-<p>These two options cover all the bases. To work out <span class="math">\(P(\mathrm{notfound})\)</span> we can use the <a href="http://en.wikipedia.org/wiki/Total_probability">Law of total probability</a>. It goes like this:</p>
-<p><span class="math">\[P(A)=\sum_n P(A\mid B_n) P(B_n)\]</span></p>
-<p>the probability for <span class="math">\(A\)</span> is the sum over all possible options <span class="math">\(B_n\)</span>. Each term in the sum is the product of the probability for option <span class="math">\(B_n\)</span> and the probability for <span class="math">\(A\)</span> given the option <span class="math">\(B_n\)</span>. In our case we have:</p>
-<p><span class="math">\[P(\mathrm{notfound}) = P(\mathrm{notfound \mid there}) \cdot P(\mathrm{there}) + P(\mathrm{notfound \mid notthere}) \cdot P(\mathrm{notthere})\]</span></p>
+<p>These two options cover all the bases. To work out $P(\mathrm{notfound})$ we can use  the <a href="http://en.wikipedia.org/wiki/Total_probability">Law of total probability</a>. It goes like this:</p>
+$$P(A)=\sum_n P(A\mid B_n) P(B_n)$$<p>the probability for $A$ is the sum over all possible options $B_n$. Each term in the sum is the product of the probability for option $B_n$ and the probability for $A$ given the option $B_n$. In our case we have:</p>
+$$P(\mathrm{notfound}) = P(\mathrm{notfound \mid there}) \cdot P(\mathrm{there}) + P(\mathrm{notfound \mid notthere}) \cdot P(\mathrm{notthere})$$
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre> 
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre> 
 </pre></div>
 
+</div>
 </div>
 </div>
 

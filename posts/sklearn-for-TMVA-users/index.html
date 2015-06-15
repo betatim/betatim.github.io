@@ -36,68 +36,69 @@
     <!-- extra stuff for nbconvert -->
 	
 <style type="text/css">
-    .highlight-ipynb .hll { background-color: #ffffcc }
-.highlight-ipynb  { background: #f8f8f8; }
-.highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
-.highlight-ipynb .err { border: 1px solid #FF0000 } /* Error */
-.highlight-ipynb .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight-ipynb .o { color: #666666 } /* Operator */
-.highlight-ipynb .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight-ipynb .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight-ipynb .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight-ipynb .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight-ipynb .gd { color: #A00000 } /* Generic.Deleted */
-.highlight-ipynb .ge { font-style: italic } /* Generic.Emph */
-.highlight-ipynb .gr { color: #FF0000 } /* Generic.Error */
-.highlight-ipynb .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight-ipynb .gi { color: #00A000 } /* Generic.Inserted */
-.highlight-ipynb .go { color: #888888 } /* Generic.Output */
-.highlight-ipynb .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight-ipynb .gs { font-weight: bold } /* Generic.Strong */
-.highlight-ipynb .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight-ipynb .gt { color: #0044DD } /* Generic.Traceback */
-.highlight-ipynb .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight-ipynb .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight-ipynb .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight-ipynb .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight-ipynb .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight-ipynb .kt { color: #B00040 } /* Keyword.Type */
-.highlight-ipynb .m { color: #666666 } /* Literal.Number */
-.highlight-ipynb .s { color: #BA2121 } /* Literal.String */
-.highlight-ipynb .na { color: #7D9029 } /* Name.Attribute */
-.highlight-ipynb .nb { color: #008000 } /* Name.Builtin */
-.highlight-ipynb .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight-ipynb .no { color: #880000 } /* Name.Constant */
-.highlight-ipynb .nd { color: #AA22FF } /* Name.Decorator */
-.highlight-ipynb .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight-ipynb .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight-ipynb .nf { color: #0000FF } /* Name.Function */
-.highlight-ipynb .nl { color: #A0A000 } /* Name.Label */
-.highlight-ipynb .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight-ipynb .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight-ipynb .nv { color: #19177C } /* Name.Variable */
-.highlight-ipynb .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight-ipynb .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight-ipynb .mf { color: #666666 } /* Literal.Number.Float */
-.highlight-ipynb .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight-ipynb .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight-ipynb .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight-ipynb .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight-ipynb .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight-ipynb .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight-ipynb .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight-ipynb .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight-ipynb .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight-ipynb .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight-ipynb .sx { color: #008000 } /* Literal.String.Other */
-.highlight-ipynb .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight-ipynb .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight-ipynb .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight-ipynb .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight-ipynb .vc { color: #19177C } /* Name.Variable.Class */
-.highlight-ipynb .vg { color: #19177C } /* Name.Variable.Global */
-.highlight-ipynb .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 
 <style type="text/css">
@@ -145,6 +146,14 @@ div.text_cell_render {
 }
 
 img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
+
+div.collapseheader {
+    width=100%;
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 </style>
 
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
@@ -167,6 +176,23 @@ init_mathjax = function() {
 }
 init_mathjax();
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $("div.collapseheader").click(function () {
+    $header = $(this).children("span").first();
+    $codearea = $(this).children(".input_area");
+    console.log($(this).children());
+    $codearea.slideToggle(500, function () {
+        $header.text(function () {
+            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+        });
+    });
+});
+});
+</script>
+
 
     <!-- extra stuff for nbconvert -->
 
@@ -315,80 +341,87 @@ init_mathjax();
             </header>
             <div class="entry-content">
                 <p>
-
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Particle physics is full of machine learning. It powered the discovery of the <a href="//http://en.wikipedia.org/wiki/Higgs_boson">Higgs boson</a> and it is used to decide which data an experiment should record. As well as in many other analyses.</p>
 <p>There is only one drawback: most of it is based on one library: <a href="https://root.cern.ch/root/html/TMVA.html">TMVA</a>. It was written many years ago, which means lots of new techniques and innovations are not available. I actually struggled to pick a good webpage to link to, as the original <a href="//tmva.sourceforge.net/">homepage</a> has not been updated since 2013.</p>
 <p>This notebook is an introduction to <a href="//scikit-learn.org/stable/">scikit-learn</a> targeted at <code>TMVA</code> users. Read my earlier post explaining how to configure a <a href="/posts/matching-machine-learning/">BDT in <code>sklearn</code> with the defaults from <code>TMVA</code></a>. By providing a dictionary translating from one package's lingo to the other I hope more people will give <code>scikit-learn</code> a try. This is not meant as an introduction to the various concepts, more of a reference for translating <code>TMVA</code> jargon/procedures to <code>scikit-learn</code> procedures.</p>
 <p><strong>Read the second post in this series: <a href="/posts/advanced-sklearn-for-TMVA/">Advanced scikit-learn for TMVA Users</a></strong></p>
 <p>It covers:</p>
-<ol style="list-style-type: decimal">
+<ol>
 <li>How to load ROOT trees</li>
-<li>Plotting</li>
-</ol>
-<ul>
+<li>Plotting<ul>
 <li>comparing the distribution of variables in signal and background categories</li>
 <li>scatter plots of two features</li>
 <li>boxplots</li>
 <li>correlation matrices between features</li>
 </ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Training</li>
-</ol>
-<ul>
+</li>
+<li>Training<ul>
 <li>the training-testing split</li>
 <li>training a classifier</li>
 <li>ROC curves and performance evaluation</li>
 <li>plotting the classifier output for training and testing</li>
 </ul>
-<ol start="4" style="list-style-type: decimal">
+</li>
 <li>How to write the classifier output to a TTree</li>
 </ol>
 <p>Thanks a lot to <a href="//twitter.com/glouppe">Gilles Louppe</a> for proof reading and suggestions.</p>
 <p>As usual, first some imports:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="o">%</span><span class="k">matplotlib</span> <span class="n">inline</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">import</span> <span class="nn">random</span>
 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="kn">as</span> <span class="nn">mpl</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">AdaBoostClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">roc_auc_score</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">AdaBoostClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">roc_auc_score</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="loading-root-trees">Loading ROOT Trees</h2>
-<p>Data comes first, the excellent <a href="//rootpy.github.io/root_numpy/"><code>root_numpy</code></a> library makes it easy to read your data stored in a ROOT TTree. Each call to <code>root2array</code> will create a 2D array which contains one row per event, and one column representing each branch you want to use.</p>
+<h2 id="Loading-ROOT-Trees">Loading ROOT Trees<a class="anchor-link" href="#Loading-ROOT-Trees">&#182;</a></h2><p>Data comes first, the excellent <a href="//rootpy.github.io/root_numpy/"><code>root_numpy</code></a> library makes it easy to read your data stored in a ROOT TTree. Each call to <code>root2array</code> will create a 2D array which contains one row per event, and one column representing each branch you want to use.</p>
 <p>You can download the dataset used here from <a href="//figshare.com">figshare</a>:</p>
 <ul>
 <li><a href="http://figshare.com/articles/HIGGS_background/1314900">HIGGS-background.root</a></li>
 <li><a href="http://figshare.com/articles/HIGGS/1314899">HIGGS-signal.root</a></li>
 </ul>
 <p>The events are derived from the much larger <a href="http://archive.ics.uci.edu/ml/datasets/HIGGS">HIGGS</a> dataset. A description of the variables can be found there as well.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">from</span> <span class="nn">root_numpy</span> <span class="kn">import</span> <span class="n">root2array</span><span class="p">,</span> <span class="n">rec2array</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">root_numpy</span> <span class="k">import</span> <span class="n">root2array</span><span class="p">,</span> <span class="n">rec2array</span>
 
 
 <span class="n">branch_names</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;lepton pT, lepton eta, lepton phi,</span>
@@ -424,25 +457,31 @@ init_mathjax();
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="plotting-variables-and-correlations">Plotting Variables and Correlations</h2>
-<p>The <code>pandas</code> library provides high-performance, easy-to-use data structures and data analysis tools written in python. We will use it for its plotting capabilities and other nice ways to explore your data.</p>
+<h2 id="Plotting-Variables-and-Correlations">Plotting Variables and Correlations<a class="anchor-link" href="#Plotting-Variables-and-Correlations">&#182;</a></h2><p>The <code>pandas</code> library provides high-performance, easy-to-use data structures and data analysis tools written in python. We will use it for its plotting capabilities and other nice ways to explore your data.</p>
 <p><em>Pro tip: if you want very pretty plots and more powerful plotting check out the <a href="//stanford.edu/~mwaskom/software/seaborn/">seaborn</a> library. It is extremely useful.</em></p>
 <p>A <code>DataFrame</code> is a 2-dimensional labeled data structure with columns of potentially different types. You can think of it like a spreadsheet or a ROOT <code>TTree</code>.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">pandas.core.common</span> <span class="k">as</span> <span class="nn">com</span>
+<span class="kn">from</span> <span class="nn">pandas.core.index</span> <span class="k">import</span> <span class="n">Index</span>
 
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">import</span> <span class="nn">pandas.core.common</span> <span class="kn">as</span> <span class="nn">com</span>
-<span class="kn">from</span> <span class="nn">pandas.core.index</span> <span class="kn">import</span> <span class="n">Index</span>
-
-<span class="kn">from</span> <span class="nn">pandas.tools</span> <span class="kn">import</span> <span class="n">plotting</span>
-<span class="kn">from</span> <span class="nn">pandas.tools.plotting</span> <span class="kn">import</span> <span class="n">scatter_matrix</span>
+<span class="kn">from</span> <span class="nn">pandas.tools</span> <span class="k">import</span> <span class="n">plotting</span>
+<span class="kn">from</span> <span class="nn">pandas.tools.plotting</span> <span class="k">import</span> <span class="n">scatter_matrix</span>
 
 
 <span class="c"># Create a pandas DataFrame for our data</span>
@@ -453,11 +492,11 @@ init_mathjax();
                   <span class="n">columns</span><span class="o">=</span><span class="n">branch_names</span><span class="o">+</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">])</span>
 
             
-<span class="k">def</span> <span class="nf">signal_background</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-                      <span class="n">xlabelsize</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">xrot</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">ylabelsize</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
-                      <span class="n">yrot</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
-                      <span class="n">sharey</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
-                      <span class="n">layout</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">signal_background</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="k">True</span><span class="p">,</span>
+                      <span class="n">xlabelsize</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">xrot</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">ylabelsize</span><span class="o">=</span><span class="k">None</span><span class="p">,</span>
+                      <span class="n">yrot</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="k">False</span><span class="p">,</span>
+                      <span class="n">sharey</span><span class="o">=</span><span class="k">False</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="k">None</span><span class="p">,</span>
+                      <span class="n">layout</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Draw histogram of the DataFrame&#39;s series comparing the distribution</span>
 <span class="sd">    in `data1` to `data2`.</span>
 <span class="sd">    </span>
@@ -490,7 +529,7 @@ init_mathjax();
     <span class="k">if</span> <span class="s">&#39;alpha&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwds</span><span class="p">:</span>
         <span class="n">kwds</span><span class="p">[</span><span class="s">&#39;alpha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span>
 
-    <span class="k">if</span> <span class="n">column</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">column</span> <span class="ow">is</span> <span class="ow">not</span> <span class="k">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">Index</span><span class="p">)):</span>
             <span class="n">column</span> <span class="o">=</span> <span class="p">[</span><span class="n">column</span><span class="p">]</span>
         <span class="n">data1</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[</span><span class="n">column</span><span class="p">]</span>
@@ -500,7 +539,7 @@ init_mathjax();
     <span class="n">data2</span> <span class="o">=</span> <span class="n">data2</span><span class="o">.</span><span class="n">_get_numeric_data</span><span class="p">()</span>
     <span class="n">naxes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data1</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 
-    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">_subplots</span><span class="p">(</span><span class="n">naxes</span><span class="o">=</span><span class="n">naxes</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">squeeze</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">_subplots</span><span class="p">(</span><span class="n">naxes</span><span class="o">=</span><span class="n">naxes</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">squeeze</span><span class="o">=</span><span class="k">False</span><span class="p">,</span>
                                    <span class="n">sharex</span><span class="o">=</span><span class="n">sharex</span><span class="p">,</span>
                                    <span class="n">sharey</span><span class="o">=</span><span class="n">sharey</span><span class="p">,</span>
                                    <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
@@ -541,30 +580,30 @@ init_mathjax();
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[15]:</div>
-<div class="box-flex1 output_subarea output_pyout">
+<div class="output_wrapper">
+<div class="output">
 
 
-<pre class="ipynb tim">array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x115fdf450&gt;,
+<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x115fdf450&gt;,
         &lt;matplotlib.axes._subplots.AxesSubplot object at 0x115933c50&gt;],
        [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x116122490&gt;,
         &lt;matplotlib.axes._subplots.AxesSubplot object at 0x1161aea10&gt;],
        [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x116490810&gt;,
         &lt;matplotlib.axes._subplots.AxesSubplot object at 0x116209810&gt;]], dtype=object)</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+</div>
+
+<div class="output_area"><div class="prompt"></div>
 
 
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAY0AAAEKCAYAAADuEgmxAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJztnXmYXVWVt99fAmQgkAIZwmjREhSUNoANtDjEFujggNif
 A9gqQVrbxhZi+9mA+knUbkRtJdKIrQgEUBAFiagMCUIp6e4QwBSEIRKQImSoEBIqSZGEhNT6/tj7
@@ -906,51 +945,57 @@ vmhmB5nZIYSF4XvM7ON1LrMXeE7SYTHoROCxepYJPAscL2lcvM8nEhb+G8FtwJnx/EygER8DjtOW
 tLRyXyGaqPR3AvBR4BFJi2LYhQn3tI2gUVMnnwV+Gjvlp4Gz6lmYmS2UdDPwR4I74D8CP6p1OZJu
 BN4O7CXpOeArwCXkcVHsOE4urtznOI7jpKZdp6ccx3GcJuCdhuM4jpMa7zQcx3Gc1Hin4TiO46TG
 Ow3HcRwnNd5pOI7jOKnxTsNxHMdJjXcajuM4Tmr+P/tW8pYuP6vcAAAAAElFTkSuQmCC
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="scatter-plots">Scatter Plots</h2>
-<p>Can we see anything by plotting one of the features against another? If you want to make a scatter plot of two features use <a href="//pandas.pydata.org/pandas-docs/stable/visualization.html#scatter-plot"><code>df.plot(kind='scatter')</code></a>. Here we pick 1000 data points at random, with 1million points the plot would be far too dense to see anything.</p>
+<h2 id="Scatter-Plots">Scatter Plots<a class="anchor-link" href="#Scatter-Plots">&#182;</a></h2><p>Can we see anything by plotting one of the features against another? If you want to make a scatter plot of two features use <a href="//pandas.pydata.org/pandas-docs/stable/visualization.html#scatter-plot"><code>df.plot(kind='scatter')</code></a>. Here we pick 1000 data points at random, with 1million points the plot would be far too dense to see anything.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">df</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;scatter&#39;</span><span class="p">,</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">df</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;scatter&#39;</span><span class="p">,</span>
                                           <span class="n">x</span><span class="o">=</span><span class="s">&#39;lepton_pT&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">&#39;jet_3_pt&#39;</span><span class="p">,</span>
                                           <span class="n">c</span><span class="o">=</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">&#39;autumn&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[4]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">&lt;matplotlib.axes._subplots.AxesSubplot at 0x1129540d0&gt;</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1129540d0&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAEQCAYAAAC6Om+RAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsnXd4VEXbh+/JZjfZTYeQQGihV2kKUizwgRQpoigCohRf
 RBEF9ZWir2AvoFJFQQWxARbAoCCIVOkgIL0JCCi9mb7Zfb4/zhIChLDJ7pJsmPu6zmVmd87M75zF
@@ -1456,27 +1501,33 @@ GqZ5x94H/Ms5t8qzw1+IVW9ywEuSXqzYR4XPldnQBXwNzMMGj0mSdlT9Mn18ai6+m6RPTPBMNC9K
 OvBX6m+6198zv0Z/Pj41Ad9E4xNL/NmFj0814s/gfWoVzrmLgeN+8vUMSdfFQh4fn1jiK3gfHx+f
 WopvovHx8fGppfgK3sfHx6eW4it4Hx8fn1qKr+B9fHx8aim+gvfx8fGppfw/8d/jmMP9KbYAAAAA
 SUVORK5CYII=
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the plot above compares the distribution of the feature <code>lepton_pT</code> vs <code>jet_3_pt</code>. The colour of each point shows which class it belongs to: 0 for background and +1 for signal. Not the most useful plot in this case, but it is here for reference.</p>
-<h2 id="boxplots">Boxplots</h2>
-<p>A <a href="//en.wikipedia.org/wiki/Box_plot">Box plot</a> is a nice way of visualising a distribution by showing it's quantiles. Below we make box plots for the features <code>lepton_pT</code>, <code>lepton_eta</code>, <code>missing_energy_magnitude</code> and <code>jet_3_pt</code> using <a href="//pandas.pydata.org/pandas-docs/stable/visualization.html#box-plots"><code>df.boxplot()</code></a>. Each plot shows the distribution of one feature for signal and background. You can also group the distributions by the number of jets in an event, or the value of any other feature in your dataset.</p>
+<h2 id="Boxplots">Boxplots<a class="anchor-link" href="#Boxplots">&#182;</a></h2><p>A <a href="//en.wikipedia.org/wiki/Box_plot">Box plot</a> is a nice way of visualising a distribution by showing it's quantiles. Below we make box plots for the features <code>lepton_pT</code>, <code>lepton_eta</code>, <code>missing_energy_magnitude</code> and <code>jet_3_pt</code> using <a href="//pandas.pydata.org/pandas-docs/stable/visualization.html#box-plots"><code>df.boxplot()</code></a>. Each plot shows the distribution of one feature for signal and background. You can also group the distributions by the number of jets in an event, or the value of any other feature in your dataset.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s">&#39;y&#39;</span><span class="p">,</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s">&#39;y&#39;</span><span class="p">,</span>
            <span class="n">column</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;lepton_pT&quot;</span><span class="p">,</span>
                    <span class="s">&quot;lepton_eta&quot;</span><span class="p">,</span>
                    <span class="s">&quot;missing_energy_magnitude&quot;</span><span class="p">,</span>
@@ -1486,25 +1537,25 @@ SUVORK5CYII=
 
 </div>
 </div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[5]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">OrderedDict([(&apos;lepton_pT&apos;, &lt;matplotlib.axes._subplots.AxesSubplot object at 0x10ca08410&gt;), (&apos;lepton_eta&apos;, &lt;matplotlib.axes._subplots.AxesSubplot object at 0x153711cd0&gt;), (&apos;missing_energy_magnitude&apos;, &lt;matplotlib.axes._subplots.AxesSubplot object at 0x153796550&gt;), (&apos;jet_3_pt&apos;, &lt;matplotlib.axes._subplots.AxesSubplot object at 0x1537f9d10&gt;)])</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>OrderedDict([(&apos;lepton_pT&apos;, &lt;matplotlib.axes._subplots.AxesSubplot object at 0x10ca08410&gt;), (&apos;lepton_eta&apos;, &lt;matplotlib.axes._subplots.AxesSubplot object at 0x153711cd0&gt;), (&apos;missing_energy_magnitude&apos;, &lt;matplotlib.axes._subplots.AxesSubplot object at 0x153796550&gt;), (&apos;jet_3_pt&apos;, &lt;matplotlib.axes._subplots.AxesSubplot object at 0x1537f9d10&gt;)])</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAEaCAYAAAAboUz3AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xm8HFWd9/HPN2ERCJBkRAIhcJWgAy5cFBhEHS6yTERF
 nEEd1JEEHX2eeRBxVMBlTBjcZnzU4IAyKpuiqBMWQRFBTUVwlD2AAwpBboBgAiELO0Lymz9O9b11
@@ -1708,26 +1759,32 @@ wMVm9ipJk4C7gP3MbLx5qp0rLC/z3dP3c9EUjZktl/SIpEFgBnCzF3TXz7zMd49X8HH6FmEiox2B
 c3KOxble8DLfBd5FEyFJmwO/I8wEuIf5SXJ9zst8d3gLPkJm9qykXwJrvaC7MvAy3x1ewUcovdF0
 AHB03rE41wte5rvDh0lGRtJewN3Az83snrzjca7bvMx3j/fBO+dcn/IWvHPO9Smv4J1zrk95Be+c
 c33KK3jnnOtTXsE751yf8greOef61P8Cv/LoEYR/l6IAAAAASUVORK5CYII=
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="correlation-matrix">Correlation Matrix</h2>
-<p>The correlation between features can be plotted with <a href="//pandas.pydata.org/pandas-docs/stable/computation.html#correlation"><code>df.corr()</code></a>. For this data set the plots are not the most exciting as the variables are not correlated with each other.</p>
+<h2 id="Correlation-Matrix">Correlation Matrix<a class="anchor-link" href="#Correlation-Matrix">&#182;</a></h2><p>The correlation between features can be plotted with <a href="//pandas.pydata.org/pandas-docs/stable/computation.html#correlation"><code>df.corr()</code></a>. For this data set the plots are not the most exciting as the variables are not correlated with each other.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">bg</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mf">0.5</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">bg</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mf">0.5</span>
 <span class="n">sig</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mf">0.5</span>
 
 <span class="k">def</span> <span class="nf">correlations</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
@@ -1752,10 +1809,10 @@ c33KK3jnnOtTXsE751yf8greOef61P8Cv/LoEYR/l6IAAAAASUVORK5CYII=
     <span class="n">labels</span> <span class="o">=</span> <span class="n">corrmat</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span>
     <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,):</span>
         <span class="c"># shift location of ticks to center of the bins</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s">&#39;right&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="k">False</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="k">False</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="k">False</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s">&#39;right&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="k">False</span><span class="p">)</span>
         
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     
@@ -1767,15 +1824,16 @@ c33KK3jnnOtTXsE751yf8greOef61P8Cv/LoEYR/l6IAAAAASUVORK5CYII=
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaMAAAFhCAYAAADdtcVLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsnXeYXVXZvu9nJoWEFHoJnYAUpUOAkEBUUCzgh4IiRSyI
 P1H8bKCACEpX+Whi+fwEVBRBQAVEEJEeIJTQu0kQCKGTQhKSzLy/P9Y6yZ4zZ609c+bM5Ezy3te1
@@ -2335,15 +2393,16 @@ hZm9BHwFHJHFh9LvXd19WiS6BgKBpoQoB9QCYWYVwJ+Bn4EHzGy4mQ01s87uPg2iKGogEGhaCMuo
 hSO56LYF9gUmuPshZe5SIBAIVEEoo1aEZBl9H4voBQKBpoZQRoFAIBAoOyJmFAgEAoGyI5RRIBAI
 BMqOUEaBQCAQKDtCGQUCgUCg7AhlFAgEAoGyI5RRIBAIBMqO/wcX4IwYse25WAAAAABJRU5ErkJg
 gg==
-">
+"
+>
+</div>
 
 </div>
-</div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_area"><div class="prompt"></div>
 
 
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaMAAAFhCAYAAADdtcVLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsnXmYHUXZvu9nJntCQthF9rAIguxbSEJUUFDBDwVlEXFB
 /IkryqIggrIrfCyK6yeggsiqsgmCsoedsO8kYQthJyF7MvP+/qg6Sc+Zrj5nes5MziTvfV19TZ+u
@@ -2900,28 +2959,34 @@ sBWwhLs/ULbeBQKBQAmEZdRCYWYvAF8AR2bxofR7V3efEYmugUCgKSHKAbVAmFkF8CfgJ+A+Mxtl
 ZsPMrLO7z4AoihoIBJoWwjJq4Uguuu2A/YDJ7n5ombsUCAQCVRDKqBUhWUbfxiJ6gUCgqSGUUSAQ
 CATKjogZBQKBQKDsCGUUCAQCgbIjlFEgEAgEyo5QRoFAIBAoO0IZBQKBQKDsCGUUCAQCgbLj/wET
 oHwZnC+ihAAAAABJRU5ErkJggg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="the-training-and-testing-split">The Training and Testing Split</h2>
-<p>One of the first things to do is split your data into a training and testing set. This will split your data into train-test sets: 67%-33%. It will also shuffle entries so you will not get the first 67% of <code>X</code> for training and the last 33% for testing. This is particularly important in cases where you load all signal events first and then the background events.</p>
+<h2 id="The-Training-and-Testing-Split">The Training and Testing Split<a class="anchor-link" href="#The-Training-and-Testing-Split">&#182;</a></h2><p>One of the first things to do is split your data into a training and testing set. This will split your data into train-test sets: 67%-33%. It will also shuffle entries so you will not get the first 67% of <code>X</code> for training and the last 33% for testing. This is particularly important in cases where you load all signal events first and then the background events.</p>
 <p>Here we split our data into two independent samples twice. The first split is to create a development and a evaluation set. All development and performance evaluation will be done with the development set. Once the hyper-parameters and other settings are frozen we can use the evaluation set to get an unbiased estimate of the performance.</p>
 <p>The development set is further split into a training and testing set. The first will be used for training the classifier and the second to evaluate its performance.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">train_test_split</span>
 
 <span class="n">X_dev</span><span class="p">,</span><span class="n">X_eval</span><span class="p">,</span> <span class="n">y_dev</span><span class="p">,</span><span class="n">y_eval</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
                                               <span class="n">test_size</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
@@ -2931,23 +2996,29 @@ oHwZnC+ihAAAAABJRU5ErkJggg==
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="training-decision-trees">Training Decision Trees</h2>
-<p>Training a <a href="//en.wikipedia.org/wiki/AdaBoost">AdaBoost Decision Tree</a> in <code>sklearn</code> is straight forward. Import the type of decision tree you want and off you go. Here we set several hyper-parameters to non default values in order to make the classifier as similar to the default BDT in <code>TMVA</code> as possible. See my <a href="/posts/matching-machine-learning/">Matching Machine Learning</a> post for more details on finding these settings.</p>
+<h2 id="Training-Decision-Trees">Training Decision Trees<a class="anchor-link" href="#Training-Decision-Trees">&#182;</a></h2><p>Training a <a href="//en.wikipedia.org/wiki/AdaBoost">AdaBoost Decision Tree</a> in <code>sklearn</code> is straight forward. Import the type of decision tree you want and off you go. Here we set several hyper-parameters to non default values in order to make the classifier as similar to the default BDT in <code>TMVA</code> as possible. See my <a href="/posts/matching-machine-learning/">Matching Machine Learning</a> post for more details on finding these settings.</p>
 <p>After instantiating our <a href="//scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html"><code>AdaBoostClassifier</code></a>, call the <code>fit()</code> method with the training sample as an argument. This will train the tree, now we are ready to evaluate the performance on the held out testing set.</p>
 <p><em>Pro tip: In TMVA many different ensemble methods that use decision trees as their base estimator are mixed together under the name BDT. Remember this when you discuss things with your local machine learning guru as they will want to know what you are doing in much more detail.</em></p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">AdaBoostClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">roc_auc_score</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">AdaBoostClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">roc_auc_score</span>
 
 <span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
                             <span class="n">min_samples_leaf</span><span class="o">=</span><span class="mf">0.05</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span>
@@ -2961,57 +3032,63 @@ oHwZnC+ihAAAAABJRU5ErkJggg==
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[9]:</div>
-<div class="box-flex1 output_subarea output_pyout">
+<div class="output_wrapper">
+<div class="output">
 
 
-<pre class="ipynb tim">AdaBoostClassifier(algorithm=&apos;SAMME&apos;,
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>AdaBoostClassifier(algorithm=&apos;SAMME&apos;,
           base_estimator=DecisionTreeClassifier(compute_importances=None, criterion=&apos;gini&apos;,
             max_depth=3, max_features=None, max_leaf_nodes=None,
             min_density=None, min_samples_leaf=22445.0,
             min_samples_split=2, random_state=None, splitter=&apos;best&apos;),
           learning_rate=0.5, n_estimators=800, random_state=None)</pre>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <code>fit()</code> method returns the trained classifier. When printed out all the hyper-parameters are listed.</p>
-<h2 id="assessing-a-classifiers-performance">Assessing a Classifier's Performance</h2>
-<p>Next let's create a quick report on how well our classifier is doing. It is important to make sure you use samples not seen by the classifier to get an unbiased estimate of its performance.</p>
+<h2 id="Assessing-a-Classifier's-Performance">Assessing a Classifier's Performance<a class="anchor-link" href="#Assessing-a-Classifier's-Performance">&#182;</a></h2><p>Next let's create a quick report on how well our classifier is doing. It is important to make sure you use samples not seen by the classifier to get an unbiased estimate of its performance.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">y_predicted</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">,</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">y_predicted</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">,</span>
                             <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;background&quot;</span><span class="p">,</span> <span class="s">&quot;signal&quot;</span><span class="p">])</span>
-<span class="k">print</span> <span class="s">&quot;Area under ROC curve: </span><span class="si">%.4f</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span>
+<span class="nb">print</span> <span class="s">&quot;Area under ROC curve: %.4f&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span>
                                                   <span class="n">bdt</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_test</span><span class="p">)))</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>             precision    recall  f1-score   support
 
  background       0.72      0.71      0.71    104165
@@ -3028,31 +3105,38 @@ Area under ROC curve: 0.8082
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To illustrate that point, here the same performance metrics evaluated on the training set instead. You can see the estimates of the performance are more optimistic than on an unseen set of events.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">y_predicted</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">,</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">y_predicted</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">,</span>
                             <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;background&quot;</span><span class="p">,</span> <span class="s">&quot;signal&quot;</span><span class="p">])</span>
-<span class="k">print</span> <span class="s">&quot;Area under ROC curve: </span><span class="si">%.4f</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span>
+<span class="nb">print</span> <span class="s">&quot;Area under ROC curve: %.4f&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span>
                                                   <span class="n">bdt</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_train</span><span class="p">)))</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>             precision    recall  f1-score   support
 
  background       0.72      0.71      0.72    210793
@@ -3069,23 +3153,29 @@ Area under ROC curve: 0.8161
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Another useful plot to judge the performance of a classifier is to look at the ROC curve directly.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
 
 <span class="n">decisions</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="c"># Compute ROC curve and area under the curve</span>
 <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">decisions</span><span class="p">)</span>
 <span class="n">roc_auc</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;ROC (area = </span><span class="si">%0.2f</span><span class="s">)&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;ROC (area = %0.2f)&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc</span><span class="p">))</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Luck&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">])</span>
@@ -3100,15 +3190,16 @@ Area under ROC curve: 0.8161
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX4AAAEZCAYAAACQK04eAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJztnXl8VNX5/99P2CGQsCgiIFEEi5ZVRVzQqKiAuCIIVSzq
 r/Zrq/3Sumvdar8udSlWrVI3rLXiBrIIIiJRNlGEgEBEUFZZJOx7ksnz++PchCFMwiSZmTvL8369
@@ -3405,26 +3496,32 @@ U8zeAk7x0u8OwckcZeueC+SKyDxcb/pZdevODgXeFpEFOJnnhHCuqarzgZE4CelLXJrjBUBHYI4n
 uTwA/DVEW/8CFpYM7pZp+xPgbNwvkZL1YV/B5c6fJyLf4paLDPWPo7QdVc3FjUEMAv6Gk8Lm4fT/
 knrTcEsTzvcGoR8BankD5IuAh8t5L4wUwaZzGoZhpBjW4zcMw0gxLPAbhmGkGBb4DcMwUgwL/IZh
 GCmGBX7DMIwUwwK/YRhGimGB3zAMI8WwwG8YhpFi/H/f91Vg63NBsAAAAABJRU5ErkJggg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="overtraining-check">Overtraining Check</h2>
-<p>Comparing the BDT's output distribution for the training and testing set is a popular way in HEP to check for overtraining. The <code>compare_test_train()</code> method will plot the BDT's decision function for each class, as well as overlaying it with the shape of the decision function in the training set.</p>
+<h2 id="Overtraining-Check">Overtraining Check<a class="anchor-link" href="#Overtraining-Check">&#182;</a></h2><p>Comparing the BDT's output distribution for the training and testing set is a popular way in HEP to check for overtraining. The <code>compare_test_train()</code> method will plot the BDT's decision function for each class, as well as overlaying it with the shape of the decision function in the training set.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">compare_train_test</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">compare_train_test</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
     <span class="n">decisions</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">X</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="p">((</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)):</span>
         <span class="n">d1</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">&gt;</span><span class="mf">0.5</span><span class="p">])</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
@@ -3437,15 +3534,15 @@ GCmGBX7DMIwUwwK/YRhGimGB3zAMI8WwwG8YhpFi/H/f91Vg63NBsAAAAABJRU5ErkJggg==
     
     <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">decisions</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
              <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">low_high</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
-             <span class="n">histtype</span><span class="o">=</span><span class="s">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+             <span class="n">histtype</span><span class="o">=</span><span class="s">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="k">True</span><span class="p">,</span>
              <span class="n">label</span><span class="o">=</span><span class="s">&#39;S (train)&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">decisions</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
              <span class="n">color</span><span class="o">=</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">low_high</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
-             <span class="n">histtype</span><span class="o">=</span><span class="s">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+             <span class="n">histtype</span><span class="o">=</span><span class="s">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="k">True</span><span class="p">,</span>
              <span class="n">label</span><span class="o">=</span><span class="s">&#39;B (train)&#39;</span><span class="p">)</span>
 
     <span class="n">hist</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">decisions</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
-                              <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">low_high</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+                              <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">low_high</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
     <span class="n">scale</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">decisions</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">hist</span><span class="p">)</span>
     <span class="n">err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">hist</span> <span class="o">*</span> <span class="n">scale</span><span class="p">)</span> <span class="o">/</span> <span class="n">scale</span>
     
@@ -3454,7 +3551,7 @@ GCmGBX7DMIwUwwK/YRhGimGB3zAMI8WwwG8YhpFi/H/f91Vg63NBsAAAAABJRU5ErkJggg==
     <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">hist</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s">&#39;o&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;S (test)&#39;</span><span class="p">)</span>
     
     <span class="n">hist</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">decisions</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
-                              <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">low_high</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+                              <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">low_high</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
     <span class="n">scale</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">decisions</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">hist</span><span class="p">)</span>
     <span class="n">err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">hist</span> <span class="o">*</span> <span class="n">scale</span><span class="p">)</span> <span class="o">/</span> <span class="n">scale</span>
 
@@ -3469,15 +3566,16 @@ GCmGBX7DMIwUwwK/YRhGimGB3zAMI8WwwG8YhpFi/H/f91Vg63NBsAAAAABJRU5ErkJggg==
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYYAAAEPCAYAAABGP2P1AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xl8VNXZwPHfk5nshCQQCXuCaAClaF3CopCACGEVpaK+
 VaG2uFQBtWgriIYqLtUqor4IVtxal9YF0EiIfW0IoIAWRJQIEmQPhCUbS5ZJzvvHDEMmTJLJMjMJ
@@ -3790,26 +3888,32 @@ UmbLOnAukmOkkotNmxHR+rXtaE7NDans4nJu14HJ3L7W0r8B9P3jtVmvvDFYGTV/7K2RauDe0Nbx
 u5PN46rAG9KJpFdt47sd1XsKHIqI1Tz3TUmbkj4A66ToYw743DLmObAaEQt57jVgOq9hmK1ykg+A
 uYj4RIoemutYAq7m5zRIldNsQPm4qtk+aj8ya3YQOWIw23/+NGYHmiMGMzMrcMRgZmYF3hjMzKzA
 G4OZmRV4YzAzswJvDGZmVuCNwczMCn4BF7w+YUVLW6YAAAAASUVORK5CYII=
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="writing-the-classifier-output-to-a-ttree">Writing the Classifier Output to a TTree</h2>
-<p>The final step is writing the classifier's output for each event into a <code>TTree</code> for further processing later on. The <code>numpy_root</code> library can read and write TTrees. We could write out each branch used as a feature as well as the classifier output or simply write out the classifier and then &quot;friend&quot; the resulting <code>TTree</code> with the original one. Doing the latter is a little less typing here so we do that. If you want to recreate the whole tree with each feature, you have to setup the data types and branch names correctly, but otherwise it is the same.</p>
+<h2 id="Writing-the-Classifier-Output-to-a-TTree">Writing the Classifier Output to a TTree<a class="anchor-link" href="#Writing-the-Classifier-Output-to-a-TTree">&#182;</a></h2><p>The final step is writing the classifier's output for each event into a <code>TTree</code> for further processing later on. The <code>numpy_root</code> library can read and write TTrees. We could write out each branch used as a feature as well as the classifier output or simply write out the classifier and then "friend" the resulting <code>TTree</code> with the original one. Doing the latter is a little less typing here so we do that. If you want to recreate the whole tree with each feature, you have to setup the data types and branch names correctly, but otherwise it is the same.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">from</span> <span class="nn">root_numpy</span> <span class="kn">import</span> <span class="n">array2root</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[239]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">root_numpy</span> <span class="k">import</span> <span class="n">array2root</span>
 
 <span class="n">y_predicted</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 <span class="n">y_predicted</span><span class="o">.</span><span class="n">dtype</span> <span class="o">=</span> <span class="p">[(</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)]</span>
@@ -3819,13 +3923,20 @@ G4OZmRV4YzAzswJvDGZmVuCNwczMCn4BF7w+YUVLW6YAAAAASUVORK5CYII=
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="the-end">The End</h2>
-<p>Thank you for reading. You can refer to this post for recipes how to do the most common things from TMVA with scikit-learn. There will be a second post with more advanced techniques which are not available in TMVA, but very common in the machine learning world.</p>
+<h2 id="The-End">The End<a class="anchor-link" href="#The-End">&#182;</a></h2><p>Thank you for reading. You can refer to this post for recipes how to do the most common things from TMVA with scikit-learn. There will be a second post with more advanced techniques which are not available in TMVA, but very common in the machine learning world.</p>
 <p>The second post is now public: <a href="/posts/advanced-sklearn-for-TMVA/">Advanced scikit-learn for TMVA Users</a>.</p>
 <p>If you find a mistake or want to tell me something else <a href="//twitter.com/betatim">catch me on twitter</a>.</p>
+
+</div>
+</div>
 </div></p>
 <p>This post started life as a ipython notebook,
 <a href="/downloads/notebooks/sklearn-for-TMVA-users.ipynb">download it</a>

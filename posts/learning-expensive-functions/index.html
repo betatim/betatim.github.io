@@ -36,68 +36,69 @@
     <!-- extra stuff for nbconvert -->
 	
 <style type="text/css">
-    .highlight-ipynb .hll { background-color: #ffffcc }
-.highlight-ipynb  { background: #f8f8f8; }
-.highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
-.highlight-ipynb .err { border: 1px solid #FF0000 } /* Error */
-.highlight-ipynb .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight-ipynb .o { color: #666666 } /* Operator */
-.highlight-ipynb .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight-ipynb .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight-ipynb .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight-ipynb .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight-ipynb .gd { color: #A00000 } /* Generic.Deleted */
-.highlight-ipynb .ge { font-style: italic } /* Generic.Emph */
-.highlight-ipynb .gr { color: #FF0000 } /* Generic.Error */
-.highlight-ipynb .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight-ipynb .gi { color: #00A000 } /* Generic.Inserted */
-.highlight-ipynb .go { color: #888888 } /* Generic.Output */
-.highlight-ipynb .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight-ipynb .gs { font-weight: bold } /* Generic.Strong */
-.highlight-ipynb .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight-ipynb .gt { color: #0044DD } /* Generic.Traceback */
-.highlight-ipynb .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight-ipynb .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight-ipynb .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight-ipynb .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight-ipynb .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight-ipynb .kt { color: #B00040 } /* Keyword.Type */
-.highlight-ipynb .m { color: #666666 } /* Literal.Number */
-.highlight-ipynb .s { color: #BA2121 } /* Literal.String */
-.highlight-ipynb .na { color: #7D9029 } /* Name.Attribute */
-.highlight-ipynb .nb { color: #008000 } /* Name.Builtin */
-.highlight-ipynb .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight-ipynb .no { color: #880000 } /* Name.Constant */
-.highlight-ipynb .nd { color: #AA22FF } /* Name.Decorator */
-.highlight-ipynb .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight-ipynb .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight-ipynb .nf { color: #0000FF } /* Name.Function */
-.highlight-ipynb .nl { color: #A0A000 } /* Name.Label */
-.highlight-ipynb .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight-ipynb .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight-ipynb .nv { color: #19177C } /* Name.Variable */
-.highlight-ipynb .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight-ipynb .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight-ipynb .mf { color: #666666 } /* Literal.Number.Float */
-.highlight-ipynb .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight-ipynb .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight-ipynb .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight-ipynb .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight-ipynb .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight-ipynb .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight-ipynb .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight-ipynb .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight-ipynb .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight-ipynb .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight-ipynb .sx { color: #008000 } /* Literal.String.Other */
-.highlight-ipynb .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight-ipynb .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight-ipynb .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight-ipynb .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight-ipynb .vc { color: #19177C } /* Name.Variable.Class */
-.highlight-ipynb .vg { color: #19177C } /* Name.Variable.Global */
-.highlight-ipynb .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 
 <style type="text/css">
@@ -145,6 +146,14 @@ div.text_cell_render {
 }
 
 img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
+
+div.collapseheader {
+    width=100%;
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 </style>
 
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
@@ -167,6 +176,23 @@ init_mathjax = function() {
 }
 init_mathjax();
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $("div.collapseheader").click(function () {
+    $header = $(this).children("span").first();
+    $codearea = $(this).children(".input_area");
+    console.log($(this).children());
+    $codearea.slideToggle(500, function () {
+        $header.text(function () {
+            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+        });
+    });
+});
+});
+</script>
+
 
     <!-- extra stuff for nbconvert -->
 
@@ -315,7 +341,10 @@ init_mathjax();
             </header>
             <div class="entry-content">
                 <p>
-
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Powerful features (or variables) are often expensive to compute. Maybe they require a lot of CPU power to compute or require human interaction. As a result the size of the datasets for which the features are evaluated are smaller than they should be.</p>
 <p>This post explores a possible way around this. Regression algorithms can learn complex functions and are cheap to evaluate. The idea then is:</p>
@@ -323,97 +352,114 @@ init_mathjax();
 <li>Train a regression algorithm on a small subset of the data for which all expensive features have been calculated</li>
 <li>Use this algorithm to cheaply calculate the features for a much larger number of samples</li>
 </ul>
-<p>Here I demonstrate this approach using a feature called &quot;<a href="//arxiv.org/abs/1012.4686">Missing mass calculator</a>&quot;. It is used in searches for the <a href="//en.wikipedia.org/wiki/Higgs_boson">Higgs boson</a> and takes about one minute to calculate per sample (or event). A minute per event! That does not sound much until you realise a typical analysis at the <a href="//home.web.cern.ch/topics/large-hadron-collider">LHC</a> uses millions or even tens of millions of events.</p>
+<p>Here I demonstrate this approach using a feature called "<a href="//arxiv.org/abs/1012.4686">Missing mass calculator</a>". It is used in searches for the <a href="//en.wikipedia.org/wiki/Higgs_boson">Higgs boson</a> and takes about one minute to calculate per sample (or event). A minute per event! That does not sound much until you realise a typical analysis at the <a href="//home.web.cern.ch/topics/large-hadron-collider">LHC</a> uses millions or even tens of millions of events.</p>
 <p>First some imports and loading the data:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="o">%</span><span class="k">matplotlib</span> <span class="n">inline</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">itemgetter</span>
 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
 <span class="kn">import</span> <span class="nn">sklearn</span>
-<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">StratifiedKFold</span><span class="p">,</span> <span class="n">KFold</span>
-<span class="kn">from</span> <span class="nn">sklearn.grid_search</span> <span class="kn">import</span> <span class="n">RandomizedSearchCV</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">randint</span> <span class="k">as</span> <span class="n">sp_randint</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">uniform</span> <span class="k">as</span> <span class="n">sp_uniform</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GradientBoostingRegressor</span><span class="p">,</span> <span class="n">AdaBoostRegressor</span><span class="p">,</span> <span class="n">RandomForestRegressor</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">BaggingRegressor</span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">StratifiedKFold</span><span class="p">,</span> <span class="n">KFold</span>
+<span class="kn">from</span> <span class="nn">sklearn.grid_search</span> <span class="k">import</span> <span class="n">RandomizedSearchCV</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">randint</span> <span class="k">as</span> <span class="n">sp_randint</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">uniform</span> <span class="k">as</span> <span class="n">sp_uniform</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">mean_squared_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">GradientBoostingRegressor</span><span class="p">,</span> <span class="n">AdaBoostRegressor</span><span class="p">,</span> <span class="n">RandomForestRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">BaggingRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeRegressor</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The HiggsML challenge dataset has been released to the public. It contains the Missing Mass Calculator (<code>MMC</code>) variable as a feature, let's try and see if we can learn to compute it with a regression model. This is an interesting challenge as the process to calculate the <code>MMC</code> feature is quite involved (good luck implementing it from <a href="//arxiv.org/abs/1012.4686">the description in the paper</a> ...). Let's go!</p>
 <p>The next cell downloads the full dataset from CERN's opendata portal to your <code>/tmp</code> directory:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="o">%%</span><span class="k">bash</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre>%%bash
 <span class="c"># Download the HiggsML dataset</span>
 <span class="c"># details here: http://opendata.cern.ch/record/328</span>
-<span class="n">wget</span> <span class="o">--</span><span class="n">quiet</span> <span class="o">-</span><span class="n">P</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">opendata</span><span class="o">.</span><span class="n">cern</span><span class="o">.</span><span class="n">ch</span><span class="o">/</span><span class="n">record</span><span class="o">/</span><span class="mi">328</span><span class="o">/</span><span class="n">files</span><span class="o">/</span><span class="n">atlas</span><span class="o">-</span><span class="n">higgs</span><span class="o">-</span><span class="n">challenge</span><span class="o">-</span><span class="mi">2014</span><span class="o">-</span><span class="n">v2</span><span class="o">.</span><span class="n">csv</span><span class="o">.</span><span class="n">gz</span>
+wget --quiet -P /tmp/ http://opendata.cern.ch/record/328/files/atlas-higgs-challenge-2014-v2.csv.gz
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Read it all in to a <code>pandas</code> <code>DataFrame</code>, directly from a compressed csv. We also print out the name of all the columns, the important part to notice is that there are several features which have nothing to do with <code>MMC</code> which we can use to predict it, as well as weights for each sample.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&#39;/tmp/atlas-higgs-challenge-2014-v2.csv.gz&#39;</span><span class="p">,</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&#39;/tmp/atlas-higgs-challenge-2014-v2.csv.gz&#39;</span><span class="p">,</span>
                  <span class="n">compression</span><span class="o">=</span><span class="s">&#39;gzip&#39;</span><span class="p">)</span>
 
 <span class="c"># Print the name of all the colums</span>
-<span class="k">print</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>EventId, DER_mass_MMC, DER_mass_transverse_met_lep, DER_mass_vis, DER_pt_h, DER_deltaeta_jet_jet, DER_mass_jet_jet, DER_prodeta_jet_jet, DER_deltar_tau_lep, DER_pt_tot, DER_sum_pt, DER_pt_ratio_lep_tau, DER_met_phi_centrality, DER_lep_eta_centrality, PRI_tau_pt, PRI_tau_eta, PRI_tau_phi, PRI_lep_pt, PRI_lep_eta, PRI_lep_phi, PRI_met, PRI_met_phi, PRI_met_sumet, PRI_jet_num, PRI_jet_leading_pt, PRI_jet_leading_eta, PRI_jet_leading_phi, PRI_jet_subleading_pt, PRI_jet_subleading_eta, PRI_jet_subleading_phi, PRI_jet_all_pt, Weight, Label, KaggleSet, KaggleWeight
 </pre>
 </div>
@@ -423,20 +469,25 @@ init_mathjax();
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="an-expensive-feature">An expensive feature</h2>
-<p>Let's take a look at the feature we want to try and learn. The idea behind the &quot;Missing Mass Calculator&quot; is to construct a variable that distinguishes between events containing a Higgs and ones that do not. One way is to try and reconstruct the mass of the Higgs boson. In events with a Higgs that should give you something close to the Higgs mass (125 GeV) and different values for events without a Higgs in them.</p>
+<h2 id="An-expensive-feature">An expensive feature<a class="anchor-link" href="#An-expensive-feature">&#182;</a></h2><p>Let's take a look at the feature we want to try and learn. The idea behind the "Missing Mass Calculator" is to construct a variable that distinguishes between events containing a Higgs and ones that do not. One way is to try and reconstruct the mass of the Higgs boson. In events with a Higgs that should give you something close to the Higgs mass (125 GeV) and different values for events without a Higgs in them.</p>
 <p>In the following plot background events (those which are not the Higgs) are shown in blue and events containing a Higgs boson are shown in red.</p>
 <p>First thing to notice is that the red distribution is multiplied by a factor of 100! This is just to make it visible. Otherwise events containing a Higgs are so rare they are impossible to see compared to the background.</p>
 <p>As expected the red distribution peaks around 125 GeV and the background peaks at lower values. The peak is also much broader.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">hist_opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">hist_opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
                  <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
                  <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">))</span>
 <span class="n">signal</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Label</span> <span class="o">==</span> <span class="s">&#39;s&#39;</span>
@@ -454,25 +505,25 @@ init_mathjax();
 
 </div>
 </div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[5]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">&lt;matplotlib.legend.Legend at 0x10b0016d0&gt;</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.legend.Legend at 0x10b0016d0&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfYAAAFVCAYAAAAdY838AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xt4XWWB7/FvsnOhO0mTpmnBMlzVecFa5HIQ5CpaQRkv
 OPLojJepohYUGJ1H5AgocrV6dDgKKjhcDnTgGX2K4kHL3Qtl6hFQGQTEF4oIg1yk7W5uO81l75w/
@@ -640,26 +691,32 @@ DN1y/81kz6mZ/ozd+eRHdy1wfQjhPoZ6VH6Moav2qwsdK/7AK8+6KtmWUQGfY7u2KfQ2vRy4j6EP
 uufGGPuKHCfptrTTp4ArQgj9wAvA8sKt1Upvp3MZuv15fgjh/MK2zwCXe05tY6R2+hfgf3tO7eBH
 wP8JIdwL1DJ0Pv2RSf6ecq54SZISZKbfipckSTvBYJckKUEMdkmSEsRglyQpQQx2SZISxGCXJClB
 DHZJkhLk/wMH/0B6nEvcGwAAAABJRU5ErkJggg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="data-loading-and-the-train-test-split">Data loading and the train-test split</h2>
-<p>Next let's convert the data frame to a plain numpy arrays and separate the samples by whether they contain a Higgs boson or not.</p>
+<h2 id="Data-loading-and-the-train-test-split">Data loading and the train-test split<a class="anchor-link" href="#Data-loading-and-the-train-test-split">&#182;</a></h2><p>Next let's convert the data frame to a plain numpy arrays and separate the samples by whether they contain a Higgs boson or not.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="c"># Selecting the columns used to predict MMC</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># Selecting the columns used to predict MMC</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;PRI_tau_pt&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_tau_eta&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_tau_phi&#39;</span><span class="p">,</span>
            <span class="s">&#39;PRI_lep_pt&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_lep_eta&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_lep_phi&#39;</span><span class="p">,</span>
            <span class="s">&#39;PRI_met&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_met_phi&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_met_sumet&#39;</span><span class="p">,</span>
@@ -690,18 +747,25 @@ DHZJkhLk/wMH/0B6nEvcGwAAAABJRU5ErkJggg==
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Split signal and background into development and evaluation sets as well as the development set into a training and testing one. It is important to keep some events hidden from your model evaluation and selection procedure so you can evaluate the models true performance.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="c"># this looks more daunting than it has to be :-(</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># this looks more daunting than it has to be :-(</span>
 <span class="n">X_dev</span><span class="p">,</span><span class="n">X_eval</span><span class="p">,</span> <span class="n">w_dev</span><span class="p">,</span><span class="n">w_eval</span><span class="p">,</span> <span class="n">MMC_dev</span><span class="p">,</span><span class="n">MMC_eval</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">(),</span>
                                                                 <span class="n">w</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">(),</span>
                                                                 <span class="n">MMC</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">(),</span>
@@ -721,19 +785,25 @@ DHZJkhLk/wMH/0B6nEvcGwAAAABJRU5ErkJggg==
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="regression-trees">Regression trees</h2>
-<p>The plan is to train a regressor which given the input variables can predict the MMC feature for us. After some <code>GridSearchCV</code> I found the hyper-parameters used below. They work quite well but we could probably do even better if we spent more CPU time. (While the hyper-parameter optimisation is not shown here, we still have to split the data the same way as the performance evaluated on the test set is biased optimistically due to doing some fairly exhaustive searching.)</p>
+<h2 id="Regression-trees">Regression trees<a class="anchor-link" href="#Regression-trees">&#182;</a></h2><p>The plan is to train a regressor which given the input variables can predict the MMC feature for us. After some <code>GridSearchCV</code> I found the hyper-parameters used below. They work quite well but we could probably do even better if we spent more CPU time. (While the hyper-parameter optimisation is not shown here, we still have to split the data the same way as the performance evaluated on the test set is biased optimistically due to doing some fairly exhaustive searching.)</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">clf</span> <span class="o">=</span> <span class="n">GradientBoostingRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">clf</span> <span class="o">=</span> <span class="n">GradientBoostingRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span>
                                 <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
                                 <span class="n">subsample</span><span class="o">=</span><span class="mf">0.7296635812586656</span><span class="p">,</span>
                                 <span class="n">max_features</span><span class="o">=</span><span class="mf">0.5779758681446561</span><span class="p">,</span>
@@ -745,63 +815,70 @@ DHZJkhLk/wMH/0B6nEvcGwAAAABJRU5ErkJggg==
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[29]:</div>
-<div class="box-flex1 output_subarea output_pyout">
+<div class="output_wrapper">
+<div class="output">
 
 
-<pre class="ipynb tim">GradientBoostingRegressor(alpha=0.9, init=None, learning_rate=0.05, loss=&apos;ls&apos;,
+<div class="output_area"><div class="prompt output_prompt">Out[29]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>GradientBoostingRegressor(alpha=0.9, init=None, learning_rate=0.05, loss=&apos;ls&apos;,
              max_depth=5, max_features=0.577975868145, max_leaf_nodes=None,
              min_samples_leaf=1, min_samples_split=2,
              min_weight_fraction_leaf=0.0, n_estimators=2000,
              random_state=None, subsample=0.729663581259, verbose=0,
              warm_start=False)</pre>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's compare the MMC feature computed by the regression model with the true value. If we are doing a good job they should be pretty similar. Crucially we do not re-use samples used during the training to evaluate the performance.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">MMC_pred_train</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">MMC_pred_train</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
 <span class="n">MMC_pred_test</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="n">MMC_pred_eval</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_eval</span><span class="p">)</span>
 
 <span class="n">bg_MMC_pred_test</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">bg_X_test</span><span class="p">)</span>
 <span class="n">bg_MMC_pred_eval</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">bg_X_eval</span><span class="p">)</span>
 
-<span class="k">print</span> <span class="s">&quot;MSE on training set:&quot;</span><span class="p">,</span>
-<span class="k">print</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">MMC_train</span><span class="p">,</span> <span class="n">MMC_pred_train</span><span class="p">,</span> <span class="n">w_train</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&quot;MSE on testing set:&quot;</span><span class="p">,</span>
-<span class="k">print</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">MMC_test</span><span class="p">,</span> <span class="n">MMC_pred_test</span><span class="p">,</span> <span class="n">w_test</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&quot;MSE on evaluation set:&quot;</span><span class="p">,</span>
-<span class="k">print</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">MMC_eval</span><span class="p">,</span> <span class="n">MMC_pred_eval</span><span class="p">,</span> <span class="n">w_eval</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s">&quot;MSE on training set:&quot;</span><span class="p">,</span>
+<span class="nb">print</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">MMC_train</span><span class="p">,</span> <span class="n">MMC_pred_train</span><span class="p">,</span> <span class="n">w_train</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s">&quot;MSE on testing set:&quot;</span><span class="p">,</span>
+<span class="nb">print</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">MMC_test</span><span class="p">,</span> <span class="n">MMC_pred_test</span><span class="p">,</span> <span class="n">w_test</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s">&quot;MSE on evaluation set:&quot;</span><span class="p">,</span>
+<span class="nb">print</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">MMC_eval</span><span class="p">,</span> <span class="n">MMC_pred_eval</span><span class="p">,</span> <span class="n">w_eval</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>MSE on training set: 12.2873639683
 MSE on testing set: 26.276874694
 MSE on evaluation set: 34.3325667757
@@ -813,18 +890,23 @@ MSE on evaluation set: 34.3325667757
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As you can see the model performs much better on the training set than on the samples in the testing set. The most important point to note though is that the performance estimate you obtain from the test set is <strong>also</strong> optimistic. This is the result of the sum of testing and training being used during the optimisation of the hyper-parameters. This is why it is crucial to reserve a third set of samples which is only looked at after you fix all parameters. In our case it is <code>MMC_eval</code>.</p>
-<h2 id="learned-versus-original">Learned versus Original</h2>
-<p>So, after all this, how well does our learned MMC regressor do? Let's compared the distribution of the MMC feature as computed the slow way and the learned MMC feature. By eye they look extremely similar, which is nice. This means you could use this approach of learning an expensive to calculate feature (or variable) and use that as a proxy which is much faster to evaluate.</p>
+<h2 id="Learned-versus-Original">Learned versus Original<a class="anchor-link" href="#Learned-versus-Original">&#182;</a></h2><p>So, after all this, how well does our learned MMC regressor do? Let's compared the distribution of the MMC feature as computed the slow way and the learned MMC feature. By eye they look extremely similar, which is nice. This means you could use this approach of learning an expensive to calculate feature (or variable) and use that as a proxy which is much faster to evaluate.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">))</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">MMC_eval</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">w_eval</span><span class="p">,</span>
          <span class="n">label</span><span class="o">=</span><span class="s">&quot;Original MMC&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">MMC_pred_eval</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">w_eval</span><span class="p">,</span>
@@ -836,25 +918,25 @@ MSE on evaluation set: 34.3325667757
 
 </div>
 </div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[35]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">&lt;matplotlib.text.Text at 0x10f736dd0&gt;</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[35]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.text.Text at 0x10f736dd0&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeYAAAFtCAYAAADS5MnUAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xl8XXWd//FXtjZNmqakpLQFhB8DfhUYFRHBFfkJgjOK
 uDMD6IAK4+AyMyKyyKayiIogMi6oIMKAgIiCPwSLLIrKIqgs+qVQQVuWtLlN0rRJmrv8/jgnJU1z
@@ -1053,27 +1135,33 @@ T//+cv3W72/qJjmycG+McX368LnAD9L/nycA96fbG/T/2TD1tZGcx/4DyVXz/zWgT24GfkRyqP1h
 kkPlVwxXtzQevO2jNIgQwm4kF1BdmP5+I3BpjPFnk1uZpOnOi7+kwT0N7JOO+krAzw1lSRPBEbMk
 SRniOWZJkjLEYJYkKUMMZkmSMsRgliQpQwxmSZIyxGCWJClD/j+oYjQk0lQS8AAAAABJRU5ErkJg
 gg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="raising-the-bar">Raising the bar</h2>
-<p>Did our regression model learn anything useful? Maybe it just memorised how the input features are related to MMC, but otherwise gained no insight. Did you notice that we only used samples containing a Higgs boson so far? That was on purpose. It means not only do we have a large set of samples which where never used during model evaluation and selection, in addition these are quite different types of events.</p>
+<h2 id="Raising-the-bar">Raising the bar<a class="anchor-link" href="#Raising-the-bar">&#182;</a></h2><p>Did our regression model learn anything useful? Maybe it just memorised how the input features are related to MMC, but otherwise gained no insight. Did you notice that we only used samples containing a Higgs boson so far? That was on purpose. It means not only do we have a large set of samples which where never used during model evaluation and selection, in addition these are quite different types of events.</p>
 <p>The next figure compares the original MMC feature with the regression model's calculation. The agreement is not as good as for the Higgs boson class but it does quite well.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bg_MMC_eval</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">bg_w_eval</span><span class="p">,</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bg_MMC_eval</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">bg_w_eval</span><span class="p">,</span>
          <span class="n">label</span><span class="o">=</span><span class="s">&quot;Original MMC&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bg_MMC_pred_eval</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">bg_w_eval</span><span class="p">,</span>
          <span class="n">label</span><span class="o">=</span><span class="s">&quot;Learned MMC&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
@@ -1085,25 +1173,25 @@ gg==
 
 </div>
 </div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[36]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">&lt;matplotlib.text.Text at 0x112947650&gt;</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[36]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.text.Text at 0x112947650&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfEAAAFtCAYAAAAXllNFAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XmcXFWd//9XdXWlt1R36KQ7C+uXr/BhGxQioiIGfqKI
 o4iCwIiIMCwi4DLiQgABh0VQEXH4ooIEEAYEBpFl2JeAQUkgiCxySIhBE0h6qV7Tay2/P+7t0N2p
@@ -1350,26 +1438,33 @@ YGDg2/3A/wLz8FrU/2VmL+ONKzgmqN4GvacevB6L55xzXf7my4Df+v+fZwMr/NfL+n82Svla8a67
 /wXv7oFvDauT+4H/wevufxmvu/7m0cotMtG0FKnIBDCzXfAGh13lP74HuM4598DUlkxEpjMNbBOZ
 GG8B+/mtyQzwkBK4iEw2tcRFRERCStfERUREQkpJXEREJKSUxEVEREJKSVxERCSklMRFRERCSklc
 REQkpP5/n0HwoAkenAcAAAAASUVORK5CYII=
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>While it is not absolute proof that the regression model actually learnt something about physics, the fact that it can compute the MMC feature even for a totally different class of samples does suggest that it learnt something.</p>
 <p>Another way of evaluating the performance is to plot the difference between the original MMC feature's value and the MMC value calculated by the regression model for each sample.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">mean_and_std</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">mean_and_std</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
     <span class="n">average</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
     <span class="n">variance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">((</span><span class="n">values</span><span class="o">-</span><span class="n">average</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">average</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">))</span>
@@ -1381,37 +1476,38 @@ REQkpP5/n0HwoAkenAcAAAAASUVORK5CYII=
            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
            <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span>
            <span class="n">label</span><span class="o">=</span><span class="s">&#39;$\Delta$MMC for Signal&#39;</span><span class="p">,</span>
-           <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+           <span class="n">normed</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 <span class="n">_</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bg_delta</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">bg_w_eval</span><span class="p">,</span>
            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
            <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span>
            <span class="n">label</span><span class="o">=</span><span class="s">&#39;$\Delta$MMC for Background&#39;</span><span class="p">,</span>
-           <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+           <span class="n">normed</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">mean_and_std</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">w_eval</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">mean_and_std</span><span class="p">(</span><span class="n">bg_delta</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">bg_w_eval</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">mean_and_std</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">w_eval</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">mean_and_std</span><span class="p">(</span><span class="n">bg_delta</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">bg_w_eval</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>(-0.038939916353662653, 5.770798070300847)
 (-1.7394594313468719, 14.574445902019193)
 </pre>
 </div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_area"><div class="prompt"></div>
 
 
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAesAAAFVCAYAAADPM8ekAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3X18XVWB7/9PkiZpm6QPoSnYAqXw66wLIo5SfiA4KFNA
 cUAYLw5wGa8WKk8DFpnqiIiCKAJCRcAWptDRn17tFZQHEQG5cmFo5zKDCMjPYSHlobRAmzRtHpuk
@@ -1604,24 +1700,31 @@ JqAHeKaYfhq2q8HJXUH4o97DmWXk5h2H3FVy/6N32SMxxv8YpvalxbXkrgK/JXcAgo0xxr/FfhpI
 tvdfH/tqW/cCJ4QQlve+njtQ5VGs73P0j8CS3ocW/Qm4Z/ialCpfJXf49ushhL5z1/PJfV/ZV+/6
 JfAvIYQnyF17NJ/cw7AK/kw5N7gkSSnnpCiSJKWcYS1JUsoZ1pIkpZxhLUlSyhnWkiSlnGEtSVLK
 GdaSJKXc/wXLvdbAdZeEwgAAAABJRU5ErkJggg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As you can see the spread between the original MMC feature and the learned one is quite small, around 6. Improtantly the average difference is basically zero. This means the regression model does not favour one value over another.</p>
 <p>Unsurprisingly the spread is larger for background events which are a different kind of beast all together compared to the ones we used during training.</p>
 <p>In a real world application you would use some background events and some signal events to train the regression model. This will improve the performance of the model on this class of events. Here I choose not to include them as I wanted to see how well the model does on events which are not only new but also quite different from the ones used during training.</p>
-<h2 id="the-end">The end</h2>
-<p>Often the most powerful features in a dataset (for example for classifying Higgs events) are also the most expensive to compute in terms of CPU time or actual human time. Often this limits the number of samples in your dataset. Here I showed that you can get away with computing an expensive feature for a small subset of your events and then use a regression model to calculate it for a much larger number of samples.</p>
+<h2 id="The-end">The end<a class="anchor-link" href="#The-end">&#182;</a></h2><p>Often the most powerful features in a dataset (for example for classifying Higgs events) are also the most expensive to compute in terms of CPU time or actual human time. Often this limits the number of samples in your dataset. Here I showed that you can get away with computing an expensive feature for a small subset of your events and then use a regression model to calculate it for a much larger number of samples.</p>
 <p>You can also apply this idea to the large, from first principle simulations of the LHCb, ATLAS and CMS detectors. These simulations use over half of the total CPU time of the LHC computing grid, so speeding them up has huge potential!</p>
 <p>As far as I know this has not really been used in particle physics so far, let me know if you know of other examples where it has been used!</p>
 <p>If you find a mistake or want to tell me something else get in touch on twitter @<a href="//twitter.com/betatim">betatim</a></p>
+
+</div>
+</div>
 </div></p>
 <p>This post started life as a ipython notebook,
 <a href="/downloads/notebooks/learning_expensive_functions.ipynb">download it</a>

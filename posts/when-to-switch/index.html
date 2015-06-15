@@ -36,68 +36,69 @@
     <!-- extra stuff for nbconvert -->
 	
 <style type="text/css">
-    .highlight-ipynb .hll { background-color: #ffffcc }
-.highlight-ipynb  { background: #f8f8f8; }
-.highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
-.highlight-ipynb .err { border: 1px solid #FF0000 } /* Error */
-.highlight-ipynb .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight-ipynb .o { color: #666666 } /* Operator */
-.highlight-ipynb .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight-ipynb .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight-ipynb .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight-ipynb .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight-ipynb .gd { color: #A00000 } /* Generic.Deleted */
-.highlight-ipynb .ge { font-style: italic } /* Generic.Emph */
-.highlight-ipynb .gr { color: #FF0000 } /* Generic.Error */
-.highlight-ipynb .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight-ipynb .gi { color: #00A000 } /* Generic.Inserted */
-.highlight-ipynb .go { color: #888888 } /* Generic.Output */
-.highlight-ipynb .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight-ipynb .gs { font-weight: bold } /* Generic.Strong */
-.highlight-ipynb .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight-ipynb .gt { color: #0044DD } /* Generic.Traceback */
-.highlight-ipynb .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight-ipynb .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight-ipynb .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight-ipynb .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight-ipynb .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight-ipynb .kt { color: #B00040 } /* Keyword.Type */
-.highlight-ipynb .m { color: #666666 } /* Literal.Number */
-.highlight-ipynb .s { color: #BA2121 } /* Literal.String */
-.highlight-ipynb .na { color: #7D9029 } /* Name.Attribute */
-.highlight-ipynb .nb { color: #008000 } /* Name.Builtin */
-.highlight-ipynb .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight-ipynb .no { color: #880000 } /* Name.Constant */
-.highlight-ipynb .nd { color: #AA22FF } /* Name.Decorator */
-.highlight-ipynb .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight-ipynb .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight-ipynb .nf { color: #0000FF } /* Name.Function */
-.highlight-ipynb .nl { color: #A0A000 } /* Name.Label */
-.highlight-ipynb .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight-ipynb .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight-ipynb .nv { color: #19177C } /* Name.Variable */
-.highlight-ipynb .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight-ipynb .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight-ipynb .mf { color: #666666 } /* Literal.Number.Float */
-.highlight-ipynb .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight-ipynb .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight-ipynb .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight-ipynb .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight-ipynb .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight-ipynb .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight-ipynb .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight-ipynb .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight-ipynb .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight-ipynb .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight-ipynb .sx { color: #008000 } /* Literal.String.Other */
-.highlight-ipynb .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight-ipynb .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight-ipynb .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight-ipynb .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight-ipynb .vc { color: #19177C } /* Name.Variable.Class */
-.highlight-ipynb .vg { color: #19177C } /* Name.Variable.Global */
-.highlight-ipynb .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 
 <style type="text/css">
@@ -145,6 +146,14 @@ div.text_cell_render {
 }
 
 img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
+
+div.collapseheader {
+    width=100%;
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 </style>
 
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
@@ -167,6 +176,23 @@ init_mathjax = function() {
 }
 init_mathjax();
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $("div.collapseheader").click(function () {
+    $header = $(this).children("span").first();
+    $codearea = $(this).children(".input_area");
+    console.log($(this).children());
+    $codearea.slideToggle(500, function () {
+        $header.text(function () {
+            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+        });
+    });
+});
+});
+</script>
+
 
     <!-- extra stuff for nbconvert -->
 
@@ -315,67 +341,79 @@ init_mathjax();
             </header>
             <div class="entry-content">
                 <p>
-
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>How do you decide if a change you made to your webpage is getting more customers to sign up? How do you know if the new drug you invented cures more people than the current market leader? Did you make a groundbreaking scientific discovery?</p>
 <p>All these questions can be answered using a branch of statistics called hypothesis testing. This post explains the basics of hypothesis testing.</p>
 <p>The first question everyone has is: did it work? How do you know if what you are seeing is due to chance or skill? To answer this you need to know: how often would you declare victory just because of random variations in your data sample? Luckily you can choose this number! This is what p-values do for you.</p>
 <p>But before diving into more details let's set up a little toy experiment to work with and illustrate the different concepts.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="o">%</span><span class="k">matplotlib</span> <span class="n">inline</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">scipy</span> <span class="kn">as</span> <span class="nn">sp</span>
-<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="kn">as</span> <span class="nn">stats</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
 <span class="kn">import</span> <span class="nn">random</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">5345436</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The first thing we need is a set of observations. In this experiment you measured the conversion rate on your website. The average conversion rate is 6%. The first set of observations will always have an average conversion rate of 6%, using the <code>difference</code> parameter we can decide how big the difference between the two samples should be. This is handy as it allows us to generate a set of observations where the true difference is zero, or any other value we would like to investigate. We can also set how big the samples should be.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">two_samples</span><span class="p">(</span><span class="n">difference</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">6500</span><span class="p">,</span> <span class="n">delta_variance</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">two_samples</span><span class="p">(</span><span class="n">difference</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">6500</span><span class="p">,</span> <span class="n">delta_variance</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
     <span class="n">As</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">6.</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
     <span class="n">Bs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">6.</span> <span class="o">+</span> <span class="n">difference</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="o">+</span><span class="n">delta_variance</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">As</span><span class="p">,</span> <span class="n">Bs</span>
@@ -383,42 +421,50 @@ init_mathjax();
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What does this look like then? We will create two samples with the same mean and 100 observations in each.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
 <span class="n">As</span><span class="p">,</span> <span class="n">Bs</span> <span class="o">=</span> <span class="n">two_samples</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">_</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">As</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
 <span class="n">_</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">Bs</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&quot;Mean for sample A: </span><span class="si">%.3f</span><span class="s"> and for sample B: </span><span class="si">%.3f</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">As</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Bs</span><span class="p">))</span>
+<span class="nb">print</span> <span class="s">&quot;Mean for sample A: %.3f and for sample B: %.3f&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">As</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Bs</span><span class="p">))</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>Mean for sample A: 5.946 and for sample B: 6.093
 </pre>
 </div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_area"><div class="prompt"></div>
 
 
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXEAAAEACAYAAABF+UbAAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAFQZJREFUeJzt3X9s1fW9x/HXQbp4Z2P5cdvTYmsxYKGnLe0RsAmx46AU
 GQsGsTpbSUmLbJnZMtSg7q+1S1aKxE2cZjFmVIym5GZxylxpRmVHekHGuuJkOuEWW2ylolILtKf8
@@ -516,29 +562,36 @@ s2DBAnPvvfdO2J9O6erqMjNnzjTnzp2LdpRRbd261Xg8HpOZmWmKi4vNpUuXoh1pWHl5ecbj8Zjs
 7Gyzb9++aMcZ8OCDD5qkpCQTExNjkpOTzY4dO8yZM2fMXXfdZW699VaTn59vvvrqq1HX4M0+AGAx
 O3b3AQDDosQBwGKUOABYjBIHAItR4gBgMUocACxGiQOAxShxALDY/wJebY24DUl+uAAAAABJRU5E
 rkJggg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can see that the mean of neither of the two samples is exactly six, nor are the two values the same. Looking at the histogram of the two samples they do look kind of similar. If we did not know the truth about how these samples were made, would we conclude that they are different? If we did, would we be right?</p>
-<p>This is where p-values and hypothesis testing come in. To do hypothesis testing you need two hypotheses which you would can pit against each other. The first one is called the Null hypothesis or <span class="math">\(H_0\)</span> and the other one is often referred to as &quot;alternate&quot; or <span class="math">\(H_1\)</span>. It is important to remember that hypothesis testing can only answer the following question: should I abandon <span class="math">\(H_0\)</span>?</p>
-<p>In order to get started with your hypothesis testing you need to assume that <span class="math">\(H_0\)</span> is true, so the test can never tell you whether or not this assumption is a good one to make. All it can do is tell you that there is overwhelming evidence against your null hypothesis. It also does not tell you whether <span class="math">\(H_1\)</span> is true or not.</p>
-<p>The p-value is often used (and abused) to decide if a result is &quot;statistically significant&quot;. The p-value is nothing more than the probability that you observed a result as extreme (far away from <span class="math">\(H_0\)</span>) or more extreme than the one you did by chance alone assuming that <span class="math">\(H_0\)</span> is true.</p>
+<p>This is where p-values and hypothesis testing come in. To do hypothesis testing you need two hypotheses which you would can pit against each other. The first one is called the Null hypothesis or $H_0$ and the other one is often referred to as "alternate" or $H_1$. It is important to remember that hypothesis testing can only answer the following question: should I abandon $H_0$?</p>
+<p>In order to get started with your hypothesis testing you need to assume that $H_0$ is true, so the test can never tell you whether or not this assumption is a good one to make. All it can do is tell you that there is overwhelming evidence against your null hypothesis. It also does not tell you whether $H_1$ is true or not.</p>
+<p>The p-value is often used (and abused) to decide if a result is "statistically significant". The p-value is nothing more than the probability that you observed a result as extreme (far away from $H_0$) or more extreme than the one you did by chance alone assuming that $H_0$ is true.</p>
 <p>Let's stick with the example of us wanting to know if our changes to our website improved the conversion rate or not. The p-value is the probability for the mean in the second sample being bigger than the mean in the first sample due to nothing else but chance. In this case you can calculate the p-value by using <a href="http://en.wikipedia.org/wiki/Student%27s_t-test">Student's t-test</a>. It is implemented in <code>scipy</code> so let's reveal it:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">one_sided_ttest</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[186]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">one_sided_ttest</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="k">True</span><span class="p">):</span>
     <span class="n">t</span><span class="p">,</span><span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="n">equal_var</span><span class="p">)</span>
     <span class="c"># the t-test implemented in scipy is two sided, but we are interested</span>
     <span class="c"># in the one sided p-value, hence this if statement and the divide by two.</span>
@@ -546,20 +599,21 @@ rkJggg==
         <span class="n">p</span> <span class="o">/=</span> <span class="mf">2.</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span> <span class="n">p</span><span class="o">/</span><span class="mf">2.</span>
-    <span class="k">print</span> <span class="s">&quot;P-value: </span><span class="si">%.5f</span><span class="s">, the smaller the less likely it is that the means are the same&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s">&quot;P-value: %.5f, the smaller the less likely it is that the means are the same&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
         
 <span class="n">one_sided_ttest</span><span class="p">(</span><span class="n">As</span><span class="p">,</span> <span class="n">Bs</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>P-value: 0.15576, the smaller the less likely it is that the means are the same
 </pre>
 </div>
@@ -569,29 +623,36 @@ rkJggg==
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Common practice is to decide below which value the p-value has to be in order for this result to be statistically significant or not before looking at the data. By choosing a smaller value you are less likely to incorrectly conclude that your changes improved the conversion rate. Common choices are 0.05 or 0.01. Meaning you only make a mistake 1 in 20 or 1 in 100 times.</p>
 <p>Let us repeat the experiment and look at another p-value:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">As2</span><span class="p">,</span> <span class="n">Bs2</span> <span class="o">=</span> <span class="n">two_samples</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[181]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">As2</span><span class="p">,</span> <span class="n">Bs2</span> <span class="o">=</span> <span class="n">two_samples</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">one_sided_ttest</span><span class="p">(</span><span class="n">As2</span><span class="p">,</span> <span class="n">Bs2</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>P-value: 0.00285, the smaller the less likely it is that the means are the same
 </pre>
 </div>
@@ -601,21 +662,27 @@ rkJggg==
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What happened here? The p-value is different! Not only is it different but it is also below 0.01, our changes worked! Actually we know that the two samples have the same mean, so how can this test be telling us that we found a statistically significant difference? This must be one of the cases where there is no difference but the p-value is small and we incorrectly conclude that there is a difference.</p>
 <p>Let's repeat the experiment a few more times and keep track of all the p-values we see:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">repeat_experiment</span><span class="p">(</span><span class="n">repeats</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">diff</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[200]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">repeat_experiment</span><span class="p">(</span><span class="n">repeats</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">diff</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
     <span class="n">p_values</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">repeats</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">repeats</span><span class="p">):</span>
         <span class="n">A</span><span class="p">,</span><span class="n">B</span> <span class="o">=</span> <span class="n">two_samples</span><span class="p">(</span><span class="n">diff</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-        <span class="n">t</span><span class="p">,</span><span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">t</span><span class="p">,</span><span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">p</span> <span class="o">/=</span> <span class="mf">2.</span>
         <span class="k">else</span><span class="p">:</span>
@@ -630,15 +697,16 @@ rkJggg==
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXoAAAEACAYAAAC9Gb03AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAFrpJREFUeJzt3W1sFNe9x/HfoN3cpimhkOA12UV3Uz/UbAjGFTWNquSa
 OuskRLWI4O6NE6EtpKiqVbVJ34TSF4a8iLfti4qmtVS1brDSJNhqK9tKieU2wmkLSR0FAhKLaidy
@@ -743,39 +811,47 @@ eMPYC5BOxuKDDz6wS0pK7DfeeCNPVc4PJ2NxsW984xv273//+3mscP44GYvjx4/btbW19vT0tH36
 snPCyVjcKJyMRUVFhR588EGtWrVKCxYs0LZt2xQIBPJcefY5GYsdO3Zoy5Ytqqys1OzsrH784x9r
 yZIlea48+xoaGvT666/rxIkTWr58uXbt2qWpqSlJ6ecmD0wBgOH4rwQBwHAEPQAYjqAHAMMR9ABg
 OIIeAAxH0AOA4Qh6ADAcQQ8Ahvt/PpE2fa6q4nAAAAAASUVORK5CYII=
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The p-value depends on the outcome of your experiment, that is which particular values you have for your observations. Therefore it is different everytime you repeat the experiment. You can see that roughly 10% of all experiments ended up in the red shaded area, they have p-values below 0.1. These are the cases where you observe a significant difference in the means despite there being none. A false positive.</p>
 <p>What happens if there is a difference between the means of the two samples?</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">repeat_experiment</span><span class="p">(</span><span class="n">diff</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[203]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">repeat_experiment</span><span class="p">(</span><span class="n">diff</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX8AAAEACAYAAABbMHZzAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAFXdJREFUeJzt3X1sU9f9x/GPqb2fUAcUaOMMm8lbHhbcQKBjYd3UKih1
 xpgaocGshql1oWNTo6kPqzYQ/YPQPxZvnbSxbpGmLStRHyDRNiXZRqOo1cym8pCtVKXCaAlVqBIn
@@ -875,32 +951,39 @@ Sl889dRTeuedd5Jj3S6XSz09PbksO+NS6QdTpNIXZWVlWrdunVasWKE5c+Zo27Zt8vv9Oa4881Lp
 i507d2rLli2qqKjQ1NSUfvzjH2vRokU5rnxm1NXV6eDBgzpz5oyWLl2q3bt3a3x8XJK93GSSFwAY
 iNs4AoCBCH8AMBDhDwAGIvwBwECEPwAYiPAHAAMR/gBgIMIfAAz0/9//xnFA8MdZAAAAAElFTkSu
 QmCC
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now you get a p-value less than 0.1 more often than 10% of the time. This is exactly what you would expect as the Null hypothesis is not true.</p>
 <p>An important thing to realize is that by choosing your p-value threshold to be say 0.05, you are choosing to be wrong 1 in 20 times. Keep in mind: This is true if you judged a lot of copies of this experiment. For each individual experiment you do, you are either right or wrong. The trouble is you do not know which one of the two it is.</p>
 <p>The smaller a value you choose for your p-value threshold, the smaller the chance of being wrong when you decide to switch to the new webpage. Nobody likes being wrong so why not always choose a very, very small threshold?</p>
 <p>The price you pay for choosing a lower threshold is that you will end up missing out on opportunities to improve your conversion rate. By lowering the p-value threshold you will conclude that the new version did not improve things when it actually did.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">keep_or_not</span><span class="p">(</span><span class="n">improvement</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[238]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">keep_or_not</span><span class="p">(</span><span class="n">improvement</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
     <span class="n">keep</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">repeats</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">repeats</span><span class="p">):</span>
         <span class="n">A</span><span class="p">,</span><span class="n">B</span> <span class="o">=</span> <span class="n">two_samples</span><span class="p">(</span><span class="n">improvement</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
-        <span class="n">t</span><span class="p">,</span><span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">t</span><span class="p">,</span><span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">p</span> <span class="o">/=</span> <span class="mf">2.</span>
         <span class="k">else</span><span class="p">:</span>
@@ -921,30 +1004,30 @@ QmCC
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">thresholds</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mf">1.1</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;p-value threshold&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;</span><span class="si">% c</span><span class="s">ases correctly accepted&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;% cases correctly accepted&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[238]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">&lt;matplotlib.text.Text at 0x106ede550&gt;</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[238]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.text.Text at 0x106ede550&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXsAAAEPCAYAAACjjWTcAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XtcVOW6B/DfiCjlDbJEDE+w2YKKMDOBmJaJKYz7eLfU
 sgy81MmdaOrebdRt0UWlU20F7KR5LMx2VqeLmhh5iRGxPN4YdW9KP3GkvABBCASCyPCeP9ysJMFh
@@ -1139,26 +1222,33 @@ vFlZlpCQgKlTp8LLywsPPPAAfvjhBwANr0h54oknMHHiRBgMBowZM0Y5QRsVFYVvv/1WaSF169YN
 OXMmysrKIITAwoUL0aNHjyavoDEajYiNjUVERISSi16vb7CtyZMn46uvvsLAgQPxb//2bxg2bFhz
 /uwkCU5xTJqQl5eH8ePH49SpU84OhcglsY1DmsFrwonUwyN7IiIJ8MieiEgCLPZERBJgsScikgCL
 PRGRBFjsiYgkwGJPRCSB/wfion9NPrq9xAAAAABJRU5ErkJggg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>From this you can see that the times you accept the new webpage (which we know to be better by 5%) is smaller if you choose your p-value lower. Missing out on these opportunities is the price you pay for being wrong less often.</p>
 <p>For a fixed p-value threshold, you correctly decide to change your webpage more often if the effect is larger:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">improvements</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[240]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">improvements</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">improvement</span> <span class="ow">in</span> <span class="n">improvements</span><span class="p">:</span>
     <span class="n">kept</span> <span class="o">=</span> <span class="n">keep_or_not</span><span class="p">(</span><span class="n">improvement</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">improvement</span><span class="p">,</span> <span class="n">kept</span><span class="p">,</span> <span class="s">&quot;bo&quot;</span><span class="p">)</span>
@@ -1167,31 +1257,31 @@ PRGRBFjsiYgkwGJPRCSB/wfion9NPrq9xAAAAABJRU5ErkJggg==
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">improvements</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mf">1.1</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;Size of the improvement&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;</span><span class="si">% c</span><span class="s">ases correctly accepted&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;% cases correctly accepted&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[240]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">&lt;matplotlib.lines.Line2D at 0x10711b910&gt;</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[240]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.lines.Line2D at 0x10711b910&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYEAAAEPCAYAAACk43iMAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XlYU2e+B/BvWJQuIGorLjhFU3fZCmLFLQ5C7CBedRTt
 zHRAqzNqRe10Rq3LrU/d0nunVwWrjtZW7KJS7QPUOBS1IFplUAra1oWWK9YNakVERVDCe//gJgNK
@@ -1389,64 +1479,71 @@ OXIkNm3aVOu5aj7+0XM+ev6a27du3YKvry9cXFywa9euOh8THx+PWbNmoaysDGq12vS7AdXvBhYu
 XIhVq1YBqH4HYs14mRuXfv36YdWqVQgLC0NVVRWcnZ2xadMm/OpXvzI7PlOnTsXMmTMRFxeHzz77
 zNTQp+aJHxElspMePXogOzsbHTp0kDsKkQmng4jshPPopER8J0BE1IrxnQARUSvGIkBE1IqxCBAR
 tWIsAkRErRiLABFRK8YiQETUiv0fIPj7uzqL6PkAAAAASUVORK5CYII=
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This makes sense. If the difference between your two onversion rates is larger, then it should be easier to detect. As a result you correctly choose to change your webpage in a higher fraction of cases. In other words the larger the difference, the more often you correctly reject the Null hypothesis.</p>
 <p>The horizontal blue line marks the p-value threshold of 5%. You can see for the left most point at 0% improvement, we reject the Null hypothesis in 5% of cases and change our webpage. In reality the new webpage does no better than what we had before.</p>
 <p>Similarly, the larger your p-value threshold the more often you correctly decide to reject the Null hypothesis. This comes at a price though, because the larger your p-value threshold, the higher the chance of you incorrectly deciding to change the website.</p>
-<p>What we have called &quot;% cases correctly accepted&quot; is known in statistics as the <a href="http://en.wikipedia.org/wiki/Statistical_power">power of a statistical test</a>. The power of a test depends on the p-value threshold, the size of the effect you are looking for and the size of your sample.</p>
+<p>What we have called "% cases correctly accepted" is known in statistics as the <a href="http://en.wikipedia.org/wiki/Statistical_power">power of a statistical test</a>. The power of a test depends on the p-value threshold, the size of the effect you are looking for and the size of your sample.</p>
 <p>For a given p-value threshold and improvement your chances of correctly detecting that there is an improvement depend on how many observations you have. If a change increases the conversion rate by a whopping 10% that is much easier to detect (you need to watch less people) than if a change only increases the conversion rate by 0.5%.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">improvements</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[264]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">improvements</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>
 <span class="n">markers</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;ro&quot;</span><span class="p">,</span> <span class="s">&quot;gv&quot;</span><span class="p">,</span> <span class="s">&quot;b^&quot;</span><span class="p">,</span> <span class="s">&quot;ms&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">improvement</span><span class="p">,</span> <span class="n">marker</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">improvements</span><span class="p">,</span> <span class="n">markers</span><span class="p">):</span>
     <span class="n">sample_size</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
     <span class="n">kept</span> <span class="o">=</span> <span class="p">[</span><span class="n">keep_or_not</span><span class="p">(</span><span class="n">improvement</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span> <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="n">sample_size</span><span class="p">]</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sample_size</span><span class="p">,</span> <span class="n">kept</span><span class="p">,</span> <span class="n">marker</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&quot;improvement=</span><span class="si">%g%%</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">improvement</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sample_size</span><span class="p">,</span> <span class="n">kept</span><span class="p">,</span> <span class="n">marker</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&quot;improvement=%g%%&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">improvement</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
     
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">sample_size</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mf">1.1</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;Sample size&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;</span><span class="si">% c</span><span class="s">ases correctly accepted&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;% cases correctly accepted&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[264]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">&lt;matplotlib.text.Text at 0x10aed9190&gt;</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[264]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.text.Text at 0x10aed9190&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYEAAAEPCAYAAACk43iMAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XdYFNf6B/DvgiiiFGPBDkhUpKNYYwQ0gFExKnZBEL0a
 vbaoMWIsJF4FYwWNJlGDLbHXYEQUwZJYooIasf0U1Ahyo4gISFve3x9eJqyUpe3u7O77eZ59Hmd2
@@ -1753,18 +1850,26 @@ AgJgY2ODyZMny7zfqFEjbN26FaNGjRLuSFq6dKnM1btUKoWvry9evXoFIsKMGTNgbGwsHPfx48c4
 cOAA7t+/jx9//BEAsGXLFixcuBAzZ86Evb09CgsL0aZNG+4cZtXGQ0kzVkFJSUnw8vLCzZs3VR0K
 YzWGm4MYqwQxzxXLWFVwTYAxxrQY1wQYY0yLcSHAGGNajAsBxhjTYlwIMMaYFuNCgDHGtBgXAowx
 psX+HwcerWVp5wdhAAAAAElFTkSuQmCC
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As you can see from this plot, for a given sample size you are more likely to correctly decide to switch to the new webpage for larger improvements. For increases in conversion rate of 10% or more you can see that you do not need a sample with more than 2000 observations or so to gurantee you will decide to switch if there is an effect. For very small improvements you see that you need very large samples to be sure to actually detect the small improvement.</p>
 <p>Now you know about hypothesis testing, p-values and how to use them to decide if you should switch, and you know that p-values are not all there is. The power of your test, the probability to actually detect an improvement if it is there is just as important as p-values. The beauty is that you can calculate a lot of these numbers before you ever start running an A/B test or the likes.</p>
+
+</div>
+</div>
 </div></p>
 <p>This post started life as a ipython notebook,
 <a href="/downloads/notebooks/hypothesis-testing.ipynb">download it</a>

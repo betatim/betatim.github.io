@@ -36,68 +36,69 @@
     <!-- extra stuff for nbconvert -->
 	
 <style type="text/css">
-    .highlight-ipynb .hll { background-color: #ffffcc }
-.highlight-ipynb  { background: #f8f8f8; }
-.highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
-.highlight-ipynb .err { border: 1px solid #FF0000 } /* Error */
-.highlight-ipynb .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight-ipynb .o { color: #666666 } /* Operator */
-.highlight-ipynb .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight-ipynb .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight-ipynb .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight-ipynb .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight-ipynb .gd { color: #A00000 } /* Generic.Deleted */
-.highlight-ipynb .ge { font-style: italic } /* Generic.Emph */
-.highlight-ipynb .gr { color: #FF0000 } /* Generic.Error */
-.highlight-ipynb .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight-ipynb .gi { color: #00A000 } /* Generic.Inserted */
-.highlight-ipynb .go { color: #888888 } /* Generic.Output */
-.highlight-ipynb .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight-ipynb .gs { font-weight: bold } /* Generic.Strong */
-.highlight-ipynb .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight-ipynb .gt { color: #0044DD } /* Generic.Traceback */
-.highlight-ipynb .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight-ipynb .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight-ipynb .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight-ipynb .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight-ipynb .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight-ipynb .kt { color: #B00040 } /* Keyword.Type */
-.highlight-ipynb .m { color: #666666 } /* Literal.Number */
-.highlight-ipynb .s { color: #BA2121 } /* Literal.String */
-.highlight-ipynb .na { color: #7D9029 } /* Name.Attribute */
-.highlight-ipynb .nb { color: #008000 } /* Name.Builtin */
-.highlight-ipynb .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight-ipynb .no { color: #880000 } /* Name.Constant */
-.highlight-ipynb .nd { color: #AA22FF } /* Name.Decorator */
-.highlight-ipynb .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight-ipynb .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight-ipynb .nf { color: #0000FF } /* Name.Function */
-.highlight-ipynb .nl { color: #A0A000 } /* Name.Label */
-.highlight-ipynb .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight-ipynb .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight-ipynb .nv { color: #19177C } /* Name.Variable */
-.highlight-ipynb .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight-ipynb .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight-ipynb .mf { color: #666666 } /* Literal.Number.Float */
-.highlight-ipynb .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight-ipynb .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight-ipynb .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight-ipynb .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight-ipynb .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight-ipynb .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight-ipynb .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight-ipynb .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight-ipynb .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight-ipynb .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight-ipynb .sx { color: #008000 } /* Literal.String.Other */
-.highlight-ipynb .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight-ipynb .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight-ipynb .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight-ipynb .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight-ipynb .vc { color: #19177C } /* Name.Variable.Class */
-.highlight-ipynb .vg { color: #19177C } /* Name.Variable.Global */
-.highlight-ipynb .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 
 <style type="text/css">
@@ -145,6 +146,14 @@ div.text_cell_render {
 }
 
 img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
+
+div.collapseheader {
+    width=100%;
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 </style>
 
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
@@ -167,6 +176,23 @@ init_mathjax = function() {
 }
 init_mathjax();
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $("div.collapseheader").click(function () {
+    $header = $(this).children("span").first();
+    $codearea = $(this).children(".input_area");
+    console.log($(this).children());
+    $codearea.slideToggle(500, function () {
+        $header.text(function () {
+            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+        });
+    });
+});
+});
+</script>
+
 
     <!-- extra stuff for nbconvert -->
 
@@ -304,7 +330,7 @@ init_mathjax();
         <article>
             <header class="title">
                 <h1>
-                    <!--<a href="http://betatim.github.io/posts/first-python-notebook-inclusion/"
+                    <!--<a href="http://betatim.github.io/drafts/first-python-notebook-inclusion.html"
                        rel="bookmark"
                        title="Permalink to First python notebook inclusion">
                         First python notebook inclusion
@@ -317,7 +343,7 @@ init_mathjax();
                 <p>This is some example code included from a file. Look how
 it gets highlighted and stuff!</p>
 <figure class='code'>
-<figcaption><span>Hello world</span> (download <a href='/downloads/code/hello.py'>hello.py</a>)</figcaption>
+<figcaption>Hello world hello.py(download <a href='/downloads/code/hello.py'>hello.py</a>)</figcaption>
 
 <div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;hello world!&quot;</span>
 <span class="c"># Define our test distribution: a mix of Cauchy-distributed variables</span>
@@ -340,26 +366,25 @@ it gets highlighted and stuff!</p>
 
 <p>Now for a whole notebook!</p>
 <p>
-
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="c"># plot figures inline with matplotlib</span>
-<span class="o">%</span><span class="k">pylab</span> <span class="n">inline</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># plot figures inline with matplotlib</span>
+<span class="o">%</span><span class="k">pylab</span> inline
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>
 Welcome to pylab, a matplotlib-based Python environment [backend: module://IPython.zmq.pylab.backend_inline].
 For more information, type &apos;help(pylab)&apos;.
@@ -371,15 +396,14 @@ For more information, type &apos;help(pylab)&apos;.
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="c"># Define our test distribution: a mix of Cauchy-distributed variables</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># Define our test distribution: a mix of Cauchy-distributed variables</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">stats</span><span class="o">.</span><span class="n">cauchy</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">)</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
@@ -394,31 +418,32 @@ For more information, type &apos;help(pylab)&apos;.
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="c"># Histogram the result</span>
-<span class="kn">import</span> <span class="nn">pylab</span> <span class="kn">as</span> <span class="nn">pl</span>
-<span class="n">H</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># Histogram the result</span>
+<span class="kn">import</span> <span class="nn">pylab</span> <span class="k">as</span> <span class="nn">pl</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 <span class="c">#pl.savefig(&#39;bayesblocks1.png&#39;)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXsAAAD9CAYAAABdoNd6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAFidJREFUeJzt3X9MXXf9x/HXrfcu1f5YO9PSei+K497ChbaXdiCZyZK7
 2IWObNfqasJ+ODJZJCRNV9Ms+3PUxLXE1MiGf9BFmzUzDGO04Eav2pgb5yYQV6Z+hemtg+VCC5l1
@@ -521,37 +546,38 @@ cZfFD40z9rOf/cwEAgGzcuVKk5eXZ3bv3m2MMeanP/2pKS0tNWVlZWbnzp3m9ddfd6O8BbtV/4wx
 8ILb5WTV+++/byKRiIlEIqa0tPS2719NTY3ZvHmz8fl8JhAImB/96EfmwoUL5ktf+tKyuPTy5v79
 8Ic/nNdx5+rXEgIAFofrwzgAgNwj7AHAAoQ9AFiAsAcACxD2AGABwh4ALPD/gT9oKwbNJFQAAAAA
 SUVORK5CYII=
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="c"># Histogram with more bins</span>
-<span class="n">H</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># Histogram with more bins</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 <span class="c">#pl.savefig(&#39;bayesblocks2.png&#39;)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXsAAAD9CAYAAABdoNd6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAFnhJREFUeJzt3VFoW9cBxvFPiRQCnZM6w/UcyUyb5cZuZzsJdkwoAcGS
 eAtMW/LkLYwwPGMMpS9l7GnEKazUDxmUug9mJKWlpfMYW5xtiZcFKtZmiwWdR2BZh0ftVXHrLEsT
@@ -655,22 +681,22 @@ Tz9tdu/ebfbu3Wt+97vfuVG9dct2fMYY89Of/tQ0NTWZXbt2mYmJCRdrWRzf//73TVtbm2lvbzff
 /va3zfz8vNtVKooLFy6YJ5980jQ1NZkXX3zR7eoU1Ycffmg6OjpMR0eHefrppyv++Hp7e01DQ4Px
 +XwmEAiYs2fPmtu3b5uvf/3rVTH0MvP4zpw5U9B55+oFxwEAG8P1bhwAQOkR9gBgAcIeACxA2AOA
 BQh7ALAAYQ8AFvg/a0fgIuxu78IAAAAASUVORK5CYII=
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">bayesian_blocks</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">bayesian_blocks</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Bayesian Blocks Implementation</span>
 
 <span class="sd">    By Jake Vanderplas.  License: BSD</span>
@@ -732,7 +758,7 @@ BQh7ALAAYQ8AFvg/a0fgIuxu78IAAAAASUVORK5CYII=
     <span class="n">change_points</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
     <span class="n">i_cp</span> <span class="o">=</span> <span class="n">N</span>
     <span class="n">ind</span> <span class="o">=</span> <span class="n">N</span>
-    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">while</span> <span class="k">True</span><span class="p">:</span>
         <span class="n">i_cp</span> <span class="o">-=</span> <span class="mi">1</span>
         <span class="n">change_points</span><span class="p">[</span><span class="n">i_cp</span><span class="p">]</span> <span class="o">=</span> <span class="n">ind</span>
         <span class="k">if</span> <span class="n">ind</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -745,32 +771,33 @@ BQh7ALAAYQ8AFvg/a0fgIuxu78IAAAAASUVORK5CYII=
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="c"># plot a standard histogram in the background, with alpha transparency</span>
-<span class="n">H1</span> <span class="o">=</span> <span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># plot a standard histogram in the background, with alpha transparency</span>
+<span class="n">H1</span> <span class="o">=</span> <span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 <span class="c"># plot an adaptive-width histogram on top</span>
-<span class="n">H2</span> <span class="o">=</span> <span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bayesian_blocks</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s">&#39;step&#39;</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">H2</span> <span class="o">=</span> <span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bayesian_blocks</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s">&#39;step&#39;</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 <span class="c">#pl.savefig(&#39;bayesblocks3.png&#39;)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXsAAAD9CAYAAABdoNd6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XlwVPed9/v36T69qVt7S0JIMjKIRdisRuYhHmZUCTbB
 94kmdqaeInH5+jrYVnHHlXLiSXmqbrmC89zkxs88nimXSU2RjJ2lknGYymKY2GCHmWhsYyPZIMAs
@@ -987,24 +1014,25 @@ pmmav/3tb8277rrLXL16tbl27Vrzj3/8oxXlTdqNjs80TfMHP/iBuWjRInPp0qXm/v37Laxyajz6
 XXfdNeuPb+vWrWZxcbHpcDjM0tJS87XXXjN7e3vNL33pS3Oi6+Xnj+/VV1+d0HmnmOYc+UpeCCHE
 DVl+GUcIIcT0k7AXQog0IGEvhBBpQMJeCCHSgIS9EEKkAQl7IYRIA/8/pAkCOrG9Q1oAAAAASUVO
 RK5CYII=
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre> 
 </pre></div>
 
+</div>
 </div>
 </div>
 
@@ -1020,48 +1048,54 @@ dolore magna aliquyam erat, sed diam voluptua.</p>
 kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
 amet.</p>
 <p>
-
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="o">%</span><span class="k">matplotlib</span> <span class="n">inline</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">import</span> <span class="nn">random</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">random</span>
 <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">namedtuple</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Imagine you want to track the position of a ball which is being dropped off the Eiffel tower. To measure the ball's position we will setup a camera that can see the whole height of the tower and take many pictures. From the pictures we can then estimate the position of the ball at each of the moments that we took a picture. The Eiffel tower is about 324m heigh. Let's say we have space for 20 pictures in our camera. It takes about 8.5s for the ball to reach the ground, so we will take a picture every 8.5/20 = 0.425seconds.</p>
+<p>Imagine you want to track the position of a ball which is being dropped off the Eiffel tower. To measure the ball's position we will setup a camera that can see the whole height of the tower and take many pictures. From the pictures we can then estimate the position of the ball at each of the moments that we took a picture.
+The Eiffel tower is about 324m heigh. Let's say we have space for 20 pictures in our camera. It takes about 8.5s for the ball to reach the ground, so we will take a picture every 8.5/20 = 0.425seconds.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">starting_point</span> <span class="o">=</span> <span class="mf">324.</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">starting_point</span> <span class="o">=</span> <span class="mf">324.</span>
 <span class="n">Nobservations</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">time_step</span> <span class="o">=</span> <span class="mf">8.5</span><span class="o">/</span><span class="n">Nobservations</span>
 
@@ -1073,18 +1107,25 @@ amet.</p>
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is the true position of the ball at each moment in time. It hits the ground around about 8s after we dropped it.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">true_positions</span> <span class="o">=</span> <span class="p">[]</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">true_positions</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">time</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Nobservations</span><span class="p">):</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="n">time_step</span>
@@ -1096,15 +1137,16 @@ amet.</p>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYQAAAEPCAYAAABCyrPIAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xtc1vX9//HHhWBqmpopKOgw1JAz6cCWB0gQWUIeisJS
 8tC2DqZp67CtgrYJVt8V2mHO8pe1JtrKQwedVl6eDU9MFxVqkJw0naNSMAQ+vz8+SprKQbn4XMDz
@@ -1295,25 +1337,32 @@ BnXpz7/uuus4cuQI27ZtA8wDirKzs2u97sCBA4SFhZGSkkLXrl1rPNpQpDGohSBy2pmjWm022wXv
 n/2cs793c3Pjn//8Jw8++CDffvstFRUVPPTQQxc8HOXs6x955BH27duHYRhERUURFBTkiF9LpM40
 7VSkkUyaNIlRo0Yxbty4Gp+Xl5dHXFycpp1Ko1OXkUgj6dixI0888USNC9M2btxIfHy8U5wRLC2P
 WggiIgKohSAiIqepIIiICKCCICIip6kgiIgIoIIgIiKn/X8Hn+LnEB1gPwAAAABJRU5ErkJggg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As the ball is dropping pretty quick it will probably be a bit blurry on our pictures. Plus to fit the whole Eiffel tower in the shot we will have to setup our camera quite a distance away. All this means when we measure the position we will invariably make a small mistake each time. Let's assume we can measure the position with an accuracy of about 10m. The uncertainty is pretty big, but that is on purpose. If we measured the position very accurately in the first place the effect of using the Kalman filter would be much less impressive. The point of this is to show that you can estimate the position of the ball accurately despite only measuring it with a large uncertainty at each time step. Below we plot the true position of the ball in blue and one possible observed path in red. Sometimes it looks like the ball went upwards!</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">measurement_uncert</span> <span class="o">=</span> <span class="mi">10</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">measurement_uncert</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="c"># the first point we know, it is the top of the tower</span>
 <span class="n">observations</span> <span class="o">=</span> <span class="p">[</span><span class="n">starting_point</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">true_pos</span> <span class="ow">in</span> <span class="n">true_positions</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
@@ -1325,15 +1374,16 @@ WggiIgKohSAiIqepIIiICKCCICIip6kgiIgIoIIgIiKn/X8Hn+LnEB1gPwAAAABJRU5ErkJggg==
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYQAAAEPCAYAAABCyrPIAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XlYlPX6x/H3sJgLpmYIymiYaMhOGli5YIJkCq55wlLc
 WrRcUjNtResn2I7aYpZlnY5o5ZppajnuhqakReUSKLuaoaISwjy/P75IoCigDM8A9+u65mKceWbm
@@ -1569,35 +1619,43 @@ BoOh1PvFryn+Z3t7e7766ivGjx/P6dOnyc/P5+mnny71cJTir586dSqHDh1C0zSCg4Px8fGxxF9L
 iHKTaadCVJERI0bQp08fBg4ceM3rkpOTCQsLk2mnospJl5EQVaRRo0a8+OKL11yYtnXrVsLDw63i
 jGBR+0gLQQghBCAtBCGEEIWkIAghhACkIAghhCgkBUEIIQQgBUEIIUSh/weVjKHDbxrOLgAAAABJ
 RU5ErkJggg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>But we can do better! By using what we know about the current position of the ball and Newton's laws we can predict where the next measurement should be. If you combine the prediction and the observation you get a better estimate of the true position then using either one by itself. We could just take the average of the two as our combination, however you can do better than that by weighting the two by how certain you are each one is correct. If the measurement has a large uncertainty and the prediction has a small uncertainty we want to give a larger weight to the prediction, and vice versa. For this we need two ingredients:</p>
+<p>But we can do better! By using what we know about the current position of the ball and Newton's laws we can predict where the next measurement should be. If you combine the prediction and the observation you get a better estimate of the true position then using either one by itself.
+We could just take the average of the two as our combination, however you can do better than that by weighting the two by how certain you are each one is correct. If the measurement has a large uncertainty and the prediction has a small uncertainty we want to give a larger weight to the prediction, and vice versa. For this we need two ingredients:</p>
 <ul>
 <li>a method to predict the next position, and</li>
 <li>a method to estimate how certain we are that the prediction is correct</li>
 </ul>
-<p>When the ball is let go at position <span class="math">\(x\)</span>, <span class="math">\(t\)</span> seconds later it will be at <span class="math">\(x&#39;=x-\frac{1}{2}\cdot9.81\cdot t^2\)</span>. Once it is falling it will gather speed, <span class="math">\(v&#39;=v+9.81\cdot t\)</span>. As a result it will cover a larger distance during each time step: <span class="math">\(x&#39;=x-v\cdot t -\frac{1}{2}\cdot9.81\cdot t^2\)</span>.</p>
+<p>When the ball is let go at position $x$, $t$ seconds later it will be at $x'=x-\frac{1}{2}\cdot9.81\cdot t^2$. Once it is falling it will gather speed, $v'=v+9.81\cdot t$. As a result it will cover a larger distance during each time step: $x'=x-v\cdot t -\frac{1}{2}\cdot9.81\cdot t^2$.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">kalman</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">measurement</span><span class="p">,</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">kalman</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">measurement</span><span class="p">,</span>
            <span class="n">R</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="s">&quot;10.&quot;</span><span class="p">),</span>
            <span class="n">motion</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="mf">9.81</span><span class="o">*</span><span class="n">time_step</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mf">9.81</span><span class="o">*</span><span class="n">time_step</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
            <span class="n">Q</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="s">&#39;&#39;&#39;0. 0.;</span>
 <span class="s">                          0. 0.&#39;&#39;&#39;</span><span class="p">),</span>
-           <span class="n">F</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="s">&#39;&#39;&#39;1. </span><span class="si">%f</span><span class="s">;</span>
+           <span class="n">F</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="s">&#39;&#39;&#39;1. %f;</span>
 <span class="s">                          0. 1.&#39;&#39;&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">time_step</span><span class="p">)),</span>
            <span class="n">H</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="s">&#39;&#39;&#39;1. 0.&#39;&#39;&#39;</span><span class="p">)):</span>
     <span class="sd">&quot;&quot;&quot;Parameters:</span>
@@ -1615,24 +1673,24 @@ RU5ErkJggg==
     <span class="c"># Predict x and P</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span><span class="n">motion</span>
     <span class="n">P</span> <span class="o">=</span> <span class="n">F</span><span class="o">*</span><span class="n">P</span><span class="o">*</span><span class="n">F</span><span class="o">.</span><span class="n">T</span> <span class="o">+</span> <span class="n">Q</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;xp:&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s">&quot;Pp:&quot;</span><span class="p">,</span> <span class="n">P</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;xp:&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s">&quot;Pp:&quot;</span><span class="p">,</span> <span class="n">P</span><span class="p">)</span>
     
     <span class="c"># Update x, P using measurement m    </span>
     <span class="c"># distance between measured and current position</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">measurement</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">-</span> <span class="n">H</span> <span class="o">*</span> <span class="n">x</span>
     <span class="n">S</span> <span class="o">=</span> <span class="n">H</span> <span class="o">*</span> <span class="n">P</span> <span class="o">*</span> <span class="n">H</span><span class="o">.</span><span class="n">T</span> <span class="o">+</span> <span class="n">R</span>  <span class="c"># residual convariance</span>
     <span class="n">K</span> <span class="o">=</span> <span class="n">P</span> <span class="o">*</span> <span class="n">H</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">S</span><span class="o">.</span><span class="n">I</span> <span class="c"># Kalman gain or ratio</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;P:&quot;</span><span class="p">,</span><span class="n">P</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;S.I:&quot;</span><span class="p">,</span><span class="n">S</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;H.T:&quot;</span><span class="p">,</span> <span class="n">H</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;P*H.T:&quot;</span><span class="p">,</span> <span class="n">P</span><span class="o">*</span><span class="n">H</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;H.T*S.I:&quot;</span><span class="p">,</span> <span class="n">H</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="n">S</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;P*H.T*S.I:&quot;</span><span class="p">,</span> <span class="n">P</span><span class="o">*</span><span class="n">H</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="n">S</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;X:&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;y:&quot;</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;P:&quot;</span><span class="p">,</span><span class="n">P</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;S.I:&quot;</span><span class="p">,</span><span class="n">S</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;H.T:&quot;</span><span class="p">,</span> <span class="n">H</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;P*H.T:&quot;</span><span class="p">,</span> <span class="n">P</span><span class="o">*</span><span class="n">H</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;H.T*S.I:&quot;</span><span class="p">,</span> <span class="n">H</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="n">S</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;P*H.T*S.I:&quot;</span><span class="p">,</span> <span class="n">P</span><span class="o">*</span><span class="n">H</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="n">S</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;X:&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;y:&quot;</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">K</span><span class="o">*</span><span class="n">y</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;K:&quot;</span><span class="p">,</span><span class="n">K</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;K*y:&quot;</span><span class="p">,</span><span class="n">K</span><span class="o">*</span><span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;K:&quot;</span><span class="p">,</span><span class="n">K</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;K*y:&quot;</span><span class="p">,</span><span class="n">K</span><span class="o">*</span><span class="n">y</span><span class="p">)</span>
     <span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="c"># identity matrix</span>
     <span class="n">P</span> <span class="o">=</span> <span class="p">(</span><span class="n">I</span> <span class="o">-</span> <span class="n">K</span><span class="o">*</span><span class="n">H</span><span class="p">)</span><span class="o">*</span><span class="n">P</span>
 
@@ -1641,23 +1699,23 @@ RU5ErkJggg==
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="s">&#39;344. 0.&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="s">&#39;344. 0.&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 <span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">predicted</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">obs</span> <span class="ow">in</span> <span class="n">observations</span><span class="p">[:</span><span class="n">N</span><span class="p">]:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;obs:&quot;</span><span class="p">,</span><span class="n">obs</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;x:&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s">&quot;P:&quot;</span><span class="p">,</span><span class="n">P</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;obs:&quot;</span><span class="p">,</span><span class="n">obs</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;x:&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s">&quot;P:&quot;</span><span class="p">,</span><span class="n">P</span><span class="p">)</span>
     <span class="n">x</span><span class="p">,</span><span class="n">P</span> <span class="o">=</span> <span class="n">kalman</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">P</span><span class="p">,</span><span class="n">obs</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;x:&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s">&quot;P:&quot;</span><span class="p">,</span><span class="n">P</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;x:&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s">&quot;P:&quot;</span><span class="p">,</span><span class="n">P</span><span class="p">)</span>
     <span class="n">predicted</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
     
 <span class="n">plot_position</span><span class="p">(</span><span class="n">time</span><span class="p">[:</span><span class="n">N</span><span class="p">],</span> <span class="n">true_positions</span><span class="p">[:</span><span class="n">N</span><span class="p">])</span>
@@ -1670,13 +1728,14 @@ RU5ErkJggg==
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>obs: 324.0
 x: [[ 344.]
  [   0.]] P: [[ 20.   0.]
@@ -1709,10 +1768,10 @@ x: [[ 329.68658516]
 </div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_area"><div class="prompt"></div>
 
 
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYwAAAEPCAYAAABRHfM8AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAHBNJREFUeJzt3X9QVNf9//HXLmCUhFGJxjQQx4pYWUV2NREztek6iFQN
 jjGOUxkNmv6a2PgjP4zh69dgzMdIqplptKOxkyZpO9NJmliLrT++2tTV2NQxiuSHzhhESBVJKhow
@@ -1841,22 +1900,22 @@ pK8fKHTs2LFWtystLdWYMWP0zDPPqH///l3i+eVASxhhAP9x5XGXVz9a9puPmf3mIzFdLpdiYmL0
 1ltvaeHChaqpqVFDQ4MeffRReTyeZo8hSU8++aRKSkpkjNGECRO67HPagSu4rBaIkHnz5um+++7T
 Aw880GK78vJyZWdnc1ktuhympIAI6d27t5YvX97ijXvvvPOOpk6dqv79+0ewMsAOIwwAgBVGGAAA
 KwQGAMAKgQEAsEJgAACsEBgAACv/H5AxV6t2GhkeAAAAAElFTkSuQmCC
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">next_position</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">next_position</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Given we are at `x`, falling at speed `v` predict the next position and speed&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">v</span><span class="o">*</span><span class="n">time_step</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="mf">9.81</span> <span class="o">*</span> <span class="n">time_step</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">v</span><span class="o">+</span><span class="mf">9.81</span><span class="o">*</span><span class="n">time_step</span>
 <span class="k">def</span> <span class="nf">position_uncertainty</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">Q</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
@@ -1870,29 +1929,30 @@ KwQGAMAKgQEAsEJgAACsEBgAACv/H5AxV6t2GhkeAAAAAElFTkSuQmCC
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">x</span> <span class="o">=</span> <span class="mf">324.</span><span class="p">;</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;Currently at: {:.2f}+-{:.3f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">p</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;Prediction for next position: {:.2f}+-{:.3f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">next_position</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">x</span> <span class="o">=</span> <span class="mf">324.</span><span class="p">;</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s">&quot;Currently at: {:.2f}+-{:.3f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">p</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s">&quot;Prediction for next position: {:.2f}+-{:.3f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">next_position</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span>
                                                             <span class="n">position_uncertainty</span><span class="p">(</span><span class="n">p</span><span class="p">)))</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>Currently at: 324.00+-2.000
 Prediction for next position: 323.11+-2.500
 </pre>
@@ -1903,13 +1963,12 @@ Prediction for next position: 323.11+-2.500
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">best_estimate_p</span> <span class="o">=</span> <span class="p">[</span><span class="n">starting_point</span><span class="o">+</span><span class="mi">10</span><span class="p">]</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">best_estimate_p</span> <span class="o">=</span> <span class="p">[</span><span class="n">starting_point</span><span class="o">+</span><span class="mi">10</span><span class="p">]</span>
 <span class="n">best_estimate_v</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.</span><span class="p">]</span>
 <span class="n">estimate_cov_p</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">]</span>
 <span class="n">estimate_cov_v</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">]</span>
@@ -1935,15 +1994,15 @@ Prediction for next position: 323.11+-2.500
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">M</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">N</span><span class="o">=</span><span class="mi">10</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">M</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">N</span><span class="o">=</span><span class="mi">10</span>
 <span class="n">plot_position</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="n">M</span><span class="p">:</span><span class="n">N</span><span class="p">],</span> <span class="n">true_positions</span><span class="p">[</span><span class="n">M</span><span class="p">:</span><span class="n">N</span><span class="p">])</span>
 <span class="n">plot_position</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="n">M</span><span class="p">:</span><span class="n">N</span><span class="p">],</span> <span class="n">observations</span><span class="p">[</span><span class="n">M</span><span class="p">:</span><span class="n">N</span><span class="p">],</span> <span class="s">&#39;ro&#39;</span><span class="p">)</span>
 <span class="n">plot_position</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="n">M</span><span class="p">:</span><span class="n">N</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">observations</span><span class="p">[</span><span class="n">M</span><span class="p">:</span><span class="n">N</span><span class="p">])</span><span class="o">+</span><span class="n">measurement_uncert</span><span class="p">,</span> <span class="s">&#39;r--&#39;</span><span class="p">)</span>
@@ -1958,15 +2017,16 @@ Prediction for next position: 323.11+-2.500
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYkAAAEPCAYAAAC3NDh4AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XlcjdkfB/BPKykiyRaiVKJNZV9ChGQsY8nIbhjLMJax
 /yxj7Gam7DK2LMNYBmXfsoRsaUMkS5vQvnfv/f7+OETuvXWre7ul83697mt073me53v5/Z5v5znn
@@ -2364,24 +2424,25 @@ ZfXvu9vc/d3NzQ07d+5EcnIyrl27hrq6OixcuLDRHMj3bv/aa6+hpKQEIoKoqCgEBwfb42cRtQkf
 gSVykNmzZ2Ps2LGYOHFik+3Ky8sRHx/PR2BJEdjdROQg3bp1w/Lly5scTHfw4EGMGzcOHh4eDoyM
 yDZeSRARkU28kiAiIptYJIiIyCYWCSIisolFgoiIbGKRICIim/4PaNOi3ewAi84AAAAASUVORK5C
 YII=
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre> 
 </pre></div>
 
+</div>
 </div>
 </div>
 

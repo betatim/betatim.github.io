@@ -36,68 +36,69 @@
     <!-- extra stuff for nbconvert -->
 	
 <style type="text/css">
-    .highlight-ipynb .hll { background-color: #ffffcc }
-.highlight-ipynb  { background: #f8f8f8; }
-.highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
-.highlight-ipynb .err { border: 1px solid #FF0000 } /* Error */
-.highlight-ipynb .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight-ipynb .o { color: #666666 } /* Operator */
-.highlight-ipynb .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight-ipynb .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight-ipynb .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight-ipynb .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight-ipynb .gd { color: #A00000 } /* Generic.Deleted */
-.highlight-ipynb .ge { font-style: italic } /* Generic.Emph */
-.highlight-ipynb .gr { color: #FF0000 } /* Generic.Error */
-.highlight-ipynb .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight-ipynb .gi { color: #00A000 } /* Generic.Inserted */
-.highlight-ipynb .go { color: #888888 } /* Generic.Output */
-.highlight-ipynb .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight-ipynb .gs { font-weight: bold } /* Generic.Strong */
-.highlight-ipynb .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight-ipynb .gt { color: #0044DD } /* Generic.Traceback */
-.highlight-ipynb .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight-ipynb .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight-ipynb .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight-ipynb .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight-ipynb .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight-ipynb .kt { color: #B00040 } /* Keyword.Type */
-.highlight-ipynb .m { color: #666666 } /* Literal.Number */
-.highlight-ipynb .s { color: #BA2121 } /* Literal.String */
-.highlight-ipynb .na { color: #7D9029 } /* Name.Attribute */
-.highlight-ipynb .nb { color: #008000 } /* Name.Builtin */
-.highlight-ipynb .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight-ipynb .no { color: #880000 } /* Name.Constant */
-.highlight-ipynb .nd { color: #AA22FF } /* Name.Decorator */
-.highlight-ipynb .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight-ipynb .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight-ipynb .nf { color: #0000FF } /* Name.Function */
-.highlight-ipynb .nl { color: #A0A000 } /* Name.Label */
-.highlight-ipynb .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight-ipynb .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight-ipynb .nv { color: #19177C } /* Name.Variable */
-.highlight-ipynb .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight-ipynb .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight-ipynb .mf { color: #666666 } /* Literal.Number.Float */
-.highlight-ipynb .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight-ipynb .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight-ipynb .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight-ipynb .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight-ipynb .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight-ipynb .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight-ipynb .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight-ipynb .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight-ipynb .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight-ipynb .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight-ipynb .sx { color: #008000 } /* Literal.String.Other */
-.highlight-ipynb .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight-ipynb .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight-ipynb .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight-ipynb .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight-ipynb .vc { color: #19177C } /* Name.Variable.Class */
-.highlight-ipynb .vg { color: #19177C } /* Name.Variable.Global */
-.highlight-ipynb .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 
 <style type="text/css">
@@ -145,6 +146,14 @@ div.text_cell_render {
 }
 
 img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
+
+div.collapseheader {
+    width=100%;
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 </style>
 
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
@@ -167,6 +176,23 @@ init_mathjax = function() {
 }
 init_mathjax();
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $("div.collapseheader").click(function () {
+    $header = $(this).children("span").first();
+    $codearea = $(this).children(".input_area");
+    console.log($(this).children());
+    $codearea.slideToggle(500, function () {
+        $header.text(function () {
+            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+        });
+    });
+});
+});
+</script>
+
 
     <!-- extra stuff for nbconvert -->
 
@@ -315,57 +341,61 @@ init_mathjax();
             </header>
             <div class="entry-content">
                 <p>
-
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In High Energy Physics a lot of Machine Learning is done. Mostly with the <a href="http://tmva.sourceforge.net/">TMVA</a> package which is part of the <a href="http://root.cern.ch">ROOT</a> framework which is used by almost every experiment. In this post I will compare how to use <code>TMVA</code> and <code>scikit-learn</code> to solve the same problem.</p>
 <p><code>TMVA</code> implements many of the popular Machine Learning algorithms, is basically the only option considered by High Energy Physicists, and is used almost exclusively by them. This means it is easy to discuss and share code with others. The fact that it is used almost exclusively by and in High Energy Physics also means it is a bit clunky to use and is missing a lot of the useful features present in other packages like <a href="http://scikit-learn.org/stable/">scikit-learn</a>.</p>
 <p>Changing habits is always difficult and one of the first questions asked when you propose a change of something that works is: how do we reproduce our current results? This is how scientists adopt new strategies and techniques. You take a problem you already solved, apply a new method and check if you get the same answer. Then you apply the new method to a new problem.</p>
 <p>Let's see if we can obtain the same result from <code>TMVA</code> and <code>scikit-learn</code> when training a set of <a href="http://en.wikipedia.org/wiki/Decision_tree_learning">Decision Trees</a> combined via <a href="http://en.wikipedia.org/wiki/AdaBoost">AdaBoost</a>.</p>
 <p>The first thing we need is some data to train on. As this is about AdaBoost we will use the dataset used in Hastie et al 2009, Example 10.2 where they compare the performance of a decision tree, a decision stump and a boosted decision stump.</p>
-<h2 id="creating-a-problem-for-ourselves">Creating a problem for ourselves</h2>
-<p>With that, some setup and data generation:</p>
+<h2 id="Creating-a-problem-for-ourselves">Creating a problem for ourselves<a class="anchor-link" href="#Creating-a-problem-for-ourselves">&#182;</a></h2><p>With that, some setup and data generation:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="o">%</span><span class="k">matplotlib</span> <span class="n">inline</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">array</span> <span class="k">import</span> <span class="n">array</span>
 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">from</span> <span class="nn">array</span> <span class="kn">import</span> <span class="n">array</span>
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">AdaBoostClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">roc_auc_score</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">AdaBoostClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">roc_auc_score</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="c"># Generate data like in Hastie et al. 2009, Example 10.2.</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># Generate data like in Hastie et al. 2009, Example 10.2.</span>
 <span class="c"># where DecisionTrees, DecisionStumps and AdaBoost are</span>
 <span class="c"># compared to each other</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">make_hastie_10_2</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">12000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -382,19 +412,26 @@ init_mathjax();
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Time to examine some of the features we have to play with. The Hastie dataset contains ten features, each of which is a unit gaussian centered on zero. A sample is considered a &quot;signal&quot; if <span class="math">\(\sum_j^{10}X_j^2&gt;9.34\)</span>. In words: if the sum of the square of each feature is larger than 9.34 it is a sample we want to keep, otherwise get rid of it. In general ML terms, samples with <span class="math">\(\sum_j^{10}X_j^2&gt;9.34\)</span> form one class and all others form the second class.</p>
+<p>Time to examine some of the features we have to play with. The Hastie dataset contains ten features, each of which is a unit gaussian centered on zero. A sample is considered a "signal" if  $\sum_j^{10}X_j^2>9.34$. In words: if the sum of the square of each feature is larger than 9.34 it is a sample we want to keep, otherwise get rid of it. In general ML terms, samples with $\sum_j^{10}X_j^2>9.34$ form one class and all others form the second class.</p>
 <p>Can we see anything by plotting one of the features against another?</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="n">signal</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X_train</span><span class="p">[</span><span class="n">signal</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="n">signal</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X_train</span><span class="p">[</span><span class="n">signal</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="n">background</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X_train</span><span class="p">[</span><span class="n">background</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;blue&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;Feature 0&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;Feature 1&quot;</span><span class="p">)</span>
@@ -402,25 +439,25 @@ init_mathjax();
 
 </div>
 </div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[5]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">&lt;matplotlib.text.Text at 0x10c90cc10&gt;</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.text.Text at 0x10c90cc10&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX8AAAEPCAYAAACqZsSmAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsnXd4FFXbxu/Z2TYzu5teSEIgCaGEGjBIT+i9V+FFBClS
 pAlKlaICKgiICiIIKAgIgiAooBJeEBUBpbePDi/SkZKe7P39McOyK8WEliDzu669IJkz5zwzSe5z
@@ -1453,22 +1490,22 @@ joiICOzduxcAkJCQgMjISDzxxBPFyjT37dsX06dPR+vWrZGeno53330X8+fPR6tWrXDt2jXbc9x5
 LWDcuHEoKChAy5Yt0bx5c4wfP75EfNWqVcO4cePQpk0btG3bFuPHjxczfYSHQkz1FARBcEOi5y8I
 guCGRPIXBEFwQyL5C4IguCGR/AVBENyQSP6CIAhuSCR/QRAENySSvyAIghsSyV8QBMEN/T/M6yM8
 vp72twAAAABJRU5ErkJggg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="n">signal</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">X_train</span><span class="p">[</span><span class="n">signal</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">)</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="n">signal</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">X_train</span><span class="p">[</span><span class="n">signal</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="n">background</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">X_train</span><span class="p">[</span><span class="n">background</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;blue&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;Feature 4&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;Feature 5&quot;</span><span class="p">)</span>
@@ -1476,25 +1513,25 @@ vp72twAAAABJRU5ErkJggg==
 
 </div>
 </div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[6]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">&lt;matplotlib.text.Text at 0x10ca56dd0&gt;</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.text.Text at 0x10ca56dd0&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX8AAAEPCAYAAACqZsSmAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsnXd4FNX3xt8puzszW9IbISRIDRAgtNAJHaRGOgoIooKA
 IgoiKghYEJCmoIKoCKKACigIP0WMDQtKL4oi0gMhdJKQsu/vj5ksmy9VCGwg83mePM/uzp07Z2Y3
@@ -2390,29 +2427,35 @@ sitW7Irt+xygrXpDaNNqnmdJr7vr13WV9HrAxLZtXdelYRju4D8eD53neY/hOI6WZZEkjeP47Vxp
 mr49gP7VxvMwDNr3Xdu2qes65XlO+PEniD/+tc9/85ZlaRxHlWUp3/cVBIGmaZIkNU2jOI6VJMnb
 yZ4sy9S2raIo0rZtKopCfd8rDEMdx3HP8bkXUFWVruuS53lyXVd1Xf94vcBv4UpnADAQX/4AYCDi
 DwAGIv4AYCDiDwAGIv4AYCDiDwAGIv4AYCDiDwAGegLOi2sAszFM/AAAAABJRU5ErkJggg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Not really. There does not seem to be a clear pattern on how to separate blue from red points by looking at any pair of variables. Good luck Mr DecisionTree!</p>
-<h2 id="training-a-bdt-with-tmva">Training a BDT with TMVA</h2>
-<p>First we will train the default Boosted Decision Tree classifier in <code>TMVA</code>. After this we will try and replicate this with <code>scikit-learn</code>.</p>
-<p>In order to use <code>TMVA</code> we have to create a Factory object, to which we add the individual samples, labelling them as either &quot;signal&quot; or &quot;background&quot; and as &quot;testing&quot; or &quot;training&quot;.</p>
+<h2 id="Training-a-BDT-with-TMVA">Training a BDT with TMVA<a class="anchor-link" href="#Training-a-BDT-with-TMVA">&#182;</a></h2><p>First we will train the default Boosted Decision Tree classifier in <code>TMVA</code>. After this we will try and replicate this with <code>scikit-learn</code>.</p>
+<p>In order to use <code>TMVA</code> we have to create a Factory object, to which we add the individual samples, labelling them as either "signal" or "background" and as "testing" or "training".</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">import</span> <span class="nn">ROOT</span> <span class="kn">as</span> <span class="nn">R</span>
-<span class="kn">from</span> <span class="nn">ROOT</span> <span class="kn">import</span> <span class="n">TMVA</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">ROOT</span> <span class="k">as</span> <span class="nn">R</span>
+<span class="kn">from</span> <span class="nn">ROOT</span> <span class="k">import</span> <span class="n">TMVA</span>
 
 <span class="c"># ROOT and TMVA require an open file to store things</span>
 <span class="c"># as they go along</span>
@@ -2420,7 +2463,7 @@ DwAGIv4AYCDiDwAGIv4AYCDiDwAGIv4AYCDiDwAGegLOi2sAszFM/AAAAABJRU5ErkJggg==
 
 <span class="n">factory</span> <span class="o">=</span> <span class="n">TMVA</span><span class="o">.</span><span class="n">Factory</span><span class="p">(</span><span class="s">&quot;TMVAClassification&quot;</span><span class="p">,</span> <span class="n">outfile</span><span class="p">,</span> <span class="s">&quot;AnalysisType=Classification&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="n">factory</span><span class="o">.</span><span class="n">AddVariable</span><span class="p">(</span><span class="s">&quot;f</span><span class="si">%i</span><span class="s">&quot;</span><span class="o">%</span><span class="k">n</span><span class="p">,</span> <span class="s">&quot;F&quot;</span><span class="p">)</span>
+    <span class="n">factory</span><span class="o">.</span><span class="n">AddVariable</span><span class="p">(</span><span class="s">&quot;f%i&quot;</span><span class="o">%</span><span class="k">n</span>, &quot;F&quot;)
 
 <span class="k">for</span> <span class="n">y</span><span class="p">,</span><span class="n">row</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">X_train</span><span class="p">):</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">std</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="n">R</span><span class="o">.</span><span class="n">Double</span><span class="p">)()</span>
@@ -2447,18 +2490,25 @@ DwAGIv4AYCDiDwAGIv4AYCDiDwAGIv4AYCDiDwAGegLOi2sAszFM/AAAAABJRU5ErkJggg==
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>After adding each sample we can now set what kind of classifier we would like to train as well as the hyperparameters for that classifier. After that we tell <code>TMVA</code> to go and train the classifier.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">factory</span><span class="o">.</span><span class="n">BookMethod</span><span class="p">(</span><span class="n">TMVA</span><span class="o">.</span><span class="n">Types</span><span class="o">.</span><span class="n">kBDT</span><span class="p">,</span> <span class="s">&quot;BDT&quot;</span><span class="p">,</span> 
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">factory</span><span class="o">.</span><span class="n">BookMethod</span><span class="p">(</span><span class="n">TMVA</span><span class="o">.</span><span class="n">Types</span><span class="o">.</span><span class="n">kBDT</span><span class="p">,</span> <span class="s">&quot;BDT&quot;</span><span class="p">,</span> 
                    <span class="c">#&quot;NTrees=800:nEventsMin=100:MaxDepth=3:&quot;</span>
                    <span class="c">#&quot;BoostType=AdaBoost:AdaBoostBeta=0.5:SeparationType=GiniIndex:&quot;</span>
                    <span class="s">&quot;nCuts=-1&quot;</span>
@@ -2468,22 +2518,29 @@ DwAGIv4AYCDiDwAGIv4AYCDiDwAGIv4AYCDiDwAGegLOi2sAszFM/AAAAABJRU5ErkJggg==
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The options (or hyperparameters) of the BDT are all left at their default values. If you were to uncomment the long option string, nothing would change. The only thing we need to adjust is <code>nCuts</code> which determines how many &quot;steps&quot; <code>TMVA</code> will take when evaluating where to split a feature when building a new leaf. By setting it to -1 it will evaluate &quot;every possible&quot; cut value instead of splitting the range of a feature into <code>N</code> chunks.</p>
-<p>As part of the training <code>TMVA</code> creates a &quot;weights&quot; file called <code>weights/TMVAClassification_BDT.weights.xml</code>. This is where all the information about the trained classifier is stored. In order to access the classifier we just trained we need a so called <code>Reader</code> object. The idea behind this split of training and using the classifier is that you typically train the classifier once and then use it many times in different applications. As part of that we have to redeclare all the features we wish to use:</p>
+<p>The options (or hyperparameters) of the BDT are all left at their default values. If you were to uncomment the long option string, nothing would change. The only thing we need to adjust is <code>nCuts</code> which determines how many "steps" <code>TMVA</code> will take when evaluating where to split a feature when building a new leaf. By setting it to -1 it will evaluate "every possible" cut value instead of splitting the range of a feature into <code>N</code> chunks.</p>
+<p>As part of the training <code>TMVA</code> creates a "weights" file called <code>weights/TMVAClassification_BDT.weights.xml</code>. This is where all the information about the trained classifier is stored. In order to access the classifier we just trained we need a so called <code>Reader</code> object. The idea behind this split of training and using the classifier is that you typically train the classifier once and then use it many times in different applications. As part of that we have to redeclare all the features we wish to use:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">reader</span> <span class="o">=</span> <span class="n">TMVA</span><span class="o">.</span><span class="n">Reader</span><span class="p">()</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">reader</span> <span class="o">=</span> <span class="n">TMVA</span><span class="o">.</span><span class="n">Reader</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s">&quot;f&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.</span><span class="p">])</span>
-    <span class="n">reader</span><span class="o">.</span><span class="n">AddVariable</span><span class="p">(</span><span class="s">&quot;f</span><span class="si">%i</span><span class="s">&quot;</span><span class="o">%</span><span class="k">n</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+    <span class="n">reader</span><span class="o">.</span><span class="n">AddVariable</span><span class="p">(</span><span class="s">&quot;f%i&quot;</span><span class="o">%</span><span class="k">n</span>, a)
     
 <span class="n">reader</span><span class="o">.</span><span class="n">BookMVA</span><span class="p">(</span><span class="s">&quot;BDT&quot;</span><span class="p">,</span> <span class="s">&quot;weights/TMVAClassification_BDT.weights.xml&quot;</span><span class="p">)</span>
 
@@ -2501,19 +2558,20 @@ DwAGIv4AYCDiDwAGIv4AYCDiDwAGIv4AYCDiDwAGegLOi2sAszFM/AAAAABJRU5ErkJggg==
     <span class="k">else</span><span class="p">:</span>
         <span class="n">y_predicted</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
         
-<span class="k">print</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">,</span> <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;background&quot;</span><span class="p">,</span> <span class="s">&quot;signal&quot;</span><span class="p">])</span>
-<span class="k">print</span> <span class="s">&quot;Area under ROC curve: </span><span class="si">%.4f</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">))</span>
+<span class="nb">print</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">,</span> <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;background&quot;</span><span class="p">,</span> <span class="s">&quot;signal&quot;</span><span class="p">])</span>
+<span class="nb">print</span> <span class="s">&quot;Area under ROC curve: %.4f&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">))</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>             precision    recall  f1-score   support
 
  background       0.87      0.89      0.88      5046
@@ -2530,17 +2588,23 @@ Area under ROC curve: 0.8783
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Above you can see various performance metrics evaluated on the test set for the BDT trained by <code>TMVA</code>. We also print the area under the ROC curve.</p>
 <p>In High Energy Physics people like seeing the shape of the BDT output distribution. Afterall seeing is believing! You can see there is very little overlap between the red and blue. This is good, it means we can use the BDT output to separate our two samples.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">decision_val</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">decision_val</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="n">y_test</span><span class="o">&gt;</span><span class="mf">0.</span><span class="p">],</span>
          <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.4</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="n">y_test</span><span class="o">&lt;</span><span class="mf">0.</span><span class="p">],</span>
@@ -2550,25 +2614,25 @@ Area under ROC curve: 0.8783
 
 </div>
 </div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[30]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">&lt;matplotlib.text.Text at 0x1128bfc10&gt;</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[30]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.text.Text at 0x1128bfc10&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXoAAAEPCAYAAABMTw/iAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3X9Q0/fhP/BnELZqtaKdJC7xPmn5UQxSiFXQtq6xGjy1
 cjgtFTsbtfWP2m6zvVkpu5tx10lo67VVz3W3YY9uPYF2G9BWOUtrnKgrLkL1lnYgAweBpFWKrRZB
@@ -2716,26 +2780,32 @@ egBAUVERDhw40O24y5cvR1FRETZv3tzt9utz9EII/PCHP8Sf/vQn//McOXIEM2fOxHfffYeoqCjs
 ABITE7F48WIsXboUs2fPxrPPPoszZ87g4YcfxvLlywEANpsNjzzyiP8zZy9dugQAWLVqFTZs2IBd
 u3bh3XcVKOj1AAAAUUlEQVTf5Tw9BcRtiolCyG63Y8eOHXj//fdDHYUUjFM3RCEUys/gpdGDZ/RE
 RArHM3oiIoVj0RMRKRyLnohI4Vj0REQKx6InIlI4Fj0RkcL9P+jBw33jdv8EAAAAAElFTkSuQmCC
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="next-up-scikit-learn">Next up scikit-learn!</h2>
-<p>Now for doing the same in <code>scikit-learn</code>! We setup the weak learner used by AdaBoost with the same options as used in <code>TMVA</code>, then train it and evaluate the same performance metrics, as well as the area under the ROC. The performance metrics are almsot exactly the same, and the area under the ROC is exactly the same (within the precision of the print out).</p>
+<h2 id="Next-up-scikit-learn!">Next up scikit-learn!<a class="anchor-link" href="#Next-up-scikit-learn!">&#182;</a></h2><p>Now for doing the same in <code>scikit-learn</code>! We setup the weak learner used by AdaBoost with the same options as used in <code>TMVA</code>, then train it and evaluate the same performance metrics, as well as the area under the ROC. The performance metrics are almsot exactly the same, and the area under the ROC is exactly the same (within the precision of the print out).</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
                             <span class="n">min_samples_leaf</span><span class="o">=</span><span class="mf">0.05</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span>
 <span class="n">bdt</span> <span class="o">=</span> <span class="n">AdaBoostClassifier</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span>
                          <span class="n">algorithm</span><span class="o">=</span><span class="s">&#39;SAMME&#39;</span><span class="p">,</span>
@@ -2744,19 +2814,20 @@ RArHM3oiIoVj0RMRKRyLnohI4Vj0REQKx6InIlI4Fj0RkcL9P+jBw33jdv8EAAAAAElFTkSuQmCC
 
 <span class="n">bdt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 <span class="n">sk_y_predicted</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">sk_y_predicted</span><span class="p">,</span> <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;background&quot;</span><span class="p">,</span> <span class="s">&quot;signal&quot;</span><span class="p">])</span>
-<span class="k">print</span> <span class="s">&quot;Area under ROC curve: </span><span class="si">%.4f</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">))</span>
+<span class="nb">print</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">sk_y_predicted</span><span class="p">,</span> <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;background&quot;</span><span class="p">,</span> <span class="s">&quot;signal&quot;</span><span class="p">])</span>
+<span class="nb">print</span> <span class="s">&quot;Area under ROC curve: %.4f&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">))</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>             precision    recall  f1-score   support
 
  background       0.88      0.88      0.88      5046
@@ -2773,13 +2844,12 @@ Area under ROC curve: 0.8783
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bdt</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="n">y_test</span><span class="o">&gt;</span><span class="mf">0.</span><span class="p">])</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bdt</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="n">y_test</span><span class="o">&gt;</span><span class="mf">0.</span><span class="p">])</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span>
          <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.4</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bdt</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="n">y_test</span><span class="o">&lt;</span><span class="mf">0.</span><span class="p">])</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span>
          <span class="n">color</span><span class="o">=</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.4</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
@@ -2788,25 +2858,25 @@ Area under ROC curve: 0.8783
 
 </div>
 </div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[31]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">&lt;matplotlib.text.Text at 0x111906890&gt;</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[31]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.text.Text at 0x111906890&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXoAAAEPCAYAAABMTw/iAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XtUlHXiP/D3CGxqmaQrMzTjNhsXYRCY0YQ85jZEg5sm
 0eqyormQ1V7YdbPOuhK1R2wrhq5rF7bv2YN7aC8JpwuwpRykHBM10QHC42SYgcttpgTxFtfh+f2h
@@ -2962,18 +3032,26 @@ YcMGhIeHIzQ0FK2trQPe03Ow9fr6+sJoNCIqKgparRZ33HGHY8e10WjE/fffj2XLluHWW291LLNu
 3Tq89NJLWLx4Mb755hsAwPTp07Fo0SIkJycjKysLALBmzRo0Nzdj4cKFeOutt7BgwQIAwNy5c7Fs
 2TKEhoZyZ+wUxMsUE01CUVFReOWVV7Bo0SJ3R6FJgFv0REQSxy16IiKJ4xY9EZHEseiJiCSORU9E
 JHEseiIiiWPRExFJHIueiEji/h+dkfB95ZnUSgAAAABJRU5ErkJggg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Compare the above figure of the BDT output from <code>scikit-learn</code> with the one we got from TMVA. They are remarkably similar! With such similiar BDT responses we can be pretty confident we managed to replicate what <code>TMVA</code> does with <code>scikit-learn</code>.</p>
-<p>So now that we understand how to configure <code>scikit-learn</code> to reproduce previous results, we can go forth and fiddle with the tools that it provides. The scientific method is as much about taking small steps where you can predict what will happen as huge leaps which will turn out to be great discoveries!</p>
+<p>So now that we understand how to configure <code>scikit-learn</code> to reproduce previous results, we can go forth and fiddle with the tools that it provides. The scientific method is as much about taking small steps  where you can predict what will happen as huge leaps which will turn out to be great discoveries!</p>
+
+</div>
+</div>
 </div></p>
 <p>This post started life as a ipython notebook,
 <a href="/downloads/notebooks/tmva-vs-scikit-learn.ipynb">download it</a>

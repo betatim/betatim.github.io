@@ -36,68 +36,69 @@
     <!-- extra stuff for nbconvert -->
 	
 <style type="text/css">
-    .highlight-ipynb .hll { background-color: #ffffcc }
-.highlight-ipynb  { background: #f8f8f8; }
-.highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
-.highlight-ipynb .err { border: 1px solid #FF0000 } /* Error */
-.highlight-ipynb .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight-ipynb .o { color: #666666 } /* Operator */
-.highlight-ipynb .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight-ipynb .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight-ipynb .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight-ipynb .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight-ipynb .gd { color: #A00000 } /* Generic.Deleted */
-.highlight-ipynb .ge { font-style: italic } /* Generic.Emph */
-.highlight-ipynb .gr { color: #FF0000 } /* Generic.Error */
-.highlight-ipynb .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight-ipynb .gi { color: #00A000 } /* Generic.Inserted */
-.highlight-ipynb .go { color: #888888 } /* Generic.Output */
-.highlight-ipynb .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight-ipynb .gs { font-weight: bold } /* Generic.Strong */
-.highlight-ipynb .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight-ipynb .gt { color: #0044DD } /* Generic.Traceback */
-.highlight-ipynb .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight-ipynb .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight-ipynb .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight-ipynb .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight-ipynb .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight-ipynb .kt { color: #B00040 } /* Keyword.Type */
-.highlight-ipynb .m { color: #666666 } /* Literal.Number */
-.highlight-ipynb .s { color: #BA2121 } /* Literal.String */
-.highlight-ipynb .na { color: #7D9029 } /* Name.Attribute */
-.highlight-ipynb .nb { color: #008000 } /* Name.Builtin */
-.highlight-ipynb .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight-ipynb .no { color: #880000 } /* Name.Constant */
-.highlight-ipynb .nd { color: #AA22FF } /* Name.Decorator */
-.highlight-ipynb .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight-ipynb .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight-ipynb .nf { color: #0000FF } /* Name.Function */
-.highlight-ipynb .nl { color: #A0A000 } /* Name.Label */
-.highlight-ipynb .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight-ipynb .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight-ipynb .nv { color: #19177C } /* Name.Variable */
-.highlight-ipynb .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight-ipynb .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight-ipynb .mf { color: #666666 } /* Literal.Number.Float */
-.highlight-ipynb .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight-ipynb .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight-ipynb .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight-ipynb .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight-ipynb .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight-ipynb .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight-ipynb .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight-ipynb .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight-ipynb .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight-ipynb .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight-ipynb .sx { color: #008000 } /* Literal.String.Other */
-.highlight-ipynb .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight-ipynb .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight-ipynb .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight-ipynb .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight-ipynb .vc { color: #19177C } /* Name.Variable.Class */
-.highlight-ipynb .vg { color: #19177C } /* Name.Variable.Global */
-.highlight-ipynb .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 
 <style type="text/css">
@@ -145,6 +146,14 @@ div.text_cell_render {
 }
 
 img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
+
+div.collapseheader {
+    width=100%;
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 </style>
 
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
@@ -167,6 +176,23 @@ init_mathjax = function() {
 }
 init_mathjax();
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $("div.collapseheader").click(function () {
+    $header = $(this).children("span").first();
+    $codearea = $(this).children(".input_area");
+    console.log($(this).children());
+    $codearea.slideToggle(500, function () {
+        $header.text(function () {
+            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+        });
+    });
+});
+});
+</script>
+
 
     <!-- extra stuff for nbconvert -->
 
@@ -315,50 +341,56 @@ init_mathjax();
             </header>
             <div class="entry-content">
                 <p>
-
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Everybody likes random numbers. They are so unpredictable! As it turns out though humans are not very good at appreciating true randomness. Even the kind that you get from a pseudo-random number generator that you can find in your favourite programming language.</p>
 <p>This post is about how quasi random number sequences. One application for them is art, but another very useful one is solving numerical integrals (Quasi Monta Carlo integration).</p>
-<p>Random numbers tend to &quot;clump&quot; together. This makes them look &quot;non random&quot; to use humans. If you flipped a coin several times in a row and recorded the results there would be more runs of tails (or heads) than people would expect.</p>
+<p>Random numbers tend to "clump" together. This makes them look "non random" to use humans. If you flipped a coin several times in a row and recorded the results there would be more runs of tails (or heads) than  people would expect.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="o">%</span><span class="k">matplotlib</span> <span class="n">inline</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">import</span> <span class="nn">random</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">random</span>
 <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">34557</span><span class="p">)</span>
 
 <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
     <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s">&quot;T&quot;</span><span class="p">,</span> <span class="s">&quot;H&quot;</span><span class="p">]))</span>
     
-<span class="k">print</span> <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>HHTHTHTTHTHHTHHTTTTTTHHHTTTHTH
 </pre>
 </div>
@@ -368,18 +400,24 @@ init_mathjax();
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Would you have expected as many HH or TT pairs as there are in this sequence? Would you have expected to see a run of 6 Ts?</p>
 <p>What about numbers distributed across a square? Well, you would find they clump together:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">6345345</span><span class="p">)</span>
 
@@ -391,25 +429,25 @@ init_mathjax();
 
 </div>
 </div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[3]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">&lt;matplotlib.collections.PathCollection at 0x10c967750&gt;</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.collections.PathCollection at 0x10c967750&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX4AAAEACAYAAAC08h1NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XlcVNX/x/HXDDAMM4CKKIiAiiBoCq6R4oKae65l6tdv
 mZqVpWWbli1q9TXL0ky/bqn1s0zNsjQXcknU1CQVcd93VFQWEQaY7fz+ACm/bsjMcAc4z8fDx4OZ
@@ -748,51 +786,62 @@ tVqlsbFRjdxRDQ0NkpycLEajUcrKykREpLq6Wqqrq0fX7Ny5U4xGo5jNZnn48KFaqR556y8qKpLo
 6OjR13v58uVq5o6h5PX/LpgGv4iy9iNHjsjixYvFZDJJVVWVWqkeeet/9eqVrFu3Tsxms5hMJqmt
 rVUz9ycFBQUSFxcn4eHhYjAYpKamJqT2rbd+X/YtL+AiItIY/teLREQaw8FPRKQxHPxERBrDwU9E
 pDEc/EREGsPBT0SkMRz8REQaw8FPRKQx/wdqs4zhj6eV8AAAAABJRU5ErkJggg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When people say &quot;random&quot; what they usually have in mind is &quot;scattered around without a clear pattern and not clumped together&quot;. As a result when you need something that <em>looks</em> random but does not have to <em>be</em> random, you can turn to <a href="https://en.wikipedia.org/wiki/Low-discrepancy_sequence">Quasi random numbers</a>. The basic idea behind these types of sequences is that every time you draw a new point from them it is placed as far away from all points you already have as possible. The <a href="https://en.wikipedia.org/wiki/Sobol_sequence">Sobol sequence</a> is a sequence of quasi random numbers in the range from 0 to 1. The first few draws from it are: 0, 1, 0.5 and 0.75. The first draw is palced at 0, the second one as far away as possible from 0 is at 1. The third draw, again being as far away as possible from all previous values lands at 0.5. And so on.</p>
-<h2 id="monte-carlo-integration-...">Monte Carlo Integration ...</h2>
-<p>Besides being visually quite pleasing, there is one application in mathematics for which these quasi random numbers are very useful: doing integrals! The most popular method for solving integrals is <a href="https://en.wikipedia.org/wiki/Monte_Carlo_integration">Monte Carlo integration</a>. In Monte Carlo integration the value of an integral is calculated by evaluating your function at random points and averaging the result over many iterations.</p>
+<p>When people say "random" what they usually have in mind is "scattered around without a clear pattern and not clumped together". As a result when you need something that <em>looks</em> random but does not have to <em>be</em> random, you can turn to <a href="https://en.wikipedia.org/wiki/Low-discrepancy_sequence">Quasi random numbers</a>. The basic idea behind these types of sequences is that every time you draw a new point from them it is placed as far away from all points you already have as possible. The <a href="https://en.wikipedia.org/wiki/Sobol_sequence">Sobol sequence</a> is a sequence of quasi random numbers in the range from 0 to 1. The first few draws from it are: 0, 1, 0.5 and 0.75. The first draw is palced at 0, the second one as far away as possible from 0 is at 1. The third draw, again being as far away as possible from all previous values lands at 0.5. And so on.</p>
+<h2 id="Monte-Carlo-Integration-...">Monte Carlo Integration ...<a class="anchor-link" href="#Monte-Carlo-Integration-...">&#182;</a></h2><p>Besides being visually quite pleasing, there is one application in mathematics for which these quasi random numbers are very useful: doing integrals! The most popular method for solving integrals is <a href="https://en.wikipedia.org/wiki/Monte_Carlo_integration">Monte Carlo integration</a>. In Monte Carlo integration  the value of an integral is calculated by evaluating your function at random points and averaging the result over many iterations.</p>
 <p>The value of the integral depends on the points at which you evaluate the function. In principle you get a different result every time you perform the integral.</p>
 <p>At first this seems like a useless method. However you get an ever better approximation of the value of the integral the more points you sample at. This means you can run the integration for as long as you need to achieve the accuracy you are looking for.</p>
-<h2 id="without-the-randomness">... without the randomness!</h2>
-<p>One downside to using random numbers is that they are random, and that means they clump together! When doing an integral repeatedly evaluating the function at the same point does not help you at all. Even evaluating it again at a point nearby is a waste of time. What you want is to evaluate it at points you have not visited before. A point as far away from all previous points as possible. This is where the quasi random numbers come riding to the rescue!</p>
+<h2 id="...-without-the-randomness!">... without the randomness!<a class="anchor-link" href="#...-without-the-randomness!">&#182;</a></h2><p>One downside to using random numbers is that they are random, and that means they clump together! When doing an integral repeatedly evaluating the function at the same point does not help you at all. Even evaluating it again at a point nearby is a waste of time. What you want is to evaluate it at points you have not visited before. A point as far away from all previous points as possible. This is where the quasi random numbers come riding to the rescue!</p>
 <p>Before we can actually prove that this works, some leg work is needed. Coding up a Sobol sequence is not that difficult but also not that much fun. Especially as someone has already done the job for us. You can find Sobol and friends in the <a href="http://www.gnu.org/software/gsl/">GSL</a> under <a href="http://www.gnu.org/software/gsl/manual/html_node/Quasi_002dRandom-Sequences.html#Quasi_002dRandom-Sequences">Quasi-random sequences</a>. Using the GSL from python is straight forward thanks to:</p>
-<h2 id="cython">Cython</h2>
+<h2 id="Cython">Cython<a class="anchor-link" href="#Cython">&#182;</a></h2>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="o">%</span><span class="k">load_ext</span> <span class="n">cythonmagic</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">load_ext</span> cythonmagic
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <a href="http://cython.org">Cython</a> magic of the IPython notebook makes it possible to write and compile Cython inside the notebook. Thus interfacing C libraries is easy. To call a simple function for calculating Bessel functions all you have to do is:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="o">%%</span><span class="k">cython</span> <span class="o">-</span><span class="n">l</span> <span class="n">gsl</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="o">%%</span><span class="n">cython</span> <span class="o">-</span><span class="n">l</span> <span class="n">gsl</span>
 <span class="c"># Include the right header file and declare the function</span>
-<span class="n">cdef</span> <span class="n">extern</span> <span class="kn">from</span> <span class="s">&quot;gsl/gsl_sf_bessel.h&quot;</span><span class="p">:</span>
+<span class="k">cdef</span> <span class="kr">extern</span> <span class="k">from</span> <span class="s">&quot;gsl/gsl_sf_bessel.h&quot;</span><span class="p">:</span>
     <span class="n">double</span> <span class="n">gsl_sf_bessel_J0</span><span class="p">(</span><span class="n">double</span> <span class="n">x</span><span class="p">)</span>
 
 <span class="c"># small python wrapper to give it a nicer name</span>
@@ -802,54 +851,60 @@ pDEc/EREGsPBT0SkMRz8REQaw8FPRKQx/wdqs4zhj6eV8AAAAABJRU5ErkJggg==
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">bessel_J0</span><span class="p">(</span><span class="mf">2.21</span><span class="p">)</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">bessel_J0</span><span class="p">(</span><span class="mf">2.21</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[6]:</div>
-<div class="box-flex1 output_subarea output_pyout">
+<div class="output_wrapper">
+<div class="output">
 
 
-<pre class="ipynb tim">0.10480981650349071</pre>
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.10480981650349071</pre>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The Sobol sequence available in GSL is a bit more complicated than a simple function call. You have to first create a new quasi-random sequence, then you can access values from it by calling a function with a <code>double*</code> as argument which will then contain the values you asked for. Wrapping things in a small python class makes everything more convenient:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="o">%%</span><span class="k">cython</span> <span class="o">-</span><span class="n">l</span> <span class="n">gsl</span>
-<span class="kn">from</span> <span class="nn">cpython.mem</span> <span class="nn">cimport</span> <span class="nn">PyMem_Malloc</span><span class="p">,</span> <span class="n">PyMem_Free</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="o">%%</span><span class="n">cython</span> <span class="o">-</span><span class="n">l</span> <span class="n">gsl</span>
+<span class="k">from</span> <span class="nn">cpython.mem</span> <span class="k">cimport</span> <span class="n">PyMem_Malloc</span><span class="p">,</span> <span class="n">PyMem_Free</span>
 
 <span class="c"># Declare the few types and functions we need</span>
-<span class="n">cdef</span> <span class="n">extern</span> <span class="kn">from</span> <span class="s">&quot;gsl/gsl_qrng.h&quot;</span><span class="p">:</span>
-    <span class="n">ctypedef</span> <span class="n">struct</span> <span class="n">gsl_qrng</span>
-    <span class="n">ctypedef</span> <span class="n">struct</span> <span class="n">gsl_qrng_type</span>
+<span class="k">cdef</span> <span class="kr">extern</span> <span class="k">from</span> <span class="s">&quot;gsl/gsl_qrng.h&quot;</span><span class="p">:</span>
+    <span class="k">ctypedef</span> <span class="k">struct</span> <span class="nc">gsl_qrng</span>
+    <span class="k">ctypedef</span> <span class="k">struct</span> <span class="nc">gsl_qrng_type</span>
     <span class="n">gsl_qrng_type</span><span class="o">*</span> <span class="n">gsl_qrng_sobol</span>
     
     <span class="n">gsl_qrng</span><span class="o">*</span> <span class="n">gsl_qrng_alloc</span><span class="p">(</span><span class="n">gsl_qrng_type</span><span class="o">*</span> <span class="n">T</span><span class="p">,</span> <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">d</span><span class="p">)</span>
@@ -858,11 +913,11 @@ pDEc/EREGsPBT0SkMRz8REQaw8FPRKQx/wdqs4zhj6eV8AAAAABJRU5ErkJggg==
     <span class="nb">int</span> <span class="n">gsl_qrng_get</span><span class="p">(</span><span class="n">const</span> <span class="n">gsl_qrng</span> <span class="o">*</span> <span class="n">q</span><span class="p">,</span> <span class="n">double</span> <span class="n">x</span><span class="p">[])</span>
 
 <span class="c"># This is the wrapper class</span>
-<span class="n">cdef</span> <span class="k">class</span> <span class="nc">Sobol</span><span class="p">:</span>
-    <span class="n">cdef</span> <span class="n">gsl_qrng</span><span class="o">*</span> <span class="n">_q</span>
-    <span class="n">cdef</span> <span class="n">unsigned</span> <span class="n">_D</span>
-    <span class="n">cdef</span> <span class="n">double</span> <span class="o">*</span><span class="n">_v</span>
-    <span class="k">def</span> <span class="nf">__cinit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="k">cdef</span> <span class="k">class</span> <span class="nf">Sobol</span><span class="p">:</span>
+    <span class="k">cdef</span> <span class="kt">gsl_qrng</span>* <span class="nf">_q</span>
+    <span class="k">cdef</span> <span class="kt">unsigned</span> <span class="nf">_D</span>
+    <span class="k">cdef</span> <span class="kt">double</span> *<span class="nf">_v</span>
+    <span class="k">def</span> <span class="nf">__cinit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">D</span><span class="o">=</span><span class="mf">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create a `D` dimensional Sobol sequence.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_D</span> <span class="o">=</span> <span class="n">D</span>
         
@@ -874,10 +929,10 @@ pDEc/EREGsPBT0SkMRz8REQaw8FPRKQx/wdqs4zhj6eV8AAAAABJRU5ErkJggg==
         
         <span class="c"># Actually allocate the QRNG generator</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_q</span> <span class="o">=</span> <span class="n">gsl_qrng_alloc</span><span class="p">(</span><span class="n">gsl_qrng_sobol</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_q</span> <span class="ow">is</span> <span class="n">NULL</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_q</span> <span class="ow">is</span> <span class="bp">NULL</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">MemoryError</span><span class="p">()</span>
         
-    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">int</span> <span class="n">N</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">int</span> <span class="n">N</span><span class="o">=</span><span class="mf">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;The next `N` points in the sequence.&quot;&quot;&quot;</span>
         <span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
@@ -895,7 +950,7 @@ pDEc/EREGsPBT0SkMRz8REQaw8FPRKQx/wdqs4zhj6eV8AAAAABJRU5ErkJggg==
     
     <span class="c"># Make sure we free all the memory we allocated</span>
     <span class="k">def</span> <span class="nf">__dealloc__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_q</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">NULL</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_q</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">NULL</span><span class="p">:</span>
             <span class="n">gsl_qrng_free</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_q</span><span class="p">)</span>
             
         <span class="n">PyMem_Free</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_v</span><span class="p">)</span>
@@ -903,34 +958,42 @@ pDEc/EREGsPBT0SkMRz8REQaw8FPRKQx/wdqs4zhj6eV8AAAAABJRU5ErkJggg==
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's create our first Sobol sequence and look at the numbers that come out of it:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">s</span> <span class="o">=</span> <span class="n">Sobol</span><span class="p">()</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">s</span> <span class="o">=</span> <span class="n">Sobol</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">n</span><span class="p">,</span><span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="k">print</span> <span class="s">&quot;Sobol point&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s">&quot;is&quot;</span><span class="p">,</span> <span class="n">x</span>
+    <span class="nb">print</span> <span class="s">&quot;Sobol point&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s">&quot;is&quot;</span><span class="p">,</span> <span class="n">x</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
         <span class="k">break</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>Sobol point 0 is [0.5]
 Sobol point 1 is [0.75]
 Sobol point 2 is [0.25]
@@ -951,21 +1014,28 @@ Sobol point 11 is [0.3125]
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Finally, we can compare how clumpy our Sobol sequence looks compared to a sequence of random numbers.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">s2</span> <span class="o">=</span> <span class="n">Sobol</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">s2</span> <span class="o">=</span> <span class="n">Sobol</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="n">sobol_X</span><span class="p">,</span> <span class="n">sobol_Y</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">s2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
 
 <span class="n">sobol_X2</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">sobol_X</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">())</span><span class="o">%</span><span class="k">1</span>
 <span class="n">sobol_Y2</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">sobol_Y</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">())</span><span class="o">%</span><span class="k">1</span>
+
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
 
 <span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
@@ -980,25 +1050,25 @@ Sobol point 11 is [0.3125]
 
 </div>
 </div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[9]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">&lt;matplotlib.text.Text at 0x10cf4e310&gt;</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.text.Text at 0x10cf4e310&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAs0AAAEKCAYAAADpSmgQAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xd4U9UbwPFv0qYjHbTM0jJKmYJMGbKHbEERBARFtmwF
 FRygshRBcYHyU0GGDBWQjVBGmQoFBMqGltWW2ULpSNu0yfn9cSW0UGibZrU9n+fpY3OTe+6bmkPe
@@ -1806,27 +1876,33 @@ BQQEsISEBINjRUVFsXr16jGxWMwaNGjA4uPjzXq/aItnynvFWDW1Zi1Zr7rEe5UparYm1ytjVLNV
 oXqlejVFPKpXTbS5CSGEEEIIIVpYZfUMQgghhBBCqhNqNBNCCCGEEKIFNZoJIYQQQgjRghrNhBBC
 CCGEaEGNZkIIIYQQQrSgRjMhhBBCCCFaUKOZEEIIIYQQLajRTAghhBBCiBb/D3XguIC9BRfZAAAA
 AElFTkSuQmCC
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The red distribution of points looks like it has a lot less empty space than the blue one. Just as you would expect. The third plot shows what happens if you add random number to your Sobol sequence. For the moment just admire it and note that it still looks like a Sobol sequence.</p>
-<h2 id="the-proof-is-in-the-pudding">The proof is in the pudding</h2>
-<p>So now let's see if we can use this new technique to evaluate an integral. Instead of calculating the area of a circle like everyone else does the first time they learn about Monte Carlo integration, we will work out the area under a gaussian curve.</p>
+<h2 id="The-proof-is-in-the-pudding">The proof is in the pudding<a class="anchor-link" href="#The-proof-is-in-the-pudding">&#182;</a></h2><p>So now let's see if we can use this new technique to evaluate an integral. Instead of calculating the area of a circle like everyone else does the first time they learn about Monte Carlo integration, we will work out the area under a gaussian curve.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="kn">as</span> <span class="nn">stats</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
 <span class="n">_norm_pdf</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span>
 <span class="k">def</span> <span class="nf">normal</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">_norm_pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
@@ -1860,26 +1936,26 @@ AElFTkSuQmCC
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[10]:</div>
-<div class="box-flex1 output_subarea output_pyout">
+<div class="output_wrapper">
+<div class="output">
 
 
-<pre class="ipynb tim">(&lt;matplotlib.figure.Figure at 0x10cf81ad0&gt;,
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(&lt;matplotlib.figure.Figure at 0x10cf81ad0&gt;,
  &lt;matplotlib.axes.AxesSubplot at 0x10e0d38d0&gt;)</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+</div>
+
+<div class="output_area"><div class="prompt"></div>
 
 
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARYAAAEKCAYAAADXWXqvAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAH8NJREFUeJzt3X9UFOe9P/D3RjAGMeKPiBGIqKAQlR/+omrVNUYJXiWk
 tQnexlj1tkRjPDZtz83pSW8w13hqvs2heu2Xk/ak5uYmURNzqyZR6o+6aFBEzaJEYoQoumBEUYlg
@@ -2025,27 +2101,34 @@ AODFF19EVlYWHnroIcmVkVbYQY5U0djYiLFjx2LRokV48803UVxcjG7duskuizSimy79ZC5BQUF4
 GmKwkN8pioKlS5di3bp1iIqKwm9+8xv8+te/ll0WaYjBQn73l7/8BdHR0ZgxYwYAYNmyZfjiiy9w
 8OBByZWRVnhWiIj8jnssROR3DBYi8jsGCxH5HYOFiPyOwUJEfsdgISK/Y7AQkd8xWIjI7/4PUnBo
 inMbE0sAAAAASUVORK5CYII=
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>On the figure you can see in blue the function <span class="math">\(f(x)\)</span> we want to integrate, in green are the points at which we will sample <span class="math">\(f(x)\)</span> in the standard Monte Carlo integration scheme, and in red the points at which we will sample the function in the Quasi Monte Carlo scheme.</p>
+<p>On the figure you can see in blue the function $f(x)$ we want to integrate, in green are the points at which we will sample $f(x)$ in the standard Monte Carlo integration scheme, and in red the points at which we will sample the function in the Quasi Monte Carlo scheme.</p>
 <p>You can already see that the red points are much more evenly distributed over the range. The green dashes tend to clump together and there are some regions which have no samples at all.</p>
-<p>Basic Monte Carlo integration is a few lines of python. What we are doing is calculating the average of <span class="math">\(f(x)\)</span> at the sample points and multiplying by the length in <span class="math">\(x\)</span> over which we are integrating. We can also easily compute the uncertainty on the value of the integral. For the same function, the more times we evaluate the function the smaller the uncertainty on the integral.</p>
+<p>Basic Monte Carlo integration is a few lines of python. What we are doing is calculating the average of $f(x)$ at the sample points and multiplying by the length in $x$ over which we are integrating. We can also easily compute the uncertainty on the value of the integral. For the same function, the more times we evaluate the function the smaller the uncertainty on the integral.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">MC_integral</span><span class="p">(</span><span class="n">samples</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">MC_integral</span><span class="p">(</span><span class="n">samples</span><span class="p">):</span>
     <span class="n">L</span> <span class="o">=</span> <span class="mf">2.</span>
     <span class="n">dx</span> <span class="o">=</span> <span class="n">L</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
     <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
@@ -2058,29 +2141,37 @@ inMbE0sAAAAASUVORK5CYII=
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Ok, go time! What is the area of a Gaussian? Considering we are using a function with PDF in the name you should be able to make a pretty good guess. Exactly, the area will be one. What does our Monte Carlo integration think?</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">print</span> <span class="s">&quot;Area: </span><span class="si">%.4f</span><span class="s"> +- </span><span class="si">%.4f</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">MC_integral</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="s">&quot;Area: %.4f +- %.4f&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">MC_integral</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>Area: 1.0910 +- 0.1360
 </pre>
 </div>
@@ -2090,29 +2181,36 @@ inMbE0sAAAAASUVORK5CYII=
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Using only 100 samples we get close to the real area of one, but the uncertainty is quite large. With this kind of uncertainty you should not be surprised if the result of a call to <code>MC_integral()</code> is 1.1 or 0.93. By increasing the number of samples the uncertainty will decrease.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">for</span> <span class="n">N</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">1600</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">for</span> <span class="n">N</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">1600</span><span class="p">):</span>
     <span class="n">area</span><span class="p">,</span> <span class="n">uncertainty</span> <span class="o">=</span> <span class="n">MC_integral</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">print</span> <span class="s">&quot;</span><span class="si">%d</span><span class="s"> samples, Area: </span><span class="si">%.4f</span><span class="s"> +- </span><span class="si">%.4f</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">uncertainty</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s">&quot;%d samples, Area: %.4f +- %.4f&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">uncertainty</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>100 samples, Area: 0.7280 +- 0.1196
 200 samples, Area: 0.9734 +- 0.0948
 400 samples, Area: 1.0281 +- 0.0698
@@ -2126,8 +2224,12 @@ inMbE0sAAAAASUVORK5CYII=
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In order to decrease the uncertainty on the area by a factor of two, you have to quadruple the number of points at which you evaluate the integral. The uncertainty scales as <span class="math">\(\frac{1}{\sqrt{N}}\)</span>. Quasi Monte Carlo integration promises to reduce the uncertainty faster than this.</p>
+<p>In order to decrease the uncertainty on the area by a factor of two, you have to quadruple the number of points at which you evaluate the integral. The uncertainty scales as $\frac{1}{\sqrt{N}}$. Quasi Monte Carlo integration promises to reduce the uncertainty faster than this.</p>
 <p>Before we move on, two important questions you should ask yourself:</p>
 <ul>
 <li>do you trust the uncertainty estimate?</li>
@@ -2135,17 +2237,19 @@ inMbE0sAAAAASUVORK5CYII=
 </ul>
 <p>Both of these can be checked by repeating the integration many times. By calculating the average differnece between the true area and the result of the intergration we can estimate the bias.</p>
 <p>To establish whether or not our uncertainty estimate is correct we can take advantage of the fact that the result of the integration is different every time we call <code>MC_integral()</code> (for the same number of samples and same function). The calculated area will vary according to a gaussian distribution, and the width of that gaussian distribution is equal to the true uncertainty of the Monte Carlo integration.</p>
-<p>The uncertainty calculated in <code>MC_integral()</code> is not used, so we can now compare the true uncertainty to the one we calculated. One way of doing this is to calculate the width of the distribution of <span class="math">\(\frac{a_i - 1}{\sigma_i}\)</span> over many repetitions of the calculation. Here <span class="math">\(a_i\)</span> and <span class="math">\(\sigma_i\)</span> are the area and uncertainty calculated by <code>MC_integral()</code> for the <span class="math">\(i\)</span>th repetition. The resulting distribution should be centered on zero (if the calculation is unbiased) and have a width of one (if we estimated the uncertainty correctly).</p>
+<p>The uncertainty calculated in <code>MC_integral()</code> is not used, so we can now compare the true uncertainty to the one we calculated. One way of doing this is to calculate the width of the distribution of $\frac{a_i - 1}{\sigma_i}$ over many repetitions of the calculation. Here $a_i$ and $\sigma_i$ are the area and uncertainty calculated by <code>MC_integral()</code> for the $i$th repetition. The resulting distribution should be centered on zero (if the calculation is unbiased) and have a width of one (if we estimated the uncertainty correctly).</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">test_integration</span><span class="p">(</span><span class="n">sampler</span><span class="p">,</span> <span class="n">integrator</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="mi">2000</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">test_integration</span><span class="p">(</span><span class="n">sampler</span><span class="p">,</span> <span class="n">integrator</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="mi">2000</span><span class="p">):</span>
     <span class="n">Is</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">repeats</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">repeats</span><span class="p">):</span>
         <span class="n">points</span> <span class="o">=</span> <span class="n">sampler</span><span class="p">()</span>
         <span class="n">Is</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">integrator</span><span class="p">(</span><span class="n">points</span><span class="p">))</span>
 
@@ -2170,57 +2274,57 @@ inMbE0sAAAAASUVORK5CYII=
 
     <span class="n">ax4</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bias</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
     <span class="n">ax4</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&quot;Bias&quot;</span><span class="p">)</span>
-    <span class="k">print</span> <span class="s">&quot;Bias: </span><span class="si">%.4f</span><span class="s">, average uncertainty: </span><span class="si">%.4f</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">bias</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">errors</span><span class="p">))</span>
+    <span class="nb">print</span> <span class="s">&quot;Bias: %.4f, average uncertainty: %.4f&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">bias</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">errors</span><span class="p">))</span>
     <span class="c"># I hope I got the uncertainty on the width of the pull distribution right</span>
     <span class="c"># Error on the error on the error on the error ...</span>
-    <span class="k">print</span> <span class="s">&quot;Width of pull distribution: </span><span class="si">%.4f</span><span class="s">+-</span><span class="si">%.5f</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">pulls</span><span class="p">),</span>
+    <span class="nb">print</span> <span class="s">&quot;Width of pull distribution: %.4f+-%.5f&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">pulls</span><span class="p">),</span>
                                                     <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">pulls</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="o">*</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pulls</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">test_integration</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">test_integration</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span>
                  <span class="n">MC_integral</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="mi">500</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>Bias: -0.0000, average uncertainty: 0.1343
 Width of pull distribution: 1.0119+-0.01600
 </pre>
 </div>
 </div>
 
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[15]:</div>
-<div class="box-flex1 output_subarea output_pyout">
+<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
 
 
-<pre class="ipynb tim">0.13433707981829704</pre>
-
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.13433707981829704</pre>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+</div>
+
+<div class="output_area"><div class="prompt"></div>
 
 
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAewAAAHpCAYAAABA5w/TAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XtUFOf9P/D34pJG5SKgLMhqV0GDqwhbreSiEaJgTJRo
 sERMdaNo+tWk/VntMaatEdJWMdFatSXxWGxIbKI0rUBSJbSNa4w2xShEG0xAA8rdC6AgKrfn9wdx
@@ -2586,27 +2690,34 @@ zzl59vf3U2Fh4QPLq+lfJPvHH39Uvf5Fcn3ddkTXh+j2724sHj9+nI4fP+5c5pVXXiGDwUAZGRmq
 PjHiLXtgYID0ej3Fx8fTsmXLaO3atTQxMeF3bnl5OSUmJjrX6+OPPy6t55qaGkpLSyOj0UhPPvkk
 tbW1Scl1pWbCFsk+duwYpaWlkaIolJWVpWpHhm+cwhhjjIWB0LoElTHGGGNu8YTNGGOMhQGesBlj
 jLEwwBM2Y4wxFgZ4wmaMMcbCAE/YjDHGWBjgCZsxxhgLA/8HesPBJOgUk94AAAAASUVORK5CYII=
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Each of the plots is a histogram of the results of the 2000 MC integrations we performed. In the top left plot you can see that the area varies every time you evaluate the integral. The top right plot shows the uncertainty calculated by the MC integrator for each evaluation. The bottom right shows the difference between the calculated area and the true area, and the bottom left shows the &quot;pull&quot;. The pull is the bias divided by the calculated uncertainty.</p>
+<p>Each of the plots is a histogram of the results of the 2000 MC integrations we performed. In the top left plot you can see that the area varies every time you evaluate the integral. The top right plot shows the uncertainty calculated by the MC integrator for each evaluation. The bottom right shows the difference between the calculated area and the true area, and the bottom left shows the "pull". The pull is the bias divided by the calculated uncertainty.</p>
 <p>The function also prints the width of the pull distribution, as you can see it is consistent with one. This means the uncertainty is calculated correctly.</p>
 <p>How does the Sobol sequence do? It promises a smaller uncertainty for the same number of samples, or conversely less samples needed to achieve the same uncertainty.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">s</span> <span class="o">=</span> <span class="n">Sobol</span><span class="p">()</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">s</span> <span class="o">=</span> <span class="n">Sobol</span><span class="p">()</span>
 <span class="n">sobol_points</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="c"># Two approaches to re-randomise the Sobol sequence that should</span>
 <span class="c"># allow for uncertainty estimates but do not. Try them yourself!</span>
@@ -2619,33 +2730,33 @@ jLEwwBM2Y4wxFgZ4wmaMMcbCAE/YjDHGWBjgCZsxxhgLA/8HesPBJOgUk94AAAAASUVORK5CYII=
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>Bias: 0.0000, average uncertainty: 0.1356
 Width of pull distribution: 0.1739+-0.00275
 </pre>
 </div>
 </div>
 
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[16]:</div>
-<div class="box-flex1 output_subarea output_pyout">
+<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
 
 
-<pre class="ipynb tim">0.13559523944641697</pre>
-
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.13559523944641697</pre>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+</div>
+
+<div class="output_area"><div class="prompt"></div>
 
 
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfYAAAHpCAYAAABwax7yAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XtcVHX+P/DXELhWAnljRmd0x7g6ooApmpsbpmi5yeJl
 SSjFS7ZfrS3LNq1dN2xTxswttQfVowcWZRvafjdxWyTXb6F2UTS0dqN+kEFyL5VREHUE3r8/iLMi
@@ -3039,66 +3150,79 @@ e/fuFTExMUKn04mZM2c69WFHDlLX2Z7mo7uJEyf2WNjdzbFo0SIxefJkodPpxMKFC0Vtba1H5iU8
 PFxMmDDBtl6uXr1a9hzHjx8XGo1GDB48WKjVavHaa6/1Oo3UbV3K/0eOPFLHLldzODPuupqjpKTE
 qbohxxgste51xgfUEBERKYhPr4onIiIiebGwExERKQgLOxERkYKwsBMRESkICzsREZGCsLATEREp
 CAs7ERGRgvwfW3RZ5Kn9dLsAAAAASUVORK5CYII=
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is where this post comes to an abrupt end. You can see from the above plots that the Quasi Monte Carlo integration does not seem to play well with estimating uncertainties. The calculated area is not a smoothly varying number but only one of a small set of values. This discreetness messes with all the other figures.</p>
 <p>After some reading I found articles which recommend re-randomising the Sobol sequence by adding a random number to it. This does not seem to help. Maybe there is a mistake in my code here somewhere.</p>
 <p>We have rediscovered one of the major problems with Quasi Monte Carlo integration: estimating the uncertainty is hard. While theoretically the uncertainty should be smaller, evaluating what it actually is on a case by case basis is very difficult.</p>
+
 </div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="ps.-errors-on-errors">PS. errors on errors</h2>
-<blockquote>
-<p>If you are not a big fan of evaluating uncertainties you can go now</p>
+<h2 id="PS.-errors-on-errors">PS. errors on errors<a class="anchor-link" href="#PS.-errors-on-errors">&#182;</a></h2><blockquote><p>If you are not a big fan of evaluating uncertainties you can go now</p>
 </blockquote>
-<p>How well we can estimate the width of the pull distribution depends on the number of repeats, not the number of samples used to do the integration</p>
+<p>How well we can estimate the width of the pull distribution depends on
+the number of repeats, not the number of samples used to do the integration</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">test_integration</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">test_integration</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span>
                  <span class="n">MC_integral</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="mi">500</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>Bias: 0.0050, average uncertainty: 0.1350
 Width of pull distribution: 1.0097+-0.02259
 </pre>
 </div>
 </div>
 
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[17]:</div>
-<div class="box-flex1 output_subarea output_pyout">
+<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
 
 
-<pre class="ipynb tim">0.13504112817337668</pre>
-
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.13504112817337668</pre>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+</div>
+
+<div class="output_area"><div class="prompt"></div>
 
 
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAewAAAHpCAYAAABA5w/TAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XtcVHX+P/DXEJSmDArKoAwuBhKMIozXtKwhhdKE8BKF
 u4nXvl+tfpnuGrXbhu0mqLWb1tfaNTXSbdXaDaiUVVeHNFM0vG1oeAHlnggoiMrFz+8P1kl0GJj7
@@ -3474,9 +3598,10 @@ PnxYIiIixOl0+v+OTU1NSmO2trZKTk6OOJ1OWbRokdTW1iqNF0pXrlyRpUuXSkpKiuTn5/v/Uenq
 6pIVK1aMO97j8Rg+S1xLjqE4TwL1vz179siePXv8x7z44ovicDgkOztb6adGpppjaWmpJCQk+H9n
 jz76qKnyG80MBZsLpxAREVlASBdOISIiIm1YsImIiCyABZuIiMgCWLCJiIgsgAWbiIjIAliwiYiI
 LIAFm4iIyAL+D3NFu0Ov8DDwAAAAAElFTkSuQmCC
-">
-
+"
+>
 </div>
+
 </div>
 
 </div>

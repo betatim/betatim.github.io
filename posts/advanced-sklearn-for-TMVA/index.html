@@ -36,68 +36,69 @@
     <!-- extra stuff for nbconvert -->
 	
 <style type="text/css">
-    .highlight-ipynb .hll { background-color: #ffffcc }
-.highlight-ipynb  { background: #f8f8f8; }
-.highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
-.highlight-ipynb .err { border: 1px solid #FF0000 } /* Error */
-.highlight-ipynb .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight-ipynb .o { color: #666666 } /* Operator */
-.highlight-ipynb .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight-ipynb .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight-ipynb .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight-ipynb .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight-ipynb .gd { color: #A00000 } /* Generic.Deleted */
-.highlight-ipynb .ge { font-style: italic } /* Generic.Emph */
-.highlight-ipynb .gr { color: #FF0000 } /* Generic.Error */
-.highlight-ipynb .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight-ipynb .gi { color: #00A000 } /* Generic.Inserted */
-.highlight-ipynb .go { color: #888888 } /* Generic.Output */
-.highlight-ipynb .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight-ipynb .gs { font-weight: bold } /* Generic.Strong */
-.highlight-ipynb .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight-ipynb .gt { color: #0044DD } /* Generic.Traceback */
-.highlight-ipynb .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight-ipynb .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight-ipynb .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight-ipynb .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight-ipynb .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight-ipynb .kt { color: #B00040 } /* Keyword.Type */
-.highlight-ipynb .m { color: #666666 } /* Literal.Number */
-.highlight-ipynb .s { color: #BA2121 } /* Literal.String */
-.highlight-ipynb .na { color: #7D9029 } /* Name.Attribute */
-.highlight-ipynb .nb { color: #008000 } /* Name.Builtin */
-.highlight-ipynb .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight-ipynb .no { color: #880000 } /* Name.Constant */
-.highlight-ipynb .nd { color: #AA22FF } /* Name.Decorator */
-.highlight-ipynb .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight-ipynb .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight-ipynb .nf { color: #0000FF } /* Name.Function */
-.highlight-ipynb .nl { color: #A0A000 } /* Name.Label */
-.highlight-ipynb .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight-ipynb .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight-ipynb .nv { color: #19177C } /* Name.Variable */
-.highlight-ipynb .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight-ipynb .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight-ipynb .mf { color: #666666 } /* Literal.Number.Float */
-.highlight-ipynb .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight-ipynb .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight-ipynb .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight-ipynb .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight-ipynb .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight-ipynb .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight-ipynb .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight-ipynb .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight-ipynb .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight-ipynb .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight-ipynb .sx { color: #008000 } /* Literal.String.Other */
-.highlight-ipynb .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight-ipynb .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight-ipynb .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight-ipynb .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight-ipynb .vc { color: #19177C } /* Name.Variable.Class */
-.highlight-ipynb .vg { color: #19177C } /* Name.Variable.Global */
-.highlight-ipynb .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 
 <style type="text/css">
@@ -145,6 +146,14 @@ div.text_cell_render {
 }
 
 img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
+
+div.collapseheader {
+    width=100%;
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 </style>
 
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
@@ -167,6 +176,23 @@ init_mathjax = function() {
 }
 init_mathjax();
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $("div.collapseheader").click(function () {
+    $header = $(this).children("span").first();
+    $codearea = $(this).children(".input_area");
+    console.log($(this).children());
+    $codearea.slideToggle(500, function () {
+        $header.text(function () {
+            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+        });
+    });
+});
+});
+</script>
+
 
     <!-- extra stuff for nbconvert -->
 
@@ -315,7 +341,10 @@ init_mathjax();
             </header>
             <div class="entry-content">
                 <p>
-
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Particle physics is full of machine learning. It powered the discovery of the <a href="//http://en.wikipedia.org/wiki/Higgs_boson">Higgs boson</a> and it is used to decide which data an experiment should record. As well as in many other analyses.</p>
 <p>This is a follow up to my previous post <a href="/posts/sklearn-for-TMVA-users/">scikit-learn for TMVA users</a> which covers how to do the most common things in TMVA with scikit-learn. This post will go beyond TMVA and show off features of scikit-learn which are not easily available in TMVA. You should read this more as a reference than a tutorial, most topics have links to more documentation or other tutorials.</p>
@@ -329,49 +358,65 @@ init_mathjax();
 <li>the unfair advantage</li>
 </ul>
 <p>As usual, first some imports:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="o">%</span><span class="k">matplotlib</span> <span class="n">inline</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">import</span> <span class="nn">random</span>
 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="kn">as</span> <span class="nn">mpl</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">AdaBoostClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">roc_auc_score</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">AdaBoostClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">roc_auc_score</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="loading-root-trees">Loading ROOT Trees</h2>
-<p>Data comes first, the excellent <a href="//rootpy.github.io/root_numpy/"><code>root_numpy</code></a> library makes it easy to read your data stored in a ROOT TTree. Each call to <code>root2array</code> will create a 2D array which contains one row per event, and one column representing each branch you want to use.</p>
-<p>You can download the dataset used here from <a href="//figshare.com">figshare</a>: * <a href="http://figshare.com/articles/HIGGS_background/1314900">HIGGS-background.root</a> * <a href="http://figshare.com/articles/HIGGS/1314899">HIGGS-signal.root</a></p>
+<h2 id="Loading-ROOT-Trees">Loading ROOT Trees<a class="anchor-link" href="#Loading-ROOT-Trees">&#182;</a></h2><p>Data comes first, the excellent <a href="//rootpy.github.io/root_numpy/"><code>root_numpy</code></a> library makes it easy to read your data stored in a ROOT TTree. Each call to <code>root2array</code> will create a 2D array which contains one row per event, and one column representing each branch you want to use.</p>
+<p>You can download the dataset used here from <a href="//figshare.com">figshare</a>:</p>
+<ul>
+<li><a href="http://figshare.com/articles/HIGGS_background/1314900">HIGGS-background.root</a></li>
+<li><a href="http://figshare.com/articles/HIGGS/1314899">HIGGS-signal.root</a></li>
+</ul>
 <p>The events are derived from the much larger <a href="http://archive.ics.uci.edu/ml/datasets/HIGGS">HIGGS</a> dataset. A description of the variables can be found there as well.</p>
-<p>The first thing to do is split your data into a development and an evaluation set. It is important to not peek at the evaluation set before you are done with optimising your classifier, otherwise you will not get an unbiased estimate of the performance from it. We do not split the development set into a training and testing set, keep reading for why.</p>
+<p>The first thing to do is split your data into a development and an evaluation set. It is
+important to not peek at the evaluation set before you are done with optimising
+your classifier, otherwise you will not get an unbiased estimate of the performance
+from it. We do not split the development set into a training and testing set, keep
+reading for why.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">from</span> <span class="nn">root_numpy</span> <span class="kn">import</span> <span class="n">root2array</span><span class="p">,</span> <span class="n">rec2array</span>
-<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">root_numpy</span> <span class="k">import</span> <span class="n">root2array</span><span class="p">,</span> <span class="n">rec2array</span>
+<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">train_test_split</span>
 
 
 <span class="n">branch_names</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;lepton pT, lepton eta, lepton phi, missing energy magnitude,</span>
@@ -415,35 +460,43 @@ init_mathjax();
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="bias-and-variance">Bias and Variance</h2>
-<p>A brief detour to jargon land: bias and variance, the bias-variance tradeoff and similar are the terms used to describe the two components that make up the error of a classifier. <a href="//scott.fortmann-roe.com/">Scott Fortman-Roe</a> has a nice <a href="//scott.fortmann-roe.com/docs/BiasVariance.html">illustrated guide</a>. In short: a biased model will on average be far away from the truth, a model with high variance will have a large spread, but might be right on average.</p>
+<h2 id="Bias-and-Variance">Bias and Variance<a class="anchor-link" href="#Bias-and-Variance">&#182;</a></h2><p>A brief detour to jargon land: bias and variance, the bias-variance tradeoff and similar
+are the terms used to describe the two components that make up the error of a classifier.
+<a href="//scott.fortmann-roe.com/">Scott Fortman-Roe</a> has a nice <a href="//scott.fortmann-roe.com/docs/BiasVariance.html">illustrated guide</a>. In short: a biased model will on average be far away from the truth, a model with high variance will have a large spread, but might be right on average.</p>
 <p>The below picture is a pretty good visualisation:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">Image</span>
 <span class="n">Image</span><span class="p">(</span><span class="s">&#39;../../images/bias-variance.png&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[3]:</div>
-<div class="box-flex1 output_subarea output_pyout">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+
+
+<div class="output_png output_subarea output_execute_result">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjEAAAItCAIAAABHGbxDAAAAAXNSR0IArs4c6QAAAAlwSFlzAAAL
 EwAACxMBAJqcGAAAQABJREFUeAHsXQd8FMX33wstCSWJtABKCIgERQhICRYggAo2wIKgIk0sKFKs
 iD+Rv1IsSBNFUIrSLQQboFQbRSUJoAkqKSIQUEgCpFCS+3/35jLZ7O1d9u529/bu3n74hLnd2Tdv
@@ -1351,41 +1404,67 @@ IBEwjIDUSYahkhElAhIBiYBEwGIEGsl1HCxGWIqXCEgEIhABl8sVgaVyQJFkP8kBlSCzIBGQCIQb
 AvJr3qIakzrJImClWImARCDCEZBqyYoKbmSFUClTIiARkAhEAwJqtSSteabUuNRJpsAohUgEJALR
 joBaP3liITWWJya6V6TtThcWeVEiIBGQCJiJgG+NZWZKYS7r/wHEmFEYcK2OBwAAAABJRU5ErkJg
 gg==
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A classifier's error will be composed of a term due to bias and one due to variance.</p>
-<p>A model which is too simple will usually have a high bias, this is referred to as under-fitting. A model which is too complicated will usually have a high variance, it gives very different answers for different unseen datasets. This is referred to as over-fitting.</p>
+<p>A model which is too simple will usually have a high bias, this is referred to as
+under-fitting. A model which is too complicated will usually have a high variance,
+it gives very different answers for different unseen datasets. This is referred to
+as over-fitting.</p>
 <p>The astro-ml guide has a <a href="//www.astroml.org/sklearn_tutorial/practical.html#bias-variance-over-fitting-and-under-fitting">nice explanation using poynomials and house prices</a>.</p>
+
 </div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="cross-validation">Cross-validation</h2>
-<p>In the process of choosing your classifier and setting its hyper-parameters you normally use a training and testing set of events. However if you want to optimise your hyper-parameters you run the risk of over-fitting your test set by changing the hyper-parameters until you find the set which performs best on the testing set.</p>
-<p>Cross-validation (CV) offers a way out! In its most basic form it is called <em>k-fold</em> CV. You split your development set into <span class="math">\(k\)</span> samples. Then use <span class="math">\(k-1\)</span> of the sub-samples for training and the other sample for testing. For example if you split your development set into three parts (0, 1, 2) you would get three estimates of the classifier's performance:</p>
+<h2 id="Cross-validation">Cross-validation<a class="anchor-link" href="#Cross-validation">&#182;</a></h2><p>In the process of choosing your classifier and setting its hyper-parameters you
+normally use a training and testing set of events. However if you want to optimise
+your hyper-parameters you run the risk of over-fitting your test set by changing
+the hyper-parameters until you find the set which performs best on the testing set.</p>
+<p>Cross-validation (CV) offers a way out! In its most basic form it is called
+<em>k-fold</em> CV. You split your development set into $k$ samples. Then use $k-1$ 
+of the sub-samples for training and the other sample for testing. For example
+if you split your development set into three parts (0, 1, 2) you would get
+three estimates of the classifier's performance:</p>
 <ul>
 <li>train on 0, 1 and evaluate on 2</li>
 <li>train on 1, 2 and evaluate on 0</li>
 <li>train on 0, 2 and evaluate on 1</li>
 </ul>
-<p>Then average the performance measure from each of the iterations, this is what you end up reporting. It also allows you to compute the standard deviation of your performance metric, so you get an uncertainty as well.</p>
+<p>Then average the performance measure from each of the iterations, this is what
+you end up reporting. It also allows you to compute the standard deviation of
+your performance metric, so you get an uncertainty as well.</p>
 <p>The scikit-learn documentation has a nice guide on <a href="//scikit-learn.org/stable/modules/cross_validation.html">Cross-validation: evaluating estimator performance</a>.</p>
-<p>The simplest way to use CV in <code>scikit-learn</code> is the <code>cross_val_score</code> function:</p>
+<p>The simplest way to use CV in <code>scikit-learn</code> is the <code>cross_val_score</code>
+function:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cross_validation</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GradientBoostingClassifier</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">cross_validation</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">GradientBoostingClassifier</span>
 
 
 <span class="n">gbt</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
@@ -1403,26 +1482,27 @@ gg==
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">print</span> <span class="s">&quot;Accuracy: </span><span class="si">%0.5f</span><span class="s"> (+/- </span><span class="si">%0.5f</span><span class="s">)&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="s">&quot;Accuracy: %0.5f (+/- %0.5f)&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>Accuracy: 0.71285 (+/- 0.00805)
 </pre>
 </div>
@@ -1432,21 +1512,33 @@ gg==
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Once you have mastered CV by itself, move on to using it to optimise your classifier's hyper-parameters.</p>
+
 </div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="optimising-hyper-parameters">Optimising Hyper-parameters</h2>
-<p>Each machine learning technique has a set of parameters which are not learnt from the training data. For example the number of trees in your ensemble of decision trees, or how deep each tree should be. These are called hyper-parameters. The best value for each of them depends on the particular learning problem you are trying to solve. Therefore it makes sense to try and find the best set of hyper-parameters</p>
+<h2 id="Optimising-Hyper-parameters">Optimising Hyper-parameters<a class="anchor-link" href="#Optimising-Hyper-parameters">&#182;</a></h2><p>Each machine learning technique has a set of parameters which are not learnt from the training data. For example the number of trees in your ensemble of decision trees, or how deep each tree should be. These are called hyper-parameters. The best value for each of them depends on the particular learning problem you are trying to solve. Therefore it makes sense to try and find the best set of hyper-parameters</p>
 <p>Once you are familiar with CV you will want to use it to find the best set of hyper-parameters for your learning problem. The easiest way to do that is to perform a <a href="//scikit-learn.org/stable/modules/grid_search.html">grid search</a> over the parameter space. In <code>scikit-learn</code> this functionality is provided by <code>GridSearchCV</code>:</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">grid_search</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">grid_search</span>
 
 
 <span class="c"># Perform grid search over all combinations</span>
@@ -1465,40 +1557,41 @@ gg==
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">print</span> <span class="s">&quot;Best parameter set found on development set:&quot;</span>
-<span class="k">print</span>
-<span class="k">print</span> <span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span>
-<span class="k">print</span>
-<span class="k">print</span> <span class="s">&quot;Grid scores on a subset of the development set:&quot;</span>
-<span class="k">print</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="s">&quot;Best parameter set found on development set:&quot;</span>
+<span class="nb">print</span>
+<span class="nb">print</span> <span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span>
+<span class="nb">print</span>
+<span class="nb">print</span> <span class="s">&quot;Grid scores on a subset of the development set:&quot;</span>
+<span class="nb">print</span>
 <span class="k">for</span> <span class="n">params</span><span class="p">,</span> <span class="n">mean_score</span><span class="p">,</span> <span class="n">scores</span> <span class="ow">in</span> <span class="n">clf</span><span class="o">.</span><span class="n">grid_scores_</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s">&quot;</span><span class="si">%0.4f</span><span class="s"> (+/-</span><span class="si">%0.04f</span><span class="s">) for </span><span class="si">%r</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">mean_score</span><span class="p">,</span> <span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="n">params</span><span class="p">)</span>
-<span class="k">print</span>
-<span class="k">print</span> <span class="s">&quot;With the model trained on the full development set:&quot;</span>
+    <span class="nb">print</span> <span class="s">&quot;%0.4f (+/-%0.04f) for %r&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">mean_score</span><span class="p">,</span> <span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="n">params</span><span class="p">)</span>
+<span class="nb">print</span>
+<span class="nb">print</span> <span class="s">&quot;With the model trained on the full development set:&quot;</span>
 
 <span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span> <span class="o">=</span> <span class="n">y_dev</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_dev</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&quot;  It scores </span><span class="si">%0.4f</span><span class="s"> on the full development set&quot;</span><span class="o">%</span><span class="k">roc_auc_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s">&quot;  It scores %0.4f on the full development set&quot;</span><span class="o">%</span><span class="k">roc_auc_score</span>(y_true, y_pred)
 <span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span> <span class="o">=</span> <span class="n">y_eval</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_eval</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&quot;  It scores </span><span class="si">%0.4f</span><span class="s"> on the full evaluation set&quot;</span><span class="o">%</span><span class="k">roc_auc_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s">&quot;  It scores %0.4f on the full evaluation set&quot;</span><span class="o">%</span><span class="k">roc_auc_score</span>(y_true, y_pred)
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
 <pre>Best parameter set found on development set:
 
 GradientBoostingClassifier(init=None, learning_rate=0.1, loss=&apos;deviance&apos;,
@@ -1557,22 +1650,30 @@ With the model trained on the full development set:
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The first thing to notice is how much the performance varies across hyper-parameters. The next thing to note is that the performance estimated as part of the grid search (0.7730) is different from the performance (0.7835) evaluated on the never seen evaluation set. In this case the classifier actually performs better than in the grid search. You can also see that the performance measured on the training set is biased upwards (0.8235).</p>
+<p>The first thing to notice is how much the performance varies across hyper-parameters. The next thing to note is that the performance estimated as part of the grid search (0.7730)
+is different from the performance (0.7835) evaluated on the never seen evaluation set.
+In this case the classifier actually performs better than in the grid search. You can
+also see that the performance measured on the training set is biased upwards (0.8235).</p>
 <p>For a large number of hyper-parameter combinations it will take a long time to evaluate them all. <a href="//scikit-learn.org/stable/modules/grid_search.html#randomized-parameter-optimization"><code>RandomizedSearchCV</code></a> samples from distributions of the hyper-parameters and evaluates random points. This can be quicker.</p>
-<h2 id="validation-curves">Validation curves</h2>
-<p>Another useful tool for picking your final model are validation curves. It can help you answer the question: should my model be more complex?</p>
+<h2 id="Validation-curves">Validation curves<a class="anchor-link" href="#Validation-curves">&#182;</a></h2><p>Another useful tool for picking your final model are validation curves. It can help you answer the question: should my model be more complex?</p>
 <p>A larger number of boosting iterations usually means a more complex classifier. We can evaluate the performance of our classifier after each boosting iteration and compare the training and testing score.</p>
 <p>In order to visualise the small changes in the score as we get to higher boosting iterations we plot 1-score. This means that smaller is better.</p>
 <p>To illustrate how differently the same type of classifier can behave for different hyper-parameters we will train four different ones varying the <code>max_depth</code> and <code>learning_rate</code> parameter.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="c"># Split development set into a train and test sample</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[113]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># Split development set into a train and test sample</span>
 <span class="n">X_train</span><span class="p">,</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span><span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_dev</span><span class="p">,</span> <span class="n">y_dev</span><span class="p">,</span>
                                                   <span class="n">test_size</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">4685</span><span class="p">)</span>
 
@@ -1590,19 +1691,26 @@ With the model trained on the full development set:
 
 </div>
 </div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <code>validation_curve</code> function will plot the area under the ROC after each boosting iteration for each of the classifiers. The solid line shows the performance on the testing sample and the dashed line shows the performance on the training sample.</p>
 <p>In almost all cases the performance on the training sample keeps improving as we increase the number of boosting iterations.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="k">def</span> <span class="nf">validation_curve</span><span class="p">(</span><span class="n">clfs</span><span class="p">,</span> <span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">):</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[128]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">validation_curve</span><span class="p">(</span><span class="n">clfs</span><span class="p">,</span> <span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">):</span>
     <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">test</span>
     <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">train</span>
     
@@ -1620,7 +1728,7 @@ With the model trained on the full development set:
         <span class="n">learn</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">get_params</span><span class="p">()[</span><span class="s">&#39;learning_rate&#39;</span><span class="p">]</span>
         <span class="n">depth</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">get_params</span><span class="p">()[</span><span class="s">&#39;max_depth&#39;</span><span class="p">]</span>
         <span class="n">test_line</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">test_score</span><span class="p">,</span>
-                             <span class="n">label</span><span class="o">=</span><span class="s">&#39;learn=</span><span class="si">%.1f</span><span class="s"> depth=</span><span class="si">%i</span><span class="s"> (</span><span class="si">%.2f</span><span class="s">)&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">learn</span><span class="p">,</span><span class="n">depth</span><span class="p">,</span>
+                             <span class="n">label</span><span class="o">=</span><span class="s">&#39;learn=%.1f depth=%i (%.2f)&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">learn</span><span class="p">,</span><span class="n">depth</span><span class="p">,</span>
                                                                  <span class="n">test_score</span><span class="p">[</span><span class="n">best_iter</span><span class="p">]))</span>
 
         <span class="n">colour</span> <span class="o">=</span> <span class="n">test_line</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_color</span><span class="p">()</span>
@@ -1635,30 +1743,31 @@ With the model trained on the full development set:
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">validation_curve</span><span class="p">(</span><span class="n">clfs</span><span class="p">,</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[129]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">validation_curve</span><span class="p">(</span><span class="n">clfs</span><span class="p">,</span>
                  <span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">),</span>
                  <span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">))</span>
 </pre></div>
 
 </div>
 </div>
+</div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAFmCAYAAAAbPSIgAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xl8FdX5+PHPnbtv2VeSsMOwCaJsLqCiWG1t3VEUF2qp
 rdZ+/dZqa39dv622aq3YWlsVtC7FtbV1Q1xQBJFNUGQb1pB9X+5Ncvc7vz9uEhJIQhISEpLn/Xrx
@@ -2362,37 +2471,45 @@ OmEfvoTwQ4d93Y0V2LwF/Bb4CzDTXvYIsN4YExi0zveBIvv9fBH4FxFZn+b9TGGNgHzK7svfAV8d
 of1KjSt9CkAplRXsb+4/BL4nIr3GmG8AFSLy9+PcNKUmJR0BUEplBftGyVbgdfsb9Crg38a3VUpN
 XjoCoJRSSk1BOgKglFJKTUEaACillFJTkAYASiml1BSkAYBSSik1BWkAoJRSSk1BGgAopZRSU9D/
 B2SgZG91MjxsAAAAAElFTkSuQmCC
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The vertical lines mark the boosting iteration at which a classifier achieves its best performance as measured on the testing set.</p>
 <p>We can see that the training score keeps improving as the model becomes more complex. The score on the testing set however eventually flattens off or starts getting worse. The classifier with <code>learning_rate=1.0</code> and <code>max_depth=4</code> reaches its best performance after a very small number of boosting iterations. Its training score keeps improving until it reaches zero at about 200 boosting iterations.</p>
 <p>Comparing classifiers with the same <code>max_depth</code> we can see that those with lower learning rate need more boosting iterations to reach the same performance as those with larger learning rate. However they can also converge to an overall higher score, making them the better classifier.</p>
-<h2 id="learning-curves">Learning curves</h2>
-<p>To answer the question of whether more training events would improve the performance we can evaluate the performance of a classifier when trained on a increasingly larger fraction of the test set. Broadly speaking, if the train and test score have plateaued/converged there is not much to be gained by adding more training examples. If the training error stays somewhat constant with training size and there is a large gap to the testing score, then there might be gains to be made by increasing the number of training events.</p>
+<h2 id="Learning-curves">Learning curves<a class="anchor-link" href="#Learning-curves">&#182;</a></h2><p>To answer the question of whether more training events would improve the performance we can evaluate the performance of a classifier when trained on a increasingly larger fraction of the test set. Broadly speaking, if the train and test score have plateaued/converged there is not much to
+be gained by adding more training examples. If the training error stays somewhat constant with
+training size and there is a large gap to the testing score, then there might be gains to be made by increasing the number of training events.</p>
 <p>Below I show the learning curves for four different classifiers. The first one is a very simple one, only 50 decisions stumps. The other three are the ones used as examples for the validation curves above.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="kn">from</span> <span class="nn">sklearn.learning_curve</span> <span class="kn">import</span> <span class="n">learning_curve</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[173]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">sklearn.learning_curve</span> <span class="k">import</span> <span class="n">learning_curve</span>
 
 <span class="c"># Taken more or less straight from</span>
 <span class="c"># http://scikit-learn.org/stable/auto_examples/plot_learning_curve.html</span>
-<span class="k">def</span> <span class="nf">plot_learning_curve</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+<span class="k">def</span> <span class="nf">plot_learning_curve</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="k">None</span><span class="p">,</span>
                         <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">train_sizes</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
-                        <span class="n">scoring</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                        <span class="n">scoring</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="k">True</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
     
@@ -2427,20 +2544,20 @@ B2SgZG91MjxsAAAAAElFTkSuQmCC
 
 </div>
 </div>
+</div>
 
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">simpleton</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[174]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">simpleton</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                                        <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
                                        <span class="n">n_estimators</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 <span class="n">classifiers</span> <span class="o">=</span> <span class="p">[</span><span class="n">simpleton</span><span class="p">,</span> <span class="n">clfs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">clfs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">clfs</span><span class="p">[</span><span class="mi">3</span><span class="p">]]</span>
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">classifiers</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">classifiers</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">clf</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">classifiers</span><span class="p">,</span> <span class="n">axes</span><span class="p">):</span>  
     <span class="n">plot_learning_curve</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span>
@@ -2448,7 +2565,7 @@ B2SgZG91MjxsAAAAAElFTkSuQmCC
                         <span class="n">X_dev</span><span class="p">,</span> <span class="n">y_dev</span><span class="p">,</span>
                         <span class="n">scoring</span><span class="o">=</span><span class="s">&#39;roc_auc&#39;</span><span class="p">,</span>
                         <span class="n">n_jobs</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
-                        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+                        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="k">False</span><span class="p">)</span>
     
 <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&quot;best&quot;</span><span class="p">)</span>
 <span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&quot;Training examples&quot;</span><span class="p">)</span>
@@ -2456,25 +2573,25 @@ B2SgZG91MjxsAAAAAElFTkSuQmCC
 
 </div>
 </div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[174]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">&lt;matplotlib.text.Text at 0x13c0c4ed0&gt;</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[174]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.text.Text at 0x13c0c4ed0&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgYAAAFmCAYAAAAWI1JnAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsnXl8XGW9/99ntiyTpVtoWihr4dsCbSlIAYHbyg7aUi1b
 e2UX9QJeURGv7EW0KqCiIFahUISCihYKWpaylCj8uNaWlhb6SFkuS1pI1+yZ7fz+OGeWJJNkkswk
@@ -2995,15 +3112,20 @@ FLgS+LCqbgY+gvMO3AiEIvJr4Ge4yYEHTCBbY58TekXkLtyQwLtV9Zmkz6r6BPBO3FbK9+MmaP6V
 qt7rr/crL8sj1IYtDMNowJYrGobRFBH5FHCZqm4VkTcCZ6rqm+ewP1cCP1bVr89VHwxjIWCTDw3D
 mIjHgJtEpAQ8jVtdYBhGl2MeA8MwDMMwqtgcA8MwDMMwqphhYBiGYRhGFTMMDMMwDMOoYoaBYRiG
 YRhVzDAwDMMwDKOKGQaGYRiGYVT5/xfKpWPtzEv5AAAAAElFTkSuQmCC
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The behaviour varies quite a lot. For the first classifier it is clear that adding more training examples will not improve performance. The classifier has plateaued at a score of around 0.72. The second classifier is a more complex model than the first, and it converges on a higher score of nearly 0.75. Making the model more complex was the right choice as it allowed it to achieve a higher score.</p>
 <p>The third model achieves a perfect score on the training set for all sizes. However there is a large gap between the test and training score. The model has enough parameters to capture the complexity of the training data, however it does not seem to generalise well. On unseen data it performs no better than the simplest model.</p>
@@ -3012,23 +3134,24 @@ YRhVzDAwDMMwDKOKGQaGYRiGYVT5/xfKpWPtzEv5AAAAAElFTkSuQmCC
 <p>A simple model will converge early and show that the score on the training and testing set is the same. This usually means you want to make your model a little more complex.</p>
 <p>If there is a large gap between the training and testing set you want to add more training events to your model. More training events will reduce the difference between the performance on the two sets.</p>
 <p>Training a model which has already converged with more samples will not improve the performance.</p>
-<h2 id="the-unfair-advantage">The Unfair Advantage</h2>
-<p>Unlike in the real world we can check our assumptions about adding more training samples! The original dataset contains 1million samples of which we used only a tiny fraction so far. Usually obtaining more training examples means a lot of hard work or spending more money. This is the unfair advantage of simulated data!</p>
+<h2 id="The-Unfair-Advantage">The Unfair Advantage<a class="anchor-link" href="#The-Unfair-Advantage">&#182;</a></h2><p>Unlike in the real world we can check our assumptions about adding more training samples! The original dataset contains 1million samples of which we used only a tiny fraction so far. Usually obtaining more training examples means a lot of hard work or spending more money. This is the unfair advantage of simulated data!</p>
 <p>Below we roughly double the size of the training data. As predicted the performance of both classifiers improves with more data.</p>
+
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-
-
-
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre><span class="n">X_dev2</span><span class="p">,</span><span class="n">X_eval2</span><span class="p">,</span> <span class="n">y_dev2</span><span class="p">,</span><span class="n">y_eval2</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[177]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">X_dev2</span><span class="p">,</span><span class="n">X_eval2</span><span class="p">,</span> <span class="n">y_dev2</span><span class="p">,</span><span class="n">y_eval2</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
                                                   <span class="n">test_size</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
                                                   <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 
 <span class="n">classifiers</span> <span class="o">=</span> <span class="p">[</span><span class="n">clfs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">clfs</span><span class="p">[</span><span class="mi">3</span><span class="p">]]</span>
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">classifiers</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">classifiers</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">clf</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">classifiers</span><span class="p">,</span> <span class="n">axes</span><span class="p">):</span>  
     <span class="n">plot_learning_curve</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span>
@@ -3036,7 +3159,7 @@ YRhVzDAwDMMwDKOKGQaGYRiGYVT5/xfKpWPtzEv5AAAAAElFTkSuQmCC
                         <span class="n">X_dev2</span><span class="p">[:</span><span class="mi">50000</span><span class="p">],</span> <span class="n">y_dev2</span><span class="p">[:</span><span class="mi">50000</span><span class="p">],</span>
                         <span class="n">scoring</span><span class="o">=</span><span class="s">&#39;roc_auc&#39;</span><span class="p">,</span>
                         <span class="n">n_jobs</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-                        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+                        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="k">False</span><span class="p">)</span>
     
 <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&quot;best&quot;</span><span class="p">)</span>
 <span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&quot;Training examples&quot;</span><span class="p">)</span>
@@ -3044,25 +3167,25 @@ YRhVzDAwDMMwDKOKGQaGYRiGYVT5/xfKpWPtzEv5AAAAAElFTkSuQmCC
 
 </div>
 </div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt output_prompt">
-    Out[177]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-
-<pre class="ipynb tim">&lt;matplotlib.text.Text at 0x11b288910&gt;</pre>
-
-</div>
 </div>
 
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area"><div class="prompt output_prompt">Out[177]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.text.Text at 0x11b288910&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgYAAAFmCAYAAAAWI1JnAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xl83FW9//HXd2ayNmvTNOkGBdqebrRlsSpYQdaClk0E
 yr0CosgV8QHXy8UrqICiBQEBBbloWYoC9f5AsC7sCBbhcqmFQtvktAFql3RJlyxtkiYz8/398f3O
@@ -3471,18 +3594,26 @@ CPCou/8+4SmPVx/FzxVpKSoMRJa2+R4b+ipwupk9QRhf/SdA9QmG+vsH6rcRzfg328+rzr8W+ISZ
 sfDFapvdfRz4TcIwvU8SbtD8XXf/SfzzfhrH8hyHLluIyAx6XFFEZmVmHwe+4O5jZvZO4Gp3//VF
 bM+dwPfc/e7FaoNIK9DNhyIyl18A3zGzIrCH8HSBiKxwOmMgIiIiNbrHQERERGpUGIiIiEiNCgMR
 ERGpUWEgIiIiNSoMREREpEaFgYiIiNT8fyJFT68XqOUhAAAAAElFTkSuQmCC
-">
+"
+>
+</div>
+
+</div>
 
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-
-</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is the end of the second part of <a href="/posts/advanced-sklearn-for-TMVA/">scikit-learn for TMVA users</a>. Thank you for reading.</p>
 <p>If you find a mistake or want to tell me something else get in touch on twitter @<a href="//twitter.com/betatim">betatim</a></p>
+
+</div>
+</div>
 </div></p>
 <p>This post started life as a ipython notebook,
 <a href="/downloads/notebooks/advanced-sklearn-for-TMVA.ipynb">download it</a>
