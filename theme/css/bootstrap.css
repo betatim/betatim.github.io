@@ -1,6 +1,6 @@
 /*!
  * Bootstrap v3.1.1 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
@@ -1382,10 +1382,6 @@ pre code {
   border-radius: 0;
 }
 .output_stream pre {
-  background-color: #fff;
-  border: none;
-}
-.output_execute_result pre {
   background-color: #fff;
   border: none;
 }
