@@ -363,7 +363,7 @@ jQuery(document).ready(function($) {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class=" highlight hl-ipython2"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
 </div>
@@ -376,24 +376,24 @@ jQuery(document).ready(function($) {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">itemgetter</span>
+<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
 
 <span class="kn">import</span> <span class="nn">sklearn</span>
-<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">StratifiedKFold</span><span class="p">,</span> <span class="n">KFold</span>
-<span class="kn">from</span> <span class="nn">sklearn.grid_search</span> <span class="k">import</span> <span class="n">RandomizedSearchCV</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">randint</span> <span class="k">as</span> <span class="n">sp_randint</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">uniform</span> <span class="k">as</span> <span class="n">sp_uniform</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">mean_squared_error</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">GradientBoostingRegressor</span><span class="p">,</span> <span class="n">AdaBoostRegressor</span><span class="p">,</span> <span class="n">RandomForestRegressor</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">BaggingRegressor</span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">StratifiedKFold</span><span class="p">,</span> <span class="n">KFold</span>
+<span class="kn">from</span> <span class="nn">sklearn.grid_search</span> <span class="kn">import</span> <span class="n">RandomizedSearchCV</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">randint</span> <span class="k">as</span> <span class="n">sp_randint</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">uniform</span> <span class="k">as</span> <span class="n">sp_uniform</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GradientBoostingRegressor</span><span class="p">,</span> <span class="n">AdaBoostRegressor</span><span class="p">,</span> <span class="n">RandomForestRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">BaggingRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
 </pre></div>
 
 </div>
@@ -417,7 +417,7 @@ jQuery(document).ready(function($) {
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre>%%bash
+<div class=" highlight hl-ipython2"><pre>%%bash
 <span class="c"># Download the HiggsML dataset</span>
 <span class="c"># details here: http://opendata.cern.ch/record/328</span>
 wget --quiet -P /tmp/ http://opendata.cern.ch/record/328/files/atlas-higgs-challenge-2014-v2.csv.gz
@@ -443,11 +443,11 @@ wget --quiet -P /tmp/ http://opendata.cern.ch/record/328/files/atlas-higgs-chall
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&#39;/tmp/atlas-higgs-challenge-2014-v2.csv.gz&#39;</span><span class="p">,</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&#39;/tmp/atlas-higgs-challenge-2014-v2.csv.gz&#39;</span><span class="p">,</span>
                  <span class="n">compression</span><span class="o">=</span><span class="s">&#39;gzip&#39;</span><span class="p">)</span>
 
 <span class="c"># Print the name of all the colums</span>
-<span class="nb">print</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -487,7 +487,7 @@ wget --quiet -P /tmp/ http://opendata.cern.ch/record/328/files/atlas-higgs-chall
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">hist_opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">hist_opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
                  <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
                  <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">))</span>
 <span class="n">signal</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Label</span> <span class="o">==</span> <span class="s">&#39;s&#39;</span>
@@ -716,7 +716,7 @@ DHZJkhLk/wMH/0B6nEvcGwAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c"># Selecting the columns used to predict MMC</span>
+<div class=" highlight hl-ipython2"><pre><span class="c"># Selecting the columns used to predict MMC</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;PRI_tau_pt&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_tau_eta&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_tau_phi&#39;</span><span class="p">,</span>
            <span class="s">&#39;PRI_lep_pt&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_lep_eta&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_lep_phi&#39;</span><span class="p">,</span>
            <span class="s">&#39;PRI_met&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_met_phi&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_met_sumet&#39;</span><span class="p">,</span>
@@ -765,7 +765,7 @@ DHZJkhLk/wMH/0B6nEvcGwAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c"># this looks more daunting than it has to be :-(</span>
+<div class=" highlight hl-ipython2"><pre><span class="c"># this looks more daunting than it has to be :-(</span>
 <span class="n">X_dev</span><span class="p">,</span><span class="n">X_eval</span><span class="p">,</span> <span class="n">w_dev</span><span class="p">,</span><span class="n">w_eval</span><span class="p">,</span> <span class="n">MMC_dev</span><span class="p">,</span><span class="n">MMC_eval</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">(),</span>
                                                                 <span class="n">w</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">(),</span>
                                                                 <span class="n">MMC</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">(),</span>
@@ -803,7 +803,7 @@ DHZJkhLk/wMH/0B6nEvcGwAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">clf</span> <span class="o">=</span> <span class="n">GradientBoostingRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">clf</span> <span class="o">=</span> <span class="n">GradientBoostingRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span>
                                 <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
                                 <span class="n">subsample</span><span class="o">=</span><span class="mf">0.7296635812586656</span><span class="p">,</span>
                                 <span class="n">max_features</span><span class="o">=</span><span class="mf">0.5779758681446561</span><span class="p">,</span>
@@ -854,19 +854,19 @@ DHZJkhLk/wMH/0B6nEvcGwAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">MMC_pred_train</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">MMC_pred_train</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
 <span class="n">MMC_pred_test</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="n">MMC_pred_eval</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_eval</span><span class="p">)</span>
 
 <span class="n">bg_MMC_pred_test</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">bg_X_test</span><span class="p">)</span>
 <span class="n">bg_MMC_pred_eval</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">bg_X_eval</span><span class="p">)</span>
 
-<span class="nb">print</span> <span class="s">&quot;MSE on training set:&quot;</span><span class="p">,</span>
-<span class="nb">print</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">MMC_train</span><span class="p">,</span> <span class="n">MMC_pred_train</span><span class="p">,</span> <span class="n">w_train</span><span class="p">)</span>
-<span class="nb">print</span> <span class="s">&quot;MSE on testing set:&quot;</span><span class="p">,</span>
-<span class="nb">print</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">MMC_test</span><span class="p">,</span> <span class="n">MMC_pred_test</span><span class="p">,</span> <span class="n">w_test</span><span class="p">)</span>
-<span class="nb">print</span> <span class="s">&quot;MSE on evaluation set:&quot;</span><span class="p">,</span>
-<span class="nb">print</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">MMC_eval</span><span class="p">,</span> <span class="n">MMC_pred_eval</span><span class="p">,</span> <span class="n">w_eval</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;MSE on training set:&quot;</span><span class="p">,</span>
+<span class="k">print</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">MMC_train</span><span class="p">,</span> <span class="n">MMC_pred_train</span><span class="p">,</span> <span class="n">w_train</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;MSE on testing set:&quot;</span><span class="p">,</span>
+<span class="k">print</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">MMC_test</span><span class="p">,</span> <span class="n">MMC_pred_test</span><span class="p">,</span> <span class="n">w_test</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot;MSE on evaluation set:&quot;</span><span class="p">,</span>
+<span class="k">print</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">MMC_eval</span><span class="p">,</span> <span class="n">MMC_pred_eval</span><span class="p">,</span> <span class="n">w_eval</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -906,7 +906,7 @@ MSE on evaluation set: 34.3325667757
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">))</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">MMC_eval</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">w_eval</span><span class="p">,</span>
          <span class="n">label</span><span class="o">=</span><span class="s">&quot;Original MMC&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">MMC_pred_eval</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">w_eval</span><span class="p">,</span>
@@ -1161,7 +1161,7 @@ gg==
 <div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bg_MMC_eval</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">bg_w_eval</span><span class="p">,</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bg_MMC_eval</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">bg_w_eval</span><span class="p">,</span>
          <span class="n">label</span><span class="o">=</span><span class="s">&quot;Original MMC&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bg_MMC_pred_eval</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">bg_w_eval</span><span class="p">,</span>
          <span class="n">label</span><span class="o">=</span><span class="s">&quot;Learned MMC&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
@@ -1464,7 +1464,7 @@ REQkpP5/n0HwoAkenAcAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">mean_and_std</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">mean_and_std</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
     <span class="n">average</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
     <span class="n">variance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">((</span><span class="n">values</span><span class="o">-</span><span class="n">average</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">average</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">))</span>
@@ -1476,16 +1476,16 @@ REQkpP5/n0HwoAkenAcAAAAASUVORK5CYII=
            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
            <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span>
            <span class="n">label</span><span class="o">=</span><span class="s">&#39;$\Delta$MMC for Signal&#39;</span><span class="p">,</span>
-           <span class="n">normed</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+           <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">_</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bg_delta</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">bg_w_eval</span><span class="p">,</span>
            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
            <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span>
            <span class="n">label</span><span class="o">=</span><span class="s">&#39;$\Delta$MMC for Background&#39;</span><span class="p">,</span>
-           <span class="n">normed</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+           <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="n">mean_and_std</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">w_eval</span><span class="p">)</span>
-<span class="nb">print</span> <span class="n">mean_and_std</span><span class="p">(</span><span class="n">bg_delta</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">bg_w_eval</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">mean_and_std</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">w_eval</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">mean_and_std</span><span class="p">(</span><span class="n">bg_delta</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">bg_w_eval</span><span class="p">)</span>
 </pre></div>
 
 </div>
