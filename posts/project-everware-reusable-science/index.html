@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
+
+    <title>Project everware: Reusable science - Tim Head</title>
+
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="/theme/css/bootstrap.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/default.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-49540142-1', 'betatim.github.io');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- extra stuff for nbconvert -->
+	
+<style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+</style>
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+div.entry-content {
+  overflow: visible;
+  padding: 8px;
+}
+.input_area {
+  padding: 0.2em;
+}
+
+a.heading-anchor {
+ white-space: normal;
+}
+
+.rendered_html
+code {
+ font-size: .8em;
+}
+
+pre.ipynb {
+  color: black;
+  background: #f7f7f7;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 0;
+  padding: 0;
+  margin: 0px;
+  font-size: 13px;
+}
+
+/* remove the prompt div from text cells */
+div.text_cell .prompt {
+    display: none;
+}
+div.prompt {
+    display: none;
+}
+
+/* remove horizontal padding from text cells, */
+/* so it aligns with outer body text */
+div.text_cell_render {
+    padding: 0.5em 0em;
+}
+
+img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
+
+div.collapseheader {
+    width=100%;
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+</style>
+
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $("div.collapseheader").click(function () {
+    $header = $(this).children("span").first();
+    $codearea = $(this).children(".input_area");
+    console.log($(this).children());
+    $codearea.slideToggle(500, function () {
+        $header.text(function () {
+            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+        });
+    });
+});
+});
+</script>
+
+
+    <!-- extra stuff for nbconvert -->
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/javascript">
+      init_mathjax = function() {
+      if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+        },
+        displayAlign: 'left', // Change this to 'center' to center equations.
+        "HTML-CSS": {
+          styles: {'.MathJax_Display': {"margin": 0}}
+        }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+      }
+      }
+      init_mathjax();
+    </script>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <style>
+      .cell {
+      margin-top: 22px;
+      margin-bottom: 11px;
+      }
+      .text_cell_render {
+      padding: 0;
+      }
+      .title {
+      border-left: 7px solid #eee;
+      padding: 10px 10px 10px 23px;
+      margin-left: -30px;
+      }
+      .when {
+      padding-top: 5px;
+      text-transform: uppercase;
+      color: #777;
+      }
+      .entry-content img {
+      border-radius: 4px;
+      }
+      .navbar {
+      margin: 75px 0 25px 0;
+      }
+      .footer {
+      margin: 100px 0 25px 0;
+      border-top: 1px solid transparent;
+      border-color: #eee;
+      }
+      .powered-by {
+      padding: 15px;
+      float: right;
+      }
+      .social {
+      padding: 15px;
+      float: left;
+      }
+      .social i {
+      padding-left: 15px;
+      }
+      .social a {
+      color: black;
+      transition: all 0.25s ease-in;
+      -webkit-transition: all 0.25s ease-in;
+      }
+      .social a:hover {
+      text-shadow: 0 0 15px #000;
+      }
+      .listing span {
+      float: right;
+      text-transform: uppercase;
+      }
+      .listing li {
+      list-style-type: none;
+      }
+      .navbar a {
+      transition: color 0.5s ease-in;
+      -webkit-transition: color 0.5s ease-in;
+      }
+      .navbar li a {
+      font-weight: bold;
+      }
+      .navbar a {
+      text-transform: uppercase
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+	<div class="col-md-8 col-md-offset-2">
+	  <nav class="navbar navbar-default" role="navigation">
+	    
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand name" href="http://betatim.github.io/">Tim<b>Head</b></a>
+	    </div>
+	    <div class="collapse navbar-collapse navbar-right">
+	      <ul class="nav navbar-nav">
+		<!-- <li><a href="#">Notes</a></li> -->
+		<!-- <li><a href="#">Talks</a></li> -->
+                         <li><a href="/pages/about.html">
+                             About
+                         </a></li>
+                         <li><a href="/pages/science.html">
+                             Science
+                         </a></li>
+                         <li><a href="/pages/sports.html">
+                             Sports
+                         </a></li>
+	      </ul>
+	    </div>
+	    
+	  </nav>  
+	</div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="col-md-8 col-md-offset-2">
+    <section id="content">
+        <article>
+            <header class="title">
+                <h1>
+                    <!--<a href="http://betatim.github.io/posts/project-everware-reusable-science/"
+                       rel="bookmark"
+                       title="Permalink to Project everware: Reusable science">
+                        Project everware: Reusable science
+                    </a>-->
+		    Project everware: Reusable science
+                </h1>
+		<div class="when">13 August 2015</div>
+            </header>
+            <div class="entry-content">
+                <p>Take interesting code for a spin, in your browser!</p>
+<p>Easily spin up the code from a git repository in a custom docker
+container, in order to quickly test out and play with something you
+are curious about.</p>
+<p>Like <a href="//nbviewer.ipython.org">nbviewer</a>, but executable. A super easy
+way to run a notebook (with all of its complicated
+dependencies). Actually, you do not even have to use python or even
+<a href="//jupyter.org">jupyter notebooks</a> to profit from this.</p>
+<p>Does all this sound interesting? Let me introduce <a href="//github.com/everware">project
+everware</a>!</p>
+<p>The <a href="//github.com/everware">everware project</a> is making the data analysis part of science
+easier to reuse and reproduce. As easy as pasting the URL of a github
+repository. We will then launch a custom docker container in which the
+code runs and connect you to it in your browser. This makes it super
+easy for you to try out someone else's code, modify it and take the
+parts that interest you and reuse them. It also means that reproducing
+and preserving an analysis comes for free.</p>
+<blockquote>
+<blockquote>
+<p>We have a <a href="http://login.miptcloud.com:55009/hub/login">working demo</a>
+where you can paste the URL any of the <a href="//github.com/everware/jupyterhub/wiki/Everware-compliant-Notebooks-gallery">repositories compatible with
+everware</a>.</p>
+</blockquote>
+</blockquote>
+<h2>How does it work?</h2>
+<p>What is needed for this magic to work? The only real, fundamental
+requirement is that the repository you want to try out contains a
+<code>Dockerfile</code> describing how to setup the environment for the
+analysis. Preferably it should also contain a jupyter notebook (an
+executable <code>README</code> on steroids) describing how to run each step of
+the analysis.</p>
+<p>This notebook provides the narrative that links the individual steps
+of the analysis. It can contain LaTeX, images, equations and code. A
+notebook alternates between narrative and executable cells.</p>
+<p>One step of your analysis can be as simple as <code>echo 3.141 &gt; PI.txt</code>,
+or require compiling large amounts of code and running it.</p>
+<p>The steps of your analysis do not have to be written in <code>python</code>, they
+can be what ever you want them to be. Compiled <code>c++</code>, <code>bash</code>,
+<code>FORTRAN</code>, <code>R</code>, what have you.</p>
+<p>Not even the executable cells in the notebook describing the steps
+have to be <code>python</code>, as of today there are 49 <a href="//github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages">kernels for
+jupyter</a>,
+so you can write the steps in your favourite language. Actually, you
+do not even need to use jupyter notebooks ... but it is a good idea!</p>
+<p>To recap: you add a <code>Dockerfile</code> to your analysis repository, we offer
+you ever lasting single click executability, reusability, and
+reproducibility.</p>
+<h2>How is everware different?</h2>
+<p>There already exist great services like
+<a href="//cloud.sagemath.com">sagemath</a>,
+<a href="//www.dominodatalab.com">dominodatalab</a>, or <a href="//tmpnb.org">tmpnb</a>. If
+you could mix all of them together they would offer docker containers
+in the cloud, jupyter notebooks as interface, git repositories for
+collaboration, and no-wasteful-clicking-just-run-the-thing usability.</p>
+<p>However, neither of them on their own solves all the challenges of a
+modern, computationally intensive, collaborative, reusable, and
+reproducible scientific endeavour.</p>
+<p>This is why we are building <a href="//github.com/everware">everware</a>.</p>
+<h2>What is in a Dockerfile?</h2>
+<p>A <code>Dockerfile</code> is a convenient way of describing all your project's
+dependencies. Probably you do not even have to write your own
+<code>Dockerfile</code>, just pick one that is close enough/fulfils your
+requirements.</p>
+<p>We are building this because it fixes several painful things we
+encounter most days as experimental physicists. Below I list some of
+them.</p>
+<h3>The convenience</h3>
+<p>You can then use this environment while developing your analysis in
+the first place. The container will run locally, you can use your
+favourite editor, mount your large input files directly into the
+container, etc. You can use what ever libraries and versions of them
+that you like, not your local admin. When you are done with your
+analysis you get reproducibility for free.</p>
+<h3>The holiday</h3>
+<p>Sometimes libraries and software get updated while you are on holiday.
+Nothing spoils your holiday faster than returning to "nothing works
+anymore ... ahhrgg ... why!!! It was working before I left!!"</p>
+<h3>The new guy</h3>
+<p>How many hours have you spent trying to figure out why that new
+student or postdoc ca not run your code? In the end it is always some
+weird environment variable or something hidden at the bottom of your
+<code>.bashrc</code> (or worse, theirs).</p>
+<h3>The coding ninja student</h3>
+<p>If you get others to use it it has the side effect that you make it
+much easier for yourself to take the code from that
+coding-ninja-student that makes that amazing Figure 3 in your paper
+and use it yourself. You even have a chance to understand what you
+need to install to run it in your analysis (<code>Dockerfile</code> syntax is
+like a shared language, unlike the l33t speak of
+coding-ninja-student).</p>
+<h3>The helper</h3>
+<p>Personally, I am kind of into machine learning. Often people will send
+me some weird script, that depends on libraries <code>X</code>, <code>Y</code> and <code>Z</code>. In
+some weird combination of versions. I look at it and think 'yeah right
+... this is gonna take a while.', getting things setup to help you
+will take a while. Therefore I will be demanding a lot of beers in
+exchange for helping you with your problem. If I can run it in my
+browser at a click of a button ... one coffee will do it (and I will
+do it now, not maybe later).</p>
+<p>So really you are doing yourself a favour, at a very small price.</p>
+<h2>The Everware Project</h2>
+<p>We started this project at the CERN <a href="//webfest.web.cern.ch">webfest</a>
+hackathon two weeks ago where we won the price for "best tech".</p>
+<p>It is based on the amazing work by the
+<a href="//github.com/jupyter/jupyterhub">Jupyterhub</a> and
+<a href="//docker.com">docker</a> guys. We shamelessly stole, copied, hacked and
+modified all the things. Check out the code on github: <a href="//github.com/everware">everware project</a></p>
+<p>Do join us!</p>
+<p>We have a <a href="http://login.miptcloud.com:55009/hub/login">working demo</a>
+where you can paste the URL any of the <a href="//github.com/everware/jupyterhub/wiki/Everware-compliant-Notebooks-gallery">repositories compatible with
+everware</a>.</p>
+<p>Lots is still missing. Right now we provide the computing power, this
+is Ok for trying stuff out, but if you want to run a typical LHC
+analysis pipeline you need "days" of CPU time. So we want to add a way
+for the visitor to type in the repository <em>and</em> some credentials that
+allow us to launch the docker container on their private "cloud" (at
+their company, institute, AWS, ...). This is the number one missing
+piece. As well as lots and lots of tidying and making things more
+robust. We also need a lot more documentation, so far your best bet is
+to drop by on gitter:
+<a href="//gitter.im/everware/everware">everware/everware</a> or email
+<code>everware@googlegroups.com</code>.</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+      </div>
+    </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <footer class="footer">
+	<div class="social">
+	    <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+	    <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+	    <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+	</div>
+	<div class="powered-by">
+	  Copyright ©  2014-2015  - Tim Head - <a href="http://docs.getpelican.com/" target="_blank">Pelican</a> powered.
+	</div>
+      </footer>
+    </div>
+  </div>
+</div>    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+  </body>
+</html>
