@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
+
+    <title>A Physicist at NIPS2015 - Tim Head</title>
+
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="/theme/css/bootstrap.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/default.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-49540142-1', 'betatim.github.io');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- extra stuff for nbconvert -->
+	
+<style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+</style>
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+div.entry-content {
+  overflow: visible;
+  padding: 8px;
+}
+.input_area {
+  padding: 0.2em;
+}
+
+a.heading-anchor {
+ white-space: normal;
+}
+
+.rendered_html
+code {
+ font-size: .8em;
+}
+
+pre.ipynb {
+  color: black;
+  background: #f7f7f7;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 0;
+  padding: 0;
+  margin: 0px;
+  font-size: 13px;
+}
+
+/* remove the prompt div from text cells */
+div.text_cell .prompt {
+    display: none;
+}
+div.prompt {
+    display: none;
+}
+
+/* remove horizontal padding from text cells, */
+/* so it aligns with outer body text */
+div.text_cell_render {
+    padding: 0.5em 0em;
+}
+
+img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
+
+div.collapseheader {
+    width=100%;
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+</style>
+
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $("div.collapseheader").click(function () {
+    $header = $(this).children("span").first();
+    $codearea = $(this).children(".input_area");
+    console.log($(this).children());
+    $codearea.slideToggle(500, function () {
+        $header.text(function () {
+            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+        });
+    });
+});
+});
+</script>
+
+
+    <!-- extra stuff for nbconvert -->
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/javascript">
+      init_mathjax = function() {
+      if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+        },
+        displayAlign: 'left', // Change this to 'center' to center equations.
+        "HTML-CSS": {
+          styles: {'.MathJax_Display': {"margin": 0}}
+        }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+      }
+      }
+      init_mathjax();
+    </script>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <style>
+      .cell {
+      margin-top: 22px;
+      margin-bottom: 11px;
+      }
+      .text_cell_render {
+      padding: 0;
+      }
+      .title {
+      border-left: 7px solid #eee;
+      padding: 10px 10px 10px 23px;
+      margin-left: -30px;
+      }
+      .when {
+      padding-top: 5px;
+      text-transform: uppercase;
+      color: #777;
+      }
+      .entry-content img {
+      border-radius: 4px;
+      }
+      .navbar {
+      margin: 75px 0 25px 0;
+      }
+      .footer {
+      margin: 100px 0 25px 0;
+      border-top: 1px solid transparent;
+      border-color: #eee;
+      }
+      .powered-by {
+      padding: 15px;
+      float: right;
+      }
+      .social {
+      padding: 15px;
+      float: left;
+      }
+      .social i {
+      padding-left: 15px;
+      }
+      .social a {
+      color: black;
+      transition: all 0.25s ease-in;
+      -webkit-transition: all 0.25s ease-in;
+      }
+      .social a:hover {
+      text-shadow: 0 0 15px #000;
+      }
+      .listing span {
+      float: right;
+      text-transform: uppercase;
+      }
+      .listing li {
+      list-style-type: none;
+      }
+      .navbar a {
+      transition: color 0.5s ease-in;
+      -webkit-transition: color 0.5s ease-in;
+      }
+      .navbar li a {
+      font-weight: bold;
+      }
+      .navbar a {
+      text-transform: uppercase
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+	<div class="col-md-8 col-md-offset-2">
+	  <nav class="navbar navbar-default" role="navigation">
+	    
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand name" href="http://betatim.github.io/">Tim<b>Head</b></a>
+	    </div>
+	    <div class="collapse navbar-collapse navbar-right">
+	      <ul class="nav navbar-nav">
+		<!-- <li><a href="#">Notes</a></li> -->
+		<!-- <li><a href="#">Talks</a></li> -->
+                         <li><a href="/pages/about.html">
+                             About
+                         </a></li>
+                         <li><a href="/pages/science.html">
+                             Science
+                         </a></li>
+                         <li><a href="/pages/sports.html">
+                             Sports
+                         </a></li>
+	      </ul>
+	    </div>
+	    
+	  </nav>  
+	</div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="col-md-8 col-md-offset-2">
+    <section id="content">
+        <article>
+            <header class="title">
+                <h1>
+                    <!--<a href="http://betatim.github.io/posts/physics-does-nips/"
+                       rel="bookmark"
+                       title="Permalink to A Physicist at NIPS2015">
+                        A Physicist at NIPS2015
+                    </a>-->
+		    A Physicist at NIPS2015
+                </h1>
+		<div class="when">16 December 2015</div>
+            </header>
+            <div class="entry-content">
+                <p>Last week I attended the second half of <a href="//nips.cc">NIPS 2015</a>. It was
+great! I am an experimental particle physicist, not a professional
+machine-learning guy. This was the first time I went to NIPS and it
+was very different from big conferences I have experienced in particle
+physics.</p>
+<p>This post is a summary of my impressions, and a reading list of sorts.</p>
+<p><img alt="A physicist's view of NIPS" src="/images/inception-deep-learning.jpeg" title="A physicist's view of NIPS" style="width: 400px;">
+<figcaption><em>A physicist's view of NIPS. Image Credit: Googler Mike Tyka’s </em><a href="https://photos.google.com/share/AF1QipPX0SCl7OzWilt9LnuQliattX4OUCj_8EP65_cTVnBmS1jnYgsGQAieQUc1VQWdgQ?key=aVBxWjhwSzg2RjJWLWRuVFBBZEN1d205bUdEMnhB" rel="nofollow">Inceptionism Library</a></figcaption></p>
+<h2>Conference format</h2>
+<p>NIPS takes place from Monday to Saturday. The first day is tutorials,
+and the last two are dedicated to workshops. On all other days the
+conference operates in single track mode. There are a few longer talks
+each day but the majority of the time is dedicated to "spotlight"
+talks. These are three minute long talks about a selected few of the
+day's posters. Then there are the epic poster sessions each day.</p>
+<p>The workshops are organised by "outsiders" (not conference
+organisers), and there are a lot of them in parallel.</p>
+<p>Overall about 3700 people attended the conference.</p>
+<h2>Business</h2>
+<p>I was not just a tourist in machine-learning wonderland, I had to do
+some work as well. I gave an invited talk at the <a href="//yandexdataschool.github.io/aleph2015/">ALEPH
+workshop</a> on Friday. In the
+same workshop <a href="https://twitter.com/glouppe">Gilles</a> talked about some
+work we did together: <a href="https://github.com/glouppe/talk-aleph-workshop2015">Pitfalls of evaluating a classifier's
+performance in high energy physics
+applications</a>.</p>
+<p>More physicists should go and give talks at NIPS. You can learn a lot,
+make connections to people you would not otherwise meet, and have your
+mind blown by the craze that is deep learning.</p>
+<p>Particle physics (HEP) has hard and interesting problems to solve. Attracting
+the skills of the machine learning community would be great. HEP would make
+progress faster, and it would spark interesting research for the NIPS
+community. Right now the barrier to entry to HEP is extremely high though.
+We should work on fixing that.</p>
+<h2>Posters, posters, posters</h2>
+<p>The first surprise was that how many poster sessions there are at NIPS
+and how well attended they are.</p>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">4 nights in a row, 100 posters per night, from 7pm till 11pm, <a href="https://twitter.com/hashtag/nips2015?src=hash">#nips2015</a> poster session. <a href="https://t.co/NOxPzzwdhu">https://t.co/NOxPzzwdhu</a> <a href="https://t.co/VPS7abv3Yy">pic.twitter.com/VPS7abv3Yy</a></p>&mdash; Tim Head (@betatim) <a href="https://twitter.com/betatim/status/674786498076655616">December 10, 2015</a></blockquote>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Given the conference format, it makes sense, but it was still surprising
+for me. At most physics conferences the focus is on short talks in parallel
+sessions.</p>
+<p>I enjoyed having the opportunity to ask really dumb questions to the
+poster presenters without having to reveal my ignorance to a room full
+of experts. I tried to prepare for the two poster sessions I was in town
+for by reading the abstracts for that session. It helped, but I would have
+had to do a lot mroe studying for it to be really useful. Just walking around
+and reading the introduction to each poster turned out to be quite a good
+strategy. I usually ran out of posters before the session was over.</p>
+<h2>Free stuff</h2>
+<p>The other big differnce was how many people from industry attended the
+conference. Basically everywhere you saw someone wearing something branded
+by Google DeepMind or FAIR.</p>
+<p>There were also a lot of parties or dinners organised by companies. This
+does not happen at physics conferences. I am sure if you wanted to you
+could have eaten and drunk for free all week. Ideal for grad students?!?</p>
+<blockquote>
+<p>Below follows a collection of things I found interesting or want to
+investigate further. It is half todo list, and half recommendations.</p>
+</blockquote>
+<h2>Workshops</h2>
+<p>There are a lot of them. Interesting thoughts about how to <a href="http://ciml.chalearn.org/">organise coopetitions if the aim is to produce and share new knowledge</a>. The <a href="http://yandexdataschool.github.io/aleph2015/">ALPEH Workshop</a>, not just because I gave a talk there ... <a href="http://bayesopt.com/">Bayesian optimisation</a>, we optimise everything! <a href="http://www.thespermwhale.com/jaseweston/ram/">Reasoning, attention, memory</a>, did not attend but looking forward to videos. <a href="https://sites.google.com/site/tlworkshop2015/">Transfer learning</a>, what if training and testing densities are not the same (also known as: my simulator is not perfect!!).</p>
+<h2>Reading list</h2>
+<p>This is a unordered list of posters, talks or otherwise interesting things
+that ended up on my reading list. <a href="https://twitter.com/karpathy">karpathy</a>'s <a href="http://cs.stanford.edu/people/karpathy/nips2015/">machine-learning powered overview of the NIPS papers</a>.</p>
+<ul>
+<li>
+<p><a href="http://papers.nips.cc/paper/5866-pointer-networks">Pointer
+  networks</a>, solve
+  the travelling salesman problem, and other problems where the length
+  of the output sequence is not known. Useful for track reconstruction?</p>
+</li>
+<li>
+<p><a href="http://papers.nips.cc/paper/5872-efficient-and-robust-automated-machine-learning">Efficient and Robust Automated Machine Learning</a>, automatic machine learning made easy. <a href="https://github.com/automl/auto-sklearn">auto-sklearn</a>, let the machine tune itself.</p>
+</li>
+<li>
+<p><a href="http://papers.nips.cc/paper/5947-semi-supervised-learning-with-ladder-networks">Semi-supervised Learning with Ladder Networks</a>, looked at the poster, listened to a talk, started reading the paper and still I am confused. Very interesting though as LHCb has huge amounts of unlabelled data.</p>
+</li>
+<li>
+<p><a href="http://papers.nips.cc/paper/5886-efficient-non-greedy-optimization-of-decision-trees">Efficient Non-greedy Optimization of Decision Trees</a> Decision trees are usually iduced in a greedy fashion. What are the advantages of this approach?</p>
+</li>
+<li>
+<p><a href="http://papers.nips.cc/paper/5954-convolutional-networks-on-graphs-for-learning-molecular-fingerprints">Convolutional Networks on Graphs for Learning Molecular Fingerprints</a>, how to deal with graphs of unknown length and perform learning on them. They applied it to predicting properties of molecules, could be useful for track reconstruction?</p>
+</li>
+<li>
+<p><a href="http://papers.nips.cc/paper/5993-generalization-in-adaptive-data-analysis-and-holdout-reuse">Generalization in Adaptive Data Analysis and Holdout Reuse</a> "Thresholdout", differential privacy allows you to reuse your holdout set. How does this compare to nested cross-validation?</p>
+</li>
+<li>
+<p><a href="http://papers.nips.cc/paper/5846-end-to-end-memory-networks">End-To-End Memory Networks</a>, I understand very little about what they do, but it got a lot of attention.</p>
+</li>
+<li>
+<p><a href="http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems">Hidden Technical Debt in Machine Learning Systems</a>, complicated pipelines of sophisticated algorithms incure technical debt, ya don't say!</p>
+</li>
+<li>
+<p><a href="http://papers.nips.cc/paper/5851-deep-convolutional-inverse-graphics-network">Deep Convolutional Inverse Graphics Network</a>, how is it that humans can recognise a face in completely different lighting conditions and a new pose after seeing it only once? Take a look at Tenenbaum's <a href="http://papers.nips.cc/author/josh-tenenbaum-6308">other submissions</a> as well and <a href="http://www.sciencemag.org/content/350/6266/1332.full">this article</a> in Science.</p>
+</li>
+<li>
+<p><a href="http://papers.nips.cc/paper/5854-spatial-transformer-networks">Spatial Transformer Networks</a>, a network module that cna larn to undo spatial transformations before classification. Presenting upside-down digits to your network? Plug in this module which will orientate them correctly and then classify them. Check out the <a href="https://github.com/skaae/recurrent-spatial-transformer-code">lasagne code</a>.</p>
+</li>
+<li>
+<p>Bunch of leftovers: <a href="">http://papers.nips.cc/paper/5653-a-recurrent-latent-variable-model-for-sequential-data</a>,
+ <a href="">http://papers.nips.cc/paper/5883-consistent-multilabel-classification</a>,
+ <a href="">http://papers.nips.cc/paper/5773-deep-generative-image-models-using-a-laplacian-pyramid-of-adversarial-networks</a>,
+ <a href="">http://papers.nips.cc/paper/5945-teaching-machines-to-read-and-comprehend</a>,
+ <a href="">http://papers.nips.cc/paper/5881-optimization-monte-carlo-efficient-and-embarrassingly-parallel-likelihood-free-inference</a></p>
+</li>
+</ul>
+<p>All accepted papers are listed here: <a href="http://papers.nips.cc/book/advances-in-neural-information-processing-systems-28-2015">Advances in Neural Information Processing Systems 28</a></p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+      </div>
+    </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <footer class="footer">
+	<div class="social">
+	    <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+	    <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+	    <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+	</div>
+	<div class="powered-by">
+	  Copyright ©  2014-2015  - Tim Head - <a href="http://docs.getpelican.com/" target="_blank">Pelican</a> powered.
+	</div>
+      </footer>
+    </div>
+  </div>
+</div>    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+  </body>
+</html>
