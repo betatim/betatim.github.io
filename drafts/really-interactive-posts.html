@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
+
+    <title>Truly Interactive Blog Posts - Tim Head</title>
+
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/default.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-49540142-1', 'betatim.github.io');
+      ga('send', 'pageview');
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script type="text/javascript" src="/interactive/main-built.js" charset="utf-8"></script>
+    <script>
+      $(function(){
+	      new Thebe({url:"https://tmpnb.org/",
+		      container_selector: "div[entry-content]"});
+      });
+    </script>
+
+    <!-- extra stuff for nbconvert -->
+    <!-- extra stuff for nbconvert -->
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/javascript">
+      init_mathjax = function() {
+      if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+        },
+        displayAlign: 'left', // Change this to 'center' to center equations.
+        "HTML-CSS": {
+          styles: {'.MathJax_Display': {"margin": 0}}
+        }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+      }
+      }
+      init_mathjax();
+    </script>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <style>
+      .cell {
+      margin-top: 22px;
+      margin-bottom: 11px;
+      }
+      .text_cell_render {
+      padding: 0;
+      }
+      .title {
+      border-left: 7px solid #eee;
+      padding: 10px 10px 10px 23px;
+      margin-left: -30px;
+      }
+      .when {
+      padding-top: 5px;
+      text-transform: uppercase;
+      color: #777;
+      }
+      .entry-content img {
+      border-radius: 4px;
+      }
+      .navbar {
+      margin: 75px 0 25px 0;
+      }
+      .footer {
+      margin: 100px 0 25px 0;
+      border-top: 1px solid transparent;
+      border-color: #eee;
+      }
+      .powered-by {
+      padding: 15px;
+      float: right;
+      }
+      .social {
+      padding: 15px;
+      float: left;
+      }
+      .social i {
+      padding-left: 15px;
+      }
+      .social a {
+      color: black;
+      transition: all 0.25s ease-in;
+      -webkit-transition: all 0.25s ease-in;
+      }
+      .social a:hover {
+      text-shadow: 0 0 15px #000;
+      }
+      .listing span {
+      float: right;
+      text-transform: uppercase;
+      }
+      .listing li {
+      list-style-type: none;
+      }
+      .navbar a {
+      transition: color 0.5s ease-in;
+      -webkit-transition: color 0.5s ease-in;
+      }
+      .navbar li a {
+      font-weight: bold;
+      }
+      .navbar a {
+      text-transform: uppercase
+      }
+      div.prompt {
+      display: none;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+	<div class="col-md-8 col-md-offset-2">
+	  <nav class="navbar navbar-default" role="navigation">
+	    
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand name" href="http://betatim.github.io/">Tim<b>Head</b></a>
+	    </div>
+	    <div class="collapse navbar-collapse navbar-right">
+	      <ul class="nav navbar-nav">
+		<!-- <li><a href="#">Notes</a></li> -->
+		<!-- <li><a href="#">Talks</a></li> -->
+                         <li><a href="/pages/about.html">
+                             About
+                         </a></li>
+                         <li><a href="/pages/science.html">
+                             Science
+                         </a></li>
+                         <li><a href="/pages/sports.html">
+                             Sports
+                         </a></li>
+	      </ul>
+	    </div>
+	    
+	  </nav>  
+	</div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="col-md-8 col-md-offset-2">
+    <section id="content">
+        <article>
+            <header class="title">
+                <h1>
+                    <!--<a href="http://betatim.github.io/drafts/really-interactive-posts.html"
+                       rel="bookmark"
+                       title="Permalink to Truly Interactive Blog Posts">
+                        Truly Interactive Blog Posts
+                    </a>-->
+		    Truly Interactive Blog Posts
+                </h1>
+		<div class="when">05 January 2016</div>
+            </header>
+            <div class="entry-content">
+                <p>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>From today on all my blog posts based on jupyter notebooks will be interactive!!</p>
+<p><img src="/images/zoidberg_hooray.jpg" width="383" height="349" /></p>
+<p>The combined magical powers of <a href="//tmpnb.org">tmpnb</a>, <a href="https://github.com/rgbkrk/gistexec">gistexec</a> and <a href="https://github.com/oreillymedia/thebe">thebe</a> mean you can run and modify my blog posts as you
+read them. No downloading, no installing, just one click and you can change parameters or
+plot things in your favourite colour scheme.</p>
+<h2 id="Try-it-out">Try it out<a class="anchor-link" href="#Try-it-out">&#182;</a></h2><p>Try out the <a href="https://betatim.github.io/interactive/?notebookID=interactive-posts.ipynb">interactive version of this post</a>. I will
+wait. As the beginning of the post is not particularly interesting to run, below the
+well used jupyter notebook on exploring the Lorenz system of differential equations.</p>
+<p>This is a very dull post if you can't change it, but as it is interactive you can slide
+the <a href="https://github.com/ipython/ipywidgets">ipywidgets</a> based sliders to change things!</p>
+<p>I am preparing a write up of how to make your own <a href="http://blog.getpelican.com/">pelican</a> site have an interactive section.</p>
+<p>Right now you can peak at the <a href="https://github.com/betatim/notebookexec">source of notebookexec</a> for the dirty details.</p>
+<h3 id="Credit-where-credit-is-due">Credit where credit is due<a class="anchor-link" href="#Credit-where-credit-is-due">&#182;</a></h3><p>Really all the hard work had already been
+done by <a href="http://lambdaops.com/">Kyle Kelley</a> who wrote large parts of both <a href="//tmpnb.org">tmpnb</a> and <a href="https://github.com/rgbkrk/gistexec">gistexec</a>.</p>
+<p>Below, the work of the jupyter development team, licensed under the 3 clause BSD license.</p>
+<p>Get in touch on twitter @<a href="//twitter.com/betatim">betatim</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Exploring-the-Lorenz-System-of-Differential-Equations">Exploring the Lorenz System of Differential Equations<a class="anchor-link" href="#Exploring-the-Lorenz-System-of-Differential-Equations">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this Notebook we explore the Lorenz system of differential equations:</p>
+$$
+\begin{aligned}
+\dot{x} & = \sigma(y-x) \\
+\dot{y} & = \rho x - y - xz \\
+\dot{z} & = -\beta z + xy
+\end{aligned}
+$$<p>This is one of the classic systems in non-linear differential equations. It exhibits a range of different behaviors as the parameters ($\sigma$, $\beta$, $\rho$) are varied.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Imports">Imports<a class="anchor-link" href="#Imports">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First, we import the needed things from IPython, NumPy, Matplotlib and SciPy.</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+%matplotlib inline
+</pre>
+
+<pre data-executable>
+from ipywidgets import interact, interactive
+from IPython.display import clear_output, display, HTML
+</pre>
+
+<pre data-executable>
+import numpy as np
+from scipy import integrate
+
+from matplotlib import pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib.colors import cnames
+from matplotlib import animation
+</pre>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Computing-the-trajectories-and-plotting-the-result">Computing the trajectories and plotting the result<a class="anchor-link" href="#Computing-the-trajectories-and-plotting-the-result">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We define a function that can integrate the differential equations numerically and then plot the solutions. This function has arguments that control the parameters of the differential equation ($\sigma$, $\beta$, $\rho$), the numerical integration (<code>N</code>, <code>max_time</code>) and the visualization (<code>angle</code>).</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+def solve_lorenz(N=10, angle=0.0, max_time=4.0, sigma=10.0, beta=8./3, rho=28.0):
+
+    fig = plt.figure()
+    ax = fig.add_axes([0, 0, 1, 1], projection='3d')
+    ax.axis('off')
+
+    # prepare the axes limits
+    ax.set_xlim((-25, 25))
+    ax.set_ylim((-35, 35))
+    ax.set_zlim((5, 55))
+    
+    def lorenz_deriv(x_y_z, t0, sigma=sigma, beta=beta, rho=rho):
+        """Compute the time-derivative of a Lorenz system."""
+        x, y, z = x_y_z
+        return [sigma * (y - x), x * (rho - z) - y, x * y - beta * z]
+
+    # Choose random starting points, uniformly distributed from -15 to 15
+    np.random.seed(1)
+    x0 = -15 + 30 * np.random.random((N, 3))
+
+    # Solve for the trajectories
+    t = np.linspace(0, max_time, int(250*max_time))
+    x_t = np.asarray([integrate.odeint(lorenz_deriv, x0i, t)
+                      for x0i in x0])
+    
+    # choose a different color for each trajectory
+    colors = plt.cm.jet(np.linspace(0, 1, N))
+
+    for i in range(N):
+        x, y, z = x_t[i,:,:].T
+        lines = ax.plot(x, y, z, '-', c=colors[i])
+        plt.setp(lines, linewidth=2)
+
+    ax.view_init(30, angle)
+    plt.show()
+
+    return t, x_t
+</pre>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's call the function once to view the solutions. For this set of parameters, we see the trajectories swirling around two points, called attractors.</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+t, x_t = solve_lorenz(angle=0, N=10)
+</pre>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using IPython's <code>interactive</code> function, we can explore how the trajectories behave as we change the various parameters.</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+w = interactive(solve_lorenz, angle=(0.,360.), N=(0,50), sigma=(0.0,50.0), rho=(0.0,50.0))
+display(w)
+</pre>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The object returned by <code>interactive</code> is a <code>Widget</code> object and it has attributes that contain the current result and arguments:</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+t, x_t = w.result
+</pre>
+
+<pre data-executable>
+w.kwargs
+</pre>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After interacting with the system, we can take the result and perform further computations. In this case, we compute the average positions in $x$, $y$ and $z$.</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+xyz_avg = x_t.mean(axis=1)
+</pre>
+
+<pre data-executable>
+xyz_avg.shape
+</pre>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Creating histograms of the average positions (across different trajectories) show that on average the trajectories swirl about the attractors.</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+plt.hist(xyz_avg[:,0])
+plt.title('Average $x(t)$')
+</pre>
+
+<pre data-executable>
+plt.hist(xyz_avg[:,1])
+plt.title('Average $y(t)$')
+</pre>
+
+<pre data-executable>
+
+</pre>
+</p>
+<p>This post started life as a jupyter notebook,
+<a href="/downloads/notebooks/interactive-posts.ipynb">download it</a>
+or
+<a href="http://nbviewer.ipython.org/url/betatim.github.io//downloads/notebooks/interactive-posts.ipynb">view it</a> online.</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+      </div>
+    </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <footer class="footer">
+	<div class="social">
+	    <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+	    <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+	    <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+	</div>
+	<div class="powered-by">
+	  Copyright ©  2014-2016  - Tim Head - <a href="http://docs.getpelican.com/" target="_blank">Pelican</a> powered.
+	</div>
+      </footer>
+    </div>
+  </div>
+</div>    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+  </body>
+</html>
