@@ -345,13 +345,9 @@ img {
 }
 
 .loading-text {
-  width:500px;
-  margin: 0 auto;
-  text-align: center;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  height: 240px;
-  width: 240px;
-  margin: -120px;
+  width:140px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 440px;
+  width: 140px;
 }
