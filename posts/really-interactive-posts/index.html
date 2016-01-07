@@ -230,16 +230,10 @@ experience, while the original post was still non-interactive.</p>
 page. Basically he was:</p>
 <p><img src="/images/meh.gif" width="480" height="270" /></p>
 <p>My blog setup follows <a href="https://jakevdp.github.io/blog/2013/05/07/migrating-from-octopress-to-pelican/">Jake Vanderplas'</a> pretty closely. So I created a new <a href=""><code>liquid_tags</code></a> plugin
-that has its own template for <code>nbconvert</code>.</p>
-<p><a href="https://github.com/oreillymedia/thebe">thebe</a> mean you can run and modify my blog posts as you
-read them. No downloading, no installing, just one click and you can change parameters or
-plot things in your favourite colour scheme.</p>
-<h2 id="Try-it-out">Try it out<a class="anchor-link" href="#Try-it-out">&#182;</a></h2><p>As the beginning of the post is not particularly interesting to run, below the
-well known jupyter notebook on exploring the Lorenz system of differential equations.</p>
-<p>This is a very dull post if you can't change it, but as it is interactive you can slide
-the <a href="https://github.com/ipython/ipywidgets">ipywidgets</a> based sliders to change things!</p>
-<p>Keep scrolling and hit the "Run" button on each cell, see what happens, edit it, re-run it.</p>
-<p>I am preparing a write up of how to modify your own <a href="http://blog.getpelican.com/">pelican</a> site have an interactive section. For the keen and eager people, the most important part is using the following template with <code>nbconvert</code>:</p>
+that has its own template for <code>nbconvert</code> which generates HTML that <a href="https://github.com/oreillymedia/thebe">thebe</a> understands.</p>
+<p>No downloading, no installing, no browsing to a separate page! Just interactive blog
+posts! (Scroll down to see it in action if you do not care how it was done.)</p>
+<h2 id="Do-it-yourself">Do it yourself<a class="anchor-link" href="#Do-it-yourself">&#182;</a></h2><p>I am preparing a write up of how to modify your own <a href="http://blog.getpelican.com/">pelican</a> site have an interactive section. For the keen and eager people, the most important part is using the following template with <code>nbconvert</code>:</p>
 
 <pre><code>{%- extends 'basic.tpl' -%}
 
@@ -261,7 +255,7 @@ the <a href="https://github.com/ipython/ipywidgets">ipywidgets</a> based sliders
 {%- endblock markdowncell %}</code></pre>
 <p>It embeds code cells in simple <code>&lt;pre&gt;</code> tags and modifies non-code cells so that they do not
 match the selectors used inside the notebook machinery. That is it. Then stick a bit of CSS and JS in the <code>&lt;head&gt;</code> of your web page and you are good to go (use the source of this one for inspiration).</p>
-<h3 id="Credit-where-credit-is-due">Credit where credit is due<a class="anchor-link" href="#Credit-where-credit-is-due">&#182;</a></h3><p>Compared to my previous post this setup now only relies on <a href="https://github.com/oreillymedia/thebe">thebe</a>, <a href="https://tmpnb.org">tmpnb</a>, and the kind people at <a href="https://developer.rackspace.com/">rackspace</a> who sponsor the computing power for <code>tmpnb</code>.</p>
+<h3 id="Credits">Credits<a class="anchor-link" href="#Credits">&#182;</a></h3><p>Compared to my previous post this setup now only relies on <a href="https://github.com/oreillymedia/thebe">thebe</a>, <a href="https://tmpnb.org">tmpnb</a>, and the kind people at <a href="https://developer.rackspace.com/">rackspace</a> who sponsor the computing power for <code>tmpnb</code>.</p>
 <p>Below, the work of the jupyter development team, licensed under the 3 clause BSD license.</p>
 <p>Get in touch on twitter @<a href="//twitter.com/betatim">betatim</a>.</p>
 
