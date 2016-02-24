@@ -232,7 +232,7 @@ the decision threshold of the classifier used to select events.</p>
 decision threshold in an unbiased way. So I decided to build a small
 toy model to illustrate some points and make the discussion more concrete.</p>
 <p>What happens if you optimise this parameter via cross-validation and use
-the classifier performance estimated on each held-out subset as an estiamte
+the classifier performance estimated on each held-out subset as an estimate
 for the true performance?</p>
 <p>If you studied up on ML, then you know the answer: it will most likely be
 a optimistic estimate, not an unbiased one.</p>
@@ -261,7 +261,7 @@ import matplotlib.pyplot as plt
 
 from sklearn.base import BaseEstimator, TransformerMixin, ClassifierMixin, MetaEstimatorMixin
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.cross_validation import train_test_split, KFold
+from sklearn.cross_validation import train_test_split
 from sklearn.grid_search import GridSearchCV
 from sklearn.pipeline import make_pipeline
 from sklearn.tree import DecisionTreeClassifier
@@ -292,7 +292,7 @@ def data(N=1000, n_features=100, random_state=None):
 </pre>
 
 <pre data-executable>
-X, y = data(2000, random_state=1)
+X, y = data(200, random_state=1)
 # set aside data for final (unbiased)performance evaluation
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=1)
 </pre>
@@ -302,7 +302,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Hyper-paramters">Hyper-paramters<a class="anchor-link" href="#Hyper-paramters">&#182;</a></h2><p>To kick things of, let's estimate a bunch of hyper-parameters for a typical random forest
+<h2 id="Hyper-parameters">Hyper-parameters<a class="anchor-link" href="#Hyper-parameters">&#182;</a></h2><p>To kick things of, let's estimate a bunch of hyper-parameters for a typical random forest
 based model. We keep the testing data to the side for the moment and use only
 the training set. <code>GridSearchCV</code> will evaluate the performance of the classifier
 using three folds.</p>
@@ -338,7 +338,7 @@ _ = grid.fit(X_train, y_train)
 <pre data-executable>
 print("Best score: %.4f"%grid.best_score_)
 print("Best params:", grid.best_params_)
-print("Score on a totaly fresh dataset:", grid.score(X_test, y_test))
+print("Score on a totally fresh dataset:", grid.score(X_test, y_test))
 </pre>
 
 <div class="cellOOO border-box-sizing text_cell rendered">
@@ -346,12 +346,12 @@ print("Score on a totaly fresh dataset:", grid.score(X_test, y_test))
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The best accuracy we found is around 0.67 with <code>max_depth=1</code> and <code>max_features=8</code>.
+<p>The best accuracy we found is around 0.62 with <code>max_depth=1</code> and <code>max_features=8</code>.
 As we created the dataset with out any informative features we know that the true score
 of any classifier is 0.5. Therefore this is either a fluctuation (because we don't measure
 the score precisely enough) or the score from <code>GridSearchCV</code> is biased.</p>
-<p>You can also see that usign a fresh, never seen before sample gives us an estimated
-accuracy of 0.497.</p>
+<p>You can also see that using a fresh, never seen before sample gives us an estimated
+accuracy of 0.56.</p>
 <h2 id="Bias-or-no-bias?">Bias or no bias?<a class="anchor-link" href="#Bias-or-no-bias?">&#182;</a></h2><p>To test this whether the accuracy obtained from <code>GridSearchCV</code> is biased or just a
 fluke let's repeatedly grid-search for the best parameters and look
 at the average score. For this we generate a brand new dataset each time. The joys
@@ -362,7 +362,7 @@ of having an infinite stream of data!</p>
 </div>
 <pre data-executable>
 def grid_search(n, param_grid, clf=None):
-    X, y = data(1200, random_state=0+n)
+    X, y = data(120, random_state=0+n)
     if clf is None:
         clf = RandomForestClassifier(random_state=94+n)
 
@@ -377,7 +377,7 @@ scores = [grid_search(n, param_grid).best_score_ for n in range(40)]
 </pre>
 
 <pre data-executable>
-plt.hist(scores, range=(0.45,0.55), bins=15)
+plt.hist(scores, range=(0.45,0.65), bins=15)
 plt.xlabel("Best score per grid search")
 plt.ylabel("Count")
 print("Average score: %.4f+-%.4f" %(np.mean(scores), sp.stats.sem(scores)))
@@ -389,17 +389,17 @@ print("Average score: %.4f+-%.4f" %(np.mean(scores), sp.stats.sem(scores)))
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As you can see all of the best scores we find are above 0.5 and the average score
-is close to 0.53, with a small uncertainty.</p>
+is close to 0.58, with a small uncertainty.</p>
 <p>Conclusion: the best score obtained during grid search is not an unbiased
 estimate of the true performance. Instead it is an optimistic estimate.</p>
 <h2 id="Threshold-optimisation">Threshold optimisation<a class="anchor-link" href="#Threshold-optimisation">&#182;</a></h2><p>Next, let's see what happens if we use a different hyper-parameter: the threshold applied
 to decide which class a sample falls in during prediction time.</p>
-<p>For this to owrk in the <code>GridSearchCV</code> framework we construct two meta-estimators.</p>
+<p>For this to work in the <code>GridSearchCV</code> framework we construct two meta-estimators.</p>
 <p>The first one is a transformer. It transforms the features of a sample into the
 output of a classifier.</p>
 <p>The second one is a very simple classifier, it assigns samples to one of two classes
 based on a threshold.</p>
-<p>Cmbining them in a pipeline we can then use <code>GridSearchCV</code> to optimise the threshold
+<p>Combining them in a pipeline we can then use <code>GridSearchCV</code> to optimise the threshold
 as it if was any other hyper-parameter.</p>
 
 </div>
