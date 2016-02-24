@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
+
+    <title>Unbiased performance estimates for your classifiers - Tim Head</title>
+
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/default.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-49540142-1', 'betatim.github.io');
+      ga('send', 'pageview');
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+
+    <!-- <script type="text/javascript" src="/interactive/main-built.js" charset="utf-8"></script>-->
+    <script type="text/javascript" src="https://cdn.rawgit.com/oreillymedia/thebe/17fe0971303cac24d7e806c8f1bc8ba3c0c40b23/static/main-built.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.min.css">
+    <script>
+      $(function(){
+	      new Thebe({url:"https://tmpnb.org/",
+		      kernel_name: "python3",
+		      load_mathjax: false,
+		      container_selector: "div.entry-content"});
+      });
+    </script>
+
+    <!-- extra stuff for nbconvert -->
+    <!-- extra stuff for nbconvert -->
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/javascript">
+      init_mathjax = function() {
+      if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+        },
+        displayAlign: 'left', // Change this to 'center' to center equations.
+        "HTML-CSS": {
+          styles: {'.MathJax_Display': {"margin": 0}}
+        }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+      }
+      }
+      init_mathjax();
+    </script>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <style>
+      .cell {
+      margin-top: 22px;
+      margin-bottom: 11px;
+      }
+      .text_cell_render {
+      padding: 0;
+      }
+      .title {
+      border-left: 7px solid #eee;
+      padding: 10px 10px 10px 23px;
+      margin-left: -30px;
+      }
+      .when {
+      padding-top: 5px;
+      text-transform: uppercase;
+      color: #777;
+      }
+      .entry-content img {
+      border-radius: 4px;
+      }
+      .navbar {
+      margin: 75px 0 25px 0;
+      }
+      .footer {
+      margin: 100px 0 25px 0;
+      border-top: 1px solid transparent;
+      border-color: #eee;
+      }
+      .powered-by {
+      padding: 15px;
+      float: right;
+      }
+      .social {
+      padding: 15px;
+      float: left;
+      }
+      .social i {
+      padding-left: 15px;
+      }
+      .social a {
+      color: black;
+      transition: all 0.25s ease-in;
+      -webkit-transition: all 0.25s ease-in;
+      }
+      .social a:hover {
+      text-shadow: 0 0 15px #000;
+      }
+      .listing span {
+      float: right;
+      text-transform: uppercase;
+      }
+      .listing li {
+      list-style-type: none;
+      }
+      .navbar a {
+      transition: color 0.5s ease-in;
+      -webkit-transition: color 0.5s ease-in;
+      }
+      .navbar li a {
+      font-weight: bold;
+      }
+      .navbar a {
+      text-transform: uppercase
+      }
+      div.prompt {
+      display: none;
+      }
+      div.thebe_controls {
+      margin-top: 5px;
+      margin-bottom: 20px;
+      }
+      div.thebe_controls button {
+      background-color: #eaeaea;
+      font-size: 1em;
+      padding: 5px 20px;
+      }
+      div.kernel_controls {
+      padding: 20px;
+      background: rgba(200, 200, 200, 0.4);
+      max-width: 600px;
+      text-align: center;
+      margin: 10px auto;
+      }
+      div.cell div.thebe_wrap div.input {
+      border: 1px solid #c8c8c8;
+      padding: 10px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+	<div class="col-md-8 col-md-offset-2">
+	  <nav class="navbar navbar-default" role="navigation">
+	    
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand name" href="http://betatim.github.io/">Tim<b>Head</b></a>
+	    </div>
+	    <div class="collapse navbar-collapse navbar-right">
+	      <ul class="nav navbar-nav">
+		<!-- <li><a href="#">Notes</a></li> -->
+		<!-- <li><a href="#">Talks</a></li> -->
+                         <li><a href="/pages/about.html">
+                             About
+                         </a></li>
+                         <li><a href="/pages/science.html">
+                             Science
+                         </a></li>
+                         <li><a href="/pages/sports.html">
+                             Sports
+                         </a></li>
+	      </ul>
+	    </div>
+	    
+	  </nav>  
+	</div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="col-md-8 col-md-offset-2">
+    <section id="content">
+        <article>
+            <header class="title">
+                <h1>
+                    <!--<a href="http://betatim.github.io/posts/unbiased-performance/"
+                       rel="bookmark"
+                       title="Permalink to Unbiased performance estimates for your classifiers">
+                        Unbiased performance estimates for your classifiers
+                    </a>-->
+		    Unbiased performance estimates for your classifiers
+                </h1>
+		<div class="when">24 February 2016</div>
+            </header>
+            <div class="entry-content">
+                <p>
+<div class="cellOOO border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><p>This is an <a href="https://betatim.github.io/posts/really-interactive-posts/">interactive blog post</a>, you can modify and run the code directly from your browser. To
+see any of the output you have to run each of the cells.</p>
+</blockquote>
+<p>In particle physics applications (like the <a href="https://www.kaggle.com/c/flavours-of-physics/">flavour of physics competition</a> on kaggle) we often optimise
+the decision threshold of the classifier used to select events.</p>
+<p>Recently we discussed (once again) the question of how to optimise the
+decision threshold in an unbiased way. So I decided to build a small
+toy model to illustrate some points and make the discussion more concrete.</p>
+<p>What happens if you optimise this parameter via cross-validation and use
+the classifier performance estimated on each held-out subset as an estiamte
+for the true performance?</p>
+<p>If you studied up on ML, then you know the answer: it will most likely be
+a optimistic estimate, not an unbiased one.</p>
+<p>Below some examples of optimising hyper-parameters on a dataset where the
+true performance is 0.5, aka there is no way to tell one class from the other.
+This is convenient because by knowing the true performance, we can evaluate
+whether or not our estimate is biased.</p>
+<p>After optimising some standard hyper-parameters we will build two meta-estimators
+that help with finding the best decision threshold via the normal <code>GridSearchCV</code>
+interface.</p>
+<p>To sweeten the deal, here a gif of Benedict Cumberbatch pretending to be unbiased:</p>
+<p><img src="http://i.gifntext.com/35465-neutral-indifferent-unbiased-neutral.gif" /></p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+%config InlineBackend.figure_format='retina'
+%matplotlib inline
+</pre>
+
+<pre data-executable>
+import numpy as np
+import scipy as sp
+import matplotlib.pyplot as plt
+
+from sklearn.base import BaseEstimator, TransformerMixin, ClassifierMixin, MetaEstimatorMixin
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.cross_validation import train_test_split, KFold
+from sklearn.grid_search import GridSearchCV
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import FunctionTransformer
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.utils import check_random_state
+</pre>
+
+<div class="cellOOO border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Uninformative-data">Uninformative data<a class="anchor-link" href="#Uninformative-data">&#182;</a></h2><p>This data set uses a mix of gaussian and uniformly distributed features and assigns
+the class label purely at random. Therefore we know that the true accuracy of any
+classifier on this sample is 0.5.</p>
+<p>Conclude something from that Sherlock!</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+def data(N=1000, n_features=100, random_state=None):
+    rng = check_random_state(random_state)
+    gaussian_features = n_features//2
+
+    return (np.hstack([rng.normal(size=(N, gaussian_features)),
+                       rng.uniform(size=(N, n_features-gaussian_features))]),
+            np.array(rng.uniform(size=N)>0.5, dtype=int))
+</pre>
+
+<pre data-executable>
+X, y = data(2000, random_state=1)
+# set aside data for final (unbiased)performance evaluation
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=1)
+</pre>
+
+<div class="cellOOO border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hyper-paramters">Hyper-paramters<a class="anchor-link" href="#Hyper-paramters">&#182;</a></h2><p>To kick things of, let's estimate a bunch of hyper-parameters for a typical random forest
+based model. We keep the testing data to the side for the moment and use only
+the training set. <code>GridSearchCV</code> will evaluate the performance of the classifier
+using three folds.</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+param_grid = {'max_depth': [1, 2, 5, 10, 20, 30, 40, 50],
+              'max_features': [4, 8, 16, 32, 64, 80, 100]}
+
+rf = RandomForestClassifier(random_state=94)
+grid = GridSearchCV(rf,
+                    param_grid=param_grid,
+                    n_jobs=6,
+                    verbose=0)
+</pre>
+
+<pre data-executable>
+_ = grid.fit(X_train, y_train)
+</pre>
+
+<div class="cellOOO border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The best parameters found and their score:</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+print("Best score: %.4f"%grid.best_score_)
+print("Best params:", grid.best_params_)
+print("Score on a totaly fresh dataset:", grid.score(X_test, y_test))
+</pre>
+
+<div class="cellOOO border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The best accuracy we found is around 0.67 with <code>max_depth=1</code> and <code>max_features=8</code>.
+As we created the dataset with out any informative features we know that the true score
+of any classifier is 0.5. Therefore this is either a fluctuation (because we don't measure
+the score precisely enough) or the score from <code>GridSearchCV</code> is biased.</p>
+<p>You can also see that usign a fresh, never seen before sample gives us an estimated
+accuracy of 0.497.</p>
+<h2 id="Bias-or-no-bias?">Bias or no bias?<a class="anchor-link" href="#Bias-or-no-bias?">&#182;</a></h2><p>To test this whether the accuracy obtained from <code>GridSearchCV</code> is biased or just a
+fluke let's repeatedly grid-search for the best parameters and look
+at the average score. For this we generate a brand new dataset each time. The joys
+of having an infinite stream of data!</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+def grid_search(n, param_grid, clf=None):
+    X, y = data(1200, random_state=0+n)
+    if clf is None:
+        clf = RandomForestClassifier(random_state=94+n)
+
+    grid = GridSearchCV(clf,
+                        param_grid=param_grid,
+                        n_jobs=6,
+                        verbose=0)
+    grid.fit(X, y)
+    return grid
+
+scores = [grid_search(n, param_grid).best_score_ for n in range(40)]
+</pre>
+
+<pre data-executable>
+plt.hist(scores, range=(0.45,0.55), bins=15)
+plt.xlabel("Best score per grid search")
+plt.ylabel("Count")
+print("Average score: %.4f+-%.4f" %(np.mean(scores), sp.stats.sem(scores)))
+</pre>
+
+<div class="cellOOO border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you can see all of the best scores we find are above 0.5 and the average score
+is close to 0.53, with a small uncertainty.</p>
+<p>Conclusion: the best score obtained during grid search is not an unbiased
+estimate of the true performance. Instead it is an optimistic estimate.</p>
+<h2 id="Threshold-optimisation">Threshold optimisation<a class="anchor-link" href="#Threshold-optimisation">&#182;</a></h2><p>Next, let's see what happens if we use a different hyper-parameter: the threshold applied
+to decide which class a sample falls in during prediction time.</p>
+<p>For this to owrk in the <code>GridSearchCV</code> framework we construct two meta-estimators.</p>
+<p>The first one is a transformer. It transforms the features of a sample into the
+output of a classifier.</p>
+<p>The second one is a very simple classifier, it assigns samples to one of two classes
+based on a threshold.</p>
+<p>Cmbining them in a pipeline we can then use <code>GridSearchCV</code> to optimise the threshold
+as it if was any other hyper-parameter.</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+class PredictionTransformer(BaseEstimator, TransformerMixin, MetaEstimatorMixin):
+    def __init__(self, clf):
+        """Replaces all features with `clf.predict_proba(X)`"""
+        self.clf = clf
+    
+    def fit(self, X, y):
+        self.clf.fit(X, y)
+        return self
+    
+    def transform(self, X):
+        return self.clf.predict_proba(X)
+
+
+class ThresholdClassifier(BaseEstimator, ClassifierMixin):
+    def __init__(self, threshold=0.5):
+        """Classify samples based on whether they are above of below `threshold`"""
+        self.threshold = threshold
+
+    def fit(self, X, y):
+        self.classes_ = np.unique(y)
+        return self
+    
+    def predict(self, X):
+        # the implementation used here breaks ties differently
+        # from the one used in RFs:
+        #return self.classes_.take(np.argmax(X, axis=1), axis=0)
+        return np.where(X[:, 0]>self.threshold, *self.classes_)
+</pre>
+
+<div class="cellOOO border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With these two wrappers we can use <code>GridSearchCV</code> to find the 'optimal'
+threshold. We use a different parameter grid that only varies the
+classifier threshold. You can experiment with optimising all three
+hyper-parameters in one go if you want to by uncommenting the <code>max_depth</code>
+and <code>max_features</code> lines.</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+pipe = make_pipeline(PredictionTransformer(RandomForestClassifier()),
+                     ThresholdClassifier())
+
+pipe_param_grid = {#'predictiontransformer__clf__max_depth': [1, 2, 5, 10, 20, 30, 40, 50],
+                   #'predictiontransformer__clf__max_features': [8, 16, 32, 64, 80, 100],
+                   'thresholdclassifier__threshold': np.linspace(0, 1, num=100)}
+
+grids = [grid_search(n,
+                     clf=pipe,
+                     param_grid=pipe_param_grid) for n in range(10)]
+scores = [g.best_score_ for g in grids]
+print("Average score: %.4f+-%.4f" %(np.mean(scores), sp.stats.sem(scores)))
+</pre>
+
+<div class="cellOOO border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As we expected the average score is larger than 0.5. This is why you should almost always
+use a completely fresh dataset to estimate the performance of your classifier.</p>
+<p>If you enjoyed this post, get in touch on twitter @<a href="//twitter.com/betatim">betatim</a>.</p>
+
+</div>
+</div>
+</div></p>
+<p>This post started life as a jupyter notebook,
+<a href="/downloads/notebooks/unbiased-performance-estimates.ipynb">download it</a>
+or
+<a href="http://nbviewer.ipython.org/url/betatim.github.io//downloads/notebooks/unbiased-performance-estimates.ipynb">view it</a> online.</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+      </div>
+    </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <footer class="footer">
+	<div class="social">
+	    <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+	    <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+	    <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+	</div>
+	<div class="powered-by">
+	  Copyright ©  2014-2016  - Tim Head - <a href="http://docs.getpelican.com/" target="_blank">Pelican</a> powered.
+	</div>
+      </footer>
+    </div>
+  </div>
+</div>    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+  </body>
+</html>
