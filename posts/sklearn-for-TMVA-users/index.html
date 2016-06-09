@@ -257,7 +257,7 @@
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">import</span> <span class="nn">random</span>
 
@@ -298,35 +298,35 @@
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">root_numpy</span> <span class="kn">import</span> <span class="n">root2array</span><span class="p">,</span> <span class="n">rec2array</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">root_numpy</span> <span class="kn">import</span> <span class="n">root2array</span><span class="p">,</span> <span class="n">rec2array</span>
 
 
-<span class="n">branch_names</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;lepton pT, lepton eta, lepton phi,</span>
-<span class="s">missing energy magnitude, missing energy phi,</span>
-<span class="s">jet 1 pt, jet 1 eta, jet 1 phi, jet 1 b-tag,</span>
-<span class="s">jet 2 pt, jet 2 eta, jet 2 phi, jet 2 b-tag,</span>
-<span class="s">jet 3 pt, jet 3 eta, jet 3 phi, jet 3 b-tag,</span>
-<span class="s">jet 4 pt, jet 4 eta, jet 4 phi, jet 4 b-tag,</span>
-<span class="s">m_jj, m_jjj, m_lv, m_jlv, m_bb, m_wbb,</span>
-<span class="s">m_wwbb&quot;&quot;&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">)</span>
+<span class="n">branch_names</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;lepton pT, lepton eta, lepton phi,</span>
+<span class="s2">missing energy magnitude, missing energy phi,</span>
+<span class="s2">jet 1 pt, jet 1 eta, jet 1 phi, jet 1 b-tag,</span>
+<span class="s2">jet 2 pt, jet 2 eta, jet 2 phi, jet 2 b-tag,</span>
+<span class="s2">jet 3 pt, jet 3 eta, jet 3 phi, jet 3 b-tag,</span>
+<span class="s2">jet 4 pt, jet 4 eta, jet 4 phi, jet 4 b-tag,</span>
+<span class="s2">m_jj, m_jjj, m_lv, m_jlv, m_bb, m_wbb,</span>
+<span class="s2">m_wwbb&quot;&quot;&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
 <span class="n">branch_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">branch_names</span><span class="p">]</span>
-<span class="n">branch_names</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">,</span> <span class="s">&quot;_&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">branch_names</span><span class="p">)</span>
-<span class="n">branch_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">,</span> <span class="s">&quot;_&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">branch_names</span><span class="p">)</span>
+<span class="n">branch_names</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">branch_names</span><span class="p">)</span>
+<span class="n">branch_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">branch_names</span><span class="p">)</span>
 
-<span class="n">signal</span> <span class="o">=</span> <span class="n">root2array</span><span class="p">(</span><span class="s">&quot;/tmp/HIGGS-signal.root&quot;</span><span class="p">,</span>
-                    <span class="s">&quot;tree&quot;</span><span class="p">,</span>
+<span class="n">signal</span> <span class="o">=</span> <span class="n">root2array</span><span class="p">(</span><span class="s2">&quot;/tmp/HIGGS-signal.root&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;tree&quot;</span><span class="p">,</span>
                     <span class="n">branch_names</span><span class="p">)</span>
 <span class="n">signal</span> <span class="o">=</span> <span class="n">rec2array</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>
 
-<span class="n">backgr</span> <span class="o">=</span> <span class="n">root2array</span><span class="p">(</span><span class="s">&quot;/tmp/HIGGS-background.root&quot;</span><span class="p">,</span>
-                    <span class="s">&quot;tree&quot;</span><span class="p">,</span>
+<span class="n">backgr</span> <span class="o">=</span> <span class="n">root2array</span><span class="p">(</span><span class="s2">&quot;/tmp/HIGGS-background.root&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;tree&quot;</span><span class="p">,</span>
                     <span class="n">branch_names</span><span class="p">)</span>
 <span class="n">backgr</span> <span class="o">=</span> <span class="n">rec2array</span><span class="p">(</span><span class="n">backgr</span><span class="p">)</span>
 
-<span class="c"># for sklearn data is usually organised</span>
-<span class="c"># into one 2D array of shape (n_samples x n_features)</span>
-<span class="c"># containing all the data and one array of categories</span>
-<span class="c"># of length n_samples</span>
+<span class="c1"># for sklearn data is usually organised</span>
+<span class="c1"># into one 2D array of shape (n_samples x n_features)</span>
+<span class="c1"># containing all the data and one array of categories</span>
+<span class="c1"># of length n_samples</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">signal</span><span class="p">,</span> <span class="n">backgr</span><span class="p">))</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
                     <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">backgr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
@@ -354,19 +354,19 @@
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">pandas.core.common</span> <span class="kn">as</span> <span class="nn">com</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas.core.common</span> <span class="kn">as</span> <span class="nn">com</span>
 <span class="kn">from</span> <span class="nn">pandas.core.index</span> <span class="kn">import</span> <span class="n">Index</span>
 
 <span class="kn">from</span> <span class="nn">pandas.tools</span> <span class="kn">import</span> <span class="n">plotting</span>
 <span class="kn">from</span> <span class="nn">pandas.tools.plotting</span> <span class="kn">import</span> <span class="n">scatter_matrix</span>
 
 
-<span class="c"># Create a pandas DataFrame for our data</span>
-<span class="c"># this provides many convenience functions</span>
-<span class="c"># for exploring your dataset</span>
-<span class="c"># need to reshape y so it is a 2D array with one column</span>
+<span class="c1"># Create a pandas DataFrame for our data</span>
+<span class="c1"># this provides many convenience functions</span>
+<span class="c1"># for exploring your dataset</span>
+<span class="c1"># need to reshape y so it is a 2D array with one column</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">))),</span>
-                  <span class="n">columns</span><span class="o">=</span><span class="n">branch_names</span><span class="o">+</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">])</span>
+                  <span class="n">columns</span><span class="o">=</span><span class="n">branch_names</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">])</span>
 
             
 <span class="k">def</span> <span class="nf">signal_background</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
@@ -403,8 +403,8 @@
 <span class="sd">        To be passed to hist function</span>
 <span class="sd">    &quot;&quot;&quot;</span>
         
-    <span class="k">if</span> <span class="s">&#39;alpha&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwds</span><span class="p">:</span>
-        <span class="n">kwds</span><span class="p">[</span><span class="s">&#39;alpha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="k">if</span> <span class="s1">&#39;alpha&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwds</span><span class="p">:</span>
+        <span class="n">kwds</span><span class="p">[</span><span class="s1">&#39;alpha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span>
 
     <span class="k">if</span> <span class="n">column</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">Index</span><span class="p">)):</span>
@@ -440,18 +440,18 @@
 
     <span class="k">return</span> <span class="n">axes</span>
 
-<span class="c"># Plot signal and background distributions for some</span>
-<span class="c"># variables</span>
-<span class="c"># The first two arguments select what is &quot;signal&quot;</span>
-<span class="c"># and what is &quot;background&quot;. This means you can</span>
-<span class="c"># use it for more general comparisons of two</span>
-<span class="c"># subsets as well.</span>
+<span class="c1"># Plot signal and background distributions for some</span>
+<span class="c1"># variables</span>
+<span class="c1"># The first two arguments select what is &quot;signal&quot;</span>
+<span class="c1"># and what is &quot;background&quot;. This means you can</span>
+<span class="c1"># use it for more general comparisons of two</span>
+<span class="c1"># subsets as well.</span>
 <span class="n">signal_background</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">y</span><span class="o">&lt;</span><span class="mf">0.5</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">y</span><span class="o">&gt;</span><span class="mf">0.5</span><span class="p">],</span>
-                  <span class="n">column</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;lepton_pT&quot;</span><span class="p">,</span>
-                          <span class="s">&quot;lepton_eta&quot;</span><span class="p">,</span>
-                          <span class="s">&quot;lepton_phi&quot;</span><span class="p">,</span>
-                          <span class="s">&quot;missing_energy_magnitude&quot;</span><span class="p">,</span>
-                          <span class="s">&quot;jet_3_pt&quot;</span><span class="p">],</span>
+                  <span class="n">column</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;lepton_pT&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;lepton_eta&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;lepton_phi&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;missing_energy_magnitude&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;jet_3_pt&quot;</span><span class="p">],</span>
                   <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 
@@ -847,9 +847,9 @@ Ow3HcRwnNd5pOI7jOKnxTsNxHMdJjXcajuM4Tmr+P/tW8pYuP6vcAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">df</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;scatter&#39;</span><span class="p">,</span>
-                                          <span class="n">x</span><span class="o">=</span><span class="s">&#39;lepton_pT&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">&#39;jet_3_pt&#39;</span><span class="p">,</span>
-                                          <span class="n">c</span><span class="o">=</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">&#39;autumn&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span>
+                                          <span class="n">x</span><span class="o">=</span><span class="s1">&#39;lepton_pT&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;jet_3_pt&#39;</span><span class="p">,</span>
+                                          <span class="n">c</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;autumn&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1404,12 +1404,12 @@ SUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s">&#39;y&#39;</span><span class="p">,</span>
-           <span class="n">column</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;lepton_pT&quot;</span><span class="p">,</span>
-                   <span class="s">&quot;lepton_eta&quot;</span><span class="p">,</span>
-                   <span class="s">&quot;missing_energy_magnitude&quot;</span><span class="p">,</span>
-                   <span class="s">&quot;jet_3_pt&quot;</span><span class="p">],</span>
-           <span class="n">return_type</span><span class="o">=</span><span class="s">&#39;axes&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span>
+           <span class="n">column</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;lepton_pT&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;lepton_eta&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;missing_energy_magnitude&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;jet_3_pt&quot;</span><span class="p">],</span>
+           <span class="n">return_type</span><span class="o">=</span><span class="s1">&#39;axes&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1424,7 +1424,7 @@ SUVORK5CYII=
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>OrderedDict([(&apos;lepton_pT&apos;, &lt;matplotlib.axes._subplots.AxesSubplot object at 0x10ca08410&gt;), (&apos;lepton_eta&apos;, &lt;matplotlib.axes._subplots.AxesSubplot object at 0x153711cd0&gt;), (&apos;missing_energy_magnitude&apos;, &lt;matplotlib.axes._subplots.AxesSubplot object at 0x153796550&gt;), (&apos;jet_3_pt&apos;, &lt;matplotlib.axes._subplots.AxesSubplot object at 0x1537f9d10&gt;)])</pre>
+<pre>OrderedDict([(&#39;lepton_pT&#39;, &lt;matplotlib.axes._subplots.AxesSubplot object at 0x10ca08410&gt;), (&#39;lepton_eta&#39;, &lt;matplotlib.axes._subplots.AxesSubplot object at 0x153711cd0&gt;), (&#39;missing_energy_magnitude&#39;, &lt;matplotlib.axes._subplots.AxesSubplot object at 0x153796550&gt;), (&#39;jet_3_pt&#39;, &lt;matplotlib.axes._subplots.AxesSubplot object at 0x1537f9d10&gt;)])</pre>
 </div>
 
 </div>
@@ -1661,7 +1661,7 @@ c33KK3jnnOtTXsE751yf8greOef61P8Cv/LoEYR/l6IAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">bg</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mf">0.5</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">bg</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mf">0.5</span>
 <span class="n">sig</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mf">0.5</span>
 
 <span class="k">def</span> <span class="nf">correlations</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
@@ -1669,34 +1669,34 @@ c33KK3jnnOtTXsE751yf8greOef61P8Cv/LoEYR/l6IAAAAASUVORK5CYII=
 <span class="sd">    </span>
 <span class="sd">    Extra arguments are passed on to DataFrame.corr()</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c"># simply call df.corr() to get a table of</span>
-    <span class="c"># correlation values if you do not need</span>
-    <span class="c"># the fancy plotting</span>
+    <span class="c1"># simply call df.corr() to get a table of</span>
+    <span class="c1"># correlation values if you do not need</span>
+    <span class="c1"># the fancy plotting</span>
     <span class="n">corrmat</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
 
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
     
-    <span class="n">opts</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;cmap&#39;</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s">&quot;RdBu&quot;</span><span class="p">),</span>
-            <span class="s">&#39;vmin&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;vmax&#39;</span><span class="p">:</span> <span class="o">+</span><span class="mi">1</span><span class="p">}</span>
+    <span class="n">opts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;cmap&#39;</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s2">&quot;RdBu&quot;</span><span class="p">),</span>
+            <span class="s1">&#39;vmin&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;vmax&#39;</span><span class="p">:</span> <span class="o">+</span><span class="mi">1</span><span class="p">}</span>
     <span class="n">heatmap1</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">pcolor</span><span class="p">(</span><span class="n">corrmat</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">heatmap1</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
 
-    <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&quot;Correlations&quot;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Correlations&quot;</span><span class="p">)</span>
 
     <span class="n">labels</span> <span class="o">=</span> <span class="n">corrmat</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span>
     <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,):</span>
-        <span class="c"># shift location of ticks to center of the bins</span>
+        <span class="c1"># shift location of ticks to center of the bins</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s">&#39;right&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
         
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     
-<span class="c"># remove the y column from the correlation matrix</span>
-<span class="c"># after using it to select background and signal</span>
-<span class="n">correlations</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">bg</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">correlations</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">sig</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="c1"># remove the y column from the correlation matrix</span>
+<span class="c1"># after using it to select background and signal</span>
+<span class="n">correlations</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">bg</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">correlations</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">sig</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -2863,7 +2863,7 @@ oHwZnC+ihAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 
 <span class="n">X_dev</span><span class="p">,</span><span class="n">X_eval</span><span class="p">,</span> <span class="n">y_dev</span><span class="p">,</span><span class="n">y_eval</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
                                               <span class="n">test_size</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
@@ -2893,14 +2893,14 @@ oHwZnC+ihAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
 <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">AdaBoostClassifier</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">roc_auc_score</span>
 
 <span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
                             <span class="n">min_samples_leaf</span><span class="o">=</span><span class="mf">0.05</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span>
 <span class="n">bdt</span> <span class="o">=</span> <span class="n">AdaBoostClassifier</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span>
-                         <span class="n">algorithm</span><span class="o">=</span><span class="s">&#39;SAMME&#39;</span><span class="p">,</span>
+                         <span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;SAMME&#39;</span><span class="p">,</span>
                          <span class="n">n_estimators</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
                          <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 
@@ -2919,11 +2919,11 @@ oHwZnC+ihAAAAABJRU5ErkJggg==
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>AdaBoostClassifier(algorithm=&apos;SAMME&apos;,
-          base_estimator=DecisionTreeClassifier(compute_importances=None, criterion=&apos;gini&apos;,
+<pre>AdaBoostClassifier(algorithm=&#39;SAMME&#39;,
+          base_estimator=DecisionTreeClassifier(compute_importances=None, criterion=&#39;gini&#39;,
             max_depth=3, max_features=None, max_leaf_nodes=None,
             min_density=None, min_samples_leaf=22445.0,
-            min_samples_split=2, random_state=None, splitter=&apos;best&apos;),
+            min_samples_split=2, random_state=None, splitter=&#39;best&#39;),
           learning_rate=0.5, n_estimators=800, random_state=None)</pre>
 </div>
 
@@ -2949,10 +2949,10 @@ oHwZnC+ihAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">y_predicted</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">y_predicted</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="k">print</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">,</span>
-                            <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;background&quot;</span><span class="p">,</span> <span class="s">&quot;signal&quot;</span><span class="p">])</span>
-<span class="k">print</span> <span class="s">&quot;Area under ROC curve: </span><span class="si">%.4f</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span>
+                            <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;background&quot;</span><span class="p">,</span> <span class="s2">&quot;signal&quot;</span><span class="p">])</span>
+<span class="k">print</span> <span class="s2">&quot;Area under ROC curve: </span><span class="si">%.4f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span>
                                                   <span class="n">bdt</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_test</span><span class="p">)))</span>
 </pre></div>
 
@@ -2997,10 +2997,10 @@ Area under ROC curve: 0.8082
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">y_predicted</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">y_predicted</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
 <span class="k">print</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">,</span>
-                            <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;background&quot;</span><span class="p">,</span> <span class="s">&quot;signal&quot;</span><span class="p">])</span>
-<span class="k">print</span> <span class="s">&quot;Area under ROC curve: </span><span class="si">%.4f</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span>
+                            <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;background&quot;</span><span class="p">,</span> <span class="s2">&quot;signal&quot;</span><span class="p">])</span>
+<span class="k">print</span> <span class="s2">&quot;Area under ROC curve: </span><span class="si">%.4f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span>
                                                   <span class="n">bdt</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_train</span><span class="p">)))</span>
 </pre></div>
 
@@ -3045,22 +3045,22 @@ Area under ROC curve: 0.8161
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
 
 <span class="n">decisions</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="c"># Compute ROC curve and area under the curve</span>
+<span class="c1"># Compute ROC curve and area under the curve</span>
 <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">decisions</span><span class="p">)</span>
 <span class="n">roc_auc</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;ROC (area = </span><span class="si">%0.2f</span><span class="s">)&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ROC (area = </span><span class="si">%0.2f</span><span class="s1">)&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Luck&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Luck&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;False Positive Rate&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;True Positive Rate&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;Receiver operating characteristic&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&quot;lower right&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;False Positive Rate&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;True Positive Rate&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Receiver operating characteristic&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -3398,7 +3398,7 @@ GCmGBX7DMIwUwwK/YRhGimGB3zAMI8WwwG8YhpFi/H/f91Vg63NBsAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">compare_train_test</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">compare_train_test</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
     <span class="n">decisions</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">X</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="p">((</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)):</span>
         <span class="n">d1</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">&gt;</span><span class="mf">0.5</span><span class="p">])</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
@@ -3410,13 +3410,13 @@ GCmGBX7DMIwUwwK/YRhGimGB3zAMI8WwwG8YhpFi/H/f91Vg63NBsAAAAABJRU5ErkJggg==
     <span class="n">low_high</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span><span class="p">,</span><span class="n">high</span><span class="p">)</span>
     
     <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">decisions</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-             <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">low_high</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
-             <span class="n">histtype</span><span class="o">=</span><span class="s">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-             <span class="n">label</span><span class="o">=</span><span class="s">&#39;S (train)&#39;</span><span class="p">)</span>
+             <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">low_high</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+             <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;S (train)&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">decisions</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-             <span class="n">color</span><span class="o">=</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">low_high</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
-             <span class="n">histtype</span><span class="o">=</span><span class="s">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-             <span class="n">label</span><span class="o">=</span><span class="s">&#39;B (train)&#39;</span><span class="p">)</span>
+             <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">low_high</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+             <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;B (train)&#39;</span><span class="p">)</span>
 
     <span class="n">hist</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">decisions</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
                               <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">low_high</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -3425,18 +3425,18 @@ GCmGBX7DMIwUwwK/YRhGimGB3zAMI8WwwG8YhpFi/H/f91Vg63NBsAAAAABJRU5ErkJggg==
     
     <span class="n">width</span> <span class="o">=</span> <span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="n">bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">hist</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s">&#39;o&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;S (test)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">hist</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;S (test)&#39;</span><span class="p">)</span>
     
     <span class="n">hist</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">decisions</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
                               <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">low_high</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="n">scale</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">decisions</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">hist</span><span class="p">)</span>
     <span class="n">err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">hist</span> <span class="o">*</span> <span class="n">scale</span><span class="p">)</span> <span class="o">/</span> <span class="n">scale</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">hist</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s">&#39;o&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;B (test)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">hist</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;B (test)&#39;</span><span class="p">)</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;BDT output&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;Arbitrary units&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;BDT output&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Arbitrary units&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
     
 <span class="n">compare_train_test</span><span class="p">(</span><span class="n">bdt</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 </pre></div>
@@ -3790,12 +3790,12 @@ G4OZmRV4YzAzswJvDGZmVuCNwczMCn4BF7w+YUVLW6YAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[239]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">root_numpy</span> <span class="kn">import</span> <span class="n">array2root</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">root_numpy</span> <span class="kn">import</span> <span class="n">array2root</span>
 
 <span class="n">y_predicted</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="n">y_predicted</span><span class="o">.</span><span class="n">dtype</span> <span class="o">=</span> <span class="p">[(</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)]</span>
+<span class="n">y_predicted</span><span class="o">.</span><span class="n">dtype</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)]</span>
 
-<span class="n">array2root</span><span class="p">(</span><span class="n">y_predicted</span><span class="p">,</span> <span class="s">&quot;/tmp/test-prediction.root&quot;</span><span class="p">,</span> <span class="s">&quot;BDToutput&quot;</span><span class="p">)</span>
+<span class="n">array2root</span><span class="p">(</span><span class="n">y_predicted</span><span class="p">,</span> <span class="s2">&quot;/tmp/test-prediction.root&quot;</span><span class="p">,</span> <span class="s2">&quot;BDToutput&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>

@@ -244,7 +244,7 @@
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">import</span> <span class="nn">random</span>
 
@@ -292,43 +292,43 @@ reading for why.</p>
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">root_numpy</span> <span class="kn">import</span> <span class="n">root2array</span><span class="p">,</span> <span class="n">rec2array</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">root_numpy</span> <span class="kn">import</span> <span class="n">root2array</span><span class="p">,</span> <span class="n">rec2array</span>
 <span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 
 
-<span class="n">branch_names</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;lepton pT, lepton eta, lepton phi, missing energy magnitude,</span>
-<span class="s">missing energy phi, jet 1 pt, jet 1 eta, jet 1 phi, jet 1 b-tag, jet 2 pt,</span>
-<span class="s">jet 2 eta, jet 2 phi, jet 2 b-tag, jet 3 pt, jet 3 eta, jet 3 phi, jet 3 b-tag,</span>
-<span class="s">jet 4 pt, jet 4 eta, jet 4 phi, jet 4 b-tag, m_jj, m_jjj, m_lv, m_jlv, m_bb, m_wbb,</span>
-<span class="s">m_wwbb&quot;&quot;&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">)</span>
+<span class="n">branch_names</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;lepton pT, lepton eta, lepton phi, missing energy magnitude,</span>
+<span class="s2">missing energy phi, jet 1 pt, jet 1 eta, jet 1 phi, jet 1 b-tag, jet 2 pt,</span>
+<span class="s2">jet 2 eta, jet 2 phi, jet 2 b-tag, jet 3 pt, jet 3 eta, jet 3 phi, jet 3 b-tag,</span>
+<span class="s2">jet 4 pt, jet 4 eta, jet 4 phi, jet 4 b-tag, m_jj, m_jjj, m_lv, m_jlv, m_bb, m_wbb,</span>
+<span class="s2">m_wwbb&quot;&quot;&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
 <span class="n">branch_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">branch_names</span><span class="p">]</span>
-<span class="n">branch_names</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">,</span> <span class="s">&quot;_&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">branch_names</span><span class="p">)</span>
-<span class="n">branch_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">,</span> <span class="s">&quot;_&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">branch_names</span><span class="p">)</span>
+<span class="n">branch_names</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">branch_names</span><span class="p">)</span>
+<span class="n">branch_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">branch_names</span><span class="p">)</span>
 
-<span class="n">signal</span> <span class="o">=</span> <span class="n">root2array</span><span class="p">(</span><span class="s">&quot;/tmp/HIGGS_signal.root&quot;</span><span class="p">,</span>
-                    <span class="s">&quot;tree&quot;</span><span class="p">,</span>
+<span class="n">signal</span> <span class="o">=</span> <span class="n">root2array</span><span class="p">(</span><span class="s2">&quot;/tmp/HIGGS_signal.root&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;tree&quot;</span><span class="p">,</span>
                     <span class="n">branch_names</span><span class="p">)</span>
 <span class="n">signal</span> <span class="o">=</span> <span class="n">rec2array</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>
 
-<span class="n">backgr</span> <span class="o">=</span> <span class="n">root2array</span><span class="p">(</span><span class="s">&quot;/tmp/HIGGS_background.root&quot;</span><span class="p">,</span>
-                    <span class="s">&quot;tree&quot;</span><span class="p">,</span>
+<span class="n">backgr</span> <span class="o">=</span> <span class="n">root2array</span><span class="p">(</span><span class="s2">&quot;/tmp/HIGGS_background.root&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;tree&quot;</span><span class="p">,</span>
                     <span class="n">branch_names</span><span class="p">)</span>
 <span class="n">backgr</span> <span class="o">=</span> <span class="n">rec2array</span><span class="p">(</span><span class="n">backgr</span><span class="p">)</span>
 
-<span class="c"># for sklearn data is usually organised</span>
-<span class="c"># into one 2D array of shape (n_samples x n_features)</span>
-<span class="c"># containing all the data and one array of categories</span>
-<span class="c"># of length n_samples</span>
+<span class="c1"># for sklearn data is usually organised</span>
+<span class="c1"># into one 2D array of shape (n_samples x n_features)</span>
+<span class="c1"># containing all the data and one array of categories</span>
+<span class="c1"># of length n_samples</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">signal</span><span class="p">,</span> <span class="n">backgr</span><span class="p">))</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">backgr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
 
-<span class="c"># set aside an evaluation sample</span>
-<span class="c"># We artificially limit ourselves</span>
-<span class="c"># to a small subset of the available</span>
-<span class="c"># samples. This speeds things up and</span>
-<span class="c"># makes it easier to illustrate things</span>
-<span class="c"># like over-fitting. In real life you</span>
-<span class="c"># would not do this.</span>
+<span class="c1"># set aside an evaluation sample</span>
+<span class="c1"># We artificially limit ourselves</span>
+<span class="c1"># to a small subset of the available</span>
+<span class="c1"># samples. This speeds things up and</span>
+<span class="c1"># makes it easier to illustrate things</span>
+<span class="c1"># like over-fitting. In real life you</span>
+<span class="c1"># would not do this.</span>
 <span class="n">X_dev</span><span class="p">,</span><span class="n">X_eval</span><span class="p">,</span> <span class="n">y_dev</span><span class="p">,</span><span class="n">y_eval</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
                                               <span class="n">train_size</span><span class="o">=</span><span class="mi">20000</span><span class="p">,</span>
                                               <span class="n">test_size</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>
@@ -358,8 +358,8 @@ are the terms used to describe the two components that make up the error of a cl
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
-<span class="n">Image</span><span class="p">(</span><span class="s">&#39;../../images/bias-variance.png&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="s1">&#39;../../images/bias-variance.png&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1340,7 +1340,7 @@ function:</p>
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cross_validation</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cross_validation</span>
 <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GradientBoostingClassifier</span>
 
 
@@ -1352,7 +1352,7 @@ function:</p>
 
 <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">cross_val_score</span><span class="p">(</span><span class="n">gbt</span><span class="p">,</span>
                                           <span class="n">X_dev</span><span class="p">,</span> <span class="n">y_dev</span><span class="p">,</span>
-                                          <span class="n">scoring</span><span class="o">=</span><span class="s">&quot;roc_auc&quot;</span><span class="p">,</span>
+                                          <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;roc_auc&quot;</span><span class="p">,</span>
                                           <span class="n">n_jobs</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
                                           <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
@@ -1367,7 +1367,7 @@ function:</p>
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span> <span class="s">&quot;Accuracy: </span><span class="si">%0.5f</span><span class="s"> (+/- </span><span class="si">%0.5f</span><span class="s">)&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s2">&quot;Accuracy: </span><span class="si">%0.5f</span><span class="s2"> (+/- </span><span class="si">%0.5f</span><span class="s2">)&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
 </pre></div>
 
 </div>
@@ -1415,19 +1415,19 @@ function:</p>
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">grid_search</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">grid_search</span>
 
 
-<span class="c"># Perform grid search over all combinations</span>
-<span class="c"># of these hyper-parameters</span>
-<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;n_estimators&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span>
-              <span class="s">&quot;max_depth&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
-              <span class="s">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]}</span>
+<span class="c1"># Perform grid search over all combinations</span>
+<span class="c1"># of these hyper-parameters</span>
+<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;n_estimators&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span>
+              <span class="s2">&quot;max_depth&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+              <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]}</span>
 
 <span class="n">clf</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">gbt</span><span class="p">,</span>
                                <span class="n">param_grid</span><span class="p">,</span>
                                <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-                               <span class="n">scoring</span><span class="o">=</span><span class="s">&#39;roc_auc&#39;</span><span class="p">,</span>
+                               <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">,</span>
                                <span class="n">n_jobs</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_dev</span><span class="p">,</span> <span class="n">y_dev</span><span class="p">)</span>
 </pre></div>
@@ -1442,21 +1442,21 @@ function:</p>
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span> <span class="s">&quot;Best parameter set found on development set:&quot;</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s2">&quot;Best parameter set found on development set:&quot;</span>
 <span class="k">print</span>
 <span class="k">print</span> <span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span>
 <span class="k">print</span>
-<span class="k">print</span> <span class="s">&quot;Grid scores on a subset of the development set:&quot;</span>
+<span class="k">print</span> <span class="s2">&quot;Grid scores on a subset of the development set:&quot;</span>
 <span class="k">print</span>
 <span class="k">for</span> <span class="n">params</span><span class="p">,</span> <span class="n">mean_score</span><span class="p">,</span> <span class="n">scores</span> <span class="ow">in</span> <span class="n">clf</span><span class="o">.</span><span class="n">grid_scores_</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s">&quot;</span><span class="si">%0.4f</span><span class="s"> (+/-</span><span class="si">%0.04f</span><span class="s">) for </span><span class="si">%r</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">mean_score</span><span class="p">,</span> <span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="n">params</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s2">&quot;</span><span class="si">%0.4f</span><span class="s2"> (+/-</span><span class="si">%0.04f</span><span class="s2">) for </span><span class="si">%r</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">mean_score</span><span class="p">,</span> <span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="n">params</span><span class="p">)</span>
 <span class="k">print</span>
-<span class="k">print</span> <span class="s">&quot;With the model trained on the full development set:&quot;</span>
+<span class="k">print</span> <span class="s2">&quot;With the model trained on the full development set:&quot;</span>
 
 <span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span> <span class="o">=</span> <span class="n">y_dev</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_dev</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&quot;  It scores </span><span class="si">%0.4f</span><span class="s"> on the full development set&quot;</span><span class="o">%</span><span class="k">roc_auc_score</span>(y_true, y_pred)
+<span class="k">print</span> <span class="s2">&quot;  It scores </span><span class="si">%0.4f</span><span class="s2"> on the full development set&quot;</span><span class="o">%</span><span class="k">roc_auc_score</span>(y_true, y_pred)
 <span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span> <span class="o">=</span> <span class="n">y_eval</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_eval</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&quot;  It scores </span><span class="si">%0.4f</span><span class="s"> on the full evaluation set&quot;</span><span class="o">%</span><span class="k">roc_auc_score</span>(y_true, y_pred)
+<span class="k">print</span> <span class="s2">&quot;  It scores </span><span class="si">%0.4f</span><span class="s2"> on the full evaluation set&quot;</span><span class="o">%</span><span class="k">roc_auc_score</span>(y_true, y_pred)
 </pre></div>
 
 </div>
@@ -1471,7 +1471,7 @@ function:</p>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Best parameter set found on development set:
 
-GradientBoostingClassifier(init=None, learning_rate=0.1, loss=&apos;deviance&apos;,
+GradientBoostingClassifier(init=None, learning_rate=0.1, loss=&#39;deviance&#39;,
               max_depth=3, max_features=0.5, max_leaf_nodes=None,
               min_samples_leaf=1, min_samples_split=2, n_estimators=200,
               random_state=None, subsample=0.5, verbose=0,
@@ -1479,42 +1479,42 @@ GradientBoostingClassifier(init=None, learning_rate=0.1, loss=&apos;deviance&apo
 
 Grid scores on a subset of the development set:
 
-0.7151 (+/-0.0078) for {&apos;n_estimators&apos;: 50, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 1}
-0.7491 (+/-0.0044) for {&apos;n_estimators&apos;: 200, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 1}
-0.7547 (+/-0.0035) for {&apos;n_estimators&apos;: 400, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 1}
-0.7550 (+/-0.0037) for {&apos;n_estimators&apos;: 1000, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 1}
-0.7674 (+/-0.0053) for {&apos;n_estimators&apos;: 50, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 3}
-0.7731 (+/-0.0024) for {&apos;n_estimators&apos;: 200, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 3}
-0.7716 (+/-0.0029) for {&apos;n_estimators&apos;: 400, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 3}
-0.7620 (+/-0.0045) for {&apos;n_estimators&apos;: 1000, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 3}
-0.7696 (+/-0.0036) for {&apos;n_estimators&apos;: 50, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 8}
-0.7631 (+/-0.0058) for {&apos;n_estimators&apos;: 200, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 8}
-0.7654 (+/-0.0044) for {&apos;n_estimators&apos;: 400, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 8}
-0.7691 (+/-0.0070) for {&apos;n_estimators&apos;: 1000, &apos;learning_rate&apos;: 0.1, &apos;max_depth&apos;: 8}
-0.7330 (+/-0.0079) for {&apos;n_estimators&apos;: 50, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 1}
-0.7544 (+/-0.0030) for {&apos;n_estimators&apos;: 200, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 1}
-0.7544 (+/-0.0023) for {&apos;n_estimators&apos;: 400, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 1}
-0.7505 (+/-0.0037) for {&apos;n_estimators&apos;: 1000, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 1}
-0.7697 (+/-0.0034) for {&apos;n_estimators&apos;: 50, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 3}
-0.7639 (+/-0.0047) for {&apos;n_estimators&apos;: 200, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 3}
-0.7557 (+/-0.0027) for {&apos;n_estimators&apos;: 400, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 3}
-0.7474 (+/-0.0082) for {&apos;n_estimators&apos;: 1000, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 3}
-0.7474 (+/-0.0060) for {&apos;n_estimators&apos;: 50, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 8}
-0.7501 (+/-0.0072) for {&apos;n_estimators&apos;: 200, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 8}
-0.7532 (+/-0.0049) for {&apos;n_estimators&apos;: 400, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 8}
-0.7609 (+/-0.0070) for {&apos;n_estimators&apos;: 1000, &apos;learning_rate&apos;: 0.2, &apos;max_depth&apos;: 8}
-0.7398 (+/-0.0046) for {&apos;n_estimators&apos;: 50, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 1}
-0.7354 (+/-0.0090) for {&apos;n_estimators&apos;: 200, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 1}
-0.7250 (+/-0.0036) for {&apos;n_estimators&apos;: 400, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 1}
-0.7180 (+/-0.0021) for {&apos;n_estimators&apos;: 1000, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 1}
-0.7097 (+/-0.0024) for {&apos;n_estimators&apos;: 50, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 3}
-0.6711 (+/-0.0027) for {&apos;n_estimators&apos;: 200, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 3}
-0.6561 (+/-0.0016) for {&apos;n_estimators&apos;: 400, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 3}
-0.6492 (+/-0.0066) for {&apos;n_estimators&apos;: 1000, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 3}
-0.6308 (+/-0.0065) for {&apos;n_estimators&apos;: 50, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 8}
-0.5955 (+/-0.0132) for {&apos;n_estimators&apos;: 200, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 8}
-0.5733 (+/-0.0216) for {&apos;n_estimators&apos;: 400, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 8}
-0.5488 (+/-0.0114) for {&apos;n_estimators&apos;: 1000, &apos;learning_rate&apos;: 1.0, &apos;max_depth&apos;: 8}
+0.7151 (+/-0.0078) for {&#39;n_estimators&#39;: 50, &#39;learning_rate&#39;: 0.1, &#39;max_depth&#39;: 1}
+0.7491 (+/-0.0044) for {&#39;n_estimators&#39;: 200, &#39;learning_rate&#39;: 0.1, &#39;max_depth&#39;: 1}
+0.7547 (+/-0.0035) for {&#39;n_estimators&#39;: 400, &#39;learning_rate&#39;: 0.1, &#39;max_depth&#39;: 1}
+0.7550 (+/-0.0037) for {&#39;n_estimators&#39;: 1000, &#39;learning_rate&#39;: 0.1, &#39;max_depth&#39;: 1}
+0.7674 (+/-0.0053) for {&#39;n_estimators&#39;: 50, &#39;learning_rate&#39;: 0.1, &#39;max_depth&#39;: 3}
+0.7731 (+/-0.0024) for {&#39;n_estimators&#39;: 200, &#39;learning_rate&#39;: 0.1, &#39;max_depth&#39;: 3}
+0.7716 (+/-0.0029) for {&#39;n_estimators&#39;: 400, &#39;learning_rate&#39;: 0.1, &#39;max_depth&#39;: 3}
+0.7620 (+/-0.0045) for {&#39;n_estimators&#39;: 1000, &#39;learning_rate&#39;: 0.1, &#39;max_depth&#39;: 3}
+0.7696 (+/-0.0036) for {&#39;n_estimators&#39;: 50, &#39;learning_rate&#39;: 0.1, &#39;max_depth&#39;: 8}
+0.7631 (+/-0.0058) for {&#39;n_estimators&#39;: 200, &#39;learning_rate&#39;: 0.1, &#39;max_depth&#39;: 8}
+0.7654 (+/-0.0044) for {&#39;n_estimators&#39;: 400, &#39;learning_rate&#39;: 0.1, &#39;max_depth&#39;: 8}
+0.7691 (+/-0.0070) for {&#39;n_estimators&#39;: 1000, &#39;learning_rate&#39;: 0.1, &#39;max_depth&#39;: 8}
+0.7330 (+/-0.0079) for {&#39;n_estimators&#39;: 50, &#39;learning_rate&#39;: 0.2, &#39;max_depth&#39;: 1}
+0.7544 (+/-0.0030) for {&#39;n_estimators&#39;: 200, &#39;learning_rate&#39;: 0.2, &#39;max_depth&#39;: 1}
+0.7544 (+/-0.0023) for {&#39;n_estimators&#39;: 400, &#39;learning_rate&#39;: 0.2, &#39;max_depth&#39;: 1}
+0.7505 (+/-0.0037) for {&#39;n_estimators&#39;: 1000, &#39;learning_rate&#39;: 0.2, &#39;max_depth&#39;: 1}
+0.7697 (+/-0.0034) for {&#39;n_estimators&#39;: 50, &#39;learning_rate&#39;: 0.2, &#39;max_depth&#39;: 3}
+0.7639 (+/-0.0047) for {&#39;n_estimators&#39;: 200, &#39;learning_rate&#39;: 0.2, &#39;max_depth&#39;: 3}
+0.7557 (+/-0.0027) for {&#39;n_estimators&#39;: 400, &#39;learning_rate&#39;: 0.2, &#39;max_depth&#39;: 3}
+0.7474 (+/-0.0082) for {&#39;n_estimators&#39;: 1000, &#39;learning_rate&#39;: 0.2, &#39;max_depth&#39;: 3}
+0.7474 (+/-0.0060) for {&#39;n_estimators&#39;: 50, &#39;learning_rate&#39;: 0.2, &#39;max_depth&#39;: 8}
+0.7501 (+/-0.0072) for {&#39;n_estimators&#39;: 200, &#39;learning_rate&#39;: 0.2, &#39;max_depth&#39;: 8}
+0.7532 (+/-0.0049) for {&#39;n_estimators&#39;: 400, &#39;learning_rate&#39;: 0.2, &#39;max_depth&#39;: 8}
+0.7609 (+/-0.0070) for {&#39;n_estimators&#39;: 1000, &#39;learning_rate&#39;: 0.2, &#39;max_depth&#39;: 8}
+0.7398 (+/-0.0046) for {&#39;n_estimators&#39;: 50, &#39;learning_rate&#39;: 1.0, &#39;max_depth&#39;: 1}
+0.7354 (+/-0.0090) for {&#39;n_estimators&#39;: 200, &#39;learning_rate&#39;: 1.0, &#39;max_depth&#39;: 1}
+0.7250 (+/-0.0036) for {&#39;n_estimators&#39;: 400, &#39;learning_rate&#39;: 1.0, &#39;max_depth&#39;: 1}
+0.7180 (+/-0.0021) for {&#39;n_estimators&#39;: 1000, &#39;learning_rate&#39;: 1.0, &#39;max_depth&#39;: 1}
+0.7097 (+/-0.0024) for {&#39;n_estimators&#39;: 50, &#39;learning_rate&#39;: 1.0, &#39;max_depth&#39;: 3}
+0.6711 (+/-0.0027) for {&#39;n_estimators&#39;: 200, &#39;learning_rate&#39;: 1.0, &#39;max_depth&#39;: 3}
+0.6561 (+/-0.0016) for {&#39;n_estimators&#39;: 400, &#39;learning_rate&#39;: 1.0, &#39;max_depth&#39;: 3}
+0.6492 (+/-0.0066) for {&#39;n_estimators&#39;: 1000, &#39;learning_rate&#39;: 1.0, &#39;max_depth&#39;: 3}
+0.6308 (+/-0.0065) for {&#39;n_estimators&#39;: 50, &#39;learning_rate&#39;: 1.0, &#39;max_depth&#39;: 8}
+0.5955 (+/-0.0132) for {&#39;n_estimators&#39;: 200, &#39;learning_rate&#39;: 1.0, &#39;max_depth&#39;: 8}
+0.5733 (+/-0.0216) for {&#39;n_estimators&#39;: 400, &#39;learning_rate&#39;: 1.0, &#39;max_depth&#39;: 8}
+0.5488 (+/-0.0114) for {&#39;n_estimators&#39;: 1000, &#39;learning_rate&#39;: 1.0, &#39;max_depth&#39;: 8}
 
 With the model trained on the full development set:
   It scores 0.8238 on the full development set
@@ -1550,7 +1550,7 @@ also see that the performance measured on the training set is biased upwards (0.
 <div class="prompt input_prompt">In&nbsp;[113]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># Split development set into a train and test sample</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Split development set into a train and test sample</span>
 <span class="n">X_train</span><span class="p">,</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span><span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_dev</span><span class="p">,</span> <span class="n">y_dev</span><span class="p">,</span>
                                                   <span class="n">test_size</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">4685</span><span class="p">)</span>
 
@@ -1587,7 +1587,7 @@ also see that the performance measured on the training set is biased upwards (0.
 <div class="prompt input_prompt">In&nbsp;[128]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">validation_curve</span><span class="p">(</span><span class="n">clfs</span><span class="p">,</span> <span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">validation_curve</span><span class="p">(</span><span class="n">clfs</span><span class="p">,</span> <span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">):</span>
     <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">test</span>
     <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">train</span>
     
@@ -1602,20 +1602,20 @@ also see that the performance measured on the training set is biased upwards (0.
             <span class="n">train_score</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">pred</span><span class="p">)</span>
 
         <span class="n">best_iter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">test_score</span><span class="p">)</span>
-        <span class="n">learn</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">get_params</span><span class="p">()[</span><span class="s">&#39;learning_rate&#39;</span><span class="p">]</span>
-        <span class="n">depth</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">get_params</span><span class="p">()[</span><span class="s">&#39;max_depth&#39;</span><span class="p">]</span>
+        <span class="n">learn</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">get_params</span><span class="p">()[</span><span class="s1">&#39;learning_rate&#39;</span><span class="p">]</span>
+        <span class="n">depth</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">get_params</span><span class="p">()[</span><span class="s1">&#39;max_depth&#39;</span><span class="p">]</span>
         <span class="n">test_line</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">test_score</span><span class="p">,</span>
-                             <span class="n">label</span><span class="o">=</span><span class="s">&#39;learn=</span><span class="si">%.1f</span><span class="s"> depth=</span><span class="si">%i</span><span class="s"> (</span><span class="si">%.2f</span><span class="s">)&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">learn</span><span class="p">,</span><span class="n">depth</span><span class="p">,</span>
+                             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;learn=</span><span class="si">%.1f</span><span class="s1"> depth=</span><span class="si">%i</span><span class="s1"> (</span><span class="si">%.2f</span><span class="s1">)&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">learn</span><span class="p">,</span><span class="n">depth</span><span class="p">,</span>
                                                                  <span class="n">test_score</span><span class="p">[</span><span class="n">best_iter</span><span class="p">]))</span>
 
         <span class="n">colour</span> <span class="o">=</span> <span class="n">test_line</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_color</span><span class="p">()</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_score</span><span class="p">,</span> <span class="s">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colour</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_score</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colour</span><span class="p">)</span>
         
-        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;Number of boosting iterations&quot;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;1 - area under ROC&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Number of boosting iterations&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;1 - area under ROC&quot;</span><span class="p">)</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">best_iter</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colour</span><span class="p">)</span>
         
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1628,7 +1628,7 @@ also see that the performance measured on the training set is biased upwards (0.
 <div class="prompt input_prompt">In&nbsp;[129]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">validation_curve</span><span class="p">(</span><span class="n">clfs</span><span class="p">,</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">validation_curve</span><span class="p">(</span><span class="n">clfs</span><span class="p">,</span>
                  <span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">),</span>
                  <span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">))</span>
 </pre></div>
@@ -2379,10 +2379,10 @@ training size and there is a large gap to the testing score, then there might be
 <div class="prompt input_prompt">In&nbsp;[173]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn.learning_curve</span> <span class="kn">import</span> <span class="n">learning_curve</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.learning_curve</span> <span class="kn">import</span> <span class="n">learning_curve</span>
 
-<span class="c"># Taken more or less straight from</span>
-<span class="c"># http://scikit-learn.org/stable/auto_examples/plot_learning_curve.html</span>
+<span class="c1"># Taken more or less straight from</span>
+<span class="c1"># http://scikit-learn.org/stable/auto_examples/plot_learning_curve.html</span>
 <span class="k">def</span> <span class="nf">plot_learning_curve</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
                         <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">train_sizes</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
                         <span class="n">scoring</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
@@ -2391,9 +2391,9 @@ training size and there is a large gap to the testing score, then there might be
         <span class="n">ax</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">xlabel</span><span class="p">:</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&quot;Training examples&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Training examples&quot;</span><span class="p">)</span>
         
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&quot;Score&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Score&quot;</span><span class="p">)</span>
     <span class="n">train_sizes</span><span class="p">,</span> <span class="n">train_scores</span><span class="p">,</span> <span class="n">test_scores</span> <span class="o">=</span> <span class="n">learning_curve</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span>
                                                             <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
                                                             <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span>
@@ -2407,13 +2407,13 @@ training size and there is a large gap to the testing score, then there might be
 
     <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">train_scores_mean</span> <span class="o">-</span> <span class="n">train_scores_std</span><span class="p">,</span>
                      <span class="n">train_scores_mean</span> <span class="o">+</span> <span class="n">train_scores_std</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
-                     <span class="n">color</span><span class="o">=</span><span class="s">&quot;r&quot;</span><span class="p">)</span>
+                     <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">test_scores_mean</span> <span class="o">-</span> <span class="n">test_scores_std</span><span class="p">,</span>
-                     <span class="n">test_scores_mean</span> <span class="o">+</span> <span class="n">test_scores_std</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;g&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">train_scores_mean</span><span class="p">,</span> <span class="s">&#39;o-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;r&quot;</span><span class="p">,</span>
-             <span class="n">label</span><span class="o">=</span><span class="s">&quot;Training score&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">test_scores_mean</span><span class="p">,</span> <span class="s">&#39;o-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;g&quot;</span><span class="p">,</span>
-             <span class="n">label</span><span class="o">=</span><span class="s">&quot;Cross-validation score&quot;</span><span class="p">)</span>
+                     <span class="n">test_scores_mean</span> <span class="o">+</span> <span class="n">test_scores_std</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;g&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">train_scores_mean</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Training score&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">test_scores_mean</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;g&quot;</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cross-validation score&quot;</span><span class="p">)</span>
 
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mf">0.65</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">plt</span>
@@ -2429,7 +2429,7 @@ training size and there is a large gap to the testing score, then there might be
 <div class="prompt input_prompt">In&nbsp;[174]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">simpleton</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">simpleton</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                                        <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
                                        <span class="n">n_estimators</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 <span class="n">classifiers</span> <span class="o">=</span> <span class="p">[</span><span class="n">simpleton</span><span class="p">,</span> <span class="n">clfs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">clfs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">clfs</span><span class="p">[</span><span class="mi">3</span><span class="p">]]</span>
@@ -2438,14 +2438,14 @@ training size and there is a large gap to the testing score, then there might be
 
 <span class="k">for</span> <span class="n">clf</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">classifiers</span><span class="p">,</span> <span class="n">axes</span><span class="p">):</span>  
     <span class="n">plot_learning_curve</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span>
-                        <span class="s">&quot;Learning curves&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;Learning curves&quot;</span><span class="p">,</span>
                         <span class="n">X_dev</span><span class="p">,</span> <span class="n">y_dev</span><span class="p">,</span>
-                        <span class="n">scoring</span><span class="o">=</span><span class="s">&#39;roc_auc&#39;</span><span class="p">,</span>
+                        <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">,</span>
                         <span class="n">n_jobs</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
                         <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
     
-<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&quot;best&quot;</span><span class="p">)</span>
-<span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&quot;Training examples&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Training examples&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -3022,7 +3022,7 @@ YRhVzDAwDMMwDKOKGQaGYRiGYVT5/xfKpWPtzEv5AAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[177]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">X_dev2</span><span class="p">,</span><span class="n">X_eval2</span><span class="p">,</span> <span class="n">y_dev2</span><span class="p">,</span><span class="n">y_eval2</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">X_dev2</span><span class="p">,</span><span class="n">X_eval2</span><span class="p">,</span> <span class="n">y_dev2</span><span class="p">,</span><span class="n">y_eval2</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
                                                   <span class="n">test_size</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
                                                   <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 
@@ -3032,14 +3032,14 @@ YRhVzDAwDMMwDKOKGQaGYRiGYVT5/xfKpWPtzEv5AAAAAElFTkSuQmCC
 
 <span class="k">for</span> <span class="n">clf</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">classifiers</span><span class="p">,</span> <span class="n">axes</span><span class="p">):</span>  
     <span class="n">plot_learning_curve</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span>
-                        <span class="s">&quot;Learning curves&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;Learning curves&quot;</span><span class="p">,</span>
                         <span class="n">X_dev2</span><span class="p">[:</span><span class="mi">50000</span><span class="p">],</span> <span class="n">y_dev2</span><span class="p">[:</span><span class="mi">50000</span><span class="p">],</span>
-                        <span class="n">scoring</span><span class="o">=</span><span class="s">&#39;roc_auc&#39;</span><span class="p">,</span>
+                        <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">,</span>
                         <span class="n">n_jobs</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
                         <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
     
-<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&quot;best&quot;</span><span class="p">)</span>
-<span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&quot;Training examples&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Training examples&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>

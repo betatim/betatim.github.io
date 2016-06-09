@@ -240,7 +240,7 @@
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
 </div>
@@ -253,7 +253,7 @@
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
@@ -294,9 +294,9 @@
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre>%%bash
-<span class="c"># Download the HiggsML dataset</span>
-<span class="c"># details here: http://opendata.cern.ch/record/328</span>
+<div class=" highlight hl-ipython2"><pre><span></span>%%bash
+<span class="c1"># Download the HiggsML dataset</span>
+<span class="c1"># details here: http://opendata.cern.ch/record/328</span>
 wget --quiet -P /tmp/ http://opendata.cern.ch/record/328/files/atlas-higgs-challenge-2014-v2.csv.gz
 </pre></div>
 
@@ -320,11 +320,11 @@ wget --quiet -P /tmp/ http://opendata.cern.ch/record/328/files/atlas-higgs-chall
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&#39;/tmp/atlas-higgs-challenge-2014-v2.csv.gz&#39;</span><span class="p">,</span>
-                 <span class="n">compression</span><span class="o">=</span><span class="s">&#39;gzip&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/tmp/atlas-higgs-challenge-2014-v2.csv.gz&#39;</span><span class="p">,</span>
+                 <span class="n">compression</span><span class="o">=</span><span class="s1">&#39;gzip&#39;</span><span class="p">)</span>
 
-<span class="c"># Print the name of all the colums</span>
-<span class="k">print</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="c1"># Print the name of all the colums</span>
+<span class="k">print</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -364,20 +364,20 @@ wget --quiet -P /tmp/ http://opendata.cern.ch/record/328/files/atlas-higgs-chall
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">hist_opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">hist_opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
                  <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
                  <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">))</span>
-<span class="n">signal</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Label</span> <span class="o">==</span> <span class="s">&#39;s&#39;</span>
+<span class="n">signal</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Label</span> <span class="o">==</span> <span class="s1">&#39;s&#39;</span>
 <span class="n">_</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">DER_mass_MMC</span><span class="p">[</span><span class="o">~</span><span class="n">signal</span><span class="p">]</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">(),</span>
            <span class="n">weights</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">Weight</span><span class="p">[</span><span class="o">~</span><span class="n">signal</span><span class="p">]</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">(),</span>
-           <span class="n">label</span><span class="o">=</span><span class="s">&#39;Other stuff&#39;</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Other stuff&#39;</span><span class="p">,</span>
            <span class="o">**</span><span class="n">hist_opts</span><span class="p">)</span>
 <span class="n">_</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">DER_mass_MMC</span><span class="p">[</span><span class="n">signal</span><span class="p">],</span>
            <span class="n">weights</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">Weight</span><span class="p">[</span><span class="n">signal</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>
-           <span class="n">label</span><span class="o">=</span><span class="s">&#39;The Higgs * 100&#39;</span><span class="p">,</span>
-           <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="s1">&#39;The Higgs * 100&#39;</span><span class="p">,</span>
+           <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span>
            <span class="o">**</span><span class="n">hist_opts</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -593,33 +593,33 @@ DHZJkhLk/wMH/0B6nEvcGwAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># Selecting the columns used to predict MMC</span>
-<span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;PRI_tau_pt&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_tau_eta&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_tau_phi&#39;</span><span class="p">,</span>
-           <span class="s">&#39;PRI_lep_pt&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_lep_eta&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_lep_phi&#39;</span><span class="p">,</span>
-           <span class="s">&#39;PRI_met&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_met_phi&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_met_sumet&#39;</span><span class="p">,</span>
-           <span class="s">&#39;PRI_jet_num&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_jet_leading_pt&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_jet_leading_eta&#39;</span><span class="p">,</span>
-           <span class="s">&#39;PRI_jet_leading_phi&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_jet_subleading_pt&#39;</span><span class="p">,</span>
-           <span class="s">&#39;PRI_jet_subleading_eta&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_jet_subleading_phi&#39;</span><span class="p">,</span> <span class="s">&#39;PRI_jet_all_pt&#39;</span><span class="p">,</span>
-           <span class="s">&#39;DER_mass_transverse_met_lep&#39;</span><span class="p">,</span> <span class="s">&#39;DER_mass_vis&#39;</span><span class="p">,</span> <span class="s">&#39;DER_pt_h&#39;</span><span class="p">,</span>
-           <span class="s">&#39;DER_deltaeta_jet_jet&#39;</span><span class="p">,</span> <span class="s">&#39;DER_mass_jet_jet&#39;</span><span class="p">,</span>
-           <span class="s">&#39;DER_prodeta_jet_jet&#39;</span><span class="p">,</span> <span class="s">&#39;DER_deltar_tau_lep&#39;</span><span class="p">,</span> <span class="s">&#39;DER_pt_tot&#39;</span><span class="p">,</span>
-           <span class="s">&#39;DER_sum_pt&#39;</span><span class="p">,</span> <span class="s">&#39;DER_pt_ratio_lep_tau&#39;</span><span class="p">,</span> <span class="s">&#39;DER_met_phi_centrality&#39;</span><span class="p">,</span>
-           <span class="s">&#39;DER_lep_eta_centrality&#39;</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Selecting the columns used to predict MMC</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PRI_tau_pt&#39;</span><span class="p">,</span> <span class="s1">&#39;PRI_tau_eta&#39;</span><span class="p">,</span> <span class="s1">&#39;PRI_tau_phi&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;PRI_lep_pt&#39;</span><span class="p">,</span> <span class="s1">&#39;PRI_lep_eta&#39;</span><span class="p">,</span> <span class="s1">&#39;PRI_lep_phi&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;PRI_met&#39;</span><span class="p">,</span> <span class="s1">&#39;PRI_met_phi&#39;</span><span class="p">,</span> <span class="s1">&#39;PRI_met_sumet&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;PRI_jet_num&#39;</span><span class="p">,</span> <span class="s1">&#39;PRI_jet_leading_pt&#39;</span><span class="p">,</span> <span class="s1">&#39;PRI_jet_leading_eta&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;PRI_jet_leading_phi&#39;</span><span class="p">,</span> <span class="s1">&#39;PRI_jet_subleading_pt&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;PRI_jet_subleading_eta&#39;</span><span class="p">,</span> <span class="s1">&#39;PRI_jet_subleading_phi&#39;</span><span class="p">,</span> <span class="s1">&#39;PRI_jet_all_pt&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;DER_mass_transverse_met_lep&#39;</span><span class="p">,</span> <span class="s1">&#39;DER_mass_vis&#39;</span><span class="p">,</span> <span class="s1">&#39;DER_pt_h&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;DER_deltaeta_jet_jet&#39;</span><span class="p">,</span> <span class="s1">&#39;DER_mass_jet_jet&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;DER_prodeta_jet_jet&#39;</span><span class="p">,</span> <span class="s1">&#39;DER_deltar_tau_lep&#39;</span><span class="p">,</span> <span class="s1">&#39;DER_pt_tot&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;DER_sum_pt&#39;</span><span class="p">,</span> <span class="s1">&#39;DER_pt_ratio_lep_tau&#39;</span><span class="p">,</span> <span class="s1">&#39;DER_met_phi_centrality&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;DER_lep_eta_centrality&#39;</span>
            <span class="p">]</span>
 
-<span class="c"># For some samples/events the MMC could not be calculated</span>
-<span class="c"># they are marked with a value &lt; -800</span>
-<span class="c"># Split the data by whether the sample represents a Higgs (signal)</span>
-<span class="c"># boson event or not (background)</span>
-<span class="n">signal</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">Label</span> <span class="o">==</span> <span class="s">&#39;s&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">DER_mass_MMC</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">800</span><span class="p">)]</span>
+<span class="c1"># For some samples/events the MMC could not be calculated</span>
+<span class="c1"># they are marked with a value &lt; -800</span>
+<span class="c1"># Split the data by whether the sample represents a Higgs (signal)</span>
+<span class="c1"># boson event or not (background)</span>
+<span class="n">signal</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">Label</span> <span class="o">==</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">DER_mass_MMC</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">800</span><span class="p">)]</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">signal</span><span class="p">[</span><span class="n">columns</span><span class="p">]</span>
-<span class="n">w</span> <span class="o">=</span> <span class="n">signal</span><span class="p">[</span><span class="s">&#39;Weight&#39;</span><span class="p">]</span>
-<span class="n">MMC</span> <span class="o">=</span> <span class="n">signal</span><span class="p">[</span><span class="s">&#39;DER_mass_MMC&#39;</span><span class="p">]</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">signal</span><span class="p">[</span><span class="s1">&#39;Weight&#39;</span><span class="p">]</span>
+<span class="n">MMC</span> <span class="o">=</span> <span class="n">signal</span><span class="p">[</span><span class="s1">&#39;DER_mass_MMC&#39;</span><span class="p">]</span>
 
-<span class="n">background</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">Label</span> <span class="o">==</span> <span class="s">&#39;b&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">DER_mass_MMC</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">800</span><span class="p">)]</span>
+<span class="n">background</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">Label</span> <span class="o">==</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">DER_mass_MMC</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">800</span><span class="p">)]</span>
 <span class="n">bg_X</span> <span class="o">=</span> <span class="n">background</span><span class="p">[</span><span class="n">columns</span><span class="p">]</span>
-<span class="n">bg_w</span> <span class="o">=</span> <span class="n">background</span><span class="p">[</span><span class="s">&#39;Weight&#39;</span><span class="p">]</span>
-<span class="n">bg_MMC</span> <span class="o">=</span> <span class="n">background</span><span class="p">[</span><span class="s">&#39;DER_mass_MMC&#39;</span><span class="p">]</span>
+<span class="n">bg_w</span> <span class="o">=</span> <span class="n">background</span><span class="p">[</span><span class="s1">&#39;Weight&#39;</span><span class="p">]</span>
+<span class="n">bg_MMC</span> <span class="o">=</span> <span class="n">background</span><span class="p">[</span><span class="s1">&#39;DER_mass_MMC&#39;</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -642,7 +642,7 @@ DHZJkhLk/wMH/0B6nEvcGwAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># this looks more daunting than it has to be :-(</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># this looks more daunting than it has to be :-(</span>
 <span class="n">X_dev</span><span class="p">,</span><span class="n">X_eval</span><span class="p">,</span> <span class="n">w_dev</span><span class="p">,</span><span class="n">w_eval</span><span class="p">,</span> <span class="n">MMC_dev</span><span class="p">,</span><span class="n">MMC_eval</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">(),</span>
                                                                 <span class="n">w</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">(),</span>
                                                                 <span class="n">MMC</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">(),</span>
@@ -680,12 +680,12 @@ DHZJkhLk/wMH/0B6nEvcGwAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">clf</span> <span class="o">=</span> <span class="n">GradientBoostingRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">GradientBoostingRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span>
                                 <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
                                 <span class="n">subsample</span><span class="o">=</span><span class="mf">0.7296635812586656</span><span class="p">,</span>
                                 <span class="n">max_features</span><span class="o">=</span><span class="mf">0.5779758681446561</span><span class="p">,</span>
                                 <span class="n">max_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-                                <span class="n">loss</span><span class="o">=</span><span class="s">&#39;ls&#39;</span><span class="p">)</span>
+                                <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
 
 <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">MMC_train</span><span class="p">,</span> <span class="n">w_train</span><span class="p">)</span>
 </pre></div>
@@ -702,7 +702,7 @@ DHZJkhLk/wMH/0B6nEvcGwAAAABJRU5ErkJggg==
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>GradientBoostingRegressor(alpha=0.9, init=None, learning_rate=0.05, loss=&apos;ls&apos;,
+<pre>GradientBoostingRegressor(alpha=0.9, init=None, learning_rate=0.05, loss=&#39;ls&#39;,
              max_depth=5, max_features=0.577975868145, max_leaf_nodes=None,
              min_samples_leaf=1, min_samples_split=2,
              min_weight_fraction_leaf=0.0, n_estimators=2000,
@@ -731,18 +731,18 @@ DHZJkhLk/wMH/0B6nEvcGwAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">MMC_pred_train</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">MMC_pred_train</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
 <span class="n">MMC_pred_test</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="n">MMC_pred_eval</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_eval</span><span class="p">)</span>
 
 <span class="n">bg_MMC_pred_test</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">bg_X_test</span><span class="p">)</span>
 <span class="n">bg_MMC_pred_eval</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">bg_X_eval</span><span class="p">)</span>
 
-<span class="k">print</span> <span class="s">&quot;MSE on training set:&quot;</span><span class="p">,</span>
+<span class="k">print</span> <span class="s2">&quot;MSE on training set:&quot;</span><span class="p">,</span>
 <span class="k">print</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">MMC_train</span><span class="p">,</span> <span class="n">MMC_pred_train</span><span class="p">,</span> <span class="n">w_train</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&quot;MSE on testing set:&quot;</span><span class="p">,</span>
+<span class="k">print</span> <span class="s2">&quot;MSE on testing set:&quot;</span><span class="p">,</span>
 <span class="k">print</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">MMC_test</span><span class="p">,</span> <span class="n">MMC_pred_test</span><span class="p">,</span> <span class="n">w_test</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&quot;MSE on evaluation set:&quot;</span><span class="p">,</span>
+<span class="k">print</span> <span class="s2">&quot;MSE on evaluation set:&quot;</span><span class="p">,</span>
 <span class="k">print</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">MMC_eval</span><span class="p">,</span> <span class="n">MMC_pred_eval</span><span class="p">,</span> <span class="n">w_eval</span><span class="p">)</span>
 </pre></div>
 
@@ -783,14 +783,14 @@ MSE on evaluation set: 34.3325667757
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">))</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">MMC_eval</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">w_eval</span><span class="p">,</span>
-         <span class="n">label</span><span class="o">=</span><span class="s">&quot;Original MMC&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+         <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Original MMC&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">MMC_pred_eval</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">w_eval</span><span class="p">,</span>
-         <span class="n">label</span><span class="o">=</span><span class="s">&quot;Learned MMC&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;Missing Mass Calculator variable&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&quot;Signal events&quot;</span><span class="p">)</span>
+         <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Learned MMC&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Missing Mass Calculator variable&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Signal events&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1038,14 +1038,14 @@ gg==
 <div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bg_MMC_eval</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">bg_w_eval</span><span class="p">,</span>
-         <span class="n">label</span><span class="o">=</span><span class="s">&quot;Original MMC&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bg_MMC_eval</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">bg_w_eval</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Original MMC&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bg_MMC_pred_eval</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">bg_w_eval</span><span class="p">,</span>
-         <span class="n">label</span><span class="o">=</span><span class="s">&quot;Learned MMC&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
+         <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Learned MMC&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;Missing Mass Calculator variable&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&quot;Background events&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Missing Mass Calculator variable&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Background events&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1341,7 +1341,7 @@ REQkpP5/n0HwoAkenAcAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">mean_and_std</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">mean_and_std</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
     <span class="n">average</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
     <span class="n">variance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">((</span><span class="n">values</span><span class="o">-</span><span class="n">average</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">average</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">))</span>
@@ -1352,15 +1352,15 @@ REQkpP5/n0HwoAkenAcAAAAASUVORK5CYII=
 <span class="n">_</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">w_eval</span><span class="p">,</span>
            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
            <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span>
-           <span class="n">label</span><span class="o">=</span><span class="s">&#39;$\Delta$MMC for Signal&#39;</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$\Delta$MMC for Signal&#39;</span><span class="p">,</span>
            <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">_</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bg_delta</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">bg_w_eval</span><span class="p">,</span>
            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
            <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span>
-           <span class="n">label</span><span class="o">=</span><span class="s">&#39;$\Delta$MMC for Background&#39;</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$\Delta$MMC for Background&#39;</span><span class="p">,</span>
            <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
 <span class="k">print</span> <span class="n">mean_and_std</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">w_eval</span><span class="p">)</span>
 <span class="k">print</span> <span class="n">mean_and_std</span><span class="p">(</span><span class="n">bg_delta</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">bg_w_eval</span><span class="p">)</span>
 </pre></div>

@@ -235,7 +235,7 @@
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">random</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -253,14 +253,14 @@
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">make_search_area</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="n">SIZE</span><span class="p">,</span> <span class="n">treasure</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">)):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_search_area</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="n">SIZE</span><span class="p">,</span> <span class="n">treasure</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">)):</span>
     <span class="n">search_area</span> <span class="o">=</span> <span class="p">{}</span>
 
     <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-            <span class="n">search_area</span><span class="p">[(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)]</span> <span class="o">=</span> <span class="k">False</span>
+            <span class="n">search_area</span><span class="p">[(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)]</span> <span class="o">=</span> <span class="kc">False</span>
         
-    <span class="n">search_area</span><span class="p">[</span><span class="n">treasure</span><span class="p">]</span> <span class="o">=</span> <span class="k">True</span>
+    <span class="n">search_area</span><span class="p">[</span><span class="n">treasure</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">return</span> <span class="n">search_area</span>
 </pre></div>
 
@@ -284,12 +284,12 @@
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">class</span> <span class="nc">Tractor</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Tractor</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">SIZE</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
         
     <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span> <span class="o">==</span> <span class="k">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
     
         <span class="n">n</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">*</span><span class="n">y</span>
@@ -319,7 +319,7 @@
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">class</span> <span class="nc">Hopping</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Hopping</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">SIZE</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
@@ -352,11 +352,11 @@
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">tx</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">ty</span><span class="o">=</span><span class="mi">14</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">tx</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">ty</span><span class="o">=</span><span class="mi">14</span><span class="p">):</span>
     <span class="n">search_area</span> <span class="o">=</span> <span class="n">make_search_area</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">treasure</span><span class="o">=</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">))</span>
     
-    <span class="n">found</span> <span class="o">=</span> <span class="k">False</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="k">None</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">steps</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">while</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
@@ -377,7 +377,7 @@
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">average_search</span><span class="p">(</span><span class="n">Method</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">tx</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span><span class="n">ty</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="mi">14</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">average_search</span><span class="p">(</span><span class="n">Method</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">tx</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span><span class="n">ty</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="mi">14</span><span class="p">):</span>
     <span class="n">steps_</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
         <span class="n">searcher</span> <span class="o">=</span> <span class="n">Method</span><span class="p">()</span>
@@ -397,7 +397,7 @@
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="s">&quot;Hopping took %.2f +- %.3f steps on average.&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">average_search</span><span class="p">(</span><span class="n">Hopping</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="s2">&quot;Hopping took </span><span class="si">%.2f</span><span class="s2"> +- </span><span class="si">%.3f</span><span class="s2"> steps on average.&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">average_search</span><span class="p">(</span><span class="n">Hopping</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -424,7 +424,7 @@
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span> <span class="s">&quot;Tractor took %.2f +- %.3f steps on average.&quot;</span><span class="o">%</span><span class="k">average_search</span>(Tractor,
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="s2">&quot;Tractor took </span><span class="si">%.2f</span><span class="s2"> +- </span><span class="si">%.3f</span><span class="s2"> steps on average.&quot;</span><span class="o">%</span><span class="k">average_search</span>(Tractor,
                                                                    <span class="n">tx</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SIZE</span><span class="p">),</span>
                                                                    <span class="n">ty</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SIZE</span><span class="p">))</span>
 </pre></div>
@@ -475,7 +475,7 @@ $$P(\mathrm{notfound}) = P(\mathrm{notfound \mid there}) \cdot P(\mathrm{there})
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -488,7 +488,7 @@ $$P(\mathrm{notfound}) = P(\mathrm{notfound \mid there}) \cdot P(\mathrm{there})
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>

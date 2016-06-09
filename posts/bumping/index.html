@@ -234,7 +234,7 @@
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
 </div>
@@ -247,7 +247,7 @@
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">457</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
@@ -273,8 +273,8 @@
 <span class="k">def</span> <span class="nf">plot_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&quot;Feature 1&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&quot;Feature 2&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Feature 1&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Feature 2&quot;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span>
@@ -300,7 +300,7 @@
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">X_</span><span class="p">,</span><span class="n">y_</span> <span class="o">=</span> <span class="n">make_chessboard</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">X_</span><span class="p">,</span><span class="n">y_</span> <span class="o">=</span> <span class="n">make_chessboard</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">plot_data</span><span class="p">(</span><span class="n">X_</span><span class="p">,</span><span class="n">y_</span><span class="p">)</span>
 </pre></div>
 
@@ -2129,7 +2129,7 @@ YII=
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">dt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_</span><span class="p">,</span><span class="n">y_</span><span class="p">)</span>
 </pre></div>
 
@@ -2145,10 +2145,10 @@ YII=
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>DecisionTreeClassifier(class_weight=None, criterion=&apos;gini&apos;, max_depth=2,
+<pre>DecisionTreeClassifier(class_weight=None, criterion=&#39;gini&#39;, max_depth=2,
             max_features=None, max_leaf_nodes=None, min_samples_leaf=1,
             min_samples_split=2, min_weight_fraction_leaf=0.0,
-            random_state=None, splitter=&apos;best&apos;)</pre>
+            random_state=None, splitter=&#39;best&#39;)</pre>
 </div>
 
 </div>
@@ -2173,13 +2173,13 @@ YII=
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">visualise_tree</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">visualise_tree</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Draw the decision tree&quot;&quot;&quot;</span>
-    <span class="n">export_graphviz</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="s">&quot;/tmp/tree.dot&quot;</span><span class="p">,</span> 
-                    <span class="n">feature_names</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;Feature 1&quot;</span><span class="p">,</span> <span class="s">&quot;Feature 2&quot;</span><span class="p">])</span>
+    <span class="n">export_graphviz</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="s2">&quot;/tmp/tree.dot&quot;</span><span class="p">,</span> 
+                    <span class="n">feature_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Feature 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Feature 2&quot;</span><span class="p">])</span>
     <span class="o">!</span>dot -Tpng -o /tmp/tree.png /tmp/tree.dot
     <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
-    <span class="k">return</span> <span class="n">Image</span><span class="p">(</span><span class="s">&quot;/tmp/tree.png&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;/tmp/tree.png&quot;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">draw_decision_regions</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Draw samples and decision regions</span>
@@ -2200,7 +2200,7 @@ YII=
     <span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plot_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
     <span class="n">cs</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">RdBu</span><span class="p">)</span>
     
-<span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">axes_style</span><span class="p">(</span><span class="s">&#39;white&#39;</span><span class="p">):</span>
+<span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">axes_style</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">):</span>
     <span class="n">draw_decision_regions</span><span class="p">(</span><span class="n">X_</span><span class="p">,</span><span class="n">y_</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
     
 <span class="n">visualise_tree</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
@@ -4465,7 +4465,7 @@ TkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">ClassifierMixin</span><span class="p">,</span> <span class="n">MetaEstimatorMixin</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">ClassifierMixin</span><span class="p">,</span> <span class="n">MetaEstimatorMixin</span>
 <span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">clone</span>
 <span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="kn">import</span> <span class="n">check_random_state</span>
 
@@ -4493,7 +4493,7 @@ TkSuQmCC
             <span class="n">estimator</span> <span class="o">=</span> <span class="n">clone</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">)</span>
             <span class="n">estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">indices</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">indices</span><span class="p">])</span>
           
-            <span class="c"># performance is measured on all samples</span>
+            <span class="c1"># performance is measured on all samples</span>
             <span class="n">score</span> <span class="o">=</span> <span class="n">estimator</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="n">best_score</span><span class="p">:</span>
                 <span class="n">best_score</span> <span class="o">=</span> <span class="n">score</span>
@@ -4525,8 +4525,8 @@ TkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s">&#39;I5Zk2vUmjpk&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;I5Zk2vUmjpk&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -4573,7 +4573,7 @@ TkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">bumper</span> <span class="o">=</span> <span class="n">Bumper</span><span class="p">(</span><span class="n">n_bumps</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">5572</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">bumper</span> <span class="o">=</span> <span class="n">Bumper</span><span class="p">(</span><span class="n">n_bumps</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">5572</span><span class="p">)</span>
 <span class="n">bumper</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_</span><span class="p">,</span><span class="n">y_</span><span class="p">)</span>
 
 <span class="n">draw_decision_regions</span><span class="p">(</span><span class="n">X_</span><span class="p">,</span><span class="n">y_</span><span class="p">,</span> <span class="n">bumper</span><span class="o">.</span><span class="n">best_estimator_</span><span class="p">)</span>
@@ -6927,7 +6927,7 @@ pwgR2AUCgUAgOEWIwC4QCAQCwSlCBHaBQCAQCE4R/x9IJ9aXqiY7RAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">X4by4</span><span class="p">,</span><span class="n">y4by4</span> <span class="o">=</span> <span class="n">make_chessboard</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">X4by4</span><span class="p">,</span><span class="n">y4by4</span> <span class="o">=</span> <span class="n">make_chessboard</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span>
                               <span class="n">xbins</span><span class="o">=</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">1.</span><span class="p">),</span>
                               <span class="n">ybins</span><span class="o">=</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">1.</span><span class="p">)</span>
                              <span class="p">)</span>
@@ -6938,7 +6938,7 @@ pwgR2AUCgUAgOEWIwC4QCAQCwSlCBHaBQCAQCE4R/x9IJ9aXqiY7RAAAAABJRU5ErkJggg==
 <span class="n">bumper2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X4by4</span><span class="p">,</span><span class="n">y4by4</span><span class="p">)</span>
 
 
-<span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">axes_style</span><span class="p">(</span><span class="s">&#39;white&#39;</span><span class="p">):</span>
+<span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">axes_style</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">):</span>
     <span class="n">draw_decision_regions</span><span class="p">(</span><span class="n">X4by4</span><span class="p">,</span><span class="n">y4by4</span><span class="p">,</span>
                           <span class="n">bumper2</span><span class="o">.</span><span class="n">best_estimator_</span><span class="p">)</span>
 <span class="n">visualise_tree</span><span class="p">(</span><span class="n">bumper2</span><span class="o">.</span><span class="n">best_estimator_</span><span class="p">)</span>

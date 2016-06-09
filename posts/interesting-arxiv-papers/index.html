@@ -236,7 +236,7 @@
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
 </div>
@@ -249,7 +249,7 @@
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">datetime</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 
 <span class="kn">import</span> <span class="nn">nltk</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -290,9 +290,9 @@
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">store</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">HDFStore</span><span class="p">(</span><span class="s">&quot;/Users/thead/git/arxiv-experiments/hep-ex.h5&quot;</span><span class="p">)</span>
-<span class="c">#store[&#39;df&#39;] = df</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">store</span><span class="p">[</span><span class="s">&#39;df&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">store</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">HDFStore</span><span class="p">(</span><span class="s2">&quot;/Users/thead/git/arxiv-experiments/hep-ex.h5&quot;</span><span class="p">)</span>
+<span class="c1">#store[&#39;df&#39;] = df</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">store</span><span class="p">[</span><span class="s1">&#39;df&#39;</span><span class="p">]</span>
 <span class="n">store</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 
@@ -319,14 +319,14 @@
 <div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">end_of_2014</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">31</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s">&#39;cites_per_day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">citation_count</span> <span class="o">/</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">end_of_2014</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">31</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;cites_per_day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">citation_count</span> <span class="o">/</span>
                        <span class="p">((</span><span class="n">end_of_2014</span> <span class="o">-</span> <span class="n">df</span><span class="o">.</span><span class="n">created</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000000000</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3600</span><span class="o">*</span><span class="mi">24</span><span class="p">)))</span>
 
 <span class="n">df</span><span class="o">.</span><span class="n">cites_per_day</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.5</span><span class="p">),</span>
-                      <span class="n">normed</span><span class="o">=</span><span class="k">True</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="k">True</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s">&#39;step&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;Citations per day&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;Arbitrary units&quot;</span><span class="p">)</span>
+                      <span class="n">normed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Citations per day&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Arbitrary units&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -557,8 +557,8 @@ QmCC
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">threshold</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">cites_per_day</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.9</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s">&#39;Y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">cites_per_day</span><span class="o">&gt;</span><span class="n">threshold</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">threshold</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">cites_per_day</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.9</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">cites_per_day</span><span class="o">&gt;</span><span class="n">threshold</span>
 </pre></div>
 
 </div>
@@ -571,7 +571,7 @@ QmCC
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">df</span><span class="o">.</span><span class="n">Y</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Y</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -614,7 +614,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">class</span> <span class="nc">ColumnExtractor</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ColumnExtractor</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Extract a column from a pandas.DataFrame</span>
 <span class="sd">        </span>
@@ -624,14 +624,14 @@ dtype: float64</pre>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">column</span> <span class="o">=</span> <span class="n">column</span>
 
-    <span class="k">def</span> <span class="nf">fit_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">fit_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">X</span><span class="p">[:,</span><span class="bp">self</span><span class="o">.</span><span class="n">column</span><span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span>
         
 
@@ -671,18 +671,18 @@ demonstration on a bit of nonsense text:</p>
 <div class="prompt input_prompt">In&nbsp;[103]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">train</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;hello world world tiger bunny hopping&quot;</span><span class="p">,</span>
-         <span class="s">&quot;tiger world&quot;</span><span class="p">]</span>
-<span class="n">test</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;hello world world tiger tiger&quot;</span><span class="p">,</span>
-        <span class="s">&quot;bunny hopping camel&quot;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hello world world tiger bunny hopping&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;tiger world&quot;</span><span class="p">]</span>
+<span class="n">test</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hello world world tiger tiger&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bunny hopping camel&quot;</span><span class="p">]</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
-<span class="c"># learn this vocabulary, with 5 unique tokens</span>
-<span class="c"># the vectorizer will produce a 5D vector when</span>
-<span class="c"># transforming text</span>
+<span class="c1"># learn this vocabulary, with 5 unique tokens</span>
+<span class="c1"># the vectorizer will produce a 5D vector when</span>
+<span class="c1"># transforming text</span>
 <span class="n">c</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
-<span class="c"># this is the mapping of token to dimension</span>
+<span class="c1"># this is the mapping of token to dimension</span>
 <span class="nb">print</span> <span class="n">c</span><span class="o">.</span><span class="n">vocabulary_</span>
-<span class="c"># tokenise new text and display the 5D vector</span>
+<span class="c1"># tokenise new text and display the 5D vector</span>
 <span class="n">c</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
 </pre></div>
 
@@ -696,7 +696,7 @@ demonstration on a bit of nonsense text:</p>
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{u&apos;tiger&apos;: 3, u&apos;world&apos;: 4, u&apos;hello&apos;: 1, u&apos;hopping&apos;: 2, u&apos;bunny&apos;: 0}
+<pre>{u&#39;tiger&#39;: 3, u&#39;world&#39;: 4, u&#39;hello&#39;: 1, u&#39;hopping&#39;: 2, u&#39;bunny&#39;: 0}
 </pre>
 </div>
 </div>
@@ -743,7 +743,7 @@ found in a large number of documents, thereby giving them less weight.</p>
 <div class="prompt input_prompt">In&nbsp;[89]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">t</span> <span class="o">=</span> <span class="n">TfidfTransformer</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">TfidfTransformer</span><span class="p">()</span>
 <span class="n">t</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">train</span><span class="p">))</span>
 <span class="nb">print</span> <span class="n">t</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test</span><span class="p">))</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
 </pre></div>
@@ -787,31 +787,31 @@ numbers, only words.</p>
 <div class="prompt input_prompt">In&nbsp;[94]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c"># pretty names for the dataframe column indices </span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># pretty names for the dataframe column indices </span>
 <span class="n">TITLE</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">ABSTRACT</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="c"># sub-pipeline for extracting the abstract</span>
-<span class="n">vect</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s">&#39;english&#39;</span><span class="p">,</span>
-                       <span class="n">token_pattern</span><span class="o">=</span><span class="s">u&#39;(?u)</span><span class="se">\\</span><span class="s">b[A-z][A-z]+</span><span class="se">\\</span><span class="s">b&#39;</span><span class="p">)</span>
-<span class="n">abstract_pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([(</span><span class="s">&#39;abstracts&#39;</span><span class="p">,</span> <span class="n">ColumnExtractor</span><span class="p">(</span><span class="n">ABSTRACT</span><span class="p">)),</span>
-                          <span class="p">(</span><span class="s">&#39;vect&#39;</span><span class="p">,</span> <span class="n">vect</span><span class="p">),</span>
-                          <span class="p">(</span><span class="s">&#39;tfidf&#39;</span><span class="p">,</span> <span class="n">TfidfTransformer</span><span class="p">())</span>
+<span class="c1"># sub-pipeline for extracting the abstract</span>
+<span class="n">vect</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span>
+                       <span class="n">token_pattern</span><span class="o">=</span><span class="s1">u&#39;(?u)</span><span class="se">\\</span><span class="s1">b[A-z][A-z]+</span><span class="se">\\</span><span class="s1">b&#39;</span><span class="p">)</span>
+<span class="n">abstract_pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([(</span><span class="s1">&#39;abstracts&#39;</span><span class="p">,</span> <span class="n">ColumnExtractor</span><span class="p">(</span><span class="n">ABSTRACT</span><span class="p">)),</span>
+                          <span class="p">(</span><span class="s1">&#39;vect&#39;</span><span class="p">,</span> <span class="n">vect</span><span class="p">),</span>
+                          <span class="p">(</span><span class="s1">&#39;tfidf&#39;</span><span class="p">,</span> <span class="n">TfidfTransformer</span><span class="p">())</span>
                           <span class="p">])</span>
 
-<span class="c"># sub-pipeline for extracting the title</span>
-<span class="n">title_pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([(</span><span class="s">&#39;title&#39;</span><span class="p">,</span> <span class="n">ColumnExtractor</span><span class="p">(</span><span class="n">TITLE</span><span class="p">)),</span>
-                       <span class="p">(</span><span class="s">&#39;vect&#39;</span><span class="p">,</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s">&#39;english&#39;</span><span class="p">,</span>
-                                                <span class="n">token_pattern</span><span class="o">=</span><span class="s">u&#39;(?u)</span><span class="se">\\</span><span class="s">b[A-z][A-z]+</span><span class="se">\\</span><span class="s">b&#39;</span><span class="p">)),</span>
-                       <span class="p">(</span><span class="s">&#39;tfidf&#39;</span><span class="p">,</span> <span class="n">TfidfTransformer</span><span class="p">())</span>
+<span class="c1"># sub-pipeline for extracting the title</span>
+<span class="n">title_pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="n">ColumnExtractor</span><span class="p">(</span><span class="n">TITLE</span><span class="p">)),</span>
+                       <span class="p">(</span><span class="s1">&#39;vect&#39;</span><span class="p">,</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span>
+                                                <span class="n">token_pattern</span><span class="o">=</span><span class="s1">u&#39;(?u)</span><span class="se">\\</span><span class="s1">b[A-z][A-z]+</span><span class="se">\\</span><span class="s1">b&#39;</span><span class="p">)),</span>
+                       <span class="p">(</span><span class="s1">&#39;tfidf&#39;</span><span class="p">,</span> <span class="n">TfidfTransformer</span><span class="p">())</span>
                        <span class="p">])</span>
-<span class="c"># combined pipeline</span>
-<span class="n">text_clf</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([(</span><span class="s">&#39;features&#39;</span><span class="p">,</span> <span class="n">FeatureUnion</span><span class="p">([(</span><span class="s">&#39;abstract&#39;</span><span class="p">,</span> <span class="n">abstract_pipe</span><span class="p">),</span>
-                                                <span class="p">(</span><span class="s">&#39;title&#39;</span><span class="p">,</span> <span class="n">title_pipe</span><span class="p">)])),</span>
-                     <span class="p">(</span><span class="s">&#39;clf&#39;</span><span class="p">,</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">SGDClassifier</span><span class="p">())</span>
-                     <span class="c"># use DummyClassifier to convince yourself we do better</span>
-                     <span class="c"># than pure luck</span>
-                     <span class="c">#(&#39;clf&#39;, dummy.DummyClassifier())</span>
+<span class="c1"># combined pipeline</span>
+<span class="n">text_clf</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([(</span><span class="s1">&#39;features&#39;</span><span class="p">,</span> <span class="n">FeatureUnion</span><span class="p">([(</span><span class="s1">&#39;abstract&#39;</span><span class="p">,</span> <span class="n">abstract_pipe</span><span class="p">),</span>
+                                                <span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="n">title_pipe</span><span class="p">)])),</span>
+                     <span class="p">(</span><span class="s1">&#39;clf&#39;</span><span class="p">,</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">SGDClassifier</span><span class="p">())</span>
+                     <span class="c1"># use DummyClassifier to convince yourself we do better</span>
+                     <span class="c1"># than pure luck</span>
+                     <span class="c1">#(&#39;clf&#39;, dummy.DummyClassifier())</span>
                      <span class="p">])</span>
 </pre></div>
 
@@ -835,8 +835,8 @@ numbers, only words.</p>
 <div class="prompt input_prompt">In&nbsp;[95]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">scores</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">cross_val_score</span><span class="p">(</span><span class="n">text_clf</span><span class="p">,</span> <span class="n">X_dev</span><span class="p">,</span> <span class="n">y_dev</span><span class="p">,</span>
-                                          <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s">&#39;roc_auc&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">cross_val_score</span><span class="p">(</span><span class="n">text_clf</span><span class="p">,</span> <span class="n">X_dev</span><span class="p">,</span> <span class="n">y_dev</span><span class="p">,</span>
+                                          <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
 <span class="n">scores</span>
 </pre></div>
 
@@ -879,18 +879,18 @@ to perform best.</p>
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">&#39;features__title__vect__max_df&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="c">#1.0 is best it seems</span>
-    <span class="c">#&#39;features__title__vect__min_df&#39;: (0.0, 0.25, 0.5, 0.75), #0.0 seems best</span>
-    <span class="c">##&#39;vect__max_features&#39;: (None, 5000, 10000, 50000), #no limit wins</span>
-    <span class="c">#&#39;features__abstract__vect__ngram_range&#39;: ((1, 1), (1, 2)),  # unigrams or bigrams, bigrams win</span>
-    <span class="s">&#39;features__title__vect__ngram_range&#39;</span><span class="p">:</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>  <span class="c"># unigrams or bigrams,</span>
-    <span class="c">##&#39;tfidf__use_idf&#39;: (True, False),</span>
-    <span class="c">##&#39;tfidf__norm&#39;: (&#39;l1&#39;, &#39;l2&#39;),</span>
-    <span class="c">#&#39;clf__loss&#39;: (&#39;hinge&#39;, &#39;log&#39;,), #log wins</span>
-    <span class="c">#&#39;clf__alpha&#39;: (1e-4, 1e-5, 1e-6, 1e-7), #alpha 1e-5</span>
-    <span class="c">##&#39;clf__penalty&#39;: (&#39;l1&#39;, &#39;l2&#39;, &#39;elasticnet&#39;), #l2</span>
-    <span class="c">##&#39;clf__n_iter&#39;: (10, 50, 80),</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;features__title__vect__max_df&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="c1">#1.0 is best it seems</span>
+    <span class="c1">#&#39;features__title__vect__min_df&#39;: (0.0, 0.25, 0.5, 0.75), #0.0 seems best</span>
+    <span class="c1">##&#39;vect__max_features&#39;: (None, 5000, 10000, 50000), #no limit wins</span>
+    <span class="c1">#&#39;features__abstract__vect__ngram_range&#39;: ((1, 1), (1, 2)),  # unigrams or bigrams, bigrams win</span>
+    <span class="s1">&#39;features__title__vect__ngram_range&#39;</span><span class="p">:</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>  <span class="c1"># unigrams or bigrams,</span>
+    <span class="c1">##&#39;tfidf__use_idf&#39;: (True, False),</span>
+    <span class="c1">##&#39;tfidf__norm&#39;: (&#39;l1&#39;, &#39;l2&#39;),</span>
+    <span class="c1">#&#39;clf__loss&#39;: (&#39;hinge&#39;, &#39;log&#39;,), #log wins</span>
+    <span class="c1">#&#39;clf__alpha&#39;: (1e-4, 1e-5, 1e-6, 1e-7), #alpha 1e-5</span>
+    <span class="c1">##&#39;clf__penalty&#39;: (&#39;l1&#39;, &#39;l2&#39;, &#39;elasticnet&#39;), #l2</span>
+    <span class="c1">##&#39;clf__n_iter&#39;: (10, 50, 80),</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -904,16 +904,16 @@ to perform best.</p>
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">grid</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">text_clf</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span>
-                                <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="c">#verbose=1,</span>
-                                <span class="n">scoring</span><span class="o">=</span><span class="s">&#39;roc_auc&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">text_clf</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span>
+                                <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="c1">#verbose=1,</span>
+                                <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
 <span class="n">grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_dev</span><span class="p">,</span> <span class="n">y_dev</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s">&quot;Best score: %0.3f&quot;</span><span class="o">%</span><span class="k">grid</span>.best_score_)
-<span class="nb">print</span><span class="p">(</span><span class="s">&quot;Best parameters set:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best score: </span><span class="si">%0.3f</span><span class="s2">&quot;</span><span class="o">%</span><span class="k">grid</span>.best_score_)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best parameters set:&quot;</span><span class="p">)</span>
 <span class="n">best_parameters</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">param_name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">parameters</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\t</span><span class="s">%s: %r&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">param_name</span><span class="p">,</span> <span class="n">best_parameters</span><span class="p">[</span><span class="n">param_name</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">%s</span><span class="s2">: </span><span class="si">%r</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">param_name</span><span class="p">,</span> <span class="n">best_parameters</span><span class="p">[</span><span class="n">param_name</span><span class="p">]))</span>
 </pre></div>
 
 </div>
@@ -938,18 +938,18 @@ successful as the performance is only slightly better than the default set.</p>
 <div class="prompt input_prompt">In&nbsp;[96]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">best_parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;clf__alpha&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">05</span><span class="p">,</span>
-                   <span class="s">&#39;clf__class_weight&#39;</span><span class="p">:</span> <span class="s">&#39;auto&#39;</span><span class="p">,</span>
-                   <span class="s">&#39;clf__penalty&#39;</span><span class="p">:</span> <span class="s">&#39;l2&#39;</span><span class="p">,</span>
-                   <span class="s">&#39;clf__loss&#39;</span><span class="p">:</span> <span class="s">&#39;log&#39;</span><span class="p">,</span>
-                   <span class="s">&#39;features__abstract__vect__ngram_range&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-                   <span class="s">&#39;features__title__vect__ngram_range&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-                   <span class="s">&#39;features__title__vect__max_df&#39;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">best_parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;clf__alpha&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">05</span><span class="p">,</span>
+                   <span class="s1">&#39;clf__class_weight&#39;</span><span class="p">:</span> <span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;clf__penalty&#39;</span><span class="p">:</span> <span class="s1">&#39;l2&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;clf__loss&#39;</span><span class="p">:</span> <span class="s1">&#39;log&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;features__abstract__vect__ngram_range&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+                   <span class="s1">&#39;features__title__vect__ngram_range&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+                   <span class="s1">&#39;features__title__vect__max_df&#39;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span>
                    <span class="p">}</span>
 
 <span class="n">text_clf</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="o">**</span><span class="n">best_parameters</span><span class="p">)</span>
 <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">cross_val_score</span><span class="p">(</span><span class="n">text_clf</span><span class="p">,</span> <span class="n">X_eval</span><span class="p">,</span> <span class="n">y_eval</span><span class="p">,</span>
-                                          <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s">&#39;roc_auc&#39;</span><span class="p">)</span>
+                                          <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
 <span class="n">scores</span>
 </pre></div>
 
@@ -989,22 +989,22 @@ successful as the performance is only slightly better than the default set.</p>
 <div class="prompt input_prompt">In&nbsp;[97]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">cv</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">y_dev</span><span class="p">,</span> <span class="n">n_folds</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cv</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">y_dev</span><span class="p">,</span> <span class="n">n_folds</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cv</span><span class="p">):</span>
     <span class="n">probas_</span> <span class="o">=</span> <span class="n">text_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_dev</span><span class="p">[</span><span class="n">train</span><span class="p">],</span> <span class="n">y_dev</span><span class="p">[</span><span class="n">train</span><span class="p">])</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_dev</span><span class="p">[</span><span class="n">test</span><span class="p">])</span>
-    <span class="c"># Compute ROC curve and area under the curve</span>
+    <span class="c1"># Compute ROC curve and area under the curve</span>
     <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_dev</span><span class="p">[</span><span class="n">test</span><span class="p">],</span> <span class="n">probas_</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
     <span class="n">roc_auc</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;ROC fold %d (area = %0.2f)&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">roc_auc</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ROC fold </span><span class="si">%d</span><span class="s1"> (area = </span><span class="si">%0.2f</span><span class="s1">)&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">roc_auc</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Luck&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Luck&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;False Positive Rate&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;True Positive Rate&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;Receiver operating characteristic&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&quot;lower right&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;False Positive Rate&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;True Positive Rate&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Receiver operating characteristic&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -1461,10 +1461,10 @@ the number of interesting ones. This means if you tuned the decision threshold t
 <div class="prompt input_prompt">In&nbsp;[101]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">fake</span> <span class="o">=</span> <span class="mi">90</span><span class="o">*</span><span class="mf">0.2</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fake</span> <span class="o">=</span> <span class="mi">90</span><span class="o">*</span><span class="mf">0.2</span>
 <span class="n">real</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="mf">0.7</span>
-<span class="nb">print</span> <span class="s">&quot;true positives: {} false positives: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">real</span><span class="p">,</span> <span class="n">fake</span><span class="p">)</span>
-<span class="nb">print</span> <span class="s">&quot;Chance of reading something interesting: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">real</span><span class="o">/</span><span class="p">(</span><span class="n">fake</span><span class="o">+</span><span class="n">real</span><span class="p">))</span>
+<span class="nb">print</span> <span class="s2">&quot;true positives: </span><span class="si">{}</span><span class="s2"> false positives: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">real</span><span class="p">,</span> <span class="n">fake</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s2">&quot;Chance of reading something interesting: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">real</span><span class="o">/</span><span class="p">(</span><span class="n">fake</span><span class="o">+</span><span class="n">real</span><span class="p">))</span>
 </pre></div>
 
 </div>
