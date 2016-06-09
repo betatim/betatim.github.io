@@ -315,7 +315,7 @@ of parts of reads overlapping. This is a good thing. These overlaps
 is what will allow us to piece everything back together. Read more
 about <a href="https://en.wikipedia.org/wiki/Shotgun_sequencing">Shotgun sequencing</a></p>
 <p><em>NB:</em> Today most real world sequencing is done using <a href="https://en.wikipedia.org/wiki/Shotgun_sequencing#Whole_genome_shotgun_sequencing">"double barrel"
-shotguns</a>. The key realisation is thhat you can create reads from both ends of
+shotguns</a>. The key realisation is that you can create reads from both ends of
 a fragment of the genome. This way you gain some information about the
 direction of the reads relative to each other and how far they are apart.</p>
 <p>Next each read is turned into a <a href="https://en.wikipedia.org/wiki/K-mer"><code>k-mer</code></a>.
@@ -407,7 +407,7 @@ print(len(kmers_), len(set(kmers_)))
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We still generate roughly 20000 <code>k-mers</code> but now there are
 three times as many unique <code>k-mers</code>. This is one of the factors
-that mkes assembling a genome so hard.</p>
+that makes assembling a genome so hard.</p>
 <p>So now that we have a super simplistic model for generating
 <code>k-mers</code>, how do we put them back together?</p>
 
