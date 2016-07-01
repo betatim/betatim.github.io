@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
+
+    <title>An Improbable Afternoon - Tim Head</title>
+
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/default.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-49540142-1', 'betatim.github.io');
+      ga('send', 'pageview');
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+
+    <!-- <script type="text/javascript" src="/interactive/main-built.js" charset="utf-8"></script>-->
+    <script type="text/javascript" src="https://cdn.rawgit.com/oreillymedia/thebe/17fe0971303cac24d7e806c8f1bc8ba3c0c40b23/static/main-built.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.min.css">
+    <script>
+      $(function(){
+	      new Thebe({url:"https://tmpnb.org/",
+		      kernel_name: "python3",
+		      load_mathjax: false,
+		      container_selector: "div.entry-content"});
+      });
+    </script>
+
+    <!-- extra stuff for nbconvert -->
+    <!-- extra stuff for nbconvert -->
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/javascript">
+      init_mathjax = function() {
+      if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+        },
+        displayAlign: 'left', // Change this to 'center' to center equations.
+        "HTML-CSS": {
+          styles: {'.MathJax_Display': {"margin": 0}}
+        }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+      }
+      }
+      init_mathjax();
+    </script>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <style>
+      .cell {
+      margin-top: 22px;
+      margin-bottom: 11px;
+      }
+      .text_cell_render {
+      padding: 0;
+      }
+      .title {
+      border-left: 7px solid #eee;
+      padding: 10px 10px 10px 23px;
+      margin-left: -30px;
+      }
+      .when {
+      padding-top: 5px;
+      text-transform: uppercase;
+      color: #777;
+      }
+      .entry-content img {
+      border-radius: 4px;
+      }
+      .navbar {
+      margin: 75px 0 25px 0;
+      }
+      .footer {
+      margin: 100px 0 25px 0;
+      border-top: 1px solid transparent;
+      border-color: #eee;
+      }
+      .powered-by {
+      padding: 15px;
+      float: right;
+      }
+      .social {
+      padding: 15px;
+      float: left;
+      }
+      .social i {
+      padding-left: 15px;
+      }
+      .social a {
+      color: black;
+      transition: all 0.25s ease-in;
+      -webkit-transition: all 0.25s ease-in;
+      }
+      .social a:hover {
+      text-shadow: 0 0 15px #000;
+      }
+      .listing span {
+      float: right;
+      text-transform: uppercase;
+      }
+      .listing li {
+      list-style-type: none;
+      }
+      .navbar a {
+      transition: color 0.5s ease-in;
+      -webkit-transition: color 0.5s ease-in;
+      }
+      .navbar li a {
+      font-weight: bold;
+      }
+      .navbar a {
+      text-transform: uppercase
+      }
+      div.prompt {
+      display: none;
+      }
+      div.thebe_controls {
+      margin-top: 5px;
+      margin-bottom: 20px;
+      }
+      div.thebe_controls button {
+      background-color: #eaeaea;
+      font-size: 1em;
+      padding: 5px 20px;
+      }
+      div.kernel_controls {
+      padding: 20px;
+      background: rgba(200, 200, 200, 0.4);
+      max-width: 600px;
+      text-align: center;
+      margin: 10px auto;
+      }
+      div.cell div.thebe_wrap div.input {
+      border: 1px solid #c8c8c8;
+      padding: 10px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+	<div class="col-md-8 col-md-offset-2">
+	  <nav class="navbar navbar-default" role="navigation">
+	    
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand name" href="http://betatim.github.io/">Tim<b>Head</b></a>
+	    </div>
+	    <div class="collapse navbar-collapse navbar-right">
+	      <ul class="nav navbar-nav">
+		<!-- <li><a href="#">Notes</a></li> -->
+		<!-- <li><a href="#">Talks</a></li> -->
+                         <li><a href="/pages/about.html">
+                             About
+                         </a></li>
+                         <li><a href="/pages/science.html">
+                             Science
+                         </a></li>
+                         <li><a href="/pages/sports.html">
+                             Sports
+                         </a></li>
+	      </ul>
+	    </div>
+	    
+	  </nav>  
+	</div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="col-md-8 col-md-offset-2">
+    <section id="content">
+        <article>
+            <header class="title">
+                <h1>
+                    <!--<a href="http://betatim.github.io/posts/improbable-afternoon/"
+                       rel="bookmark"
+                       title="Permalink to An Improbable Afternoon">
+                        An Improbable Afternoon
+                    </a>-->
+		    An Improbable Afternoon
+                </h1>
+		<div class="when">01 July 2016</div>
+            </header>
+            <div class="entry-content">
+                <p>
+<div class="cellOOO border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Spend an afternoon understanding these seemingly magical algorithms.</p>
+<p>This post covers a few probabilistic data structures in python. Each of them
+deals with counting things in one form or another (how many unique items,
+is an item present, how many of each have we seen, etc).</p>
+<p>The idea behind these
+probabilistic data structures is that you can use a lot less memory to
+perform each task if you are happy to get an estimate instead of a precise
+answer. At first this sounds like it would make your life more difficult,
+but often it turns out to allow you to do things that were impossible
+before.</p>
+<h2 id="Call-me,-...-maybe">Call me, ... maybe<a class="anchor-link" href="#Call-me,-...-maybe">&#182;</a></h2><p>The theme tune you should be listening to for this post (because the Tour
+starts in a few days):</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+from IPython.display import VimeoVideo
+VimeoVideo(48756378)
+</pre>
+
+<div class="cellOOO border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Old-School-Spellchecking">Old School Spellchecking<a class="anchor-link" href="#Old-School-Spellchecking">&#182;</a></h2><p>A famous example of using probabilistic data structures is the following:
+How would you implement a (fast) spellchecker if there are more words in
+your dictionary than you have RAM? In the early days of computers this
+was the case. The slow solution is to search your on disk dictionary
+for each word in the document. A faster solution is to be able to quickly
+rule out words that are definitely not in the dictionary, and only going
+to disk for the words you think might be in the dictionary. This is what
+the <a href="#bloom-filter">Bloom filter</a> was invented for.</p>
+<h2 id="Contents">Contents<a class="anchor-link" href="#Contents">&#182;</a></h2><p>These four data structures are definitely covered in this post:</p>
+<ul>
+<li>Bloom filters ✔︎</li>
+<li>Count-min sketch ✔︎</li>
+<li>MinHash (not done yet)</li>
+<li>HyperLogLog ✔︎</li>
+</ul>
+<p><strong>Word of warning:</strong> I tried to keep the implementations as simple as
+possible. The goal was to make it as easy to understand what was going
+on as possible. There are several optimisations you can apply if you
+want to use these at scale. Please find yourself a good, well tested
+implementation somewhere else if you want to use these in production.</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+%config InlineBackend.figure_format='retina'
+%matplotlib inline
+</pre>
+
+<pre data-executable>
+import random
+random.seed(12345)
+from collections import Counter
+import string
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+from sklearn.utils import murmurhash3_32
+from sklearn.utils import check_random_state
+
+
+# python's builtin hash function isn't even approximately random
+def hash_(n, seed=1):
+    return murmurhash3_32(n, seed=seed, positive=True)
+</pre>
+
+<div class="cellOOO border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Do-I-know-you?">Do I know you?<a class="anchor-link" href="#Do-I-know-you?">&#182;</a></h2><p>The simplest form of keeping track of items you have seen is to create
+a list to which you add each new item. The good news is that this is easy
+to implement, you can check if you have seen <code>X</code> and answer the
+question "What are all the items you have seen?". The bad news is that you need
+to have enough memory to store each new, unique item.</p>
+<p>Answering the question "Have I seen <code>X</code>
+before?" does not require you to store every item you have seen though! Instead
+you can use a list of <code>m</code> bits and some method to convert an item into
+an index into that list. So when you see <code>X</code> you calculate the position
+<code>i</code> in the list corresponding to the item and turn on the bit there.</p>
+<p>To find out if you have seen <code>X</code> before you calculate the index <code>i</code> and
+check if the bit there is turned on or off. Simplez.</p>
+<blockquote><h3 id="Hash-functions">Hash functions<a class="anchor-link" href="#Hash-functions">&#182;</a></h3><p>How to turn an item into an index? A hash function. There are many different hash
+functions for many different tasks. One thing you can do with them is to "summarise"
+an item in a single number. For example <code>hash('hello world') -&gt; 6355</code> and <code>hash('hello world!') -&gt; 2359</code>.
+We can now use this number as our index.</p>
+</blockquote>
+<p>The eagle-eyed will have spotted a caveat with this approach: What if
+two different items <code>X</code> and <code>Y</code> end up producing the same index <code>i</code>? This
+could happen either because their hash is the same or because we only have
+<code>m</code> entries in our list.</p>
+<p>This is why it is called a probabilistic data structure. We summarise items
+and keep track of counts with a small number of bits. This means we might
+make a mistake. In thise particular case you can see that increasing <code>m</code>
+(for a given number of unique items) controls how likely you are to make
+a mistake. If you make <code>m</code> very small you need hardly any memory and make
+mistakes all the time. If you make <code>m</code> very large you will use as much
+as if you stored every item and make nearly no mistakes.</p>
+<h2 id="Multiple-hashes">Multiple hashes<a class="anchor-link" href="#Multiple-hashes">&#182;</a></h2><p>It turns out you can do better than using <code>m</code> bits and one hash function
+without increasing the amount of memory you use. The trick is to use
+<code>k</code> different hash functions which turn on bits in the same list of length
+<code>m</code>. To check if an item has been seen you check if all <code>k</code> positions are
+turned on. If one of them is off you know you did not see this item.</p>
+<p>A simple way of understanding why this approach does better than using
+one hash function is to think of each hash function as a member of a
+crowd. The reason for the crowd of hash functions doing better than
+a single one of them is the same why a crowd does better at estimating
+the weight of a cow. You are averaging several independent estimates.</p>
+<h2 id="The-Bloom-filter">The Bloom filter<a class="anchor-link" href="#The-Bloom-filter">&#182;</a></h2><p>This then is the <code>BloomFilter</code>: an array of <code>m</code> bits and <code>k</code> hash functions.
+Membership testing without knowing who is a member! Sounds crazy, but
+this does actually work.</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+class BloomFilter:
+    def __init__(self, m, k, random_state=None):
+        # k hash functions and m bits
+        self.m = m
+        self.rng = check_random_state(random_state)
+        self.bits = np.zeros(m, dtype=bool)
+        r = self.rng.randint(1e9)
+        self.k = [r + k for k in range(1, k+1)]
+
+    def add(self, val):
+        for i in self.k:
+            idx = hash_(val, i) % self.m
+            self.bits[idx] = True
+
+    def __contains__(self, val):
+        for i in self.k:
+            if not self.bits[hash_(val, i) % self.m]:
+                return False
+            
+        return True
+    
+    def entries(self):
+        """Approximate number of entries."""
+        X = np.sum(self.bits)
+        return -(self.m / float(len(self.k))) * np.log(1 - X/self.m)
+</pre>
+
+<div class="cellOOO border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's take it for a ride. We create a <code>BloomFilter</code> with a memory of 15000 bits
+and 20 hash functions. Then fill it with 1000 random numbers. Afterwards we check
+which fraction of the numbers we have seen previously is recognised by the
+<code>BloomFilter</code>. We also check what fraction of previously unseen numbers
+are incorrectly assumed to be a member.</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+b = BloomFilter(15000, 20)
+
+def fill(B, n_test=1000, upper=1e9, exact=False):
+    if exact:
+        exact_ = set()
+
+    for n in range(n_test):
+        r = np.random.randint(upper)
+        B.add(r)
+        if exact:
+            exact_.add(r)
+            
+    if exact:
+        return exact_
+    
+exact = fill(b, exact=True)
+
+n_true = 0
+for e in exact:
+    if e in b:
+        n_true += 1
+
+def fakes(B, n_test=1000, upper=1e9):
+    n_fake = 0
+    for e in np.random.randint(upper, size=n_test):
+        if int(e) in B:
+            n_fake += 1
+            
+    return n_fake / n_test
+        
+print('True positive rate: %.3f False positive rate: %.3f.' % (n_true / len(exact),
+                                                               fakes(b)))
+</pre>
+
+<div class="cellOOO border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Below a small illustration how the false positive rate changes
+with the size of the bloom filter. As expected, the more memory
+you allocate the smaller the false positive rate. For a given
+size of bloom filter, the false positive rate gets worse as
+the number of values stored increases. The legend shows the
+true number of entries as well as the estimated number of
+entries in brackets.</p>
+<p>The second figure investigates the behaviour as a function
+of the number of hash functions at fixed bloom filter size.</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+sizes = np.arange(5000, 40000, step=2000)
+
+for n_test in (1500, 3000, 4500):
+    fake_rate = []
+    for size in sizes:
+        b = BloomFilter(size, 20)
+        fill(b, n_test=n_test)
+        fake_rate.append(fakes(b, n_test=10000))
+
+    plt.plot(sizes, fake_rate, label='%i (%f.1) entries' % (n_test, b.entries()))
+
+plt.legend(loc='best')
+plt.xlabel('Bloom filter size [bits]')
+plt.ylabel('False positive rate')
+</pre>
+
+<pre data-executable>
+for n_test in (2500, 3000, 3500):
+    hash_funs = np.arange(1, 20)
+    fake_rate = []
+    for k in hash_funs:
+        b = BloomFilter(22000, k)
+        fill(b, n_test=n_test)
+        fake_rate.append(fakes(b, n_test=3000))
+
+    plt.plot(hash_funs, fake_rate, label='%i entries' % n_test)
+
+plt.legend(loc='best')
+plt.xlabel('Number of hash functions $k$')
+plt.ylabel('False positive rate')
+</pre>
+
+<div class="cellOOO border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Count-Min-Sketch">Count-Min Sketch<a class="anchor-link" href="#Count-Min-Sketch">&#182;</a></h2><p>After this deep dive into bloom filters, let's move on to data structures
+which use bloom filters as building blocks.</p>
+<p>One thing you can not do with a standard bloom filter is count how
+often you have seen an item. A <a href="https://en.wikipedia.org/wiki/Count%E2%80%93min_sketch">count-min sketch</a> is similar to a bloom
+filter, except it can estimate how often it has seen each item, not
+just answer yes or no.</p>
+<p>Instead of having just one array which you index with $k$ hash functions
+you create $d$ arrays of size $w$, and index each with its own hash function.
+To find the number of times you have seen an item you take the minimum count over
+all arrays.</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+class CountMinSketch:
+    def __init__(self, w, d, random_state=None):
+        self.rng = check_random_state(random_state)
+        self.w = w # cols
+        self.d = d # rows
+        
+        self.k = self.rng.randint(1e9, size=d)
+        self.t = np.zeros((d, w), dtype=np.int)
+        self.N = 0
+        self.hash_ = np.vectorize(hash_)
+
+    def update(self, val):
+        idx = self.hash_(val, self.k) % self.w
+        self.t[np.arange(len(self.t)), idx] += 1
+        self.N += 1
+
+    def query(self, val):
+        idx = self.hash_(val, self.k) % self.w
+        return np.min(self.t[np.arange(len(self.t)), idx])
+</pre>
+
+<div class="cellOOO border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The code below stores 1000 unique words in a count min sketch with counts for
+each word varying between zero and 50. Afterwards we print out the true and the
+estimated counts.</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+cms = CountMinSketch(100, 300)
+
+words = {}
+for n in range(1000):
+    word = ''.join([random.choice(string.ascii_lowercase) for _ in range(10)])
+    count = np.random.randint(50)
+    words[word] = count
+    for _ in range(count):
+        cms.update(word)
+
+for n,word in enumerate(words):
+    print(words[word], cms.query(word))
+    if n > 20:
+        break
+</pre>
+
+<div class="cellOOO border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="HyperLogLog">HyperLogLog<a class="anchor-link" href="#HyperLogLog">&#182;</a></h2><p>Next up: How many distinct items are there in a stream of data? The <a href="https://en.wikipedia.org/wiki/HyperLogLog">HyperLogLog</a> (what a cool name!) can help you with that.</p>
+<p>The implementation is a bit more involved. Mostly because you need to make a few
+corrections for edge cases (few and very many items).</p>
+<p>The intuitive explanation of how and why the HyperLogLog works goes like this: By keeping
+track of the longest run of heads someone has flipped you can estimate how often
+they must have flipped the coin. The more often someone flips a coin in a row, the
+higher the probability for them to observe a long run of heads.</p>
+
+</div>
+</div>
+</div>
+<pre data-executable>
+def binary(w):
+    """Binary representation of w"""
+    return bin(w)[2:]
+
+def rho(bit_string):
+    """Index of first 1 in bit_string"""
+    for n,x in enumerate(reversed(bit_string)):
+        if x == '1':
+            return n+1
+        
+    return 32
+
+def alpha(b):
+    if not (4 <= b <= 16):
+        raise ValueError("b=%d should be in range [4 : 16]" % b)
+
+    if b == 4:
+        return 0.673
+
+    if b == 5:
+        return 0.697
+
+    if b == 6:
+        return 0.709
+
+    return 0.7213 / (1.0 + 1.079 / (1 << b))
+
+def hyperloglog(items, b=4):
+    """Approximate count of distinct elements in `items`"""
+    m = 2**b
+    registers = np.zeros(m)
+
+    for item in items:
+        bin_ = binary(hash_(item))
+        idx = int(bin_[-b:], 2)
+        val = bin_[:-b]
+        registers[idx] = max(registers[idx], rho(val))
+        
+    z = sum(np.power(2, -reg) for reg in registers)
+    
+    E = alpha(b) * m**2 / z
+    
+    # correct for small values
+    if E <= 2.5 * m:
+        V = m - np.count_nonzero(registers)
+        if V > 0:
+            return m * np.log(m/float(V))
+        else:
+            return E
+        
+    # correct for very large values
+    elif 1./30 * 2**32:
+        return -2**32 * np.log(1 - E/2**32)
+        
+    return E
+
+hyperloglog(['b', 'v', 'c'], b=6)
+</pre>
+
+<pre data-executable>
+# how many distinct elements in a stream of 100000
+# random numbers?
+hyperloglog((np.random.randint(0, int(1e9)) for i in range(100000)), b=8)
+</pre>
+
+<div class="cellOOO border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And with this, happy counting!</p>
+<h2 id="Further-reading">Further reading<a class="anchor-link" href="#Further-reading">&#182;</a></h2><p><a href="https://highlyscalable.wordpress.com/2012/05/01/probabilistic-structures-web-analytics-data-mining/">Probabilistic DS for web analytics</a> contains a lot of good explanation of these algorithms, with pictures and
+example use cases. As well as a post by Titus <a href="http://ivory.idyll.org/blog/2013-pycon-awesome-big-data-algorithms-talk.html">Awesome big data algorithms</a>.</p>
+<h2 id="Health-warning">Health warning<a class="anchor-link" href="#Health-warning">&#182;</a></h2><p>Let me repeat the health warning from the beginning: please <strong>do not</strong> use these
+implementations in your production code. Find a well tested, heavily used
+implementation elsewhere. Or create one based on these. These data structures
+are like crypto code: you think it is easy to roll your own but will
+make lots of subtle mistakes that invalidate your work.</p>
+<p>Get in touch on twitter @<a href="//twitter.com/betatim">betatim</a> if you have questions or comments.</p>
+
+</div>
+</div>
+</div></p>
+<p>This post started life as a jupyter notebook,
+<a href="/downloads/notebooks/improbable-afternoon.ipynb">download it</a>
+or
+<a href="http://nbviewer.ipython.org/url/betatim.github.io//downloads/notebooks/improbable-afternoon.ipynb">view it</a> online.</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+      </div>
+    </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <footer class="footer">
+	<div class="social">
+	    <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+	    <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+	    <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+	</div>
+	<div class="powered-by">
+	  Copyright ©  2014-2016  - Tim Head - <a href="http://docs.getpelican.com/" target="_blank">Pelican</a> powered.
+	</div>
+      </footer>
+    </div>
+  </div>
+</div>    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+  </body>
+</html>
