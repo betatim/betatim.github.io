@@ -2,226 +2,94 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
 
     <title>scikit-learn for TMVA Users - Tim Head</title>
 
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <!-- Bootstrap -->
-    <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/simplez.css" rel="stylesheet">
+    <link href="/theme/pygments/default.css" rel="stylesheet">
 
-    <link href="/theme/css/pygments/default.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-
+<!--
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      
+
       ga('create', 'UA-49540142-1', 'betatim.github.io');
       ga('send', 'pageview');
-    </script>
+    </script>-->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
 
-    <!-- <script type="text/javascript" src="/interactive/main-built.js" charset="utf-8"></script>-->
-    <script type="text/javascript" src="https://cdn.rawgit.com/oreillymedia/thebe/17fe0971303cac24d7e806c8f1bc8ba3c0c40b23/static/main-built.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.min.css">
+    <!-- extra stuff for nbconvert -->
+    <!-- extra stuff for nbconvert -->
+
     <script>
-      $(function(){
-	      new Thebe({url:"https://tmpnb.org/",
-		      kernel_name: "python3",
-		      load_mathjax: false,
-		      container_selector: "div.entry-content"});
-      });
-    </script>
-
-    <!-- extra stuff for nbconvert -->
-    <!-- extra stuff for nbconvert -->
-
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/javascript">
-      init_mathjax = function() {
-      if (window.MathJax) {
-        // MathJax loaded
-        MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    window.MathJax = {
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        autoload: {
+          color: [],
+          colorV2: ['color']
         },
-        displayAlign: 'left', // Change this to 'center' to center equations.
-        "HTML-CSS": {
-          styles: {'.MathJax_Display': {"margin": 0}}
-        }
-        });
-        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        packages: {'[+]': ['noerrors']}
+      },
+      chtml: {
+        displayAlign: 'left'    // Change this to 'center' to center equations.
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
       }
-      }
-      init_mathjax();
+    };
     </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
 
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
-    <style>
-      .cell {
-      margin-top: 22px;
-      margin-bottom: 11px;
-      }
-      .text_cell_render {
-      padding: 0;
-      }
-      .title {
-      border-left: 7px solid #eee;
-      padding: 10px 10px 10px 23px;
-      margin-left: -30px;
-      }
-      .when {
-      padding-top: 5px;
-      text-transform: uppercase;
-      color: #777;
-      }
-      .entry-content img {
-      border-radius: 4px;
-      }
-      .navbar {
-      margin: 75px 0 25px 0;
-      }
-      .footer {
-      margin: 100px 0 25px 0;
-      border-top: 1px solid transparent;
-      border-color: #eee;
-      }
-      .powered-by {
-      padding: 15px;
-      float: right;
-      }
-      .social {
-      padding: 15px;
-      float: left;
-      }
-      .social i {
-      padding-left: 15px;
-      }
-      .social a {
-      color: black;
-      transition: all 0.25s ease-in;
-      -webkit-transition: all 0.25s ease-in;
-      }
-      .social a:hover {
-      text-shadow: 0 0 15px #000;
-      }
-      .listing span {
-      float: right;
-      text-transform: uppercase;
-      }
-      .listing li {
-      list-style-type: none;
-      }
-      .navbar a {
-      transition: color 0.5s ease-in;
-      -webkit-transition: color 0.5s ease-in;
-      }
-      .navbar li a {
-      font-weight: bold;
-      }
-      .navbar a {
-      text-transform: uppercase
-      }
-      div.prompt {
-      display: none;
-      }
-      div.thebe_controls {
-      margin-top: 5px;
-      margin-bottom: 20px;
-      }
-      div.thebe_controls button {
-      background-color: #eaeaea;
-      font-size: 1em;
-      padding: 5px 20px;
-      }
-      div.kernel_controls {
-      padding: 20px;
-      background: rgba(200, 200, 200, 0.4);
-      max-width: 600px;
-      text-align: center;
-      margin: 10px auto;
-      }
-      div.cell div.thebe_wrap div.input {
-      border: 1px solid #c8c8c8;
-      padding: 10px;
-      }
-    </style>
 
   </head>
   <body>
     <div class="container">
-      <div class="row">
-	<div class="col-md-8 col-md-offset-2">
-	  <nav class="navbar navbar-default" role="navigation">
-	    
-	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand name" href="http://betatim.github.io/">Tim<b>Head</b></a>
-	    </div>
-	    <div class="collapse navbar-collapse navbar-right">
-	      <ul class="nav navbar-nav">
-		<!-- <li><a href="#">Notes</a></li> -->
-		<!-- <li><a href="#">Talks</a></li> -->
-                         <li><a href="/pages/about.html">
-                             About
-                         </a></li>
-                         <li><a href="/pages/science.html">
-                             Science
-                         </a></li>
-                         <li><a href="/pages/sports.html">
-                             Sports
-                         </a></li>
-	      </ul>
-	    </div>
-	    
-	  </nav>  
-	</div>
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8 px-0">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="http://betatim.github.io/">Tim<b>Head</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/pages/about-me">
+                      About Me
+                     </a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </div>
-    </div>
-    
-    <div class="container">
-      <div class="col-md-8 col-md-offset-2">
-    <section id="content">
-        <article>
-            <header class="title">
-                <h1>
-                    <!--<a href="http://betatim.github.io/posts/sklearn-for-TMVA-users/"
-                       rel="bookmark"
-                       title="Permalink to scikit-learn for TMVA Users">
-                        scikit-learn for TMVA Users
-                    </a>-->
-		    scikit-learn for TMVA Users
-                </h1>
-		<div class="when">04 February 2015</div>
-            </header>
-            <div class="entry-content">
-                <p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8">
+<article>
+  <header class="title">
+    <h1>
+      scikit-learn for TMVA Users
+    </h1>
+    <div class="when small mb-3">04 February 2015</div>
+  </header>
+  <div class="entry-content">
+    <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Particle physics is full of machine learning. It powered the discovery of the <a href="http://en.wikipedia.org/wiki/Higgs_boson">Higgs boson</a> and it is used to decide which data an experiment should record. As well as in many other analyses.</p>
 <p>There is only one drawback: most of it is based on one library: <a href="https://root.cern.ch/root/html/TMVA.html">TMVA</a>. It was written many years ago, which means lots of new techniques and innovations are not available. I actually struggled to pick a good webpage to link to, as the original <a href="//tmva.sourceforge.net/">homepage</a> has not been updated since 2013.</p>
@@ -261,10 +129,10 @@
 
 <span class="kn">import</span> <span class="nn">random</span>
 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="kn">as</span> <span class="nn">mpl</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
 <span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
@@ -272,15 +140,13 @@
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">roc_auc_score</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Loading-ROOT-Trees">Loading ROOT Trees<a class="anchor-link" href="#Loading-ROOT-Trees">&#182;</a></h2><p>Data comes first, the excellent <a href="//rootpy.github.io/root_numpy/"><code>root_numpy</code></a> library makes it easy to read your data stored in a ROOT TTree. Each call to <code>root2array</code> will create a 2D array which contains one row per event, and one column representing each branch you want to use.</p>
 <p>You can download the dataset used here from <a href="//figshare.com">figshare</a>:</p>
@@ -332,15 +198,13 @@
                     <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">backgr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Plotting-Variables-and-Correlations">Plotting Variables and Correlations<a class="anchor-link" href="#Plotting-Variables-and-Correlations">&#182;</a></h2><p>The <code>pandas</code> library provides high-performance, easy-to-use data structures and data analysis tools written in python. We will use it for its plotting capabilities and other nice ways to explore your data.</p>
 <p><em>Pro tip: if you want very pretty plots and more powerful plotting check out the <a href="//stanford.edu/~mwaskom/software/seaborn/">seaborn</a> library. It is extremely useful.</em></p>
@@ -354,7 +218,7 @@
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas.core.common</span> <span class="kn">as</span> <span class="nn">com</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas.core.common</span> <span class="k">as</span> <span class="nn">com</span>
 <span class="kn">from</span> <span class="nn">pandas.core.index</span> <span class="kn">import</span> <span class="n">Index</span>
 
 <span class="kn">from</span> <span class="nn">pandas.tools</span> <span class="kn">import</span> <span class="n">plotting</span>
@@ -369,11 +233,11 @@
                   <span class="n">columns</span><span class="o">=</span><span class="n">branch_names</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">])</span>
 
             
-<span class="k">def</span> <span class="nf">signal_background</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-                      <span class="n">xlabelsize</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">xrot</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">ylabelsize</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
-                      <span class="n">yrot</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
-                      <span class="n">sharey</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
-                      <span class="n">layout</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">signal_background</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                      <span class="n">xlabelsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xrot</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ylabelsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                      <span class="n">yrot</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                      <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                      <span class="n">layout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Draw histogram of the DataFrame&#39;s series comparing the distribution</span>
 <span class="sd">    in `data1` to `data2`.</span>
 <span class="sd">    </span>
@@ -406,7 +270,7 @@
     <span class="k">if</span> <span class="s1">&#39;alpha&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwds</span><span class="p">:</span>
         <span class="n">kwds</span><span class="p">[</span><span class="s1">&#39;alpha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span>
 
-    <span class="k">if</span> <span class="n">column</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">column</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">Index</span><span class="p">)):</span>
             <span class="n">column</span> <span class="o">=</span> <span class="p">[</span><span class="n">column</span><span class="p">]</span>
         <span class="n">data1</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[</span><span class="n">column</span><span class="p">]</span>
@@ -416,7 +280,7 @@
     <span class="n">data2</span> <span class="o">=</span> <span class="n">data2</span><span class="o">.</span><span class="n">_get_numeric_data</span><span class="p">()</span>
     <span class="n">naxes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data1</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 
-    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">_subplots</span><span class="p">(</span><span class="n">naxes</span><span class="o">=</span><span class="n">naxes</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">squeeze</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">_subplots</span><span class="p">(</span><span class="n">naxes</span><span class="o">=</span><span class="n">naxes</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">squeeze</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                                    <span class="n">sharex</span><span class="o">=</span><span class="n">sharex</span><span class="p">,</span>
                                    <span class="n">sharey</span><span class="o">=</span><span class="n">sharey</span><span class="p">,</span>
                                    <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
@@ -455,7 +319,7 @@
                   <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -463,7 +327,11 @@
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -477,7 +345,11 @@
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -832,10 +704,8 @@ Ow3HcRwnNd5pOI7jOKnxTsNxHMdJjXcajuM4Tmr+P/tW8pYuP6vcAAAAAElFTkSuQmCC
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Scatter-Plots">Scatter Plots<a class="anchor-link" href="#Scatter-Plots">&#182;</a></h2><p>Can we see anything by plotting one of the features against another? If you want to make a scatter plot of two features use <a href="//pandas.pydata.org/pandas-docs/stable/visualization.html#scatter-plot"><code>df.plot(kind='scatter')</code></a>. Here we pick 1000 data points at random, with 1million points the plot would be far too dense to see anything.</p>
 
@@ -852,7 +722,7 @@ Ow3HcRwnNd5pOI7jOKnxTsNxHMdJjXcajuM4Tmr+P/tW8pYuP6vcAAAAAElFTkSuQmCC
                                           <span class="n">c</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;autumn&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -860,7 +730,11 @@ Ow3HcRwnNd5pOI7jOKnxTsNxHMdJjXcajuM4Tmr+P/tW8pYuP6vcAAAAAElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -869,7 +743,11 @@ Ow3HcRwnNd5pOI7jOKnxTsNxHMdJjXcajuM4Tmr+P/tW8pYuP6vcAAAAAElFTkSuQmCC
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1388,10 +1266,8 @@ SUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the plot above compares the distribution of the feature <code>lepton_pT</code> vs <code>jet_3_pt</code>. The colour of each point shows which class it belongs to: 0 for background and +1 for signal. Not the most useful plot in this case, but it is here for reference.</p>
 <h2 id="Boxplots">Boxplots<a class="anchor-link" href="#Boxplots">&#182;</a></h2><p>A <a href="//en.wikipedia.org/wiki/Box_plot">Box plot</a> is a nice way of visualising a distribution by showing it's quantiles. Below we make box plots for the features <code>lepton_pT</code>, <code>lepton_eta</code>, <code>missing_energy_magnitude</code> and <code>jet_3_pt</code> using <a href="//pandas.pydata.org/pandas-docs/stable/visualization.html#box-plots"><code>df.boxplot()</code></a>. Each plot shows the distribution of one feature for signal and background. You can also group the distributions by the number of jets in an event, or the value of any other feature in your dataset.</p>
@@ -1412,7 +1288,7 @@ SUVORK5CYII=
            <span class="n">return_type</span><span class="o">=</span><span class="s1">&#39;axes&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1420,7 +1296,11 @@ SUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1429,7 +1309,11 @@ SUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1646,10 +1530,8 @@ c33KK3jnnOtTXsE751yf8greOef61P8Cv/LoEYR/l6IAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Correlation-Matrix">Correlation Matrix<a class="anchor-link" href="#Correlation-Matrix">&#182;</a></h2><p>The correlation between features can be plotted with <a href="//pandas.pydata.org/pandas-docs/stable/computation.html#correlation"><code>df.corr()</code></a>. For this data set the plots are not the most exciting as the variables are not correlated with each other.</p>
 
@@ -1686,10 +1568,10 @@ c33KK3jnnOtTXsE751yf8greOef61P8Cv/LoEYR/l6IAAAAASUVORK5CYII=
     <span class="n">labels</span> <span class="o">=</span> <span class="n">corrmat</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span>
     <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,):</span>
         <span class="c1"># shift location of ticks to center of the bins</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
         
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     
@@ -1699,7 +1581,7 @@ c33KK3jnnOtTXsE751yf8greOef61P8Cv/LoEYR/l6IAAAAASUVORK5CYII=
 <span class="n">correlations</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">sig</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1707,7 +1589,11 @@ c33KK3jnnOtTXsE751yf8greOef61P8Cv/LoEYR/l6IAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -2276,7 +2162,11 @@ gg==
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -2846,10 +2736,8 @@ oHwZnC+ihAAAAABJRU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="The-Training-and-Testing-Split">The Training and Testing Split<a class="anchor-link" href="#The-Training-and-Testing-Split">&#182;</a></h2><p>One of the first things to do is split your data into a training and testing set. This will split your data into train-test sets: 67%-33%. It will also shuffle entries so you will not get the first 67% of <code>X</code> for training and the last 33% for testing. This is particularly important in cases where you load all signal events first and then the background events.</p>
 <p>Here we split our data into two independent samples twice. The first split is to create a development and a evaluation set. All development and performance evaluation will be done with the development set. Once the hyper-parameters and other settings are frozen we can use the evaluation set to get an unbiased estimate of the performance.</p>
@@ -2871,15 +2759,13 @@ oHwZnC+ihAAAAABJRU5ErkJggg==
                                                   <span class="n">test_size</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">492</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Training-Decision-Trees">Training Decision Trees<a class="anchor-link" href="#Training-Decision-Trees">&#182;</a></h2><p>Training a <a href="//en.wikipedia.org/wiki/AdaBoost">AdaBoost Decision Tree</a> in <code>sklearn</code> is straight forward. Import the type of decision tree you want and off you go. Here we set several hyper-parameters to non default values in order to make the classifier as similar to the default BDT in <code>TMVA</code> as possible. See my <a href="/posts/matching-machine-learning/">Matching Machine Learning</a> post for more details on finding these settings.</p>
 <p>After instantiating our <a href="//scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html"><code>AdaBoostClassifier</code></a>, call the <code>fit()</code> method with the training sample as an argument. This will train the tree, now we are ready to evaluate the performance on the held out testing set.</p>
@@ -2907,7 +2793,7 @@ oHwZnC+ihAAAAABJRU5ErkJggg==
 <span class="n">bdt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2915,7 +2801,11 @@ oHwZnC+ihAAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -2933,10 +2823,8 @@ oHwZnC+ihAAAAABJRU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <code>fit()</code> method returns the trained classifier. When printed out all the hyper-parameters are listed.</p>
 <h2 id="Assessing-a-Classifier's-Performance">Assessing a Classifier's Performance<a class="anchor-link" href="#Assessing-a-Classifier's-Performance">&#182;</a></h2><p>Next let's create a quick report on how well our classifier is doing. It is important to make sure you use samples not seen by the classifier to get an unbiased estimate of its performance.</p>
@@ -2950,13 +2838,13 @@ oHwZnC+ihAAAAABJRU5ErkJggg==
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">y_predicted</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">,</span>
+<span class="nb">print</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">,</span>
                             <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;background&quot;</span><span class="p">,</span> <span class="s2">&quot;signal&quot;</span><span class="p">])</span>
-<span class="k">print</span> <span class="s2">&quot;Area under ROC curve: </span><span class="si">%.4f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span>
+<span class="nb">print</span> <span class="s2">&quot;Area under ROC curve: </span><span class="si">%.4f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span>
                                                   <span class="n">bdt</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_test</span><span class="p">)))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2964,7 +2852,11 @@ oHwZnC+ihAAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>             precision    recall  f1-score   support
 
@@ -2982,10 +2874,8 @@ Area under ROC curve: 0.8082
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To illustrate that point, here the same performance metrics evaluated on the training set instead. You can see the estimates of the performance are more optimistic than on an unseen set of events.</p>
 
@@ -2998,13 +2888,13 @@ Area under ROC curve: 0.8082
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">y_predicted</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">,</span>
+<span class="nb">print</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">,</span>
                             <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;background&quot;</span><span class="p">,</span> <span class="s2">&quot;signal&quot;</span><span class="p">])</span>
-<span class="k">print</span> <span class="s2">&quot;Area under ROC curve: </span><span class="si">%.4f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span>
+<span class="nb">print</span> <span class="s2">&quot;Area under ROC curve: </span><span class="si">%.4f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span>
                                                   <span class="n">bdt</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_train</span><span class="p">)))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -3012,7 +2902,11 @@ Area under ROC curve: 0.8082
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>             precision    recall  f1-score   support
 
@@ -3030,10 +2924,8 @@ Area under ROC curve: 0.8161
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Another useful plot to judge the performance of a classifier is to look at the ROC curve directly.</p>
 
@@ -3065,7 +2957,7 @@ Area under ROC curve: 0.8161
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -3073,7 +2965,11 @@ Area under ROC curve: 0.8161
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -3383,10 +3279,8 @@ GCmGBX7DMIwUwwK/YRhGimGB3zAMI8WwwG8YhpFi/H/f91Vg63NBsAAAAABJRU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Overtraining-Check">Overtraining Check<a class="anchor-link" href="#Overtraining-Check">&#182;</a></h2><p>Comparing the BDT's output distribution for the training and testing set is a popular way in HEP to check for overtraining. The <code>compare_test_train()</code> method will plot the BDT's decision function for each class, as well as overlaying it with the shape of the decision function in the training set.</p>
 
@@ -3411,15 +3305,15 @@ GCmGBX7DMIwUwwK/YRhGimGB3zAMI8WwwG8YhpFi/H/f91Vg63NBsAAAAABJRU5ErkJggg==
     
     <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">decisions</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
              <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">low_high</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
-             <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+             <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
              <span class="n">label</span><span class="o">=</span><span class="s1">&#39;S (train)&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">decisions</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
              <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">low_high</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
-             <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+             <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
              <span class="n">label</span><span class="o">=</span><span class="s1">&#39;B (train)&#39;</span><span class="p">)</span>
 
     <span class="n">hist</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">decisions</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
-                              <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">low_high</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+                              <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">low_high</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">scale</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">decisions</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">hist</span><span class="p">)</span>
     <span class="n">err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">hist</span> <span class="o">*</span> <span class="n">scale</span><span class="p">)</span> <span class="o">/</span> <span class="n">scale</span>
     
@@ -3428,7 +3322,7 @@ GCmGBX7DMIwUwwK/YRhGimGB3zAMI8WwwG8YhpFi/H/f91Vg63NBsAAAAABJRU5ErkJggg==
     <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">hist</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;S (test)&#39;</span><span class="p">)</span>
     
     <span class="n">hist</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">decisions</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
-                              <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">low_high</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+                              <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">low_high</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">scale</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">decisions</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">hist</span><span class="p">)</span>
     <span class="n">err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">hist</span> <span class="o">*</span> <span class="n">scale</span><span class="p">)</span> <span class="o">/</span> <span class="n">scale</span>
 
@@ -3441,7 +3335,7 @@ GCmGBX7DMIwUwwK/YRhGimGB3zAMI8WwwG8YhpFi/H/f91Vg63NBsAAAAABJRU5ErkJggg==
 <span class="n">compare_train_test</span><span class="p">(</span><span class="n">bdt</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -3449,7 +3343,11 @@ GCmGBX7DMIwUwwK/YRhGimGB3zAMI8WwwG8YhpFi/H/f91Vg63NBsAAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -3775,10 +3673,8 @@ G4OZmRV4YzAzswJvDGZmVuCNwczMCn4BF7w+YUVLW6YAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Writing-the-Classifier-Output-to-a-TTree">Writing the Classifier Output to a TTree<a class="anchor-link" href="#Writing-the-Classifier-Output-to-a-TTree">&#182;</a></h2><p>The final step is writing the classifier's output for each event into a <code>TTree</code> for further processing later on. The <code>numpy_root</code> library can read and write TTrees. We could write out each branch used as a feature as well as the classifier output or simply write out the classifier and then "friend" the resulting <code>TTree</code> with the original one. Doing the latter is a little less typing here so we do that. If you want to recreate the whole tree with each feature, you have to setup the data types and branch names correctly, but otherwise it is the same.</p>
 
@@ -3798,15 +3694,13 @@ G4OZmRV4YzAzswJvDGZmVuCNwczMCn4BF7w+YUVLW6YAAAAASUVORK5CYII=
 <span class="n">array2root</span><span class="p">(</span><span class="n">y_predicted</span><span class="p">,</span> <span class="s2">&quot;/tmp/test-prediction.root&quot;</span><span class="p">,</span> <span class="s2">&quot;BDToutput&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="The-End">The End<a class="anchor-link" href="#The-End">&#182;</a></h2><p>Thank you for reading. You can refer to this post for recipes how to do the most common things from TMVA with scikit-learn. There will be a second post with more advanced techniques which are not available in TMVA, but very common in the machine learning world.</p>
 <p>The second post is now public: <a href="/posts/advanced-sklearn-for-TMVA/">Advanced scikit-learn for TMVA Users</a>.</p>
@@ -3814,36 +3708,38 @@ G4OZmRV4YzAzswJvDGZmVuCNwczMCn4BF7w+YUVLW6YAAAAASUVORK5CYII=
 
 </div>
 </div>
-</div></p>
+</div>
+ 
+
+
+
 <p>This post started life as a ipython notebook,
 <a href="/downloads/notebooks/sklearn-for-TMVA-users.ipynb">download it</a>
 or
 <a href="http://nbviewer.ipython.org/url/betatim.github.io//downloads/notebooks/sklearn-for-TMVA-users.ipynb">view it</a> online.</p>
-            </div>
-            <!-- /.entry-content -->
-        </article>
-    </section>
-
-      </div>
-    </div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <footer class="footer">
-	<div class="social">
-	    <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
-	    <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
-	    <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
-	</div>
-	<div class="powered-by">
-	  Copyright ©  2014-2016  - Tim Head - <a href="http://docs.getpelican.com/" target="_blank">Pelican</a> powered.
-	</div>
-      </footer>
-    </div>
   </div>
-</div>    
+</article>
+
+        </div>
+      </div>
+
+<div class="row justify-content-center pb-5">
+  <div class="col-md-8">
+    <footer>
+      <div class="social">
+          <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+          <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+          <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+      </div>
+      <div class="powered-by">
+        Copyright © 2014-2020  - Tim Head
+      </div>
+    </footer>
+  </div>
+</div>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/theme/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>

@@ -2,226 +2,94 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
 
     <title>Knowing when to switch - Tim Head</title>
 
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <!-- Bootstrap -->
-    <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/simplez.css" rel="stylesheet">
+    <link href="/theme/pygments/default.css" rel="stylesheet">
 
-    <link href="/theme/css/pygments/default.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-
+<!--
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      
+
       ga('create', 'UA-49540142-1', 'betatim.github.io');
       ga('send', 'pageview');
-    </script>
+    </script>-->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
 
-    <!-- <script type="text/javascript" src="/interactive/main-built.js" charset="utf-8"></script>-->
-    <script type="text/javascript" src="https://cdn.rawgit.com/oreillymedia/thebe/17fe0971303cac24d7e806c8f1bc8ba3c0c40b23/static/main-built.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.min.css">
+    <!-- extra stuff for nbconvert -->
+    <!-- extra stuff for nbconvert -->
+
     <script>
-      $(function(){
-	      new Thebe({url:"https://tmpnb.org/",
-		      kernel_name: "python3",
-		      load_mathjax: false,
-		      container_selector: "div.entry-content"});
-      });
-    </script>
-
-    <!-- extra stuff for nbconvert -->
-    <!-- extra stuff for nbconvert -->
-
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/javascript">
-      init_mathjax = function() {
-      if (window.MathJax) {
-        // MathJax loaded
-        MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    window.MathJax = {
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        autoload: {
+          color: [],
+          colorV2: ['color']
         },
-        displayAlign: 'left', // Change this to 'center' to center equations.
-        "HTML-CSS": {
-          styles: {'.MathJax_Display': {"margin": 0}}
-        }
-        });
-        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        packages: {'[+]': ['noerrors']}
+      },
+      chtml: {
+        displayAlign: 'left'    // Change this to 'center' to center equations.
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
       }
-      }
-      init_mathjax();
+    };
     </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
 
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
-    <style>
-      .cell {
-      margin-top: 22px;
-      margin-bottom: 11px;
-      }
-      .text_cell_render {
-      padding: 0;
-      }
-      .title {
-      border-left: 7px solid #eee;
-      padding: 10px 10px 10px 23px;
-      margin-left: -30px;
-      }
-      .when {
-      padding-top: 5px;
-      text-transform: uppercase;
-      color: #777;
-      }
-      .entry-content img {
-      border-radius: 4px;
-      }
-      .navbar {
-      margin: 75px 0 25px 0;
-      }
-      .footer {
-      margin: 100px 0 25px 0;
-      border-top: 1px solid transparent;
-      border-color: #eee;
-      }
-      .powered-by {
-      padding: 15px;
-      float: right;
-      }
-      .social {
-      padding: 15px;
-      float: left;
-      }
-      .social i {
-      padding-left: 15px;
-      }
-      .social a {
-      color: black;
-      transition: all 0.25s ease-in;
-      -webkit-transition: all 0.25s ease-in;
-      }
-      .social a:hover {
-      text-shadow: 0 0 15px #000;
-      }
-      .listing span {
-      float: right;
-      text-transform: uppercase;
-      }
-      .listing li {
-      list-style-type: none;
-      }
-      .navbar a {
-      transition: color 0.5s ease-in;
-      -webkit-transition: color 0.5s ease-in;
-      }
-      .navbar li a {
-      font-weight: bold;
-      }
-      .navbar a {
-      text-transform: uppercase
-      }
-      div.prompt {
-      display: none;
-      }
-      div.thebe_controls {
-      margin-top: 5px;
-      margin-bottom: 20px;
-      }
-      div.thebe_controls button {
-      background-color: #eaeaea;
-      font-size: 1em;
-      padding: 5px 20px;
-      }
-      div.kernel_controls {
-      padding: 20px;
-      background: rgba(200, 200, 200, 0.4);
-      max-width: 600px;
-      text-align: center;
-      margin: 10px auto;
-      }
-      div.cell div.thebe_wrap div.input {
-      border: 1px solid #c8c8c8;
-      padding: 10px;
-      }
-    </style>
 
   </head>
   <body>
     <div class="container">
-      <div class="row">
-	<div class="col-md-8 col-md-offset-2">
-	  <nav class="navbar navbar-default" role="navigation">
-	    
-	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand name" href="http://betatim.github.io/">Tim<b>Head</b></a>
-	    </div>
-	    <div class="collapse navbar-collapse navbar-right">
-	      <ul class="nav navbar-nav">
-		<!-- <li><a href="#">Notes</a></li> -->
-		<!-- <li><a href="#">Talks</a></li> -->
-                         <li><a href="/pages/about.html">
-                             About
-                         </a></li>
-                         <li><a href="/pages/science.html">
-                             Science
-                         </a></li>
-                         <li><a href="/pages/sports.html">
-                             Sports
-                         </a></li>
-	      </ul>
-	    </div>
-	    
-	  </nav>  
-	</div>
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8 px-0">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="http://betatim.github.io/">Tim<b>Head</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/pages/about-me">
+                      About Me
+                     </a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </div>
-    </div>
-    
-    <div class="container">
-      <div class="col-md-8 col-md-offset-2">
-    <section id="content">
-        <article>
-            <header class="title">
-                <h1>
-                    <!--<a href="http://betatim.github.io/posts/when-to-switch/"
-                       rel="bookmark"
-                       title="Permalink to Knowing when to switch">
-                        Knowing when to switch
-                    </a>-->
-		    Knowing when to switch
-                </h1>
-		<div class="when">29 April 2014</div>
-            </header>
-            <div class="entry-content">
-                <p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8">
+<article>
+  <header class="title">
+    <h1>
+      Knowing when to switch
+    </h1>
+    <div class="when small mb-3">29 April 2014</div>
+  </header>
+  <div class="entry-content">
+    <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>How do you decide if a change you made to your webpage is getting more customers to sign up? How do you know if the new drug you invented cures more people than the current market leader? Did you make a groundbreaking scientific discovery?</p>
 <p>All these questions can be answered using a branch of statistics called hypothesis testing. This post explains the basics of hypothesis testing.</p>
@@ -239,7 +107,7 @@
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -256,7 +124,7 @@
 <span class="kn">import</span> <span class="nn">random</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -270,15 +138,13 @@
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">5345436</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The first thing we need is a set of observations. In this experiment you measured the conversion rate on your website. The average conversion rate is 6%. The first set of observations will always have an average conversion rate of 6%, using the <code>difference</code> parameter we can decide how big the difference between the two samples should be. This is handy as it allows us to generate a set of observations where the true difference is zero, or any other value we would like to investigate. We can also set how big the samples should be.</p>
 
@@ -296,15 +162,13 @@
     <span class="k">return</span> <span class="n">As</span><span class="p">,</span> <span class="n">Bs</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What does this look like then? We will create two samples with the same mean and 100 observations in each.</p>
 
@@ -323,7 +187,7 @@
 <span class="nb">print</span> <span class="s2">&quot;Mean for sample A: </span><span class="si">%.3f</span><span class="s2"> and for sample B: </span><span class="si">%.3f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">As</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Bs</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -331,14 +195,22 @@
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Mean for sample A: 5.946 and for sample B: 6.093
 </pre>
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -449,10 +321,8 @@ rkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can see that the mean of neither of the two samples is exactly six, nor are the two values the same. Looking at the histogram of the two samples they do look kind of similar. If we did not know the truth about how these samples were made, would we conclude that they are different? If we did, would we be right?</p>
 <p>This is where p-values and hypothesis testing come in. To do hypothesis testing you need two hypotheses which you would can pit against each other. The first one is called the Null hypothesis or $H_0$ and the other one is often referred to as "alternate" or $H_1$. It is important to remember that hypothesis testing can only answer the following question: should I abandon $H_0$?</p>
@@ -481,7 +351,7 @@ rkJggg==
 <span class="n">one_sided_ttest</span><span class="p">(</span><span class="n">As</span><span class="p">,</span> <span class="n">Bs</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -489,7 +359,11 @@ rkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>P-value: 0.15576, the smaller the less likely it is that the means are the same
 </pre>
@@ -500,10 +374,8 @@ rkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Common practice is to decide below which value the p-value has to be in order for this result to be statistically significant or not before looking at the data. By choosing a smaller value you are less likely to incorrectly conclude that your changes improved the conversion rate. Common choices are 0.05 or 0.01. Meaning you only make a mistake 1 in 20 or 1 in 100 times.</p>
 <p>Let us repeat the experiment and look at another p-value:</p>
@@ -520,7 +392,7 @@ rkJggg==
 <span class="n">one_sided_ttest</span><span class="p">(</span><span class="n">As2</span><span class="p">,</span> <span class="n">Bs2</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -528,7 +400,11 @@ rkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>P-value: 0.00285, the smaller the less likely it is that the means are the same
 </pre>
@@ -539,10 +415,8 @@ rkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What happened here? The p-value is different! Not only is it different but it is also below 0.01, our changes worked! Actually we know that the two samples have the same mean, so how can this test be telling us that we found a statistically significant difference? This must be one of the cases where there is no difference but the p-value is small and we incorrectly conclude that there is a difference.</p>
 <p>Let's repeat the experiment a few more times and keep track of all the p-values we see:</p>
@@ -572,7 +446,7 @@ rkJggg==
 <span class="n">repeat_experiment</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -580,7 +454,11 @@ rkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -698,10 +576,8 @@ OIIeAAxH0AOA4Qh6ADAcQQ8Ahvt/PpE2fa6q4nAAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The p-value depends on the outcome of your experiment, that is which particular values you have for your observations. Therefore it is different everytime you repeat the experiment. You can see that roughly 10% of all experiments ended up in the red shaded area, they have p-values below 0.1. These are the cases where you observe a significant difference in the means despite there being none. A false positive.</p>
 <p>What happens if there is a difference between the means of the two samples?</p>
@@ -717,7 +593,7 @@ OIIeAAxH0AOA4Qh6ADAcQQ8Ahvt/PpE2fa6q4nAAAAAASUVORK5CYII=
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">repeat_experiment</span><span class="p">(</span><span class="n">diff</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -725,7 +601,11 @@ OIIeAAxH0AOA4Qh6ADAcQQ8Ahvt/PpE2fa6q4nAAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -838,10 +718,8 @@ QmCC
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now you get a p-value less than 0.1 more often than 10% of the time. This is exactly what you would expect as the Null hypothesis is not true.</p>
 <p>An important thing to realize is that by choosing your p-value threshold to be say 0.05, you are choosing to be wrong 1 in 20 times. Keep in mind: This is true if you judged a lot of copies of this experiment. For each individual experiment you do, you are either right or wrong. The trouble is you do not know which one of the two it is.</p>
@@ -884,7 +762,7 @@ QmCC
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">% c</span><span class="s2">ases correctly accepted&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -892,7 +770,11 @@ QmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[238]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[238]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -901,7 +783,11 @@ QmCC
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1109,10 +995,8 @@ PRGRBFjsiYgkwGJPRCSB/wfion9NPrq9xAAAAABJRU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>From this you can see that the times you accept the new webpage (which we know to be better by 5%) is smaller if you choose your p-value lower. Missing out on these opportunities is the price you pay for being wrong less often.</p>
 <p>For a fixed p-value threshold, you correctly decide to change your webpage more often if the effect is larger:</p>
@@ -1138,7 +1022,7 @@ PRGRBFjsiYgkwGJPRCSB/wfion9NPrq9xAAAAABJRU5ErkJggg==
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1146,7 +1030,11 @@ PRGRBFjsiYgkwGJPRCSB/wfion9NPrq9xAAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[240]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[240]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1155,7 +1043,11 @@ PRGRBFjsiYgkwGJPRCSB/wfion9NPrq9xAAAAABJRU5ErkJggg==
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1366,10 +1258,8 @@ tWIsAkRErRiLABFRK8YiQETUiv0fIPj7uzqL6PkAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This makes sense. If the difference between your two onversion rates is larger, then it should be easier to detect. As a result you correctly choose to change your webpage in a higher fraction of cases. In other words the larger the difference, the more often you correctly reject the Null hypothesis.</p>
 <p>The horizontal blue line marks the p-value threshold of 5%. You can see for the left most point at 0% improvement, we reject the Null hypothesis in 5% of cases and change our webpage. In reality the new webpage does no better than what we had before.</p>
@@ -1400,7 +1290,7 @@ tWIsAkRErRiLABFRK8YiQETUiv0fIPj7uzqL6PkAAAAASUVORK5CYII=
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">% c</span><span class="s2">ases correctly accepted&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1408,7 +1298,11 @@ tWIsAkRErRiLABFRK8YiQETUiv0fIPj7uzqL6PkAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[264]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[264]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1417,7 +1311,11 @@ tWIsAkRErRiLABFRK8YiQETUiv0fIPj7uzqL6PkAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1737,46 +1635,46 @@ psX+HwcerWVp5wdhAAAAAElFTkSuQmCC
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As you can see from this plot, for a given sample size you are more likely to correctly decide to switch to the new webpage for larger improvements. For increases in conversion rate of 10% or more you can see that you do not need a sample with more than 2000 observations or so to gurantee you will decide to switch if there is an effect. For very small improvements you see that you need very large samples to be sure to actually detect the small improvement.</p>
 <p>Now you know about hypothesis testing, p-values and how to use them to decide if you should switch, and you know that p-values are not all there is. The power of your test, the probability to actually detect an improvement if it is there is just as important as p-values. The beauty is that you can calculate a lot of these numbers before you ever start running an A/B test or the likes.</p>
 
 </div>
 </div>
-</div></p>
+</div>
+ 
+
+
+
 <p>This post started life as a ipython notebook,
 <a href="/downloads/notebooks/hypothesis-testing.ipynb">download it</a>
 or
 <a href="http://nbviewer.ipython.org/url/betatim.github.io//downloads/notebooks/hypothesis-testing.ipynb">view it</a> online.</p>
-            </div>
-            <!-- /.entry-content -->
-        </article>
-    </section>
-
-      </div>
-    </div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <footer class="footer">
-	<div class="social">
-	    <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
-	    <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
-	    <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
-	</div>
-	<div class="powered-by">
-	  Copyright ©  2014-2016  - Tim Head - <a href="http://docs.getpelican.com/" target="_blank">Pelican</a> powered.
-	</div>
-      </footer>
-    </div>
   </div>
-</div>    
+</article>
+
+        </div>
+      </div>
+
+<div class="row justify-content-center pb-5">
+  <div class="col-md-8">
+    <footer>
+      <div class="social">
+          <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+          <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+          <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+      </div>
+      <div class="powered-by">
+        Copyright © 2014-2020  - Tim Head
+      </div>
+    </footer>
+  </div>
+</div>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/theme/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>

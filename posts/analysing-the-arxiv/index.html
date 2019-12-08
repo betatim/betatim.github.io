@@ -2,226 +2,94 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
 
     <title>Analysing the arXiv - Tim Head</title>
 
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <!-- Bootstrap -->
-    <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/simplez.css" rel="stylesheet">
+    <link href="/theme/pygments/default.css" rel="stylesheet">
 
-    <link href="/theme/css/pygments/default.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-
+<!--
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      
+
       ga('create', 'UA-49540142-1', 'betatim.github.io');
       ga('send', 'pageview');
-    </script>
+    </script>-->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
 
-    <!-- <script type="text/javascript" src="/interactive/main-built.js" charset="utf-8"></script>-->
-    <script type="text/javascript" src="https://cdn.rawgit.com/oreillymedia/thebe/17fe0971303cac24d7e806c8f1bc8ba3c0c40b23/static/main-built.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.min.css">
+    <!-- extra stuff for nbconvert -->
+    <!-- extra stuff for nbconvert -->
+
     <script>
-      $(function(){
-	      new Thebe({url:"https://tmpnb.org/",
-		      kernel_name: "python3",
-		      load_mathjax: false,
-		      container_selector: "div.entry-content"});
-      });
-    </script>
-
-    <!-- extra stuff for nbconvert -->
-    <!-- extra stuff for nbconvert -->
-
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/javascript">
-      init_mathjax = function() {
-      if (window.MathJax) {
-        // MathJax loaded
-        MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    window.MathJax = {
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        autoload: {
+          color: [],
+          colorV2: ['color']
         },
-        displayAlign: 'left', // Change this to 'center' to center equations.
-        "HTML-CSS": {
-          styles: {'.MathJax_Display': {"margin": 0}}
-        }
-        });
-        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        packages: {'[+]': ['noerrors']}
+      },
+      chtml: {
+        displayAlign: 'left'    // Change this to 'center' to center equations.
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
       }
-      }
-      init_mathjax();
+    };
     </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
 
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
-    <style>
-      .cell {
-      margin-top: 22px;
-      margin-bottom: 11px;
-      }
-      .text_cell_render {
-      padding: 0;
-      }
-      .title {
-      border-left: 7px solid #eee;
-      padding: 10px 10px 10px 23px;
-      margin-left: -30px;
-      }
-      .when {
-      padding-top: 5px;
-      text-transform: uppercase;
-      color: #777;
-      }
-      .entry-content img {
-      border-radius: 4px;
-      }
-      .navbar {
-      margin: 75px 0 25px 0;
-      }
-      .footer {
-      margin: 100px 0 25px 0;
-      border-top: 1px solid transparent;
-      border-color: #eee;
-      }
-      .powered-by {
-      padding: 15px;
-      float: right;
-      }
-      .social {
-      padding: 15px;
-      float: left;
-      }
-      .social i {
-      padding-left: 15px;
-      }
-      .social a {
-      color: black;
-      transition: all 0.25s ease-in;
-      -webkit-transition: all 0.25s ease-in;
-      }
-      .social a:hover {
-      text-shadow: 0 0 15px #000;
-      }
-      .listing span {
-      float: right;
-      text-transform: uppercase;
-      }
-      .listing li {
-      list-style-type: none;
-      }
-      .navbar a {
-      transition: color 0.5s ease-in;
-      -webkit-transition: color 0.5s ease-in;
-      }
-      .navbar li a {
-      font-weight: bold;
-      }
-      .navbar a {
-      text-transform: uppercase
-      }
-      div.prompt {
-      display: none;
-      }
-      div.thebe_controls {
-      margin-top: 5px;
-      margin-bottom: 20px;
-      }
-      div.thebe_controls button {
-      background-color: #eaeaea;
-      font-size: 1em;
-      padding: 5px 20px;
-      }
-      div.kernel_controls {
-      padding: 20px;
-      background: rgba(200, 200, 200, 0.4);
-      max-width: 600px;
-      text-align: center;
-      margin: 10px auto;
-      }
-      div.cell div.thebe_wrap div.input {
-      border: 1px solid #c8c8c8;
-      padding: 10px;
-      }
-    </style>
 
   </head>
   <body>
     <div class="container">
-      <div class="row">
-	<div class="col-md-8 col-md-offset-2">
-	  <nav class="navbar navbar-default" role="navigation">
-	    
-	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand name" href="http://betatim.github.io/">Tim<b>Head</b></a>
-	    </div>
-	    <div class="collapse navbar-collapse navbar-right">
-	      <ul class="nav navbar-nav">
-		<!-- <li><a href="#">Notes</a></li> -->
-		<!-- <li><a href="#">Talks</a></li> -->
-                         <li><a href="/pages/about.html">
-                             About
-                         </a></li>
-                         <li><a href="/pages/science.html">
-                             Science
-                         </a></li>
-                         <li><a href="/pages/sports.html">
-                             Sports
-                         </a></li>
-	      </ul>
-	    </div>
-	    
-	  </nav>  
-	</div>
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8 px-0">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="http://betatim.github.io/">Tim<b>Head</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/pages/about-me">
+                      About Me
+                     </a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </div>
-    </div>
-    
-    <div class="container">
-      <div class="col-md-8 col-md-offset-2">
-    <section id="content">
-        <article>
-            <header class="title">
-                <h1>
-                    <!--<a href="http://betatim.github.io/posts/analysing-the-arxiv/"
-                       rel="bookmark"
-                       title="Permalink to Analysing the arXiv">
-                        Analysing the arXiv
-                    </a>-->
-		    Analysing the arXiv
-                </h1>
-		<div class="when">16 December 2014</div>
-            </header>
-            <div class="entry-content">
-                <p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8">
+<article>
+  <header class="title">
+    <h1>
+      Analysing the arXiv
+    </h1>
+    <div class="when small mb-3">16 December 2014</div>
+  </header>
+  <div class="entry-content">
+    <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This post is about what you can learn about scientific articles posted on the <a href="http://arxiv.org">arXiv</a> by using Natural Language Processing (NLP). Said differently: I had some questions about papers posted on the arXiv and used it as an excuse to teach myself the basics of NLP. We also look at citation counts and reveal the top cited paper of 2014!</p>
 <p>The arXiv makes its data available via a simple API which allows you to download almost everything about an article short of its full text. For each article we can look up information about who has been citing it on <a href="http://inspirehep.net/">inspire</a>. Combined this is a powerful dataset that can answer some interesting questions like: what are the most used words, can we auto generate abstracts, what about summarising abstracts or finding the most cited article of 2014.</p>
@@ -239,11 +107,11 @@
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">urllib2</span>
 <span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">ifilter</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">Counter</span><span class="p">,</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">ifilter</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span><span class="p">,</span> <span class="n">defaultdict</span>
 <span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
 
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -252,7 +120,7 @@
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;mode.chained_assignment&#39;</span><span class="p">,</span><span class="s1">&#39;warn&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -265,15 +133,13 @@
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <code>harvest</code> function will query the arXiv API for all articles modified between January, 1st 2010 and the end of the year 2014. This is a subtlety worth noting: with this query you will also get articles <em>created</em> before 2010 if their entry was modified after 2010.</p>
 <p>The arXiv itself covers so many topics that it is organised into seperate arxivs (I know unfortunate doulbe use of the name arxiv), one for each topic. By default <code>harvest</code> will collect articles from the <code>physics:hep-ex</code> arxiv. This is because I am a experimental particle physicist. If you are into theory try <code>physics:hep-th</code> or <code>stats</code> if you are a stats guru. The API gives you a <a href="http://export.arxiv.org/oai2?verb=ListSets">full list of all sets of topics</a> to explore.</p>
@@ -357,15 +223,13 @@
     
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Set <code>harvest</code> running and go chat with someone for a few minutes while it gathers the information about your articles.</p>
 
@@ -380,15 +244,13 @@
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">harvest</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What does all that stuff we just downloaded look like? Here are the first five entries in the dataframe:</p>
 
@@ -403,7 +265,7 @@
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -411,7 +273,11 @@
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[73]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[73]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
@@ -490,10 +356,8 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="First-factoid">First factoid<a class="anchor-link" href="#First-factoid">&#182;</a></h2><p><a id="factoid"></a></p>
 
@@ -526,7 +390,7 @@
 <span class="nb">print</span> <span class="s2">&quot;of which </span><span class="si">%i</span><span class="s2"> entries were created in that time period.&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">new_articles</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -534,7 +398,11 @@
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -705,7 +573,11 @@ MqAlSeqQAS1JUocMaEmSOmRAS5LUIQNakqQO/X90zUmYVayJ6QAAAABJRU5ErkJggg==
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Unique arXiv IDs edited between 2010 and 2014: 16321
 of which 11958 entries were created in that time period.
@@ -717,10 +589,8 @@ of which 11958 entries were created in that time period.
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here is our first factoid about the arXiv: There are about 16000 articles in <code>hep-ex</code> which were edited between the beginning of 2010 and the end of 2014. Including about 12000 newly created articles. The other 4000 papers were created before 2010 and were updated after creation. Amazing to see that papers created in 1994 were still being edited almost ten years later!</p>
 <p>Let's take a look at those, maybe there is something interesting:</p>
@@ -736,7 +606,7 @@ of which 11958 entries were created in that time period.
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">created</span><span class="o">&lt;</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">1995</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -744,7 +614,11 @@ of which 11958 entries were created in that time period.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[72]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[72]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
@@ -1163,10 +1037,8 @@ of which 11958 entries were created in that time period.
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>After scrolling through the list I can not spot a particular pattern to the edits. Though it does seem like the list contains articles on interesting topics like evidence for the top quark (index 15148), PeV $\tau$ neutrinos (index 16113) and an article about determining the weak mixing angle at SLD (index 15149).</p>
 <h2 id="Collecting-citations">Collecting citations<a class="anchor-link" href="#Collecting-citations">&#182;</a></h2><p>Unfortunately Inspire does not provide a real API, so we have to scrape their webpages to get what we want. The <code>get_cites</code> function will look up the citations of an article by its <code>arxiv_id</code>. Having to make one HTTP request per article means this takes quite a while. So set it going and come back after a few hours. We process articles in chunks of 1000 to get some feedback as well as being able to resume if something goes wrong:</p>
@@ -1209,15 +1081,13 @@ of which 11958 entries were created in that time period.
     <span class="n">df</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">N</span><span class="o">*</span><span class="n">step</span><span class="p">:(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">step</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;cited_by&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cites</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Data-preservation">Data preservation<a class="anchor-link" href="#Data-preservation">&#182;</a></h2><p>After investing so much time to gather the raw data it is a good idea to store it locally so we do not have to scrape it all again later:</p>
 
@@ -1235,15 +1105,13 @@ of which 11958 entries were created in that time period.
 <span class="n">store</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Word-counts">Word counts<a class="anchor-link" href="#Word-counts">&#182;</a></h2><p>Let's get to answering some questions. What are the ten most used words in <code>hep-ex</code> abstracts?</p>
 
@@ -1260,7 +1128,7 @@ of which 11958 entries were created in that time period.
 <span class="n">Counter</span><span class="p">(</span><span class="n">word_bag</span><span class="o">.</span><span class="n">split</span><span class="p">())</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1268,7 +1136,11 @@ of which 11958 entries were created in that time period.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[77]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[77]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1290,10 +1162,8 @@ of which 11958 entries were created in that time period.
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Not too enlightening, boring little words close out the top ten. These words are known as stopwords and the <code>NLTK</code> library provides a list of all of them. So let's remove them as well as basic mathematical symbols:</p>
 
@@ -1305,7 +1175,7 @@ of which 11958 entries were created in that time period.
 <div class="prompt input_prompt">In&nbsp;[113]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="k">import</span> <span class="n">stopwords</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
 
 <span class="n">stops</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">)]</span>
 <span class="n">stops</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="s2">&quot;-&gt;&quot;</span><span class="p">]</span>
@@ -1316,7 +1186,7 @@ of which 11958 entries were created in that time period.
 <span class="n">bar_chart</span><span class="p">(</span><span class="n">top_twenty</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1324,7 +1194,11 @@ of which 11958 entries were created in that time period.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1644,10 +1518,8 @@ LnBN2szMrKbcJ21mZlZTDtJmZmY15SBtZmZWUw7SZmZmNeUgbWZmVlMO0mZmZjXlIG1mZlZT/x8b
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Experimental physics is all about data afterall! A shame that <code>model</code> beats <code>detector</code> but probably that is inevitable as there are many more theoretical models than experimental detectors. The <code>higgs</code> boson beats the <code>neutrino</code> but they reign supreme over all the other particles.</p>
 <p>Towards the bottom we have <code>measurements</code> and <code>measured</code>. These should probably be counted as one entry, together with <code>measurement</code>, <code>measuring</code>, etc. The easiest way to achieve this is to stem the words before counting. <a href="http://en.wikipedia.org/wiki/Stemming">Stemming</a> is the process of reducing derived words to their stem, for example:</p>
@@ -1667,7 +1539,7 @@ LnBN2szMrKbcJ21mZlZTDtJmZmY15SBtZmZWUw7SZmZmNeUgbWZmVlMO0mZmZjXlIG1mZlZT/x8b
     <span class="nb">print</span> <span class="n">w</span><span class="p">,</span> <span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">porter</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1675,7 +1547,11 @@ LnBN2szMrKbcJ21mZlZTDtJmZmY15SBtZmZWUw7SZmZmNeUgbWZmVlMO0mZmZjXlIG1mZlZT/x8b
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>measurement -&gt; measur
 measurements -&gt; measur
@@ -1689,10 +1565,8 @@ measure -&gt; measur
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Like in this case the stem does not have to be a real word itself. By stemming words before counting how often they occur the entries for <code>measurements</code> and <code>measured</code> get added together. Using the stem of every word we get the following ranking:</p>
 
@@ -1718,7 +1592,7 @@ measure -&gt; measur
     <span class="nb">print</span> <span class="n">stem</span><span class="p">,</span> <span class="s2">&quot;&lt;-&quot;</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">stem2words</span><span class="p">[</span><span class="n">stem</span><span class="p">])</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1726,7 +1600,11 @@ measure -&gt; measur
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -2017,7 +1895,11 @@ DWds3gAAAABJRU5ErkJggg==
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>measur &lt;- measuring, measures, measurment, measurements, measure, measurable, measurably, measureable, measurability, measurement, measured
 decay &lt;- decayed, decays, decaying, decay
@@ -2047,10 +1929,8 @@ experi &lt;- experiement, experiments, experiences, experiment, experience
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Turns out experimental phsics is all about measuring things. The stemming is not perfect, but good enough for now.</p>
 <h2 id="Cite-me,-cite-me,-no-cite-me!">Cite me, cite me, no cite me!<a class="anchor-link" href="#Cite-me,-cite-me,-no-cite-me!">&#182;</a></h2><p>In science citations is the currency used to measure the success of a paper. What does the distribution of citations look like then?</p>
@@ -2071,7 +1951,7 @@ experi &lt;- experiement, experiments, experiences, experiment, experience
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Fraction&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2079,7 +1959,11 @@ experi &lt;- experiement, experiments, experiences, experiment, experience
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[235]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[235]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -2088,7 +1972,11 @@ experi &lt;- experiement, experiments, experiences, experiment, experience
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -2218,10 +2106,8 @@ JLXy/wEhD+LRSQUwPAAAAABJRU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This plot shows the fraction of articles cited zero, one, two, three, ... times. The single most likely number of citations for an article on <code>hep-ex</code> is zero! A whopping 13% of articles never get cited and nearly a third of articles are cited less than four times.</p>
 
@@ -2237,7 +2123,7 @@ JLXy/wEhD+LRSQUwPAAAAABJRU5ErkJggg==
 <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">created</span><span class="o">&lt;</span><span class="n">before_2014</span><span class="p">][</span><span class="s1">&#39;citation_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2245,7 +2131,11 @@ JLXy/wEhD+LRSQUwPAAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[233]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[233]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -2266,10 +2156,8 @@ Name: citation_count, dtype: float64</pre>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The average number of citations is about 33. The average is misleading for a steeply falling distribution like this, afterall we reach the 50% percentile at only 10 citations!</p>
 <h2 id="Citations-top-ten">Citations top ten<a class="anchor-link" href="#Citations-top-ten">&#182;</a></h2><p><a id="topten"></a></p>
@@ -2286,7 +2174,7 @@ Name: citation_count, dtype: float64</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">citation_count</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2294,7 +2182,11 @@ Name: citation_count, dtype: float64</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[234]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[234]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -2315,10 +2207,8 @@ Name: 15779, dtype: object</pre>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Read the paper yourself: <a href="http://arxiv.org/abs/hep-ph/0201195">New Generation of Parton Distributions with Uncertainties from Global QCD Analysis</a> and see if you agree.</p>
 <p>We can also easily compute the top ten papers. This is an interesting mix of articles. Number two and three are the papers by the <a href="http://atlas.ch">ATLAS</a> and <a href="http://cms.web.cern.ch/">CMS</a> experiments reporting on the discovery of the <a href="http://en.wikipedia.org/wiki/Higgs_boson">Higgs boson</a>. While most of the papers in the top ten are older these two were only published in 2012 and have already overtaken the top quark discovery which was published in 1995! Curious fact, the ATLAS paper has ever so few more citations than the CMS one.</p>
@@ -2334,7 +2224,7 @@ Name: 15779, dtype: object</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;citation_count&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2342,7 +2232,11 @@ Name: 15779, dtype: object</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[241]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[241]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
@@ -2482,46 +2376,46 @@ Name: 15779, dtype: object</pre>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There are many more interesting things to be done with analysing the words used in abstracts as well as anlysing who cites who. This will be covered in the second part of this post as this one is already fairly lengthy.</p>
 <p>Just one more thing, the top cited paper of 2014: <a href="http://arxiv.org/abs/1403.4427">First combination of Tevatron and LHC measurements of the top-quark mass</a> celebrating collaboration across the globe:</p>
 
 </div>
 </div>
-</div></p>
+</div>
+ 
+
+
+
 <p>This post started life as a ipython notebook,
 <a href="/downloads/notebooks/arXiv.ipynb">download it</a>
 or
 <a href="http://nbviewer.ipython.org/url/betatim.github.io//downloads/notebooks/arXiv.ipynb">view it</a> online.</p>
-            </div>
-            <!-- /.entry-content -->
-        </article>
-    </section>
-
-      </div>
-    </div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <footer class="footer">
-	<div class="social">
-	    <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
-	    <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
-	    <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
-	</div>
-	<div class="powered-by">
-	  Copyright ©  2014-2016  - Tim Head - <a href="http://docs.getpelican.com/" target="_blank">Pelican</a> powered.
-	</div>
-      </footer>
-    </div>
   </div>
-</div>    
+</article>
+
+        </div>
+      </div>
+
+<div class="row justify-content-center pb-5">
+  <div class="col-md-8">
+    <footer>
+      <div class="social">
+          <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+          <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+          <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+      </div>
+      <div class="powered-by">
+        Copyright © 2014-2020  - Tim Head
+      </div>
+    </footer>
+  </div>
+</div>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/theme/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>

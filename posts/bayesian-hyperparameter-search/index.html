@@ -2,226 +2,94 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
 
     <title>Bayesian optimisation for smart hyperparameter search - Tim Head</title>
 
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <!-- Bootstrap -->
-    <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/simplez.css" rel="stylesheet">
+    <link href="/theme/pygments/default.css" rel="stylesheet">
 
-    <link href="/theme/css/pygments/default.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-
+<!--
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      
+
       ga('create', 'UA-49540142-1', 'betatim.github.io');
       ga('send', 'pageview');
-    </script>
+    </script>-->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
 
-    <!-- <script type="text/javascript" src="/interactive/main-built.js" charset="utf-8"></script>-->
-    <script type="text/javascript" src="https://cdn.rawgit.com/oreillymedia/thebe/17fe0971303cac24d7e806c8f1bc8ba3c0c40b23/static/main-built.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.min.css">
+    <!-- extra stuff for nbconvert -->
+    <!-- extra stuff for nbconvert -->
+
     <script>
-      $(function(){
-	      new Thebe({url:"https://tmpnb.org/",
-		      kernel_name: "python3",
-		      load_mathjax: false,
-		      container_selector: "div.entry-content"});
-      });
-    </script>
-
-    <!-- extra stuff for nbconvert -->
-    <!-- extra stuff for nbconvert -->
-
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/javascript">
-      init_mathjax = function() {
-      if (window.MathJax) {
-        // MathJax loaded
-        MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    window.MathJax = {
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        autoload: {
+          color: [],
+          colorV2: ['color']
         },
-        displayAlign: 'left', // Change this to 'center' to center equations.
-        "HTML-CSS": {
-          styles: {'.MathJax_Display': {"margin": 0}}
-        }
-        });
-        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        packages: {'[+]': ['noerrors']}
+      },
+      chtml: {
+        displayAlign: 'left'    // Change this to 'center' to center equations.
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
       }
-      }
-      init_mathjax();
+    };
     </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
 
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
-    <style>
-      .cell {
-      margin-top: 22px;
-      margin-bottom: 11px;
-      }
-      .text_cell_render {
-      padding: 0;
-      }
-      .title {
-      border-left: 7px solid #eee;
-      padding: 10px 10px 10px 23px;
-      margin-left: -30px;
-      }
-      .when {
-      padding-top: 5px;
-      text-transform: uppercase;
-      color: #777;
-      }
-      .entry-content img {
-      border-radius: 4px;
-      }
-      .navbar {
-      margin: 75px 0 25px 0;
-      }
-      .footer {
-      margin: 100px 0 25px 0;
-      border-top: 1px solid transparent;
-      border-color: #eee;
-      }
-      .powered-by {
-      padding: 15px;
-      float: right;
-      }
-      .social {
-      padding: 15px;
-      float: left;
-      }
-      .social i {
-      padding-left: 15px;
-      }
-      .social a {
-      color: black;
-      transition: all 0.25s ease-in;
-      -webkit-transition: all 0.25s ease-in;
-      }
-      .social a:hover {
-      text-shadow: 0 0 15px #000;
-      }
-      .listing span {
-      float: right;
-      text-transform: uppercase;
-      }
-      .listing li {
-      list-style-type: none;
-      }
-      .navbar a {
-      transition: color 0.5s ease-in;
-      -webkit-transition: color 0.5s ease-in;
-      }
-      .navbar li a {
-      font-weight: bold;
-      }
-      .navbar a {
-      text-transform: uppercase
-      }
-      div.prompt {
-      display: none;
-      }
-      div.thebe_controls {
-      margin-top: 5px;
-      margin-bottom: 20px;
-      }
-      div.thebe_controls button {
-      background-color: #eaeaea;
-      font-size: 1em;
-      padding: 5px 20px;
-      }
-      div.kernel_controls {
-      padding: 20px;
-      background: rgba(200, 200, 200, 0.4);
-      max-width: 600px;
-      text-align: center;
-      margin: 10px auto;
-      }
-      div.cell div.thebe_wrap div.input {
-      border: 1px solid #c8c8c8;
-      padding: 10px;
-      }
-    </style>
 
   </head>
   <body>
     <div class="container">
-      <div class="row">
-	<div class="col-md-8 col-md-offset-2">
-	  <nav class="navbar navbar-default" role="navigation">
-	    
-	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand name" href="http://betatim.github.io/">Tim<b>Head</b></a>
-	    </div>
-	    <div class="collapse navbar-collapse navbar-right">
-	      <ul class="nav navbar-nav">
-		<!-- <li><a href="#">Notes</a></li> -->
-		<!-- <li><a href="#">Talks</a></li> -->
-                         <li><a href="/pages/about.html">
-                             About
-                         </a></li>
-                         <li><a href="/pages/science.html">
-                             Science
-                         </a></li>
-                         <li><a href="/pages/sports.html">
-                             Sports
-                         </a></li>
-	      </ul>
-	    </div>
-	    
-	  </nav>  
-	</div>
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8 px-0">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="http://betatim.github.io/">Tim<b>Head</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/pages/about-me">
+                      About Me
+                     </a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </div>
-    </div>
-    
-    <div class="container">
-      <div class="col-md-8 col-md-offset-2">
-    <section id="content">
-        <article>
-            <header class="title">
-                <h1>
-                    <!--<a href="http://betatim.github.io/posts/bayesian-hyperparameter-search/"
-                       rel="bookmark"
-                       title="Permalink to Bayesian optimisation for smart hyperparameter search">
-                        Bayesian optimisation for smart hyperparameter search
-                    </a>-->
-		    Bayesian optimisation for smart hyperparameter search
-                </h1>
-		<div class="when">07 August 2015</div>
-            </header>
-            <div class="entry-content">
-                <p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8">
+<article>
+  <header class="title">
+    <h1>
+      Bayesian optimisation for smart hyperparameter search
+    </h1>
+    <div class="when small mb-3">07 August 2015</div>
+  </header>
+  <div class="entry-content">
+    <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Fitting a single classifier does not take long, fitting hundreds takes a while. To find the best hyperparameters you need to fit a lot of classifiers. What to do?</p>
 <p>This post explores the inner workings of an algorithm you can use to reduce the number of hyperparameter sets you need to try before finding the best set. The algorithm goes under the name of <a href="https://en.wikipedia.org/wiki/Bayesian_optimization">bayesian optimisation</a>. If you are looking for a production ready implementation check out: <a href="https://github.com/Yelp/MOE">MOE, metric optimisation engine</a> developed by <a href="http://www.yelp.com">Yelp</a>.</p>
@@ -234,27 +102,13 @@
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span>%%bash
-pip install george
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -266,36 +120,32 @@ pip install george
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">randint</span> <span class="k">as</span> <span class="n">sp_randint</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;talk&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="By-George!">By George!<a class="anchor-link" href="#By-George!">&#182;</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Bayesian optimisation uses gaussian processes to fit a regression model to the previously evaluated points in hyper-parameter space. This model is then used to suggest the next (best) point in hyper-parameter space to evaluate the model at.</p>
 <p>To choose the best point we need to define a criterion, in this case we use "expected improvement". As we only know the score to with a certain precision we do not want to simply choose the point with the best score. Instead we pick the point which promises the largest expected improvement. This allows us to incorporate the uncertainty about our estimation of the scoring function into the procedure. It leads to a mixture of exploitation and exploration of the parameter space.</p>
@@ -316,7 +166,7 @@ pip install george
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -334,7 +184,7 @@ pip install george
 <span class="n">yp</span> <span class="o">=</span> <span class="n">score_func</span><span class="p">(</span><span class="n">xp</span><span class="p">)</span> <span class="o">+</span> <span class="n">yerr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xp</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -369,7 +219,7 @@ pip install george
 <span class="n">basic_plot</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -377,7 +227,11 @@ pip install george
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -387,7 +241,11 @@ pip install george
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1128,10 +986,8 @@ JBEUQgghhHBSkggKIYQQQjip/w/N2DhG3fAnqwAAAABJRU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The dashed green line represents the true value of the scoring function as a function of our hypothetical hyper-parameter <code>X</code>. The black dots (and their errorbars) represent points at which we evaluated our classifier and calculated the score. In blue our regression model trying to predict the value of the score function. The shaded area represents the uncertainty on the median (solid blue line) value of the estimated score function value.</p>
 <p>Next let's calculate the expected improvement at every value of the hyper-parameter <code>X</code>. We also build a multistart optimisation routine (<code>next_sample</code>) which uses the expected improvement to suggest which point to sample next.</p>
@@ -1148,7 +1004,7 @@ JBEUQgghhHBSkggKIYQQQjip/w/N2DhG3fAnqwAAAABJRU5ErkJggg==
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1158,7 +1014,7 @@ JBEUQgghhHBSkggKIYQQQjip/w/N2DhG3fAnqwAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">expected_improvement</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">gp</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="n">bigger_better</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">expected_improvement</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">gp</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="n">bigger_better</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="c1"># are we trying to maximise a score or minimise an error?</span>
     <span class="k">if</span> <span class="n">bigger_better</span><span class="p">:</span>
         <span class="n">best_sample</span> <span class="o">=</span> <span class="n">samples</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">samples</span><span class="p">)]</span>
@@ -1186,9 +1042,9 @@ JBEUQgghhHBSkggKIYQQQjip/w/N2DhG3fAnqwAAAABJRU5ErkJggg==
         <span class="c1"># want to use this as objective function in a minimiser so multiply by -1</span>
         <span class="k">return</span> <span class="o">-</span><span class="n">ei</span>
 
-<span class="k">def</span> <span class="nf">next_sample</span><span class="p">(</span><span class="n">gp</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">bigger_better</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">next_sample</span><span class="p">(</span><span class="n">gp</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">bigger_better</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Find point with largest expected improvement&quot;&quot;&quot;</span>
-    <span class="n">best_x</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">best_x</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">best_ei</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="c1"># EI is zero at most values -&gt; often get trapped</span>
     <span class="c1"># in a local maximum -&gt; multistarting to increase</span>
@@ -1212,7 +1068,7 @@ JBEUQgghhHBSkggKIYQQQjip/w/N2DhG3fAnqwAAAABJRU5ErkJggg==
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1220,7 +1076,11 @@ JBEUQgghhHBSkggKIYQQQjip/w/N2DhG3fAnqwAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1229,7 +1089,11 @@ JBEUQgghhHBSkggKIYQQQjip/w/N2DhG3fAnqwAAAABJRU5ErkJggg==
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -2126,10 +1990,10 @@ WZVyImhmZmZWpZwImpmZmVWp/wBoBmQpHAbjawAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s2">&quot;The algorithm suggests sampling at X=</span><span class="si">%.4f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">next_sample</span><span class="p">(</span><span class="n">gp</span><span class="p">,</span> <span class="n">yp</span><span class="p">))</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">print</span> <span class="s2">&quot;The algorithm suggests sampling at X=</span><span class="si">%.4f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">next_sample</span><span class="p">(</span><span class="n">gp</span><span class="p">,</span> <span class="n">yp</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2137,7 +2001,11 @@ WZVyImhmZmZWpZwImpmZmVWp/wBoBmQpHAbjawAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>The algorithm suggests sampling at X=1.5833
 </pre>
@@ -2148,10 +2016,8 @@ WZVyImhmZmZWpZwImpmZmVWp/wBoBmQpHAbjawAAAABJRU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The red line shows the expected improvement. Comparing the solid blue line and shaded area with where the exepcted imrpovement is largest it makes sense that the optimisations suggest we should try <code>X=1.58</code> as the next point to evaluate our scoring function at.</p>
 <p>This concludes the toy example part. Let's get moving with something real!</p>
@@ -2159,10 +2025,8 @@ WZVyImhmZmZWpZwImpmZmVWp/wBoBmQpHAbjawAAAABJRU5ErkJggg==
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Random-Grid-Search-as-Benchmark">Random Grid Search as Benchmark<a class="anchor-link" href="#Random-Grid-Search-as-Benchmark">&#182;</a></h2><p>To make this more interesting than a complete toy example, let's use a regression problem (Friedman1) and a single <code>DecisionTreeRegressor</code>, even though it is fairly fast to fit lots of classifiers on this dataset. Replace both by your setup for your actual problem.</p>
 <p>To judge how much more quickly we find the best set of hyperparameters we will pit bayesian optimisation against random grid search. Random grid search is already a big improvement over an exhaustive grid search. I have taken the particular regression problem from <a href="//twitter.com/glouppe">Gilles Louppe</a>'s PhD thesis: <a href="http://orbi.ulg.ac.be/handle/2268/170309">Understanding Random Forests: From Theory to Practice</a>.</p>
@@ -2202,7 +2066,7 @@ WZVyImhmZmZWpZwImpmZmVWp/wBoBmQpHAbjawAAAABJRU5ErkJggg==
 <span class="n">random_grid</span> <span class="o">=</span> <span class="n">random_grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2229,7 +2093,7 @@ WZVyImhmZmZWpZwImpmZmVWp/wBoBmQpHAbjawAAAABJRU5ErkJggg==
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2237,7 +2101,11 @@ WZVyImhmZmZWpZwImpmZmVWp/wBoBmQpHAbjawAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[76]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[76]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -2246,7 +2114,11 @@ WZVyImhmZmZWpZwImpmZmVWp/wBoBmQpHAbjawAAAABJRU5ErkJggg==
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -2483,10 +2355,8 @@ pCRJkjIxQEqSJCkTA6QkSZIyMUBKkiQpEwOkJEmSMvn/7cGbh1U25FoAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>With eight evaluations we get a fairly good idea what the score function looks like for this problem. Potentially 1 is the best solution, otherwise steeply falling. The best hyper-parameter setting in this case is eight.</p>
 <p>You can see that the search explores all values of <code>min_samples_leaf</code> with equal probability.</p>
@@ -2502,16 +2372,16 @@ pCRJkjIxQEqSJCkTA6QkSZIyMUBKkiQpEwOkJEmSMvn/7cGbh1U25FoAAAAASUVORK5CYII=
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">top_parameters</span><span class="p">(</span><span class="n">random_grid_cv</span><span class="p">):</span>
     <span class="n">top_score</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">random_grid_cv</span><span class="o">.</span><span class="n">grid_scores_</span><span class="p">,</span>
                        <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
-                       <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">print</span> <span class="s2">&quot;Mean validation score: {0:.3f} +- {1:.3f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                       <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">print</span> <span class="s2">&quot;Mean validation score: </span><span class="si">{0:.3f}</span><span class="s2"> +- </span><span class="si">{1:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
         <span class="n">top_score</span><span class="o">.</span><span class="n">mean_validation_score</span><span class="p">,</span>
         <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">top_score</span><span class="o">.</span><span class="n">cv_validation_scores</span><span class="p">))</span>
-    <span class="k">print</span> <span class="n">random_grid_cv</span><span class="o">.</span><span class="n">best_params_</span>
+    <span class="nb">print</span> <span class="n">random_grid_cv</span><span class="o">.</span><span class="n">best_params_</span>
     
 <span class="n">top_parameters</span><span class="p">(</span><span class="n">random_grid</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2519,7 +2389,11 @@ pCRJkjIxQEqSJCkTA6QkSZIyMUBKkiQpEwOkJEmSMvn/7cGbh1U25FoAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Mean validation score: -4.322 +- 0.127
 {&#39;min_samples_split&#39;: 8}
@@ -2531,10 +2405,8 @@ pCRJkjIxQEqSJCkTA6QkSZIyMUBKkiQpEwOkJEmSMvn/7cGbh1U25FoAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The top scoring parameter is around eight. Let's see what we can do with a bayesian approach.</p>
 <h2 id="Bayesian-optimisation">Bayesian optimisation<a class="anchor-link" href="#Bayesian-optimisation">&#182;</a></h2><p>Do you have your priors ready? Let's get Bayesian! The question is, can we find at least as good a value for <code>min_samples_split</code> or a better one in eight or less attempts of training a model.</p>
@@ -2560,9 +2432,9 @@ pCRJkjIxQEqSJCkTA6QkSZIyMUBKkiQpEwOkJEmSMvn/7cGbh1U25FoAAAAASUVORK5CYII=
     <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="o">-</span><span class="n">std</span><span class="p">,</span> <span class="n">mu</span><span class="o">+</span><span class="n">std</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 
     <span class="n">ax_r</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
-    <span class="n">ax_r</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">ax_r</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">ax_r</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span>
-              <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">expected_improvement</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">gp</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">bigger_better</span><span class="o">=</span><span class="bp">True</span><span class="p">)),</span>
+              <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">expected_improvement</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">gp</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">bigger_better</span><span class="o">=</span><span class="kc">True</span><span class="p">)),</span>
               <span class="n">label</span><span class="o">=</span><span class="s1">&#39;expected improvement&#39;</span><span class="p">,</span>
               <span class="n">c</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">2</span><span class="p">])</span>
     <span class="n">ax_r</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;expected improvement&quot;</span><span class="p">)</span>
@@ -2599,7 +2471,7 @@ pCRJkjIxQEqSJCkTA6QkSZIyMUBKkiQpEwOkJEmSMvn/7cGbh1U25FoAAAAASUVORK5CYII=
         
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_iterations</span><span class="o">-</span><span class="mi">3</span><span class="p">):</span>
         <span class="n">gp</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">yerr</span><span class="p">)</span>
-        <span class="n">param</span> <span class="o">=</span> <span class="n">next_sample</span><span class="p">(</span><span class="n">gp</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span> <span class="n">bigger_better</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">param</span> <span class="o">=</span> <span class="n">next_sample</span><span class="p">(</span><span class="n">gp</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span> <span class="n">bigger_better</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         
         <span class="n">clf</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="n">parameter</span><span class="p">:</span> <span class="n">param</span><span class="p">})</span>
         <span class="n">cv_scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
@@ -2616,7 +2488,7 @@ pCRJkjIxQEqSJCkTA6QkSZIyMUBKkiQpEwOkJEmSMvn/7cGbh1U25FoAAAAASUVORK5CYII=
                                            <span class="mi">8</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2624,7 +2496,11 @@ pCRJkjIxQEqSJCkTA6QkSZIyMUBKkiQpEwOkJEmSMvn/7cGbh1U25FoAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -3520,7 +3396,11 @@ J4FRQ+kAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -4503,11 +4383,11 @@ h4HFME0AAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s2">&quot;Best parameter:&quot;</span>
-<span class="k">print</span> <span class="n">params</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">scores</span><span class="p">)],</span> <span class="s1">&#39;scores&#39;</span><span class="p">,</span> <span class="n">scores</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">scores</span><span class="p">)]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">print</span> <span class="s2">&quot;Best parameter:&quot;</span>
+<span class="nb">print</span> <span class="n">params</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">scores</span><span class="p">)],</span> <span class="s1">&#39;scores&#39;</span><span class="p">,</span> <span class="n">scores</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">scores</span><span class="p">)]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -4515,7 +4395,11 @@ h4HFME0AAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Best parameter:
 17.721702255 scores -4.29572348033
@@ -4527,10 +4411,8 @@ h4HFME0AAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can see that the points are all sampled close to the maximum. Where as the random grid search samples points far away from the peak (above 40 and beyond), the bayesian optimisation concentrates on the region close to the maximum (around 20). This vastly improves the efficiency of finding the true maximum. We could have even stopped before evaluating all of the next five points. They are all pretty close to each other.</p>
 <h2 id="The-real-deal-----MOE">The real deal --- MOE<a class="anchor-link" href="#The-real-deal-----MOE">&#182;</a></h2><p>While it is quite straightforward to build yourself a small bayesian optimisation procedure, I would recommend you check out <a href="https://github.com/Yelp/MOE">MOE</a>. This is a production quality setup for doing global, black box optimisation. It is developed by the good guys at Yelp!. Therefore much more robust than our home made solution.</p>
@@ -4540,36 +4422,38 @@ h4HFME0AAAAASUVORK5CYII=
 
 </div>
 </div>
-</div></p>
+</div>
+ 
+
+
+
 <p>This post started life as a ipython notebook,
 <a href="/downloads/notebooks/bayesian-hyperparameter-search.ipynb">download it</a>
 or
 <a href="http://nbviewer.ipython.org/url/betatim.github.io//downloads/notebooks/bayesian-hyperparameter-search.ipynb">view it</a> online.</p>
-            </div>
-            <!-- /.entry-content -->
-        </article>
-    </section>
-
-      </div>
-    </div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <footer class="footer">
-	<div class="social">
-	    <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
-	    <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
-	    <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
-	</div>
-	<div class="powered-by">
-	  Copyright ©  2014-2016  - Tim Head - <a href="http://docs.getpelican.com/" target="_blank">Pelican</a> powered.
-	</div>
-      </footer>
-    </div>
   </div>
-</div>    
+</article>
+
+        </div>
+      </div>
+
+<div class="row justify-content-center pb-5">
+  <div class="col-md-8">
+    <footer>
+      <div class="social">
+          <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+          <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+          <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+      </div>
+      <div class="powered-by">
+        Copyright © 2014-2020  - Tim Head
+      </div>
+    </footer>
+  </div>
+</div>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/theme/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>

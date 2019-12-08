@@ -2,226 +2,94 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
 
     <title>Getting Ahead on Interesting Papers - Tim Head</title>
 
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <!-- Bootstrap -->
-    <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/simplez.css" rel="stylesheet">
+    <link href="/theme/pygments/default.css" rel="stylesheet">
 
-    <link href="/theme/css/pygments/default.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-
+<!--
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      
+
       ga('create', 'UA-49540142-1', 'betatim.github.io');
       ga('send', 'pageview');
-    </script>
+    </script>-->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
 
-    <!-- <script type="text/javascript" src="/interactive/main-built.js" charset="utf-8"></script>-->
-    <script type="text/javascript" src="https://cdn.rawgit.com/oreillymedia/thebe/17fe0971303cac24d7e806c8f1bc8ba3c0c40b23/static/main-built.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.min.css">
+    <!-- extra stuff for nbconvert -->
+    <!-- extra stuff for nbconvert -->
+
     <script>
-      $(function(){
-	      new Thebe({url:"https://tmpnb.org/",
-		      kernel_name: "python3",
-		      load_mathjax: false,
-		      container_selector: "div.entry-content"});
-      });
-    </script>
-
-    <!-- extra stuff for nbconvert -->
-    <!-- extra stuff for nbconvert -->
-
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/javascript">
-      init_mathjax = function() {
-      if (window.MathJax) {
-        // MathJax loaded
-        MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    window.MathJax = {
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        autoload: {
+          color: [],
+          colorV2: ['color']
         },
-        displayAlign: 'left', // Change this to 'center' to center equations.
-        "HTML-CSS": {
-          styles: {'.MathJax_Display': {"margin": 0}}
-        }
-        });
-        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        packages: {'[+]': ['noerrors']}
+      },
+      chtml: {
+        displayAlign: 'left'    // Change this to 'center' to center equations.
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
       }
-      }
-      init_mathjax();
+    };
     </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
 
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
-    <style>
-      .cell {
-      margin-top: 22px;
-      margin-bottom: 11px;
-      }
-      .text_cell_render {
-      padding: 0;
-      }
-      .title {
-      border-left: 7px solid #eee;
-      padding: 10px 10px 10px 23px;
-      margin-left: -30px;
-      }
-      .when {
-      padding-top: 5px;
-      text-transform: uppercase;
-      color: #777;
-      }
-      .entry-content img {
-      border-radius: 4px;
-      }
-      .navbar {
-      margin: 75px 0 25px 0;
-      }
-      .footer {
-      margin: 100px 0 25px 0;
-      border-top: 1px solid transparent;
-      border-color: #eee;
-      }
-      .powered-by {
-      padding: 15px;
-      float: right;
-      }
-      .social {
-      padding: 15px;
-      float: left;
-      }
-      .social i {
-      padding-left: 15px;
-      }
-      .social a {
-      color: black;
-      transition: all 0.25s ease-in;
-      -webkit-transition: all 0.25s ease-in;
-      }
-      .social a:hover {
-      text-shadow: 0 0 15px #000;
-      }
-      .listing span {
-      float: right;
-      text-transform: uppercase;
-      }
-      .listing li {
-      list-style-type: none;
-      }
-      .navbar a {
-      transition: color 0.5s ease-in;
-      -webkit-transition: color 0.5s ease-in;
-      }
-      .navbar li a {
-      font-weight: bold;
-      }
-      .navbar a {
-      text-transform: uppercase
-      }
-      div.prompt {
-      display: none;
-      }
-      div.thebe_controls {
-      margin-top: 5px;
-      margin-bottom: 20px;
-      }
-      div.thebe_controls button {
-      background-color: #eaeaea;
-      font-size: 1em;
-      padding: 5px 20px;
-      }
-      div.kernel_controls {
-      padding: 20px;
-      background: rgba(200, 200, 200, 0.4);
-      max-width: 600px;
-      text-align: center;
-      margin: 10px auto;
-      }
-      div.cell div.thebe_wrap div.input {
-      border: 1px solid #c8c8c8;
-      padding: 10px;
-      }
-    </style>
 
   </head>
   <body>
     <div class="container">
-      <div class="row">
-	<div class="col-md-8 col-md-offset-2">
-	  <nav class="navbar navbar-default" role="navigation">
-	    
-	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand name" href="http://betatim.github.io/">Tim<b>Head</b></a>
-	    </div>
-	    <div class="collapse navbar-collapse navbar-right">
-	      <ul class="nav navbar-nav">
-		<!-- <li><a href="#">Notes</a></li> -->
-		<!-- <li><a href="#">Talks</a></li> -->
-                         <li><a href="/pages/about.html">
-                             About
-                         </a></li>
-                         <li><a href="/pages/science.html">
-                             Science
-                         </a></li>
-                         <li><a href="/pages/sports.html">
-                             Sports
-                         </a></li>
-	      </ul>
-	    </div>
-	    
-	  </nav>  
-	</div>
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8 px-0">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="http://betatim.github.io/">Tim<b>Head</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/pages/about-me">
+                      About Me
+                     </a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </div>
-    </div>
-    
-    <div class="container">
-      <div class="col-md-8 col-md-offset-2">
-    <section id="content">
-        <article>
-            <header class="title">
-                <h1>
-                    <!--<a href="http://betatim.github.io/posts/interesting-arxiv-papers/"
-                       rel="bookmark"
-                       title="Permalink to Getting Ahead on Interesting Papers">
-                        Getting Ahead on Interesting Papers
-                    </a>-->
-		    Getting Ahead on Interesting Papers
-                </h1>
-		<div class="when">27 January 2015</div>
-            </header>
-            <div class="entry-content">
-                <p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8">
+<article>
+  <header class="title">
+    <h1>
+      Getting Ahead on Interesting Papers
+    </h1>
+    <div class="when small mb-3">27 January 2015</div>
+  </header>
+  <div class="entry-content">
+    <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A large number of scientific articles are published on the <a href="//arxiv.org">arXiv</a> every day. Most of them are not that interesting. This post is about how you can improve your chances of picking an article that is interesting by a factor of about three!</p>
 <p>The dataset was collected for my previous post: <a href="/posts/analysing-the-arxiv/">Analysing the arXiv</a>. One of the lessons learnt from looking at citation data for the articles I collected was that most of them are never cited. This supports the idea that most articles are not the interesting. Not even a fellow academic can be bothered to refer to it!</p>
@@ -239,7 +107,7 @@
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -257,28 +125,26 @@
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">interp</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interp</span>
 
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">dummy</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">ensemble</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">grid_search</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">linear_model</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">cross_validation</span>
-<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="k">import</span> <span class="n">Pipeline</span><span class="p">,</span> <span class="n">FeatureUnion</span>
-<span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="k">import</span> <span class="n">TransformerMixin</span><span class="p">,</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">ClassifierMixin</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
-<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="k">import</span> <span class="n">CountVectorizer</span><span class="p">,</span> <span class="n">TfidfTransformer</span><span class="p">,</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">dummy</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">ensemble</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">grid_search</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cross_validation</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span><span class="p">,</span> <span class="n">FeatureUnion</span>
+<span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">TransformerMixin</span><span class="p">,</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">ClassifierMixin</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span><span class="p">,</span> <span class="n">TfidfTransformer</span><span class="p">,</span> <span class="n">TfidfVectorizer</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>I am reusing data collected for my previous post, so head on over <a href="/posts/analysing-the-arxiv/">there</a> to learn hwo to download it. Here I am just restoring a <code>pandas</code> dataframe from a HDF5 file:</p>
 
@@ -296,15 +162,13 @@
 <span class="n">store</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="What-is-interesting?">What is interesting?<a class="anchor-link" href="#What-is-interesting?">&#182;</a></h2><p>The most important question is: what is an interesting article? This is a highly contentious question, if you ask five people to give you a definition you will probably get six or seven. To make life simple we will define interesting as being in the top 10% of all the articles collected here.</p>
 <p>Instead of predicting the total number of citations an article will receive over its lifetime. Instead we will use the number of citations a paper receives per day as a measure for interestingness.</p>
@@ -329,7 +193,7 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Arbitrary units&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -337,7 +201,11 @@
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[56]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[56]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -346,7 +214,11 @@
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -542,10 +414,8 @@ QmCC
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can see this is a steeply falling distribution, even on a plot with the y axis in log-scale! To pick the cut off value we query the data frame for the 90% quantile and use that as a threshold.</p>
 
@@ -561,7 +431,7 @@ QmCC
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">cites_per_day</span><span class="o">&gt;</span><span class="n">threshold</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -574,7 +444,7 @@ QmCC
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Y</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -582,7 +452,11 @@ QmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -597,10 +471,8 @@ dtype: float64</pre>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As you can see, roughly 10% of entries are labelled <code>True</code> for interesting and the other 90% are labelled as <code>False</code>.</p>
 <h2 id="The-test-train-divide">The test-train divide<a class="anchor-link" href="#The-test-train-divide">&#182;</a></h2><p>Next we define our pipeline for processing articles and feeding them to a classification algorithm. Beyond splitting the data set into a development and evaluation set, we also initialise some standard <code>sklearn</code> transformers to take a bunch of text and turn it into features for the classifier.</p>
@@ -615,7 +487,7 @@ dtype: float64</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ColumnExtractor</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Extract a column from a pandas.DataFrame</span>
 <span class="sd">        </span>
 <span class="sd">        Use this transformer at the beginning of a</span>
@@ -641,15 +513,13 @@ dtype: float64</pre>
                                                                  <span class="n">random_state</span><span class="o">=</span><span class="mi">78534</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Feature-Extraction">Feature Extraction<a class="anchor-link" href="#Feature-Extraction">&#182;</a></h2><p>The next question is what to use as features for our classifier. We want to make
 a prediction as soon as an article is published. This limits us to features
@@ -686,7 +556,7 @@ demonstration on a bit of nonsense text:</p>
 <span class="n">c</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -694,14 +564,22 @@ demonstration on a bit of nonsense text:</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>{u&#39;tiger&#39;: 3, u&#39;world&#39;: 4, u&#39;hello&#39;: 1, u&#39;hopping&#39;: 2, u&#39;bunny&#39;: 0}
 </pre>
 </div>
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[103]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[103]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -715,10 +593,8 @@ demonstration on a bit of nonsense text:</p>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can see how both bits of text are transformed into 5D vectors. Something
 to keep in mind: Words which were not part of the training set are simply dropped.</p>
@@ -748,7 +624,7 @@ found in a large number of documents, thereby giving them less weight.</p>
 <span class="nb">print</span> <span class="n">t</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test</span><span class="p">))</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -756,7 +632,11 @@ found in a large number of documents, thereby giving them less weight.</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[[ 0.          0.44499628  0.          0.63323704  0.63323704]
  [ 0.70710678  0.          0.70710678  0.          0.        ]]
@@ -768,10 +648,8 @@ found in a large number of documents, thereby giving them less weight.</p>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>ss</p>
 <h2 id="Feature-Pipeline">Feature Pipeline<a class="anchor-link" href="#Feature-Pipeline">&#182;</a></h2><p>Let's assemble our complete pipeline. Both the title and abstract
@@ -793,7 +671,7 @@ numbers, only words.</p>
 
 <span class="c1"># sub-pipeline for extracting the abstract</span>
 <span class="n">vect</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span>
-                       <span class="n">token_pattern</span><span class="o">=</span><span class="s1">u&#39;(?u)</span><span class="se">\\</span><span class="s1">b[A-z][A-z]+</span><span class="se">\\</span><span class="s1">b&#39;</span><span class="p">)</span>
+                       <span class="n">token_pattern</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;(?u)</span><span class="se">\\</span><span class="s1">b[A-z][A-z]+</span><span class="se">\\</span><span class="s1">b&#39;</span><span class="p">)</span>
 <span class="n">abstract_pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([(</span><span class="s1">&#39;abstracts&#39;</span><span class="p">,</span> <span class="n">ColumnExtractor</span><span class="p">(</span><span class="n">ABSTRACT</span><span class="p">)),</span>
                           <span class="p">(</span><span class="s1">&#39;vect&#39;</span><span class="p">,</span> <span class="n">vect</span><span class="p">),</span>
                           <span class="p">(</span><span class="s1">&#39;tfidf&#39;</span><span class="p">,</span> <span class="n">TfidfTransformer</span><span class="p">())</span>
@@ -802,7 +680,7 @@ numbers, only words.</p>
 <span class="c1"># sub-pipeline for extracting the title</span>
 <span class="n">title_pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="n">ColumnExtractor</span><span class="p">(</span><span class="n">TITLE</span><span class="p">)),</span>
                        <span class="p">(</span><span class="s1">&#39;vect&#39;</span><span class="p">,</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span>
-                                                <span class="n">token_pattern</span><span class="o">=</span><span class="s1">u&#39;(?u)</span><span class="se">\\</span><span class="s1">b[A-z][A-z]+</span><span class="se">\\</span><span class="s1">b&#39;</span><span class="p">)),</span>
+                                                <span class="n">token_pattern</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;(?u)</span><span class="se">\\</span><span class="s1">b[A-z][A-z]+</span><span class="se">\\</span><span class="s1">b&#39;</span><span class="p">)),</span>
                        <span class="p">(</span><span class="s1">&#39;tfidf&#39;</span><span class="p">,</span> <span class="n">TfidfTransformer</span><span class="p">())</span>
                        <span class="p">])</span>
 <span class="c1"># combined pipeline</span>
@@ -815,15 +693,13 @@ numbers, only words.</p>
                      <span class="p">])</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Baseline">Baseline<a class="anchor-link" href="#Baseline">&#182;</a></h2><p>Running the pipeline with all hyperparameters set to their default values establishes a baseline:</p>
 
@@ -840,7 +716,7 @@ numbers, only words.</p>
 <span class="n">scores</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -848,7 +724,11 @@ numbers, only words.</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[95]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[95]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -861,10 +741,8 @@ numbers, only words.</p>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Using the area under the ROC curve as performance metric we get to around 0.78 or so.</p>
 <p>By grid searching the hyperparameter space we can improve this a bit. This takes quite
@@ -894,7 +772,7 @@ to perform best.</p>
 <span class="p">}</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -916,15 +794,13 @@ to perform best.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">%s</span><span class="s2">: </span><span class="si">%r</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">param_name</span><span class="p">,</span> <span class="n">best_parameters</span><span class="p">[</span><span class="n">param_name</span><span class="p">]))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Grid-Search-Results">Grid Search Results<a class="anchor-link" href="#Grid-Search-Results">&#182;</a></h2><p>This is the best set of parameters I found by grid searching the hyperparameter space. To get an unbiased estimated of the performance we evaluate it on the so far unseen "evaluation" set.
 Investing a few hours of computing time to find these parameters was only marginally
@@ -938,7 +814,7 @@ successful as the performance is only slightly better than the default set.</p>
 <div class="prompt input_prompt">In&nbsp;[96]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">best_parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;clf__alpha&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">05</span><span class="p">,</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">best_parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;clf__alpha&#39;</span><span class="p">:</span> <span class="mf">1e-05</span><span class="p">,</span>
                    <span class="s1">&#39;clf__class_weight&#39;</span><span class="p">:</span> <span class="s1">&#39;auto&#39;</span><span class="p">,</span>
                    <span class="s1">&#39;clf__penalty&#39;</span><span class="p">:</span> <span class="s1">&#39;l2&#39;</span><span class="p">,</span>
                    <span class="s1">&#39;clf__loss&#39;</span><span class="p">:</span> <span class="s1">&#39;log&#39;</span><span class="p">,</span>
@@ -953,7 +829,7 @@ successful as the performance is only slightly better than the default set.</p>
 <span class="n">scores</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -961,7 +837,11 @@ successful as the performance is only slightly better than the default set.</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[96]:</div>
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[96]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -974,10 +854,8 @@ successful as the performance is only slightly better than the default set.</p>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A more detailed way to look at the performance is to plot the ROC curve directly:</p>
 
@@ -1009,7 +887,7 @@ successful as the performance is only slightly better than the default set.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1017,7 +895,11 @@ successful as the performance is only slightly better than the default set.</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1443,10 +1325,8 @@ rn8Xpw+pAAAAAElFTkSuQmCC
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Nice!">Nice!<a class="anchor-link" href="#Nice!">&#182;</a></h2><p>We built a simple pipeline which can tell the difference between an interesting and a boring article posted to the arXiv using nothing more than the title and the abstract.</p>
 <p>One thing to keep in mind though is that the number of boring articles is much, much larger than
@@ -1467,7 +1347,7 @@ the number of interesting ones. This means if you tuned the decision threshold t
 <span class="nb">print</span> <span class="s2">&quot;Chance of reading something interesting: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">real</span><span class="o">/</span><span class="p">(</span><span class="n">fake</span><span class="o">+</span><span class="n">real</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1475,7 +1355,11 @@ the number of interesting ones. This means if you tuned the decision threshold t
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>true positives: 7.0 false positives: 18.0
 Chance of reading something interesting: 0.28
@@ -1486,36 +1370,38 @@ Chance of reading something interesting: 0.28
 </div>
 </div>
 
-</div></p>
+</div>
+ 
+
+
+
 <p>This post started life as a ipython notebook,
 <a href="/downloads/notebooks/arXiv-abstract-summary.ipynb">download it</a>
 or
 <a href="http://nbviewer.ipython.org/url/betatim.github.io//downloads/notebooks/arXiv-abstract-summary.ipynb">view it</a> online.</p>
-            </div>
-            <!-- /.entry-content -->
-        </article>
-    </section>
-
-      </div>
-    </div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <footer class="footer">
-	<div class="social">
-	    <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
-	    <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
-	    <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
-	</div>
-	<div class="powered-by">
-	  Copyright ©  2014-2016  - Tim Head - <a href="http://docs.getpelican.com/" target="_blank">Pelican</a> powered.
-	</div>
-      </footer>
-    </div>
   </div>
-</div>    
+</article>
+
+        </div>
+      </div>
+
+<div class="row justify-content-center pb-5">
+  <div class="col-md-8">
+    <footer>
+      <div class="social">
+          <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+          <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+          <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+      </div>
+      <div class="powered-by">
+        Copyright © 2014-2020  - Tim Head
+      </div>
+    </footer>
+  </div>
+</div>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/theme/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>

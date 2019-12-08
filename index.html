@@ -2,363 +2,269 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
 
     <title>Tim Head</title>
 
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <!-- Bootstrap -->
-    <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/simplez.css" rel="stylesheet">
+    <link href="/theme/pygments/default.css" rel="stylesheet">
 
-    <link href="/theme/css/pygments/default.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-
+<!--
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      
+
       ga('create', 'UA-49540142-1', 'betatim.github.io');
       ga('send', 'pageview');
-    </script>
+    </script>-->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
 
-    <!-- <script type="text/javascript" src="/interactive/main-built.js" charset="utf-8"></script>-->
-    <script type="text/javascript" src="https://cdn.rawgit.com/oreillymedia/thebe/17fe0971303cac24d7e806c8f1bc8ba3c0c40b23/static/main-built.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.min.css">
+    <!-- extra stuff for nbconvert -->
+    <!-- extra stuff for nbconvert -->
+
     <script>
-      $(function(){
-	      new Thebe({url:"https://tmpnb.org/",
-		      kernel_name: "python3",
-		      load_mathjax: false,
-		      container_selector: "div.entry-content"});
-      });
-    </script>
-
-    <!-- extra stuff for nbconvert -->
-    <!-- extra stuff for nbconvert -->
-
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/javascript">
-      init_mathjax = function() {
-      if (window.MathJax) {
-        // MathJax loaded
-        MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    window.MathJax = {
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        autoload: {
+          color: [],
+          colorV2: ['color']
         },
-        displayAlign: 'left', // Change this to 'center' to center equations.
-        "HTML-CSS": {
-          styles: {'.MathJax_Display': {"margin": 0}}
-        }
-        });
-        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        packages: {'[+]': ['noerrors']}
+      },
+      chtml: {
+        displayAlign: 'left'    // Change this to 'center' to center equations.
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
       }
-      }
-      init_mathjax();
+    };
     </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
 
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
-    <style>
-      .cell {
-      margin-top: 22px;
-      margin-bottom: 11px;
-      }
-      .text_cell_render {
-      padding: 0;
-      }
-      .title {
-      border-left: 7px solid #eee;
-      padding: 10px 10px 10px 23px;
-      margin-left: -30px;
-      }
-      .when {
-      padding-top: 5px;
-      text-transform: uppercase;
-      color: #777;
-      }
-      .entry-content img {
-      border-radius: 4px;
-      }
-      .navbar {
-      margin: 75px 0 25px 0;
-      }
-      .footer {
-      margin: 100px 0 25px 0;
-      border-top: 1px solid transparent;
-      border-color: #eee;
-      }
-      .powered-by {
-      padding: 15px;
-      float: right;
-      }
-      .social {
-      padding: 15px;
-      float: left;
-      }
-      .social i {
-      padding-left: 15px;
-      }
-      .social a {
-      color: black;
-      transition: all 0.25s ease-in;
-      -webkit-transition: all 0.25s ease-in;
-      }
-      .social a:hover {
-      text-shadow: 0 0 15px #000;
-      }
-      .listing span {
-      float: right;
-      text-transform: uppercase;
-      }
-      .listing li {
-      list-style-type: none;
-      }
-      .navbar a {
-      transition: color 0.5s ease-in;
-      -webkit-transition: color 0.5s ease-in;
-      }
-      .navbar li a {
-      font-weight: bold;
-      }
-      .navbar a {
-      text-transform: uppercase
-      }
-      div.prompt {
-      display: none;
-      }
-      div.thebe_controls {
-      margin-top: 5px;
-      margin-bottom: 20px;
-      }
-      div.thebe_controls button {
-      background-color: #eaeaea;
-      font-size: 1em;
-      padding: 5px 20px;
-      }
-      div.kernel_controls {
-      padding: 20px;
-      background: rgba(200, 200, 200, 0.4);
-      max-width: 600px;
-      text-align: center;
-      margin: 10px auto;
-      }
-      div.cell div.thebe_wrap div.input {
-      border: 1px solid #c8c8c8;
-      padding: 10px;
-      }
-    </style>
 
   </head>
   <body>
     <div class="container">
-      <div class="row">
-	<div class="col-md-8 col-md-offset-2">
-	  <nav class="navbar navbar-default" role="navigation">
-	    
-	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand name" href="http://betatim.github.io/">Tim<b>Head</b></a>
-	    </div>
-	    <div class="collapse navbar-collapse navbar-right">
-	      <ul class="nav navbar-nav">
-		<!-- <li><a href="#">Notes</a></li> -->
-		<!-- <li><a href="#">Talks</a></li> -->
-                         <li><a href="/pages/about.html">
-                             About
-                         </a></li>
-                         <li><a href="/pages/science.html">
-                             Science
-                         </a></li>
-                         <li><a href="/pages/sports.html">
-                             Sports
-                         </a></li>
-	      </ul>
-	    </div>
-	    
-	  </nav>  
-	</div>
-      </div>
-    </div>
-    
-    <div class="container">
-      <div class="col-md-8 col-md-offset-2">
-      <ul class="listing">
-           <article>
-	     <li>
-               <span>09 September 2016</span> <a href="http://betatim.github.io/posts/algebra-from-scratch/">AlgebraNet - Learning Algebra from Scratch</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>01 July 2016</span> <a href="http://betatim.github.io/posts/improbable-afternoon/">An Improbable Afternoon</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>09 June 2016</span> <a href="http://betatim.github.io/posts/genome-hackers/">Genome Assembly for Hackers</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>01 April 2016</span> <a href="http://betatim.github.io/posts/stop-ensemble-growth-early/">Stop growing your ensembles early</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>29 February 2016</span> <a href="http://betatim.github.io/posts/an-openscienceprize-story/">From One Man Band to Orchestra</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>24 February 2016</span> <a href="http://betatim.github.io/posts/unbiased-performance/">Unbiased performance estimates for your classifiers</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>07 January 2016</span> <a href="http://betatim.github.io/posts/really-interactive-posts/">Really Interactive Blog Posts</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>05 January 2016</span> <a href="http://betatim.github.io/posts/interactive-posts/">Interactive Blog Posts</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>16 December 2015</span> <a href="http://betatim.github.io/posts/physics-does-nips/">A Physicist at NIPS2015</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>25 November 2015</span> <a href="http://betatim.github.io/posts/jupyterhub-carina/">Jupyterhub backed by Carina!</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>13 August 2015</span> <a href="http://betatim.github.io/posts/project-everware-reusable-science/">Project everware: Reusable science</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>07 August 2015</span> <a href="http://betatim.github.io/posts/bayesian-hyperparameter-search/">Bayesian optimisation for smart hyperparameter search</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>21 July 2015</span> <a href="http://betatim.github.io/posts/gaussian-processes-with-george/">Basic Gaussian Processes with George</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>17 June 2015</span> <a href="http://betatim.github.io/posts/bumping/">Bumping or Escaping Local Minima</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>02 May 2015</span> <a href="http://betatim.github.io/posts/learning-expensive-functions/">Learning Expensive Functions</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>04 April 2015</span> <a href="http://betatim.github.io/posts/cross-validation-gone-wrong/">Cross-Validation Gone Wrong</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>11 March 2015</span> <a href="http://betatim.github.io/posts/advanced-sklearn-for-TMVA/">Advanced scikit-learn for TMVA Users</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>04 February 2015</span> <a href="http://betatim.github.io/posts/sklearn-for-TMVA-users/">scikit-learn for TMVA Users</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>27 January 2015</span> <a href="http://betatim.github.io/posts/interesting-arxiv-papers/">Getting Ahead on Interesting Papers</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>27 December 2014</span> <a href="http://betatim.github.io/posts/artificial-artist/">The Artificial Artist</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>16 December 2014</span> <a href="http://betatim.github.io/posts/analysing-the-arxiv/">Analysing the arXiv</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>02 December 2014</span> <a href="http://betatim.github.io/posts/read-any-nature-paper-for-free/">Read any Nature Paper for Free</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>03 June 2014</span> <a href="http://betatim.github.io/posts/quasi-random-numbers/">Monte Carlo Integration with Quasi Random Numbers</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>28 May 2014</span> <a href="http://betatim.github.io/posts/early-stopping/">Early stopping</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>14 May 2014</span> <a href="http://betatim.github.io/posts/matching-machine-learning/">Matching Machine Learning</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>29 April 2014</span> <a href="http://betatim.github.io/posts/when-to-switch/">Knowing when to switch</a>
-             </li>
-           </article>
-           <article>
-	     <li>
-               <span>26 March 2014</span> <a href="http://betatim.github.io/posts/obligatory-first-post/">Obligatory first post</a>
-             </li>
-           </article>
-      </div>
-    </div>
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8 px-0">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="http://betatim.github.io/">Tim<b>Head</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <footer class="footer">
-	<div class="social">
-	    <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
-	    <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
-	    <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
-	</div>
-	<div class="powered-by">
-	  Copyright ©  2014-2016  - Tim Head - <a href="http://docs.getpelican.com/" target="_blank">Pelican</a> powered.
-	</div>
-      </footer>
-    </div>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/pages/about-me">
+                      About Me
+                     </a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8">
+    <h1>Posts</h1>
+    <ul class="listing">
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/algebra-from-scratch/">AlgebraNet - Learning Algebra from Scratch</a>
+            <small class="d-none d-md-inline">09 September 2016</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/improbable-afternoon/">An Improbable Afternoon</a>
+            <small class="d-none d-md-inline">01 July 2016</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/genome-hackers/">Genome Assembly for Hackers</a>
+            <small class="d-none d-md-inline">09 June 2016</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/stop-ensemble-growth-early/">Stop growing your ensembles early</a>
+            <small class="d-none d-md-inline">01 April 2016</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/an-openscienceprize-story/">From One Man Band to Orchestra</a>
+            <small class="d-none d-md-inline">29 February 2016</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/unbiased-performance/">Unbiased performance estimates for your classifiers</a>
+            <small class="d-none d-md-inline">24 February 2016</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/really-interactive-posts/">Really Interactive Blog Posts</a>
+            <small class="d-none d-md-inline">07 January 2016</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/interactive-posts/">Interactive Blog Posts</a>
+            <small class="d-none d-md-inline">05 January 2016</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/physics-does-nips/">A Physicist at NIPS2015</a>
+            <small class="d-none d-md-inline">16 December 2015</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/jupyterhub-carina/">Jupyterhub backed by Carina!</a>
+            <small class="d-none d-md-inline">25 November 2015</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/project-everware-reusable-science/">Project everware: Reusable science</a>
+            <small class="d-none d-md-inline">13 August 2015</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/bayesian-hyperparameter-search/">Bayesian optimisation for smart hyperparameter search</a>
+            <small class="d-none d-md-inline">07 August 2015</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/gaussian-processes-with-george/">Basic Gaussian Processes with George</a>
+            <small class="d-none d-md-inline">21 July 2015</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/bumping/">Bumping or Escaping Local Minima</a>
+            <small class="d-none d-md-inline">17 June 2015</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/learning-expensive-functions/">Learning Expensive Functions</a>
+            <small class="d-none d-md-inline">02 May 2015</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/cross-validation-gone-wrong/">Cross-Validation Gone Wrong</a>
+            <small class="d-none d-md-inline">04 April 2015</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/advanced-sklearn-for-TMVA/">Advanced scikit-learn for TMVA Users</a>
+            <small class="d-none d-md-inline">11 March 2015</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/sklearn-for-TMVA-users/">scikit-learn for TMVA Users</a>
+            <small class="d-none d-md-inline">04 February 2015</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/interesting-arxiv-papers/">Getting Ahead on Interesting Papers</a>
+            <small class="d-none d-md-inline">27 January 2015</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/artificial-artist/">The Artificial Artist</a>
+            <small class="d-none d-md-inline">27 December 2014</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/analysing-the-arxiv/">Analysing the arXiv</a>
+            <small class="d-none d-md-inline">16 December 2014</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/read-any-nature-paper-for-free/">Read any Nature Paper for Free</a>
+            <small class="d-none d-md-inline">02 December 2014</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/quasi-random-numbers/">Monte Carlo Integration with Quasi Random Numbers</a>
+            <small class="d-none d-md-inline">03 June 2014</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/early-stopping/">Early stopping</a>
+            <small class="d-none d-md-inline">28 May 2014</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/matching-machine-learning/">Matching Machine Learning</a>
+            <small class="d-none d-md-inline">14 May 2014</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/when-to-switch/">Knowing when to switch</a>
+            <small class="d-none d-md-inline">29 April 2014</small>
+          </span>
+        </li>
+        <li>
+          <span class="d-lg-flex justify-content-between">
+            <a href="/posts/obligatory-first-post/">Obligatory first post</a>
+            <small class="d-none d-md-inline">26 March 2014</small>
+          </span>
+        </li>
+    </ul>
+        </div>
+      </div>
+
+<div class="row justify-content-center pb-5">
+  <div class="col-md-8">
+    <footer>
+      <div class="social">
+          <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+          <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+          <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+      </div>
+      <div class="powered-by">
+        Copyright © 2014-2020  - Tim Head
+      </div>
+    </footer>
   </div>
-</div>    
+</div>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/theme/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>

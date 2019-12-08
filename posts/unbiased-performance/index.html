@@ -2,226 +2,94 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
 
     <title>Unbiased performance estimates for your classifiers - Tim Head</title>
 
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <!-- Bootstrap -->
-    <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/simplez.css" rel="stylesheet">
+    <link href="/theme/pygments/default.css" rel="stylesheet">
 
-    <link href="/theme/css/pygments/default.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-
+<!--
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      
+
       ga('create', 'UA-49540142-1', 'betatim.github.io');
       ga('send', 'pageview');
-    </script>
+    </script>-->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
 
-    <!-- <script type="text/javascript" src="/interactive/main-built.js" charset="utf-8"></script>-->
-    <script type="text/javascript" src="https://cdn.rawgit.com/oreillymedia/thebe/17fe0971303cac24d7e806c8f1bc8ba3c0c40b23/static/main-built.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.min.css">
+    <!-- extra stuff for nbconvert -->
+    <!-- extra stuff for nbconvert -->
+
     <script>
-      $(function(){
-	      new Thebe({url:"https://tmpnb.org/",
-		      kernel_name: "python3",
-		      load_mathjax: false,
-		      container_selector: "div.entry-content"});
-      });
-    </script>
-
-    <!-- extra stuff for nbconvert -->
-    <!-- extra stuff for nbconvert -->
-
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/javascript">
-      init_mathjax = function() {
-      if (window.MathJax) {
-        // MathJax loaded
-        MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    window.MathJax = {
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        autoload: {
+          color: [],
+          colorV2: ['color']
         },
-        displayAlign: 'left', // Change this to 'center' to center equations.
-        "HTML-CSS": {
-          styles: {'.MathJax_Display': {"margin": 0}}
-        }
-        });
-        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        packages: {'[+]': ['noerrors']}
+      },
+      chtml: {
+        displayAlign: 'left'    // Change this to 'center' to center equations.
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
       }
-      }
-      init_mathjax();
+    };
     </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
 
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
-    <style>
-      .cell {
-      margin-top: 22px;
-      margin-bottom: 11px;
-      }
-      .text_cell_render {
-      padding: 0;
-      }
-      .title {
-      border-left: 7px solid #eee;
-      padding: 10px 10px 10px 23px;
-      margin-left: -30px;
-      }
-      .when {
-      padding-top: 5px;
-      text-transform: uppercase;
-      color: #777;
-      }
-      .entry-content img {
-      border-radius: 4px;
-      }
-      .navbar {
-      margin: 75px 0 25px 0;
-      }
-      .footer {
-      margin: 100px 0 25px 0;
-      border-top: 1px solid transparent;
-      border-color: #eee;
-      }
-      .powered-by {
-      padding: 15px;
-      float: right;
-      }
-      .social {
-      padding: 15px;
-      float: left;
-      }
-      .social i {
-      padding-left: 15px;
-      }
-      .social a {
-      color: black;
-      transition: all 0.25s ease-in;
-      -webkit-transition: all 0.25s ease-in;
-      }
-      .social a:hover {
-      text-shadow: 0 0 15px #000;
-      }
-      .listing span {
-      float: right;
-      text-transform: uppercase;
-      }
-      .listing li {
-      list-style-type: none;
-      }
-      .navbar a {
-      transition: color 0.5s ease-in;
-      -webkit-transition: color 0.5s ease-in;
-      }
-      .navbar li a {
-      font-weight: bold;
-      }
-      .navbar a {
-      text-transform: uppercase
-      }
-      div.prompt {
-      display: none;
-      }
-      div.thebe_controls {
-      margin-top: 5px;
-      margin-bottom: 20px;
-      }
-      div.thebe_controls button {
-      background-color: #eaeaea;
-      font-size: 1em;
-      padding: 5px 20px;
-      }
-      div.kernel_controls {
-      padding: 20px;
-      background: rgba(200, 200, 200, 0.4);
-      max-width: 600px;
-      text-align: center;
-      margin: 10px auto;
-      }
-      div.cell div.thebe_wrap div.input {
-      border: 1px solid #c8c8c8;
-      padding: 10px;
-      }
-    </style>
 
   </head>
   <body>
     <div class="container">
-      <div class="row">
-	<div class="col-md-8 col-md-offset-2">
-	  <nav class="navbar navbar-default" role="navigation">
-	    
-	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand name" href="http://betatim.github.io/">Tim<b>Head</b></a>
-	    </div>
-	    <div class="collapse navbar-collapse navbar-right">
-	      <ul class="nav navbar-nav">
-		<!-- <li><a href="#">Notes</a></li> -->
-		<!-- <li><a href="#">Talks</a></li> -->
-                         <li><a href="/pages/about.html">
-                             About
-                         </a></li>
-                         <li><a href="/pages/science.html">
-                             Science
-                         </a></li>
-                         <li><a href="/pages/sports.html">
-                             Sports
-                         </a></li>
-	      </ul>
-	    </div>
-	    
-	  </nav>  
-	</div>
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8 px-0">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="http://betatim.github.io/">Tim<b>Head</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/pages/about-me">
+                      About Me
+                     </a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </div>
-    </div>
-    
-    <div class="container">
-      <div class="col-md-8 col-md-offset-2">
-    <section id="content">
-        <article>
-            <header class="title">
-                <h1>
-                    <!--<a href="http://betatim.github.io/posts/unbiased-performance/"
-                       rel="bookmark"
-                       title="Permalink to Unbiased performance estimates for your classifiers">
-                        Unbiased performance estimates for your classifiers
-                    </a>-->
-		    Unbiased performance estimates for your classifiers
-                </h1>
-		<div class="when">24 February 2016</div>
-            </header>
-            <div class="entry-content">
-                <p>
-<div class="cellOOO border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8">
+<article>
+  <header class="title">
+    <h1>
+      Unbiased performance estimates for your classifiers
+    </h1>
+    <div class="when small mb-3">24 February 2016</div>
+  </header>
+  <div class="entry-content">
+    <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><p>This is an <a href="https://betatim.github.io/posts/really-interactive-posts/">interactive blog post</a>, you can modify and run the code directly from your browser. To
 see any of the output you have to run each of the cells.</p>
@@ -249,29 +117,45 @@ interface.</p>
 </div>
 </div>
 </div>
-<pre data-executable>
-%config InlineBackend.figure_format='retina'
-%matplotlib inline
-</pre>
-
-<pre data-executable>
-import numpy as np
-import scipy as sp
-import matplotlib.pyplot as plt
-
-from sklearn.base import BaseEstimator, TransformerMixin, ClassifierMixin, MetaEstimatorMixin
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.cross_validation import train_test_split
-from sklearn.grid_search import GridSearchCV
-from sklearn.pipeline import make_pipeline
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.utils import check_random_state
-</pre>
-
-<div class="cellOOO border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">config</span> InlineBackend.figure_format=&#39;retina&#39;
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">,</span> <span class="n">ClassifierMixin</span><span class="p">,</span> <span class="n">MetaEstimatorMixin</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.grid_search</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">make_pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="kn">import</span> <span class="n">check_random_state</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Uninformative-data">Uninformative data<a class="anchor-link" href="#Uninformative-data">&#182;</a></h2><p>This data set uses a mix of gaussian and uniformly distributed features and assigns
 the class label purely at random. Therefore we know that the true accuracy of any
@@ -281,26 +165,42 @@ classifier on this sample is 0.5.</p>
 </div>
 </div>
 </div>
-<pre data-executable>
-def data(N=1000, n_features=100, random_state=None):
-    rng = check_random_state(random_state)
-    gaussian_features = n_features//2
-
-    return (np.hstack([rng.normal(size=(N, gaussian_features)),
-                       rng.uniform(size=(N, n_features-gaussian_features))]),
-            np.array(rng.uniform(size=N)>0.5, dtype=int))
-</pre>
-
-<pre data-executable>
-X, y = data(200, random_state=1)
-# set aside data for final (unbiased)performance evaluation
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=1)
-</pre>
-
-<div class="cellOOO border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">check_random_state</span><span class="p">(</span><span class="n">random_state</span><span class="p">)</span>
+    <span class="n">gaussian_features</span> <span class="o">=</span> <span class="n">n_features</span><span class="o">//</span><span class="mi">2</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">gaussian_features</span><span class="p">)),</span>
+                       <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">n_features</span><span class="o">-</span><span class="n">gaussian_features</span><span class="p">))]),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="o">&gt;</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># set aside data for final (unbiased)performance evaluation</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Hyper-parameters">Hyper-parameters<a class="anchor-link" href="#Hyper-parameters">&#182;</a></h2><p>To kick things of, let's estimate a bunch of hyper-parameters for a typical random forest
 based model. We keep the testing data to the side for the moment and use only
@@ -310,41 +210,84 @@ using three folds.</p>
 </div>
 </div>
 </div>
-<pre data-executable>
-param_grid = {'max_depth': [1, 2, 5, 10, 20, 30, 40, 50],
-              'max_features': [4, 8, 16, 32, 64, 80, 100]}
-
-rf = RandomForestClassifier(random_state=94)
-grid = GridSearchCV(rf,
-                    param_grid=param_grid,
-                    n_jobs=6,
-                    verbose=0)
-</pre>
-
-<pre data-executable>
-_ = grid.fit(X_train, y_train)
-</pre>
-
-<div class="cellOOO border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span>
+              <span class="s1">&#39;max_features&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">100</span><span class="p">]}</span>
+
+<span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">94</span><span class="p">)</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">rf</span><span class="p">,</span>
+                    <span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span>
+                    <span class="n">n_jobs</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+                    <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The best parameters found and their score:</p>
 
 </div>
 </div>
 </div>
-<pre data-executable>
-print("Best score: %.4f"%grid.best_score_)
-print("Best params:", grid.best_params_)
-print("Score on a totally fresh dataset:", grid.score(X_test, y_test))
-</pre>
-
-<div class="cellOOO border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best score: </span><span class="si">%.4f</span><span class="s2">&quot;</span><span class="o">%</span><span class="k">grid</span>.best_score_)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best params:&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Score on a totally fresh dataset:&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Best score: 0.6167
+Best params: {&#39;max_features&#39;: 64, &#39;max_depth&#39;: 2}
+Score on a totally fresh dataset: 0.5625
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The best accuracy we found is around 0.62 with <code>max_depth=1</code> and <code>max_features=8</code>.
 As we created the dataset with out any informative features we know that the true score
@@ -360,33 +303,300 @@ of having an infinite stream of data!</p>
 </div>
 </div>
 </div>
-<pre data-executable>
-def grid_search(n, param_grid, clf=None):
-    X, y = data(120, random_state=0+n)
-    if clf is None:
-        clf = RandomForestClassifier(random_state=94+n)
-
-    grid = GridSearchCV(clf,
-                        param_grid=param_grid,
-                        n_jobs=6,
-                        verbose=0)
-    grid.fit(X, y)
-    return grid
-
-scores = [grid_search(n, param_grid).best_score_ for n in range(40)]
-</pre>
-
-<pre data-executable>
-plt.hist(scores, range=(0.45,0.65), bins=15)
-plt.xlabel("Best score per grid search")
-plt.ylabel("Count")
-print("Average score: %.4f+-%.4f" %(np.mean(scores), sp.stats.sem(scores)))
-</pre>
-
-<div class="cellOOO border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">grid_search</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">clf</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">clf</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">94</span><span class="o">+</span><span class="n">n</span><span class="p">)</span>
+
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span>
+                        <span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span>
+                        <span class="n">n_jobs</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+                        <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">grid</span>
+
+<span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">grid_search</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">)</span><span class="o">.</span><span class="n">best_score_</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">40</span><span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mf">0.45</span><span class="p">,</span><span class="mf">0.65</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Best score per grid search&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Count&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average score: </span><span class="si">%.4f</span><span class="s2">+-</span><span class="si">%.4f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sem</span><span class="p">(</span><span class="n">scores</span><span class="p">)))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Average score: 0.5781+-0.0057
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+tU2zbVbV2Ulaa+2Onft+TpI/yAZts6oeneS9Sf62tfborg/DfmfO7dOxk01Nq21W1UEZvs29NMld
+WmtXdezbsZMtzbl9zuTYuQrdltZ+gd89uaC19qWqOjXJ4zM8LO6k7TZWVfdI8ookv9Fae39VPbaj
+DLetqh/K8FyJC5Kc1lr7p94PwH5rqm0zyQ2q6plJDk/yX0k+kuSU1to1m+y7Zfh2ZNIpGQ5WD6+q
+67fWruzYN/ufebbPNY6dbGRabfPxGbp/vDJJq6qjk9wryeVJTm+tfXCTfTt2spV5ts81u3rsXIXw
+cLcMv+gf32T5JzL8gO6abf4AVtUBSf4kyTlJXrKDMjx+nNZtqk5O8n2ttXN3sB32L1Nrm6NbJ3nd
+uv9XkrOr6tmttVM22Hc22ndr7erxm+J7Jrljhr6arJ55ts81jp1sZFpt80Hjdq5IckaSe4//T4a2
+dkqSp7XWzp/Ydzbat2Mno3m2zzW7euxchbsCHDK+bvb06LX5PaPfj0ly3yTf31r7csf6l2Z4mvUD
+ktxsnI5McmKGLk9/U1U37NgO+6dpts1jM3Shu3WSGyf5hiSvTXJEkr+uqm/YxX2zf5pn+3TsZCvT
+aptfmyHEvjhDP/FHZBjTcJ8MVxYeleSNu7Rv9l/zbJ8zOXauQniYiqp6SJKfS/JrrbXTe97TWvvP
+1tqe1tqHW2tfGKf3J3likg8luXOSH9i9UrMqWmu/2Fo7eWxzl7fWPtZa+9EMlztvlGTPfEvIKttp
++3TsZEbWzoGuTPLk1tpprbVLW2v/nOSpSc5LcuT49x9mbcftc1bHzlUID2sJ75BNlq/Nv3izDYzd
+lV6X4RLkyyYX77RArbWrMwy4qgzJkdW0z22zw2vH18l2Not9s9zm2T435NjJaFptc235GZNdOcaB
+rGvjGh68C/tm/zXP9rmhaR87VyE8nJmhsu66yfK7jK+b9U1Lhuc43CXJPZJ8ef0DN3JtmPiDcd4r
+O8v1n+PrjTvXZ/8zjba5nc3a2Vpf3OvsewzLd0hyVZKz9mHfLLd5ts9pv4f9y7Ta5tpxcLOTuLX7
+8K/v5uHYyXbm2T63MrVj5yoMmF4bjPKEyQXjLbMekaGP2Faj1r+cIbFt5BuT3D/J+zL8oE/rLNfD
+xlcHmNU1jba5nc3a2YlJnpnkSRkecrTekRm6kpzsbiErbZ7tc9rvYf8yrbb53gwDUO+5yfJ7j69n
+r5vn2Ml25tk+tzK9Y+duPkRiUaYMT9+7OsnzJ+a/MsMglN9eN+/ADCPl79i57WOy+UPi7p8Mz9KY
+mP/YDA/MrVc3AAAPvElEQVSYuTrJQ+ddP6b5TdNom0nunuRGG2z7iAx3dbg6yc9MLFv/oKMHrJt/
+gyQfGN/zHfOuH9N8pzm2T8dO05bTtP6uZ3gK79VJXjgx/wnj/POTHLxuvmOnadtpju1zJsfO/f4h
+cclXHthxaoaR63+V5F8y3F/3qCT/muQrjwlf94CNc1rHA42q6pgMAeIH2nUfEndShstTH8gwsCUZ
+Rsk/JkOafGlr7RX7+vlYXtNom2Mb/KkM9xj/tyRfTHKnJEdn+IP2jiRPbRMPmKmqpyR5U4Yra29I
+cmGSb81wqfVNrbVn7MqHZmnMq306drKdaf1dr6rDxu3cLsNVhTMy3Gb1KRlO8p7eWnvLxHscO9nS
+vNrnzI6d805nM0yBh2V4vPdnMjxg4+wMT4k+ZGK922dIZp/q3O5WVx6ePTaas5J8IUPqOyfJ68eG
+M/d6Mc1/2te2mWHw058m+ViGP2JfTvK5DIOpnrnNvh+W5O0ZHiLzX0n+MclPZINvLkyrOc2jfTp2
+mnqmaf1dz/Agrd8c3395hisLxyd54Bb7duw0bTnNo33O6ti5ElceAACAfbcKd1sCAACmQHgAAAC6
+CA8AAEAX4QEAAOgiPAAAAF2EBwAAoIvwAAAAdBEeAACALsIDAADQRXgAAAC6CA8AAEAX4QEAAOgi
+PAAAAF2EBwBYp6r+qKquqarDd/Cec6rqrN0s1zKoqj1j3T1q3mUBdofwAOy68WRicrq8qs4eT9Tu
+PuPy7PjkkJXSxmmn72Hv6g5YIgfOuwDAymhJ9iSp8f+HJHlwkmcleWpVPbK19pEZlsUJDpv52SSv
+SPKZeRcEYNEID8DMtNZ+cXJeVf1Wkh9L8sIkz5lRUWr7VVhVrbXPJfncvMsBsIh0WwLm7d0ZTuZv
+tdHCqvquqjqpqi6qqsuq6mNV9ZKqOmiDdb+pqt5WVeeO3aI+W1WnVdXL1q1zTYarHZXknHXdqLbt
+r15V16+qn6iqv6+qC6vqv8auV2+pqsdusP7dqurYcZ3Lq+pzVXVKVf3wBus+tqpOqKoLxnXPrKpX
+VNVNN1j35Kq6eizPy6rqX8f3HLu3dbfFZ17r4nVEVf1kVf3LuK1zq+qVVXXwJu87rKpeU1WfGst2
+flW9taoeuMG6X+knX1XfXVUfrKov9o4hqKoHVdW7q+oLVXVJVb2nqh66Wf/7cd6JVfV1VfUHVXVe
+VV1VVc+a+MzX6dZWVc+vqo+OdXBeVb16o59RR5m3bavr1r1hVf1cVZ1RVV8a6+YDVfWMDda9/ljG
+d9QwDuPysU29p6qetElZzqmqs6rq4PFnenZVXTHxe3O9qvrhqnp/VV1cVZdW1Seq6ver6k6bbPdp
+VfWh8ffkgqr6s6q67U7rClgsrjwA8/b4DF2I/t/kgvFk+PuTnJvk+CQXJ3lokl9M8piqenxr7Zpx
+3ScleXuSS5L8VYYuJzdPco8kP5Lk5eNm9yT5/5LcJ8lvjtvMutet/HGSZyT5p/HflyW5bZJHJnli
+kveuK/vRSd6Y5KAkJyR5fZJDk9w3yYuTvHbdus9L8jtJvpTkTUk+n+SoJD+T5Fuq6hGttS+sK8da
+l6u/SPLAJO9M8ubxfTuuu22sdfH6jSTfNH6mi8fP+8Ikj6yhy9kV6/b9jRlC4aFJ3jWW85ZJvi3J
++6vq21prJ2ywjxcleVyStyU5MUPXti2NweBdGb4M+4skZyX5hiQnjdvYrHvazZN8MMkXx/ddk2uv
+NmzYra2qfjPJjyf59yT/J8mVSZ6S5CEZfs5f3q6843Z622qq6pDxs9w3yT8k+cPxsz4xyeur6p6t
+tfWB4+YZflanZvgZ/GeS2yR5cpK/rqofaK19VcgcP+tBGerrZhnq8wtJzh7LcP0k78jws/l0kj8d
+lx+R4Wf6viSfmtjmj437/KskJ4919PQk96mq+7XWruypK2ABtdZMJpNpV6cMJ2ZXJzlm3fTrGU46
+rk7yliQ3nnjP94/ve1OSgyaWvWx834+vm/cX47x7b7D/m0/8/7hx3cN38BluOr7nQ5ssv9m6f98i
+w4nh5UkeucG6t13378PH9S5OcpeJ9X57rIPXTsw/aZz/4fX73du62+ZzHzdu6/NJvn5i2fHjtl6y
+bt4BST6Z5NLJz57k1knOy3CyfP11848Z9/HFJPfZwc+kknxiLMMTJpb90Lp296hN2uNxSa63yWf+
+qvaR5GHj+85Mcsi6+Qcl+cC47KzOcu+krf7RuO5PTcw/KENovGp9nY3zb7vBdg/OEHrPT3KDiWVn
+j/t4V5IbbvDeXx4/35vX/9zGZddPcosNfpYXJ7nnxLp/Ou7nab0/Y5PJtHiTbkvALL1s3fTCJA9P
+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
+39AAAAAASUVORK5CYII=
+"
+width=391
+height=270
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As you can see all of the best scores we find are above 0.5 and the average score
 is close to 0.58, with a small uncertainty.</p>
@@ -405,40 +615,47 @@ as it if was any other hyper-parameter.</p>
 </div>
 </div>
 </div>
-<pre data-executable>
-class PredictionTransformer(BaseEstimator, TransformerMixin, MetaEstimatorMixin):
-    def __init__(self, clf):
-        """Replaces all features with `clf.predict_proba(X)`"""
-        self.clf = clf
-    
-    def fit(self, X, y):
-        self.clf.fit(X, y)
-        return self
-    
-    def transform(self, X):
-        return self.clf.predict_proba(X)
-
-
-class ThresholdClassifier(BaseEstimator, ClassifierMixin):
-    def __init__(self, threshold=0.5):
-        """Classify samples based on whether they are above of below `threshold`"""
-        self.threshold = threshold
-
-    def fit(self, X, y):
-        self.classes_ = np.unique(y)
-        return self
-    
-    def predict(self, X):
-        # the implementation used here breaks ties differently
-        # from the one used in RFs:
-        #return self.classes_.take(np.argmax(X, axis=1), axis=0)
-        return np.where(X[:, 0]>self.threshold, *self.classes_)
-</pre>
-
-<div class="cellOOO border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">PredictionTransformer</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">,</span> <span class="n">MetaEstimatorMixin</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clf</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Replaces all features with `clf.predict_proba(X)`&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clf</span> <span class="o">=</span> <span class="n">clf</span>
+    
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+    
+    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">clf</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ThresholdClassifier</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">ClassifierMixin</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Classify samples based on whether they are above of below `threshold`&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">threshold</span> <span class="o">=</span> <span class="n">threshold</span>
+
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">classes_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+    
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="c1"># the implementation used here breaks ties differently</span>
+        <span class="c1"># from the one used in RFs:</span>
+        <span class="c1">#return self.classes_.take(np.argmax(X, axis=1), axis=0)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">&gt;</span><span class="bp">self</span><span class="o">.</span><span class="n">threshold</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>With these two wrappers we can use <code>GridSearchCV</code> to find the 'optimal'
 threshold. We use a different parameter grid that only varies the
@@ -449,25 +666,50 @@ and <code>max_features</code> lines.</p>
 </div>
 </div>
 </div>
-<pre data-executable>
-pipe = make_pipeline(PredictionTransformer(RandomForestClassifier()),
-                     ThresholdClassifier())
-
-pipe_param_grid = {#'predictiontransformer__clf__max_depth': [1, 2, 5, 10, 20, 30, 40, 50],
-                   #'predictiontransformer__clf__max_features': [8, 16, 32, 64, 80, 100],
-                   'thresholdclassifier__threshold': np.linspace(0, 1, num=100)}
-
-grids = [grid_search(n,
-                     clf=pipe,
-                     param_grid=pipe_param_grid) for n in range(10)]
-scores = [g.best_score_ for g in grids]
-print("Average score: %.4f+-%.4f" %(np.mean(scores), sp.stats.sem(scores)))
-</pre>
-
-<div class="cellOOO border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pipe</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">PredictionTransformer</span><span class="p">(</span><span class="n">RandomForestClassifier</span><span class="p">()),</span>
+                     <span class="n">ThresholdClassifier</span><span class="p">())</span>
+
+<span class="n">pipe_param_grid</span> <span class="o">=</span> <span class="p">{</span><span class="c1">#&#39;predictiontransformer__clf__max_depth&#39;: [1, 2, 5, 10, 20, 30, 40, 50],</span>
+                   <span class="c1">#&#39;predictiontransformer__clf__max_features&#39;: [8, 16, 32, 64, 80, 100],</span>
+                   <span class="s1">&#39;thresholdclassifier__threshold&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">100</span><span class="p">)}</span>
+
+<span class="n">grids</span> <span class="o">=</span> <span class="p">[</span><span class="n">grid_search</span><span class="p">(</span><span class="n">n</span><span class="p">,</span>
+                     <span class="n">clf</span><span class="o">=</span><span class="n">pipe</span><span class="p">,</span>
+                     <span class="n">param_grid</span><span class="o">=</span><span class="n">pipe_param_grid</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">g</span><span class="o">.</span><span class="n">best_score_</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">grids</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average score: </span><span class="si">%.4f</span><span class="s2">+-</span><span class="si">%.4f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sem</span><span class="p">(</span><span class="n">scores</span><span class="p">)))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Average score: 0.5750+-0.0070
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As we expected the average score is larger than 0.5. This is why you should almost always
 use a completely fresh dataset to estimate the performance of your classifier.</p>
@@ -475,36 +717,38 @@ use a completely fresh dataset to estimate the performance of your classifier.</
 
 </div>
 </div>
-</div></p>
+</div>
+ 
+
+
+
 <p>This post started life as a jupyter notebook,
 <a href="/downloads/notebooks/unbiased-performance-estimates.ipynb">download it</a>
 or
 <a href="http://nbviewer.ipython.org/url/betatim.github.io//downloads/notebooks/unbiased-performance-estimates.ipynb">view it</a> online.</p>
-            </div>
-            <!-- /.entry-content -->
-        </article>
-    </section>
-
-      </div>
-    </div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <footer class="footer">
-	<div class="social">
-	    <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
-	    <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
-	    <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
-	</div>
-	<div class="powered-by">
-	  Copyright ©  2014-2016  - Tim Head - <a href="http://docs.getpelican.com/" target="_blank">Pelican</a> powered.
-	</div>
-      </footer>
-    </div>
   </div>
-</div>    
+</article>
+
+        </div>
+      </div>
+
+<div class="row justify-content-center pb-5">
+  <div class="col-md-8">
+    <footer>
+      <div class="social">
+          <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+          <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+          <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+      </div>
+      <div class="powered-by">
+        Copyright © 2014-2020  - Tim Head
+      </div>
+    </footer>
+  </div>
+</div>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/theme/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>
