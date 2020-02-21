@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="same-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
+
+<link rel="canonical" href="http://betatim.github.io/posts/thoughts-on-collective-thinking/">
+<meta property="og:url" content="http://betatim.github.io/posts/thoughts-on-collective-thinking/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Thoughts on collective thinking" />
+
+    <title>Thoughts on collective thinking - Tim Head's blog</title>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <link href="/theme/simplez.css" rel="stylesheet">
+    <link href="/theme/pygments/default.css" rel="stylesheet">
+
+    <script>
+      // Only load GA if DNT is not set
+      if (navigator.doNotTrack != "1" && // Most Firefox & Chrome
+          window.doNotTrack != "1" && // IE & Safari
+          navigator.msDoNotTrack != "1" // Old IE
+      ) {
+        console.log("Loading Google Analytics, since Do Not Track is off");
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-49540142-1', 'betatim.github.io', {'storage': 'none'});
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+      }
+    </script>
+
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        autoload: {
+          color: [],
+          colorV2: ['color']
+        },
+        packages: {'[+]': ['noerrors']}
+      },
+      chtml: {
+        displayAlign: 'left'    // Change this to 'center' to center equations.
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
+      }
+    };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8 px-0">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="http://betatim.github.io/">Tim<b>Head</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/pages/about">
+                      About Me
+                     </a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8">
+<article>
+  <header class="title">
+    <h1>
+      Thoughts on collective thinking
+    </h1>
+    <time class="when d-block small mb-3">22 February 2020</time>
+  </header>
+  <article>
+    <p>This post is about a tool to create a web of knowledge for your team. A tool to
+help you to think things through together. A tool that helps keep everyone in
+the loop. This tool is your issue tracker.</p>
+<p>What features do you look for in an issue tracker for your team or whole company?
+Think about it for a moment. Have you thought of three? Good.</p>
+<p>Here are the top three items I look at when evaluating a system:
+* how much screen real estate is given to reading and writing comments
+* how well does the notification system work for power users
+* how good is the automatic cross referencing support</p>
+<p>There are many more things I care about but I either take them as a given for
+any serious contender (full API access, markdown based message formatting)
+or they are less important, after all not everything can be in the top three.</p>
+<p>The issue tracker will become a primary tool for creating a collective memory
+of why you did what you did in a project. In order for this to happen it has to
+be a tool that helps your team to think things through together. When this
+happens in your issue tracker you create a history of what got done, what didn't get
+done and most importantly why.</p>
+<h2>Screen real estate</h2>
+<p>The primary task people accomplish in an issue tracker is reading what other
+people have written. In a team with ten active members you will spend nine tenths
+of your time reading what other people have written. Only 10% of your time will
+be writing new things. There are also other tasks to accomplish as a user of the
+issue tracker but they all require you to first read or write something.</p>
+<p>This means the user interface has to be optimised first for reading, second for writing,
+and only then for labelling, triaging, tracking, progress reporting, sprint planning, and
+all the other tasks people perform in an issue tracker.</p>
+<p>Everyone agrees that the content of the top part of a webpage (above the fold) is
+the most important part. This means when evaluating an issue tracker look at how
+much of the content of an issue you can read after opening a ticket, without
+first having to scroll.</p>
+<p>Often the first items shown are status, assignee, priority, size, creation date,
+parent or sub-tasks, deadlines and a whole host of other trivia about the issue
+that does not help you with reading the content of the issue. All this information
+does not help you to quickly scan the content of the issue.</p>
+<h2>A notification system for power users</h2>
+<p>You might not know it yet but you will become a power user of your issue
+tracker's notification system. It is the team's primary place to get thinking
+done. A team of a few (or more) people does a lot of thinking. This means you
+will receive a lot of notifications or have to find some other way of staying
+on top of what is going on.</p>
+<p>In order to create the collective memory and shared understanding of why and what is
+being done you will receive notifications about things which you only have to
+be aware of, not act on. Knowing what others are working on or discussing gives
+you context. Having briefly seen issues that tell you that Jill and Jim are
+working on the spine reticulator means when someone reports that it isn't working
+anymore you have an idea where to start looking.</p>
+<p>To deal with receiving a lot of notifications, most of which are there to keep
+you in the loop you need to be able to decide from just the content of the
+notification: can I act on this issue right now or is it something that will
+require more than two minutes?</p>
+<p>Most of the time acting on a notification means quickly scanning it and then
+marking it as done. Minimising the number of clicks required to do this is
+important.</p>
+<h2>Forward and backward cross referencing</h2>
+<p>Someone with a lot of experience has "a web of knowledge". Lots of little bits
+of information that have links between each other. Experience and knowledge is
+not just a box of random, unconnected facts. It is a set of facts which are
+related to each other.</p>
+<p>To turn your issue tracker from a box of random issues with no context into a
+web of knowledge you need to create links between them. This is why the hyperlink
+got invented. Most issue trackers let you create forward links by referring to
+other issues. This creates a link from A to B and A to C.</p>
+<p>For your web of knowledge to really take off you also want to have links from
+C to A and from B to A. Someone reading issue B should see that it was referred
+to by other issues. A really good issue tracker automatically adds these backward
+references.</p>
+<h2>Things that don't matter</h2>
+<p>Things like tagging, assigning people, priorities, size estimates, sub-tasks,
+boards, burn down charts, and so on are nice but less important than features
+that help you accomplish the number one task you will be doing: reading what
+other people have written.</p>
+<p>These are nice to haves and create second order benefits. However they are not
+very useful if you don't have the basics covered first.</p>
+<h2>A recommendation</h2>
+<p>My current favourite issue tracker is the one that comes with GitHub
+repositories. I don't get any money or other benefits for recommending them.</p>
+<p>Before you turn away because your project is not a software project: people use
+GitHub issues to organise a whole variety of projects, not just software based
+ones. For example Mozilla used it to organise <a href="https://github.com/MozillaFestival/mozfest-program-2018">the MozFest 2018 program</a>.</p>
+<h2>Conclusion</h2>
+<p>Your issue tracker is a very important tool for creating the web of
+knowledge amongst your team. Most of your time is spent reading and writing,
+how good is your issue tracker at helping you do that?</p>
+  </article>
+</article>
+
+        </div>
+      </div>
+
+<div class="row justify-content-center pb-5">
+  <div class="col-md-8">
+    <footer>
+      <div class="social">
+          <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+          <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+          <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+      </div>
+      <div class="powered-by">
+        Copyright © 2014-2020  - Tim Head
+      </div>
+    </footer>
+  </div>
+</div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
