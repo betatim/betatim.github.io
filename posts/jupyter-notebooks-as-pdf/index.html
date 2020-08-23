@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="same-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
+
+<link rel="canonical" href="http://betatim.github.io/posts/jupyter-notebooks-as-pdf/">
+<meta property="og:url" content="http://betatim.github.io/posts/jupyter-notebooks-as-pdf/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Save Jupyter Notebooks as PDF" />
+
+    <title>Save Jupyter Notebooks as PDF - Tim Head's blog</title>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <link href="/theme/simplez.css" rel="stylesheet">
+    <link href="/theme/pygments/default.css" rel="stylesheet">
+
+    <script>
+      // Only load GA if DNT is not set
+      if (navigator.doNotTrack != "1" && // Most Firefox & Chrome
+          window.doNotTrack != "1" && // IE & Safari
+          navigator.msDoNotTrack != "1" // Old IE
+      ) {
+        console.log("Loading Google Analytics, since Do Not Track is off");
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-49540142-1', 'betatim.github.io', {'storage': 'none'});
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+      }
+    </script>
+
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        autoload: {
+          color: [],
+          colorV2: ['color']
+        },
+        packages: {'[+]': ['noerrors']}
+      },
+      chtml: {
+        displayAlign: 'left'    // Change this to 'center' to center equations.
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
+      }
+    };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8 px-0">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="http://betatim.github.io/">Tim<b>Head</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/pages/about">
+                      About Me
+                     </a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8">
+<article>
+  <header class="title">
+    <h1>
+      Save Jupyter Notebooks as PDF
+    </h1>
+    <time class="when d-block small mb-3">23 August 2020</time>
+  </header>
+  <article>
+    <p>This post introduces a Jupyter notebook extension that I created to help
+you save your notebooks as PDFs. It is available as <a href="https://pypi.org/project/notebook-as-pdf/"><code>notebook-as-pdf</code></a> and the source is on <a href="https://github.com/betatim/notebook-as-pdf"><code>betatim/notebook-as-pdf</code></a>. Try it without having to install anything: <a href="https://mybinder.org/v2/gh/betatim/notebook-as-pdf/master"><img alt="Binder" src="https://mybinder.org/badge_logo.svg"></a></p>
+<p>This extension does a few things differently, it will:</p>
+<ul>
+<li>produce a PDF with the smallest number of page breaks,</li>
+<li>attach the original notebook to the PDF,</li>
+<li>automatically generate a table of contents from the main headings; and</li>
+<li>this extension does not require LaTex.</li>
+</ul>
+<p>The rest of this post will explain each of those four points in more detail.</p>
+<p><img alt="" src="/images/nb-as-pdf-header.jpg"></p>
+<p>This blog post is about turning notebooks into PDF that aren't meant to be printed.</p>
+<h2>Create the smallest number of pages</h2>
+<p>The created PDF will have as few pages as possible, in many cases only one. A quick and unscientific poll on twitter confirmed my hunch that a lot of people save their notebooks as PDF not because they want to print them but to share them with others. Based on this I decided that <code>notebook-as-pdf</code> should not be limited
+by existing paper formats that people have in their printers.</p>
+<p><img alt="" src="/images/nb-as-pdf-one-page.png"></p>
+<p>Most notebooks will be converted into a single page PDF.</p>
+<p>This means the PDF you get will be very close to the look of a website, you can keep scrolling with no page breaks. For very long notebooks I discovered that some PDF viewers have a built-in limit to the extent of a page. As a result notebook-as-pdf will insert a page break when the page is longer than about 200in or 508cm.</p>
+<h2>Attach the original notebook</h2>
+<p>Technically a PDF document can be edited, but realistically when you export a notebook to a PDF the result is a "read only" document. Most of the time this is a good thing. The PDF gets attached to emails or shared in others ways. You do not want it to accidentally get edited or changed.</p>
+<p>However, sometimes you will have to go back and reproduce the PDF. Maybe some of the numbers do not add up or someone wants to change the dataset or the labels need fixing. This is when having the original notebook attached to the PDF comes in handy.</p>
+<p>Most people will have their notebooks in a Git repository or version them some other way. This means that they could just go to the commit that was current when the PDF was created and they should have the version that was used to make the PDF. Technically. In practice people forget to commit the exact version they used or little tweaks get made that get forgotten about.</p>
+<p>Luckily, the PDF specification allows you to attach a file to a PDF. notebook-as-pdf uses this feature to attach the original <code>.ipynb</code> file to the PDF. This allows you to go back to exactly the version of a notebook that was exported. All you need is the PDF in question.</p>
+<p><img alt="" src="/images/nb-as-pdf-attachment.png"></p>
+<p>The <a href="https://mozilla.github.io/pdf.js/">pdf.js</a> viewer has an "attachments" tab that lets you open the original notebook <code>.ipynb</code>.</p>
+<p>Unfortunately not all PDF viewers know how to deal with attachments. They will happily open a PDF with an attachment, but they will not let you download it. PDF viewers known to support downloading of file attachments are: Acrobat Reader, <a href="https://mozilla.github.io/pdf.js/">pdf.js</a> (the viewer used by Firefox) and <a href="https://wiki.gnome.org/Apps/Evince">evince</a>. The <a href="https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/">pdftk CLI</a> program can also extract attached files from a PDF. Sadly Preview for OSX does not know how to give you access to attachments of PDF files.</p>
+<h2>Automatically generate a table of contents</h2>
+<p>Navigating a large notebook can be tricky. This is why notebook-as-pdf will generate a table of contents for the PDF. Every main heading (technically every <code>&lt;h1&gt;</code> tag) in the notebook will be converted into an entry in the table of contents. This lets you quickly navigate the contents of the notebook. It also allows you to link people directly to a section you want them to read.</p>
+<p><img alt="" src="/images/nb-as-pdf-table-of-contents.png"></p>
+<p>The table of contents view in pdf.js</p>
+<p>In a future version lower level headings might be included in the table of contents. This would give you a more detailed view of the notebook structure but also more clutter in the table of contents. Maybe a better solution is to allow people to insert "bookmarks" into the notebook. Each of these bookmarks would then be a table of contents entry.</p>
+<h2>Do not use LaTeX</h2>
+<p>The final feature is that <a href="https://pypi.org/project/notebook-as-pdf/">notebook-as-pdf</a> uses Chromium to convert the notebook into a PDF. This means you do not need to install LaTeX which can be challenging to get to work because it is such a large and powerful piece of software.</p>
+<p>Instead notebook-as-pdf uses the "convert HTML to a PDF" feature of Chromium. The Chromium project spends a lot of time working on making it easy to install and work on all major platforms.</p>
+<p>The way notebook-as-pdf uses it is in "headless" mode. This means no window opens up when using it.</p>
+<p>This post introduces a Jupyter notebook extension that I created to help
+you save your notebooks as PDFs. It is available as <a href="https://pypi.org/project/notebook-as-pdf/"><code>notebook-as-pdf</code></a> and the source is on <a href="https://github.com/betatim/notebook-as-pdf"><code>betatim/notebook-as-pdf</code></a>. You can try it without having to install anything: <a href="https://mybinder.org/v2/gh/betatim/notebook-as-pdf/master"><img alt="Binder" src="https://mybinder.org/badge_logo.svg"></a></p>
+  </article>
+</article>
+
+        </div>
+      </div>
+
+<div class="row justify-content-center pb-5">
+  <div class="col-md-8">
+    <footer>
+      <div class="social">
+          <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+          <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+          <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+      </div>
+      <div class="powered-by">
+        Copyright © 2014-2020  - Tim Head
+      </div>
+    </footer>
+  </div>
+</div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

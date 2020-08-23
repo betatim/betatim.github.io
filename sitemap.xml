@@ -5,28 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://betatim.github.io/</loc>
-<lastmod>2020-02-22T11:51:25-00:00</lastmod>
+<lastmod>2020-08-23T18:29:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://betatim.github.io/archives.html</loc>
-<lastmod>2020-02-22T11:51:25-00:00</lastmod>
+<lastmod>2020-08-23T18:29:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://betatim.github.io/categories.html</loc>
-<lastmod>2020-02-22T11:51:25-00:00</lastmod>
+<lastmod>2020-08-23T18:29:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://betatim.github.io/pages/about.html</loc>
-<lastmod>2020-02-22T11:51:25-00:00</lastmod>
+<lastmod>2020-08-23T18:29:57-00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://betatim.github.io/posts/jupyter-notebooks-as-pdf/</loc>
+<lastmod>2020-08-23T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -236,14 +243,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://betatim.github.io/category/misc.html</loc>
-<lastmod>2020-02-22T00:00:00+00:09</lastmod>
+<lastmod>2020-08-23T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://betatim.github.io/author/tim-head.html</loc>
-<lastmod>2020-02-22T00:00:00+00:09</lastmod>
+<lastmod>2020-08-23T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
