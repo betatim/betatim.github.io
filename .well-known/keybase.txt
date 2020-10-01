@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/betatim
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://betatim.github.io
+  * I am betatim (https://keybase.io/betatim) on keybase.
+  * I have a public key with fingerprint F878 4CD6 06E1 9BD6 205D  6AFD 9B12 4580 85CF 9FD1
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01202c74762223734b995b5b1d08362fc580c15e637f610cff5978a326c3a78a81560a",
+      "fingerprint": "f8784cd606e19bd6205d6afd9b12458085cf9fd1",
+      "host": "keybase.io",
+      "key_id": "9b12458085cf9fd1",
+      "kid": "0101c6c57032fad88451af92e52385689f9e8ae8aff231bbe95429edf7e1dddcc73e0a",
+      "uid": "1b0312fffe39bbfb31a8597236a3ed19",
+      "username": "betatim"
+    },
+    "service": {
+      "hostname": "betatim.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1601543593,
+  "expire_in": 157680000,
+  "prev": "d3ec2d96e9385edbc67b0c421ed781fea2aaabe54924fa23e64d34cd2433a69e",
+  "seqno": 51,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owFtUm1QVFUYXuQjpEhEho8NQq9GTMHuvefs/dopnAQiHckYDIsG1vtxLtzQvcvu
+XeRDmtVhSxgUG8GBAUH6wZcgTkIjMSE5hhhOZhqMMkKkaKSY1ThkgHWX4kcznTkz
+55z3PO9znuc97+FAb52/V31wsst9uemK18gMr7M4G8NKMF4RizBzCZaHlha0S0QO
+1ZIni5gZwwmAA4E20RQAANLQxLMsyZM8IeIMpIAkkAwuECSiIC1RBC5IEsnSDAcB
+JUBO2zAESeEcFodJsjUH2W122apqtBJDMyZBpHAKESwvUgAnRYqTRJYngEmjZEhB
+YiWR0BJzFYcnQxPHcw5kkBUtph0sS/L+B7+sGycESiBpHAKJExnGRBKcxAJEAsiQ
+FMNKLGI4bUoSgATPI5Y0ARaJEo0IURQFgYZoSbdziY7gcUgASZIQZHle4iHBMZpR
+ACkOIpFgPUAHslu53UhD80jlVHk3VhqHacECWUCeunqM/BdgyJHVXCf/jyebXVEV
+QdmlXeeqqs1h9qSrRTYPfg/iLf8yWXjZKmq11DIKkN0hK1bMTGhIQePToASFE6QJ
+kiyMw1ChTbYji+xBkDTF4NrwvIMKNEoRoiwBiCyFWK0gSOQFiuZxwQQIJNIMISEO
+cBzHI9LEApPEAYgokwi1PwMmCDmKRZjHXL5VwcwkoQnlcjRSh5xj5VSnHWGlAeUr
+oI/Oy18XFbrO54/CraN+U/Wja7PeX1xuQN8Vnu7TBawMWo5UPlz1l3U6LfzzDqX7
+rfZstRg3bpw/eunTgfWflA+NBX/wY1HYkw0zNd85Q/pi7PkNz/ywp/Ca38pvzLbn
+jEVPPRvjyiLiNycY3p50tkLru8MpiVtPjE7VlN4ZPhjZvjbKv71tf57trE9XYHzt
+r5EVhlPj70VNPC5FVVf5vsL+10a88wNG4uYS/FvTe/ZvT9AX670zN7ljLDfOhxb6
+HP6iOapjJnd6/ctTQkfDVOebynC5b1u1fhLPzCZSftcrZe7N92NOg17W+uov1y89
+GXw+7FCCfmN6mrsz7vSg/tbOY5drBTbvds+62OiaLrbxZvzY+Jn0xy+28mvIr++Q
+D1L1d4su9halOpJnpk/83GzUu8aqZhfSPlODM8atk3XGeyFJzV09iReq29pOLr6w
+5Y2fJnrGDQf6HhkTL16Yr7qfeuO4ez7edy7mSH7GJjEJDH2cPKwYjzlcG75vbdyX
+n/S6FLktpnunwXXmwd6jV8qw8gV7b4JcF107GdFsP94d+Ap5vWnV/JbklgX50Kmb
+Bz7E/UrQubC5h0NrivPUP5XU2NWPTvoOPL3ty1BL32R9RHEl/1H/4rUJn7OdlkoZ
+7HjpVnXEanf/kd9i9wWVDe1tORc0m5n9TkUFuhu0I7pmrGE+Iz0Dhoc3Xb09Y00c
+DKkrPT9rTBm/Fz6gk7+ydLQUNtrG0re75D6jq+PbuL8B
+=8qDP
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/betatim
+
+==================================================================
