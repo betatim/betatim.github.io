@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="same-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
+
+<link rel="canonical" href="http://betatim.github.io/posts/upgrade-ability/">
+<meta property="og:url" content="http://betatim.github.io/posts/upgrade-ability/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Upgrade-ability" />
+
+    <title>Upgrade-ability - Tim Head's blog</title>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <link href="/theme/simplez.css" rel="stylesheet">
+    <link href="/theme/pygments/default.css" rel="stylesheet">
+
+    <script>
+      // Only load GA if DNT is not set
+      if (navigator.doNotTrack != "1" && // Most Firefox & Chrome
+          window.doNotTrack != "1" && // IE & Safari
+          navigator.msDoNotTrack != "1" // Old IE
+      ) {
+        console.log("Loading Google Analytics, since Do Not Track is off");
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-49540142-1', 'betatim.github.io', {'storage': 'none'});
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+      }
+    </script>
+
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        autoload: {
+          color: [],
+          colorV2: ['color']
+        },
+        packages: {'[+]': ['noerrors']}
+      },
+      chtml: {
+        displayAlign: 'left'    // Change this to 'center' to center equations.
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
+      }
+    };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8 px-0">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="http://betatim.github.io/">Tim<b>Head</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/pages/about">
+                      About Me
+                     </a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8">
+<article>
+  <header class="title">
+    <h1>
+      Upgrade-ability
+    </h1>
+    <time class="when d-block small mb-3">25 April 2021</time>
+  </header>
+  <article>
+    <p>People who create software obsess about versioning. What version am I using?
+What is the latest version? Are these two versions compatible? Can I upgrade
+from this version to the latest one? Is SemVer the best versioning system?</p>
+<p>This post will explore the idea that of software without versions.
+This post will tell you why it is a bad thing if you (have to) care about
+software versions and try to convince you that the only thing that matters is
+"upgrade-ability".</p>
+<p>"Upgrade-ability" is a measure that combines how easy it is to upgrade and how
+risky an upgrade is. The lower both of those are, the higher the
+"upgrade-ability".</p>
+<h2>User don't care about versioning</h2>
+<p>As a user of software one of the last things you care about is which version
+you are running. Don't believe me?</p>
+<p>As quick as you can: what version of Chrome are you
+using? - Chances are you have no idea and finding out would take you a moment.
+This is great. It means that the last time you cared which version of Chrome
+you are using is a long, long time ago.</p>
+<p>Maybe you are not the graphical user interface kind of person. Fair enough.
+Which version of curl are you running? - You had to look that up, didn't you?</p>
+<p>Everyone is using Slack all day, every day. Never unplugged, always ready to
+respond to chats. Surely for such an important and frequently used tool you
+know the version you are using. No?</p>
+<p>The point is that you do not know and neither should you. You have probably
+never had to care about which version you were using, whether it was compatible
+with some other software, or if you can (or need to) upgrade it.</p>
+<p>This is a good thing. It means you are using each of these tools as a
+tool to perform a task you actually care about. Like finding cute cat pictures.</p>
+<p>The only software I know the version of is software that someone did not work
+or frequently breaks when I change versions.</p>
+<p>Knowing the version of software you use is like knowing the number of your car
+dealer of by heart. It means it breaks too often.</p>
+<h2>Programmers shouldn't care about versioning</h2>
+<p>The creators of software spend an inordinate amount of time dealing
+with software versions and versioning. But they shouldn't have to.</p>
+<p>What versioning scheme should our software use? Endless
+and heated discussions can be triggered by bringing up this question. There
+are many schemes to choose from each with some perceived benefits and drawbacks.
+I don't know of a software project where the choice of versioning scheme was
+in the top five factors that determined success or failure. If you do, let me
+know!</p>
+<p>How often should we create a new release and what should be part of it?
+Another set of questions that can trigger very long deliberation phases. After
+which, no software has been released and put in the hands of users.</p>
+<p>Another job that takes a lot of effort is backporting changes to earlier version.
+Imagine after releasing v2.3 and v3.0 a important bug is discovered that exists
+in both versions. You now need to backport the fix to v2.3 and make a new release
+v2.3.1. You also have to release v3.0.1</p>
+<p>This brings us to the next big discussion: How many different versions do we
+support and for how long? There is no easy answer and so it will take a lot of
+effort to find the right one for your project.</p>
+<p>Because backporting changes and supporting multiple versions is such hard work
+most projects choose to only support one version: the current version. This is
+a fine choice. However you now need to work on making it easy to upgrade.</p>
+<p>A software "without versions" (like your browser) is a great solution to all
+these difficulties. Without versions you don't need to discuss versioning schemes.
+Without versioning you can release as often as you want. You only need to
+maintain one version.</p>
+<p>Otherwise you will become known as the software that is "pretty unstable" and</p>
+<p>But, breaking changes! How should we do those?</p>
+<h2>Take away</h2>
+<p>As someone who creates software with the goal of having lots of people use it:
+try to setup things so your users do not have to care about which version
+they are using. Because they'd rather not care</p>
+<p>This is hard work. Good luck!</p>
+  </article>
+</article>
+
+        </div>
+      </div>
+
+<div class="row justify-content-center pb-5">
+  <div class="col-md-8">
+    <footer>
+      <div class="social">
+          <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+          <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+          <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+      </div>
+      <div class="powered-by">
+        Copyright © 2014-2020  - Tim Head
+      </div>
+    </footer>
+  </div>
+</div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
