@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
 
-<link rel="canonical" href="http://betatim.github.io/drafts/rendezvous-hashing.html">
-<meta property="og:url" content="http://betatim.github.io/drafts/rendezvous-hashing.html" />
+<link rel="canonical" href="http://betatim.github.io/posts/pdf-js-preview/">
+<meta property="og:url" content="http://betatim.github.io/posts/pdf-js-preview/" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Rendezvous hashing" />
+<meta property="og:title" content="TIL: PDF JS Preview" />
 
-    <title>Rendezvous hashing - Tim Head's blog</title>
+    <title>TIL: PDF JS Preview - Tim Head's blog</title>
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
@@ -91,60 +91,43 @@
 <article>
   <header class="title">
     <h1>
-      Rendezvous hashing
+      TIL: PDF JS Preview
     </h1>
-    <time class="when d-block small mb-3">25 February 2020</time>
+    <time class="when d-block small mb-3">02 May 2021</time>
   </header>
   <article>
-    <p>This post will introduce you to an algorithm called rendezvous hashing. It is
-a great algorithm for load balancing requests without having to keep any state
-in your load balancers.</p>
-<p>Imagine you operate a very large warehouse. With many, many rows of  shelves.
-To distribute arriving goods to all of the shelves in all of the rows you have
-ten fork-lifts. When a pallet of bananas is delivered to
-the warehouse one of the fork-lifts picks it up and puts it on a shelf in
-the row for bananas. The same happens when a pallet of chocolate, washing machines
-or hammers arrives.</p>
-<p>Life is great. Each of the fork-lifts knows that bananas go in row five, hammers
-in row 13 and washing machines in row 42. This means they can go about their
-business without having to coordinate with all the other fork-lifts.</p>
-<p>There is one problem though: every time a new kind of item is delivered all
-the fork-lifts have to meet and briefly discuss where this new item should go.
-This is not a big deal if you deal with the same set of items and rarely add
-a new one.</p>
-<p>However, in this day and age of consumerism new products are constantly being
-invented and retired. This means your fork-lifts end up having to spend a lot
-of time having to meet to coordinate.</p>
-<p>Is there a way to reduce the amount of coordination needed? Yes there is.</p>
-<p>A real applications of it are load-balancing and assigning keys to caches. Though
-using it to coordinate fork-lifts sounds exciting as well.</p>
-<hr>
-<p>To solve the fork-lift problem we need
-an algorithm that allows our fork-lift trucks (or frontends)
-to agree which row (or backend server) to assign a pallet (or user) to. All without
-having to communicate with each other.</p>
-<p>One way of doing this would be to count the number of rows <code>n_rows</code> of shelves,
-to take the serial number of the product on a pallet and compute <code>serial mod n_rows</code>.</p>
-<p>Assuming the serial number is an integer then no matter what it is, this method
-will give you a number that is less
-than the total number of rows. So we can place a newly arrived pallet into the
-row given by <code>serial mod n_rows</code>. All we have to do is tell every fork-lift to
-use this formula and we are done. No matter which fork-lift picks up the pallet
-they will all agree on which row it should be stored in.</p>
-<p>For a practical example lets assume we have 100 rows in our warehouse. Assuming
-the serial number for bananas is 20213, then we assign them to row <code>20213 mod 100 = 13</code>.
-Hammers with serial number 74574 go into row <code>74574 mod 100 = 74</code>. And so on
-for every product that we want to store.</p>
-<p>To find an item again when it needs removing from the warehouse you can use
-the same algorithm to find the row in which the item will be.</p>
-<p>Life is great.</p>
-<hr>
-<p>A problem with this approach is that if the number of rows in the warehouse
-changes, for example when one of them is full, our algorithm will not work anymore.</p>
-<p>If we reduce the number of available rows from 100 to 99 all assignments change.
-Bananas will move to row <code>20213 mod 99 = 17</code> and hammers  to row <code>74574 mod 99 = 27</code>.</p>
-<p>To keep our system working we would have to pause adding items and rearrange
-everything that is in the warehouse.</p>
+    <p>Today I learnt how to use <a href="https://mozilla.github.io/pdf.js/">PDF.js</a> to
+add a PDF preview to a HTML form without having to upload the file to a server.</p>
+<p>I needed this to build a multi-step form that shows a preview before we have
+reached the last step in the form submission.</p>
+<p>A demo is worth a thousand words:</p>
+<p class="codepen" data-height="383" data-theme-id="light" data-default-tab="result" data-user="betatim" data-slug-hash="abpjwaZ" style="height: 383px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="PDF preview form">
+  <span>See the Pen <a href="https://codepen.io/betatim/pen/abpjwaZ">
+  PDF preview form</a> by Tim (<a href="https://codepen.io/betatim">@betatim</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+<p><br></p>
+<p>Check out the <a href="https://codepen.io/betatim/pen/abpjwaZ">code of the codepen</a> to
+see how it is done.</p>
+<p>This is a useful little snippet of JavaScript that means users do not have to
+upload the PDF to your servers first to get a preview image. In this case the
+API that receives the PDF does not offer an option to render only the first
+page. You have to upload the whole document, basically submitting the form,
+and then tidy up again when the user decides not to submit the form.</p>
+<p>A advantage of doing the rendering on the client side is that you do not have
+to upload the PDF first. This can be a huge benefit if your users are on a
+slow internet connection and have large files.</p>
+<p>A drawback of using PDF.js is that if your PDF is expensive to render, it can
+take a while to get that preview image on a low powered device like a mobile
+phone.</p>
+<p>One thing that took me a while to figure out is that you should not include the
+<code>pdf.worker.js</code> via a <code>&lt;script&gt;</code> tag. Instead you should set <code>pdfjsLib.GlobalWorkerOptions.workerSrc = "https://unpkg.com/pdfjs-dist/build/pdf.worker.js"</code> in your JS. Figuring this out
+took a while because a lot of examples either load it in <code>&lt;script&gt;</code> tag or do
+not make any mention of it. If you load it the wrong way you will see a warning
+in your console about PDF.js using a "dummy worker".</p>
   </article>
 </article>
 

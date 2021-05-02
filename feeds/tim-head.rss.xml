@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Tim Head's blog - Tim Head</title><link>http://betatim.github.io/</link><description></description><lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0200</lastBuildDate><item><title>TIL: Hotwire's Turbo with Python</title><link>http://betatim.github.io/posts/hotwire-turbo-with-python/</link><description>&lt;p&gt;&lt;a href="https://turbo.hotwire.dev/handbook/streams"&gt;Hotwire's Turbo Streams&lt;/a&gt; can use
+<rss version="2.0"><channel><title>Tim Head's blog - Tim Head</title><link>http://betatim.github.io/</link><description></description><lastBuildDate>Sun, 02 May 2021 00:00:00 +0200</lastBuildDate><item><title>TIL: PDF JS Preview</title><link>http://betatim.github.io/posts/pdf-js-preview/</link><description>&lt;p&gt;Today I learnt how to use &lt;a href="https://mozilla.github.io/pdf.js/"&gt;PDF.js&lt;/a&gt; to
+add a PDF preview to a HTML form without having to upload the file to a server.&lt;/p&gt;
+&lt;p&gt;I needed this to build a multi-step form that shows a preview before we have
+reached the last step in the form submission.&lt;/p&gt;
+&lt;p&gt;A …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Tim Head</dc:creator><pubDate>Sun, 02 May 2021 00:00:00 +0200</pubDate><guid isPermaLink="false">tag:betatim.github.io,2021-05-02:/posts/pdf-js-preview/</guid><category>misc</category></item><item><title>TIL: Hotwire's Turbo with Python</title><link>http://betatim.github.io/posts/hotwire-turbo-with-python/</link><description>&lt;p&gt;&lt;a href="https://turbo.hotwire.dev/handbook/streams"&gt;Hotwire's Turbo Streams&lt;/a&gt; can use
 WebSockets to stream updates. How to do this is not well documented in the
 handbook. This post contains my notes on building a prototype to figure out
 how to do it. I used Tornado as webserver but the technique is completely
