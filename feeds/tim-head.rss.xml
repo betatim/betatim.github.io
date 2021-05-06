@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Tim Head's blog - Tim Head</title><link>http://betatim.github.io/</link><description></description><lastBuildDate>Sun, 02 May 2021 00:00:00 +0200</lastBuildDate><item><title>TIL: PDF JS Preview</title><link>http://betatim.github.io/posts/pdf-js-preview/</link><description>&lt;p&gt;Today I learnt how to use &lt;a href="https://mozilla.github.io/pdf.js/"&gt;PDF.js&lt;/a&gt; to
+<rss version="2.0"><channel><title>Tim Head's blog - Tim Head</title><link>http://betatim.github.io/</link><description></description><lastBuildDate>Thu, 06 May 2021 00:00:00 +0200</lastBuildDate><item><title>TIL: Limiting clamav memory usage</title><link>http://betatim.github.io/posts/clamav-memory-usage/</link><description>&lt;p&gt;Today I learnt how to limit &lt;a href="https://www.clamav.net/"&gt;clamd's&lt;/a&gt; memory consumption.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;clamd&lt;/code&gt; process uses a lot of memory (about 1GB) because it loads the
+complete database of virus definitions into memory. This allows it to be super
+fast.&lt;/p&gt;
+&lt;p&gt;When deploying this to a kubernetes cluster we want to set a memory …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Tim Head</dc:creator><pubDate>Thu, 06 May 2021 00:00:00 +0200</pubDate><guid isPermaLink="false">tag:betatim.github.io,2021-05-06:/posts/clamav-memory-usage/</guid><category>misc</category></item><item><title>TIL: PDF JS Preview</title><link>http://betatim.github.io/posts/pdf-js-preview/</link><description>&lt;p&gt;Today I learnt how to use &lt;a href="https://mozilla.github.io/pdf.js/"&gt;PDF.js&lt;/a&gt; to
 add a PDF preview to a HTML form without having to upload the file to a server.&lt;/p&gt;
 &lt;p&gt;I needed this to build a multi-step form that shows a preview before we have
 reached the last step in the form submission.&lt;/p&gt;
