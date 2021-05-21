@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Tim Head's blog - Tim Head</title><link>http://betatim.github.io/</link><description></description><lastBuildDate>Sun, 09 May 2021 00:00:00 +0200</lastBuildDate><item><title>TIL? Today I learnt! - the explainer post</title><link>http://betatim.github.io/posts/til-explained/</link><description>&lt;p&gt;I started posting "TILs" and you might be wondering what they are and why I
+<rss version="2.0"><channel><title>Tim Head's blog - Tim Head</title><link>http://betatim.github.io/</link><description></description><lastBuildDate>Fri, 21 May 2021 00:00:00 +0200</lastBuildDate><item><title>TIL: Configure Traefik on bare metal</title><link>http://betatim.github.io/posts/traefik-config-bare-metal/</link><description>&lt;p&gt;&lt;em&gt;&lt;a href="../til-explained"&gt;What is a TIL?&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Today I learnt how to configure &lt;a href="https://doc.traefik.io/traefik/"&gt;traefik&lt;/a&gt; as reverse proxy for a service
+running on "bare metal". I have a webserver listening on &lt;code&gt;http://localhost:8080&lt;/code&gt;
+and would like it to be reachable from the internet. With HTTPS.&lt;/p&gt;
+&lt;p&gt;I setup traefik v2.4.8 by downloading …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Tim Head</dc:creator><pubDate>Fri, 21 May 2021 00:00:00 +0200</pubDate><guid isPermaLink="false">tag:betatim.github.io,2021-05-21:/posts/traefik-config-bare-metal/</guid><category>misc</category></item><item><title>TIL? Today I learnt! - the explainer post</title><link>http://betatim.github.io/posts/til-explained/</link><description>&lt;p&gt;I started posting "TILs" and you might be wondering what they are and why I
 am posting them.&lt;/p&gt;
 &lt;p&gt;TIL stands for Today I Learnt. The posts are short summaries of something
 I learnt.&lt;/p&gt;

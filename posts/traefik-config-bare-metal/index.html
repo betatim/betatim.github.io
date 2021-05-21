@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="same-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
+
+<link rel="canonical" href="http://betatim.github.io/posts/traefik-config-bare-metal/">
+<meta property="og:url" content="http://betatim.github.io/posts/traefik-config-bare-metal/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="TIL: Configure Traefik on bare metal" />
+
+    <title>TIL: Configure Traefik on bare metal - Tim Head's blog</title>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <link href="/theme/simplez.css" rel="stylesheet">
+    <link href="/theme/pygments/default.css" rel="stylesheet">
+
+    <script>
+      // Only load GA if DNT is not set
+      if (navigator.doNotTrack != "1" && // Most Firefox & Chrome
+          window.doNotTrack != "1" && // IE & Safari
+          navigator.msDoNotTrack != "1" // Old IE
+      ) {
+        console.log("Loading Google Analytics, since Do Not Track is off");
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-49540142-1', 'betatim.github.io', {'storage': 'none'});
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+      }
+    </script>
+
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        autoload: {
+          color: [],
+          colorV2: ['color']
+        },
+        packages: {'[+]': ['noerrors']}
+      },
+      chtml: {
+        displayAlign: 'left'    // Change this to 'center' to center equations.
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
+      }
+    };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8 px-0">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="http://betatim.github.io/">Tim<b>Head</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/pages/about">
+                      About Me
+                     </a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8">
+<article>
+  <header class="title">
+    <h1>
+      TIL: Configure Traefik on bare metal
+    </h1>
+    <time class="when d-block small mb-3">21 May 2021</time>
+  </header>
+  <article>
+    <p><em><a href="../til-explained">What is a TIL?</a></em></p>
+<p>Today I learnt how to configure <a href="https://doc.traefik.io/traefik/">traefik</a> as reverse proxy for a service
+running on "bare metal". I have a webserver listening on <code>http://localhost:8080</code>
+and would like it to be reachable from the internet. With HTTPS.</p>
+<p>I setup traefik v2.4.8 by downloading it and creating two config files.</p>
+<p>The first config file sets up the basic, mostly static configuration. It lives
+at <code>/etc/traefik/traefik.toml</code>:</p>
+<div class="highlight"><pre><span></span><span class="k">[entryPoints]</span>
+  <span class="k">[entryPoints.web]</span>
+    <span class="na">address</span> <span class="o">=</span> <span class="s">&quot;:80&quot;</span>
+<span class="s">    [entryPoints.web.http.redirections.entryPoint]</span>
+<span class="s">      to = &quot;websecure&quot;</span>
+<span class="s">      scheme = &quot;https&quot;</span>
+
+  <span class="k">[entryPoints.websecure]</span>
+    <span class="na">address</span> <span class="o">=</span> <span class="s">&quot;:443&quot;</span>
+
+<span class="k">[api]</span>
+  <span class="na">dashboard</span> <span class="o">=</span> <span class="s">true</span>
+
+<span class="k">[certificatesResolvers.lets-encrypt.acme]</span>
+  <span class="na">email</span> <span class="o">=</span> <span class="s">&quot;my-email@example.com&quot;</span>
+<span class="s">  storage = &quot;acme.json&quot;</span>
+<span class="s">  [certificatesResolvers.lets-encrypt.acme.tlsChallenge]</span>
+
+<span class="k">[providers.file]</span>
+  <span class="na">filename</span> <span class="o">=</span> <span class="s">&quot;/etc/traefik/traefik_dynamic.toml&quot;</span>
+<span class="s">  watch = true</span>
+</pre></div>
+
+
+<p>The interesting part (and where it would differ if your service was running in
+a docker container) is the <code>[providers.file]</code> section. It points to the "dynamic"
+configuration file (the second one I created) which configures the routers and services:</p>
+<div class="highlight"><pre><span></span><span class="k">[tls.options]</span>
+  <span class="k">[tls.options.modern]</span>
+    <span class="na">minVersion</span> <span class="o">=</span> <span class="s">&quot;VersionTLS13&quot;</span>
+
+<span class="k">[http.middlewares.apiAuth.basicAuth]</span>
+  <span class="na">users</span> <span class="o">=</span> <span class="s">[</span>
+<span class="s">    # use `htpasswd -n admin` to generate the secret</span>
+<span class="s">    &quot;admin:$apr1$.h4Eecwq$something-secret.&quot;</span>
+<span class="s">  ]</span>
+
+<span class="k">[http.routers.api]</span>
+  <span class="na">rule</span> <span class="o">=</span> <span class="s">&quot;Host(`traefik-dashboard.example.com`)&quot;</span>
+<span class="s">  entrypoints = [&quot;websecure&quot;]</span>
+<span class="s">  middlewares = [&quot;apiAuth&quot;]</span>
+<span class="s">  service = &quot;api@internal&quot;</span>
+<span class="s">  [http.routers.api.tls]</span>
+<span class="s">    certResolver = &quot;lets-encrypt&quot;</span>
+<span class="s">    options = &quot;modern&quot;</span>
+
+<span class="k">[http.routers.myservice]</span>
+  <span class="na">rule</span> <span class="o">=</span> <span class="s">&quot;Host(`my-service.example.com`)&quot;</span>
+<span class="s">  service = &quot;myservice&quot;</span>
+<span class="s">  [http.routers.myservice.tls]</span>
+<span class="s">    certResolver = &quot;lets-encrypt&quot;</span>
+<span class="s">    options = &quot;modern&quot;</span>
+
+<span class="k">[http.services]</span>
+  <span class="k">[http.services.myservice.loadBalancer]</span>
+    <span class="k">[[http.services.myservice.loadBalancer.servers]]</span>
+      <span class="na">url</span> <span class="o">=</span> <span class="s">&quot;http://localhost:8080/&quot;</span>
+</pre></div>
+
+
+<p>After this run <code>traefik --configuration=/etc/traefik/traefik.toml</code> as root and
+you will be able to visit the dashboard at https://traefik-dashboard.example.com.</p>
+<p>The service which is listening on <code>localhost:8080</code> will be available at
+https://my-service.example.com.</p>
+<p>The cool thing is that traefik takes care of obtaining the TLS certificates from
+Let's Encrypt.</p>
+<p>To run traefik on my ubuntu machine I used <code>systemd</code> with the following
+unit file:</p>
+<div class="highlight"><pre><span></span><span class="k">[Unit]</span>
+<span class="c1"># Wait for network stack to be fully up before starting proxy</span>
+<span class="na">After</span><span class="o">=</span><span class="s">network.target</span>
+
+<span class="k">[Service]</span>
+<span class="na">User</span><span class="o">=</span><span class="s">root</span>
+<span class="na">Restart</span><span class="o">=</span><span class="s">always</span>
+<span class="na">ProtectHome</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">ProtectSystem</span><span class="o">=</span><span class="s">strict</span>
+<span class="na">PrivateTmp</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">PrivateDevices</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">ProtectKernelTunables</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">ProtectKernelModules</span><span class="o">=</span><span class="s">yes</span>
+<span class="na">ReadWritePaths</span><span class="o">=</span><span class="s">/opt/traefik/state/acme.json</span>
+<span class="na">WorkingDirectory</span><span class="o">=</span><span class="s">/opt/traefik/state/</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/opt/traefik/bin/traefik \</span>
+<span class="s">            --configfile /etc/traefik/traefik.toml</span>
+
+<span class="k">[Install]</span>
+<span class="c1"># Start service when system boots</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</pre></div>
+
+
+<p>And that was it. My service is reachable from the internet and uses HTTPS.</p>
+  </article>
+</article>
+
+        </div>
+      </div>
+
+<div class="row justify-content-center pb-5">
+  <div class="col-md-8">
+    <footer>
+      <div class="social">
+          <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+          <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+          <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+      </div>
+      <div class="powered-by">
+        Copyright © 2014-2021  - Tim Head
+      </div>
+    </footer>
+  </div>
+</div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
