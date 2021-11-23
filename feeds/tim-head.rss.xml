@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Tim Head's blog - Tim Head</title><link>http://betatim.github.io/</link><description></description><lastBuildDate>Wed, 17 Nov 2021 00:00:00 +0100</lastBuildDate><item><title>TIL: A Python module from which you can import anything</title><link>http://betatim.github.io/posts/python-module-import-anything/</link><description>&lt;p&gt;&lt;em&gt;&lt;a href="../til-explained"&gt;What is a TIL?&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Tim Head's blog - Tim Head</title><link>http://betatim.github.io/</link><description></description><lastBuildDate>Tue, 23 Nov 2021 00:00:00 +0100</lastBuildDate><item><title>Communicating in writing</title><link>http://betatim.github.io/posts/communicating-in-writing/</link><description>&lt;p&gt;We humans communicate a lot. Increasingly so in writing. This post is exists
+because I am trying to find books, guides, courses, lessons and expert advice
+on how to get better at communicating, in writing.&lt;/p&gt;
+&lt;p&gt;I am looking for ways to improve my (and others) communication in the context
+of …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Tim Head</dc:creator><pubDate>Tue, 23 Nov 2021 00:00:00 +0100</pubDate><guid isPermaLink="false">tag:betatim.github.io,2021-11-23:/posts/communicating-in-writing/</guid><category>misc</category></item><item><title>TIL: A Python module from which you can import anything</title><link>http://betatim.github.io/posts/python-module-import-anything/</link><description>&lt;p&gt;&lt;em&gt;&lt;a href="../til-explained"&gt;What is a TIL?&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Today I learnt how to make a Python module from which you can import anything.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://twitter.com/yuvipanda/status/1460630086319702017"&gt;Yuvi asked&lt;/a&gt; if you
 can write a Python module that will allow anything to be imported from it. A bit
