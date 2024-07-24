@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="same-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
+
+<link rel="canonical" href="http://betatim.github.io/posts/github-action-with-gpu/">
+<meta property="og:url" content="http://betatim.github.io/posts/github-action-with-gpu/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="GitHub Action workflows with GPUs" />
+
+    <title>GitHub Action workflows with GPUs - Tim Head's blog</title>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <link href="/theme/simplez.css" rel="stylesheet">
+    <link href="/theme/pygments/default.css" rel="stylesheet">
+
+    <script>
+      // Only load GA if DNT is not set
+      if (navigator.doNotTrack != "1" && // Most Firefox & Chrome
+          window.doNotTrack != "1" && // IE & Safari
+          navigator.msDoNotTrack != "1" // Old IE
+      ) {
+        console.log("Loading Google Analytics, since Do Not Track is off");
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-49540142-1', 'betatim.github.io', {'storage': 'none'});
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+      }
+    </script>
+
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        autoload: {
+          color: [],
+          colorV2: ['color']
+        },
+        packages: {'[+]': ['noerrors']}
+      },
+      chtml: {
+        displayAlign: 'left'    // Change this to 'center' to center equations.
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
+      }
+    };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8 px-0">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="http://betatim.github.io/">Tim<b>Head</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/pages/about">
+                      About Me
+                     </a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8">
+<article>
+  <header class="title">
+    <h1>
+      GitHub Action workflows with GPUs
+    </h1>
+    <time class="when d-block small mb-3">24 July 2024</time>
+  </header>
+  <article>
+    <p>TL;DR: If you have GPU code in your project, setup a GitHub hosted GPU runner today.
+It is fairly quick to do and will free you from having to run tests manually.</p>
+<p>Writing automated tests for your code base and certainly for the more complex parts
+of it has become as normal as brushing your teeth in the morning. Having a system
+that automatically runs a project's tests for every Pull Request
+is completely normal. However, until recently it was very complex and expensive
+to setup a system that can run tests on a system with a GPU. This means that,
+when dealing with GPU related code, we were thrown back into the dark ages where
+you had to rely on manual testing.</p>
+<p>In this blog post I will describe how we set up a GitHub Action based GPU runner
+for the scikit-learn project and the things we learnt along the way. The goal is
+to give you some additional information and details about the setup we now use.</p>
+<ul>
+<li><a href="#larger-runners-with-gpus">Setting up larger runners for your project</a></li>
+<li><a href="#vm-image-contents">VM image contents and setup</a></li>
+<li><a href="#workflow-configuration">Workflow configuration</a></li>
+<li><a href="#bonus-material">Bonus material</a></li>
+</ul>
+<h2>Larger runners with GPUs <span id="larger-runners-with-gpus"></span></h2>
+<p>All workflows for your GitHub project are executed on a
+runner. Normally all your workflows run on the default runner, but you can have additional runners too. If you wanted
+to you could host a runner yourself on your own infrastructure. Until now this
+was the only way to get access to a runner with a GPU. However, hosting your
+own runner is complicated and comes with pitfalls regarding security.</p>
+<p>Since about April 2024 GitHub has made <a href="https://docs.github.com/en/actions/using-github-hosted-runners/about-larger-runners/about-larger-runners">larger runners with a
+GPU</a> generally available.</p>
+<p>To use these you will have to <a href="https://docs.github.com/en/billing/managing-your-github-billing-settings/adding-or-editing-a-payment-method#updating-your-organizations-payment-method">setup a credit card for your organisation</a>. Configure a spending limit so that you do not end up getting surprised
+with a very large bill. For scikit-learn we currently use a limit of $50.</p>
+<p>When <a href="https://github.com/organizations/YOUR_OWN_ORG_NAME/settings/actions/runners">adding a new GitHub hosted runner</a> make sure to select the "Partner" tab when
+choosing the VM's image. You need to select the "NVIDIA GPU-Optimized Image for AI and HPC"
+image in order to be able to choose the GPU runner later on.</p>
+<p>The group the runner is assigned to can be configured to only allow particular repositories
+and workflows to use the runner group. It makes sense to only enable the runner
+group for the repository in which you plan to use it. Limiting which workflows your
+runner will pick up requires an additional level of indirection in your workflow
+setup, so I will not cover it in this blog post.</p>
+<p>Name your runner group <code>cuda-gpu-runner-group</code> to match the name used in the examples
+below.</p>
+<h2>VM Image contents <span id="vm-image-contents"></span></h2>
+<p>The GPU runner uses a disk image provided by NVIDIA. This means that there are
+some differences to the image that the default runner uses.</p>
+<p>The <code>gh</code> command-line utility is not installed by default. Keep this in mind
+if you want to do things like removing a label from the Pull Request or
+other such tasks.</p>
+<p>The biggest difference to the standard image is that the GPU image contains
+a conda installation, but the file permissions do not allow the workflow user
+to modify the existing environment or create new environments. As a result
+for scikit-learn we install conda a second time via miniforge. The conda environment is
+created from a lockfile, so we do not need to run the dependency solver.</p>
+<h2>Workflow configuration <span id="workflow-configuration"></span></h2>
+<p>A key difference between the GPU runner and the default runner is that a project
+has to pay for the time of the GPU runner. This means that you might want to
+execute your GPU workflow only for some Pull Requests instead of all of them.</p>
+<p>The GPU available in the runner is not very powerful, this means it is not
+that attractive of a target for people who are looking to abuse free GPU resources.
+Nevertheless, once in a while someone might try. Another reason to not run
+the GPU workflow by default.</p>
+<p>A nice way to deal with running the workflow only after some form of human review
+is to use a label. To mark a Pull Request (PR) for execution on the GPU runner a
+reviewer applies a particular label. Applying a label does not cause a notification
+to be sent to all PR participants, unlike using a special comment to trigger the
+workflow.
+In the following example the <code>CUDA CI</code> label is used to mark a PR for execution and
+the <code>runs-on</code> directive is used to select the GPU runner. This is a snippet from
+<a href="https://github.com/scikit-learn/scikit-learn/blob/9d39f57399d6f1f7d8e8d4351dbc3e9244b98d28/.github/workflows/cuda-ci.yml">the full GPU workflow</a> used in the scikit-learn repository.</p>
+<div class="highlight"><pre><span></span><span class="n">name</span><span class="o">:</span> <span class="n">CUDA</span> <span class="n">GPU</span>
+<span class="n">on</span><span class="o">:</span>
+  <span class="n">pull_request</span><span class="o">:</span>
+    <span class="n">types</span><span class="o">:</span>
+      <span class="o">-</span> <span class="n">labeled</span>
+
+<span class="n">jobs</span><span class="o">:</span>
+  <span class="n">tests</span><span class="o">:</span>
+    <span class="k">if</span><span class="o">:</span> <span class="n">contains</span><span class="o">(</span><span class="n">github</span><span class="o">.</span><span class="na">event</span><span class="o">.</span><span class="na">pull_request</span><span class="o">.</span><span class="na">labels</span><span class="o">.*.</span><span class="n">name</span><span class="o">,</span> <span class="s1">&#39;CUDA CI&#39;</span><span class="o">)</span>
+    <span class="n">runs</span><span class="o">-</span><span class="n">on</span><span class="o">:</span>
+      <span class="n">group</span><span class="o">:</span> <span class="n">cuda</span><span class="o">-</span><span class="n">gpu</span><span class="o">-</span><span class="n">runner</span><span class="o">-</span><span class="n">group</span>
+    <span class="n">steps</span><span class="o">:</span>
+      <span class="o">-</span> <span class="n">uses</span><span class="o">:</span> <span class="n">actions</span><span class="o">/</span><span class="n">setup</span><span class="o">-</span><span class="n">python</span><span class="err">@</span><span class="n">v5</span>
+        <span class="k">with</span><span class="o">:</span>
+          <span class="n">python</span><span class="o">-</span><span class="n">version</span><span class="o">:</span> <span class="s1">&#39;3.12.3&#39;</span>
+      <span class="o">-</span> <span class="n">name</span><span class="o">:</span> <span class="n">Checkout</span> <span class="n">main</span> <span class="n">repository</span>
+        <span class="n">uses</span><span class="o">:</span> <span class="n">actions</span><span class="o">/</span><span class="n">checkout</span><span class="err">@</span><span class="n">v4</span>
+      <span class="o">...</span>
+</pre></div>
+
+
+<p>In order to remove the label again we need a workflow with elevated
+permissions. It needs to be able to edit a Pull Request. This privilege is not
+available for workflows triggered from Pull Requests from forks. Instead
+the workflow has to run in the context of the main repository and should only
+do the minimum amount of work.</p>
+<div class="highlight"><pre><span></span><span class="k">on</span><span class="p">:</span>
+  <span class="c1"># Using `pull_request_target` gives us the possibility to get a API token</span>
+  <span class="c1"># with write permissions</span>
+  <span class="n">pull_request_target</span><span class="p">:</span>
+    <span class="n">types</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">labeled</span>
+
+<span class="c1"># In order to remove the &quot;CUDA CI&quot; label we need to have write permissions for PRs</span>
+<span class="n">permissions</span><span class="p">:</span>
+  <span class="n">pull</span><span class="o">-</span><span class="n">requests</span><span class="p">:</span> <span class="k">write</span>
+
+<span class="n">jobs</span><span class="p">:</span>
+  <span class="n">label</span><span class="o">-</span><span class="n">remover</span><span class="p">:</span>
+    <span class="k">if</span><span class="p">:</span> <span class="nf">contains</span><span class="p">(</span><span class="n">github</span><span class="p">.</span><span class="n">event</span><span class="p">.</span><span class="n">pull_request</span><span class="p">.</span><span class="n">labels</span><span class="p">.</span><span class="o">*</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;CUDA CI&#39;</span><span class="p">)</span>
+    <span class="n">runs</span><span class="o">-</span><span class="k">on</span><span class="p">:</span> <span class="n">ubuntu</span><span class="o">-</span><span class="mi">20</span><span class="p">.</span><span class="mi">04</span>
+    <span class="n">steps</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">uses</span><span class="p">:</span> <span class="n">actions</span><span class="o">-</span><span class="n">ecosystem</span><span class="o">/</span><span class="n">action</span><span class="o">-</span><span class="n">remove</span><span class="o">-</span><span class="n">labels</span><span class="o">@</span><span class="n">v1</span>
+        <span class="k">with</span><span class="p">:</span>
+          <span class="n">labels</span><span class="p">:</span> <span class="n">CUDA</span> <span class="n">CI</span>
+</pre></div>
+
+
+<p>This snippet is from the <a href="https://github.com/scikit-learn/scikit-learn/blob/9d39f57399d6f1f7d8e8d4351dbc3e9244b98d28/.github/workflows/cuda-label-remover.yml">label remover workflow</a>
+we use in scikit-learn.</p>
+<h2>Bonus Material <span id="bonus-material"></span></h2>
+<p>For scikit-learn we have been using the GPU runner for about six weeks. So far we have stayed
+below the $50 monthly spending limit we set. This includes some runs to debug the setup at the
+start.</p>
+<p>One of the scikit-learn contributors created a <a href="https://gist.github.com/EdAbati/ff3bdc06bafeb92452b3740686cc8d7c">Colab notebook that people can use to setup and run the scikit-learn test suite on Colab</a>. This is useful
+for contributors who do not have easy access to a GPU. They can test their changes or debug
+failures without having to wait for a maintainer to label the Pull Request. We plan to add
+a workflow that comments on PRs with information on how to use this notebook to increase its
+discoverability.</p>
+<h2>Conclusion</h2>
+<p>Overall it was not too difficult to setup the GPU runner. It took a little bit of fiddling to
+deal with the differences in VM image content as well as a few iterations for how to setup
+the workflow, given we wanted to manually trigger them.</p>
+<p>The GPU runner has been reliably working and picking up work when requested. It saves us (the
+maintainers) a lot of time, as we do not have to checkout a PR locally and run the tests
+by hand.</p>
+<p>The costs so far have been manageable and it has been worth spending the money as it removes
+a repetitive and tedious manual task from the reviewing workflow. However, it does require
+having the funds and a credit card.</p>
+  </article>
+</article>
+
+        </div>
+      </div>
+
+<div class="row justify-content-center pb-5">
+  <div class="col-md-8">
+    <footer>
+      <div class="social">
+          <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+          <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+          <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+      </div>
+      <div class="powered-by">
+        Copyright © 2014-2021  - Tim Head
+      </div>
+    </footer>
+  </div>
+</div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
