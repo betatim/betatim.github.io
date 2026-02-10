@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="same-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
+
+<link rel="canonical" href="http://betatim.github.io/posts/using-ai-in-public/">
+<meta property="og:url" content="http://betatim.github.io/posts/using-ai-in-public/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Trust, but verify - using AI tools in public" />
+
+    <title>Trust, but verify - using AI tools in public - Tim Head's blog</title>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <link href="/theme/simplez.css" rel="stylesheet">
+    <link href="/theme/pygments/default.css" rel="stylesheet">
+
+    <script>
+      // Only load GA if DNT is not set
+      if (navigator.doNotTrack != "1" && // Most Firefox & Chrome
+          window.doNotTrack != "1" && // IE & Safari
+          navigator.msDoNotTrack != "1" // Old IE
+      ) {
+        console.log("Loading Google Analytics, since Do Not Track is off");
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-49540142-1', 'betatim.github.io', {'storage': 'none'});
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+      }
+    </script>
+
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        autoload: {
+          color: [],
+          colorV2: ['color']
+        },
+        packages: {'[+]': ['noerrors']}
+      },
+      chtml: {
+        displayAlign: 'left'    // Change this to 'center' to center equations.
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
+      loader: {
+        load: ['[tex]/noerrors']
+      }
+    };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8 px-0">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="http://betatim.github.io/">Tim<b>Head</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/pages/about">
+                      About Me
+                     </a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-8">
+<article>
+  <header class="title">
+    <h1>
+      Trust, but verify - using AI tools in public
+    </h1>
+    <time class="when d-block small mb-3">10 February 2026</time>
+  </header>
+  <article>
+    <p>With access to AI tools I can create, work on and contribute to (software) projects that I have no business creating, working on or contributing to. This is fantastic! It also creates a dilemma.</p>
+<p>In the days before AI tools, adding a feature to a browser extension would be something that I could probably do, but would not. I know very little about browser extensions. How they are created, how they work, how to make them do stuff, etc. I could teach myself, but I would probably have to set aside a day or two to get something working. Unfortunately this means I would not build the feature I was missing because two days for a speculative, little tweak is too much investment. In particular because I do not want to become a regular contributor to browser extensions.</p>
+<p>I work on scikit-learn as a maintainer. It is part of my day job! Yet there are parts of the library that contain algorithms I do not know much about. Or estimators that use parts of linear algebra that I have not thought about since university. I can make changes to these parts or review contributions made by others. It requires quite a bit of investment though as I have to remind myself of things that are stored somewhere at the back of my brain.</p>
+<p>The examples continue. With AI tools it becomes feasible to do all these things. If I can think of it, I can build it. At least a first prototype. Once there is a prototype it is much easier to decide if you want to invest more time or not. Often the "prototype" is super good enough. For the browser extension I had something that showed it would work and be useful within ten minutes. And I participated in a meeting for those ten minutes, so I did not fully concentrate on the work. Instead I wrote down what the goal was and asked an AI tool to research the topic and then make a plan for implementation.</p>
+<p>The problem with all this is: how do I verify that what AI created for me works the way that I think it does? For a browser extension tweak that only I use I can manually test the feature. Do they fulfill accessibility standards and are the CSS selectors used robust enough? I have no idea, I am not even sure how to check. Or what other questions to ask. For changes to complex algorithms in scikit-learn it is even harder to know what questions to ask.</p>
+<p>Accessibility standards do not matter for my private changes to a browser extension. If it breaks I will ask AI to make it work again. As long as I do not distribute this work it is not a problem that I have very little understanding of why it works. For work on scikit-learn or other large open-source projects this does not apply. Changes to these libraries get shipped to millions of people, mission critical projects rely on them. For anything you share or contribute to others verification is mandatory. Asking AI to work on something and then posting the results without putting in the verification work means that the project maintainers now have even more work.</p>
+<p>Yes, I can build things that otherwise I could not (or would not). This is like a superpower. For public work there is no way around it: you have to put in the work to understand and check what you built. Feynman once said: "What I cannot create I don't understand." - I believe this and have for many years. It does not mean that you can not use AI tools. Think of what an AI tool builds for you as being like watching a tutorial or a lecture. Watching someone derive a proof or build a cabinet is very helpful for learning how to do it yourself, but it is not the same.</p>
+<p>Use what your tool created as a starting point for learning how to create it yourself. You need to study what you asked the AI tool to create, break it down and put it back together, try to find contradictions and things that look not quite right.</p>
+<p>This is how physicists study the universe and slowly, but surely, increase our understanding of it. Science is about understanding things like the universe which we did not create. As part of studying the universe, science breaks down the problem into smaller ones. These smaller problems can be studied in experiments in the lab. The solutions from several smaller problems are put back together to form a theory for the big questions of science.</p>
+<p>You can understand something that you did not create, could not create, through science. You can apply the same approach to software. </p>
+<p>This means you need to put in the hard work of verifying what you built with the help of AI. You can do this by using it, by creating benchmarks that check CPU and memory usage, checking for edge cases, trying things that should not work, and looking at the generated code to check for code smells. For example I now routinely use AI to create small benchmarks that check for regressions with respect to <code>main</code> for scikit-learn pull requests that I create and review. I ask the AI tool why it made certain changes, why did it not use some other approach? I check my understanding by reasoning that if X and Y are true, then Z must also be true - and then verify if Z is actually true.</p>
+<p>So, use the AI superpower to build and learn new things, then put in the work to verify and understand what you created before you share it publicly.</p>
+  </article>
+</article>
+
+        </div>
+      </div>
+
+<div class="row justify-content-center pb-5">
+  <div class="col-md-8">
+    <footer>
+      <div class="social">
+          <a href="https://github.com/betatim"><i class="fa fa-github fa-2x"></i></a>
+          <a href="https://twitter.com/betatim"><i class="fa fa-twitter fa-2x"></i></a>
+          <a href="mailto:betatim@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+      </div>
+      <div class="powered-by">
+        Copyright © 2014-2021  - Tim Head
+      </div>
+    </footer>
+  </div>
+</div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
