@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="feed" href="/feeds/all.atom.xml" title="Articles">
 
-<link rel="canonical" href="http://betatim.github.io/posts/obligatory-first-post/">
-<meta property="og:url" content="http://betatim.github.io/posts/obligatory-first-post/" />
+<link rel="canonical" href="http://betatim.github.io/posts/skills-search-path-for-agents/">
+<meta property="og:url" content="http://betatim.github.io/posts/skills-search-path-for-agents/" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Obligatory first post" />
+<meta property="og:title" content="SKILLS_PATH - a search path for agent skills" />
 
-    <title>Obligatory first post - Tim Head's blog</title>
+    <title>SKILLS_PATH - a search path for agent skills - Tim Head's blog</title>
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
@@ -91,19 +91,18 @@
 <article>
   <header class="title">
     <h1>
-      Obligatory first post
+      SKILLS_PATH - a search path for agent skills
     </h1>
-    <time class="when d-block small mb-3">26 March 2014</time>
+    <time class="when d-block small mb-3">17 June 2026</time>
   </header>
   <article>
-    <p>Thank you for visiting. Welcome!</p>
-<p>This is my new home on the web. It is still a bit sparse but remember:</p>
-<blockquote>
-<p>Life moves pretty fast. If you don't stop and look around once in a
- while, you could miss it.
-<footer>Ferris Bueller</footer></p>
-</blockquote>
-<p>So take a look around.</p>
+    <p>I'm interested in answers to the question: how do we make it as easy as possible for users of a package (PyPI package, conda package, npm package, etc) to use the skills for that package? This post explains my best idea so far: an environment variable that specifies paths to search.</p>
+<p>As a maintainer of a package (in my case scikit-learn or cuml) I'd like to create skills for users of the package. For example, a skill that helps you design and iterate on your machine learning pipeline. Users are already installing my package and already trust the package authors, so it feels natural to ship the files related to skills in that artifact. In an ideal world installing the package would be all that is needed for the user's agent to become aware of the skills.</p>
+<p>In the Python world we use virtual environments, conda environments, etc to manage the dependencies for different projects/tasks. This means that what package is installed depends on which "environment" the user is currently using. A user might have different versions of the same package installed in different environments. This means copying skills to <code>~/.agents/skills</code> at install time is not really an option.</p>
+<p>A solution to this could be having an environment variable (e.g. <code>SKILLS_PATH</code>) that specifies search paths for skills. Similar to how <code>PATH</code> and <code>LD_LIBRARY_PATH</code> work. It would allow users to add additional directories beyond what is configured in a particular agent. Most importantly, when activating/deactivating an environment many tools give you the chance to modify environment variables. This means during activation the paths to installed packages with skills could be added to the <code>SKILLS_PATH</code> variable. When the environment is deactivated they get removed again.</p>
+<p>There is a lot of discussion about how to ship skills and deal with versioning and trust. Most seem to propose using a new tool, I think the downside of using an additional tool is that the average user won't use it. The reason for that being that it is hard to discover and that it is an extra step to take. The tool/skills manager would also need to be quite clever to deal with the case of several versions of a package being installed/version depending on the current environment.</p>
+<p>A search path is not perfect. For example it increases the number of directories an agent has to look at. How do you indicate that a directory is trusted? Setting up the logic in the environment activation/deactivation mechanism to cleanly add and remove directories can be a bit fiddly. But overall I haven't managed to think of a better idea.</p>
+<p>This post started as a <a href="https://github.com/agentskills/agentskills/discussions/394">post on the agentskills repository</a>.</p>
   </article>
 </article>
 
